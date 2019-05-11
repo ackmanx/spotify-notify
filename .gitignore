@@ -1,0 +1,13 @@
+#Generic IDE and OS
+.DS_Store
+*.iml
+.idea
+
+#Build Tool
+node_modules/
+npm-debug.log
+dist/
+coverage/
+
+#Custom
+.junk/
