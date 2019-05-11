@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET home page. */
+// ---------------------------------------------------------------------------------
+// Page renders
+// ---------------------------------------------------------------------------------
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Spotify Notify' });
 });
 
 module.exports = router;
