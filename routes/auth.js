@@ -39,7 +39,7 @@ router.get('/login', passport.authenticate(strategy, {
 
 router.get('/callback', passport.authenticate(strategy, {failureRedirect: '/auth/login#loginFail'}),
     function success(req, res) {
-        console.log(req.query.code);
+        req.session.accessToken = req.query.code
         res.redirect('/#loginSuccess');
     }
 );

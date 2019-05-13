@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const passport = require('passport')
+const session = require('express-session')
 
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
@@ -25,6 +26,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+    secret: 'oh-boy-oh-boy',
+    resave: false,
+    saveUninitialized: true
+}))
+
 app.use(passport.initialize());
 
 passport.serializeUser(function(user, done) {
