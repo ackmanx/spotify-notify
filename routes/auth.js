@@ -32,14 +32,15 @@ const strategy = 'spotify'
 
 router.get('/login', passport.authenticate(strategy, {
     scope: ['user-read-email', 'user-read-private'],
-    showDialog: true
+    showDialog: false
 }), function () {
     //Spotify redirects the request, so this handler will never be called
 });
 
-router.get('/callback', passport.authenticate(strategy, {failureRedirect: '/login#fail'}),
+router.get('/callback', passport.authenticate(strategy, {failureRedirect: '/auth/login#loginFail'}),
     function success(req, res) {
-        res.redirect('/#blah');
+        console.log(req.query.code);
+        res.redirect('/#loginSuccess');
     }
 );
 
