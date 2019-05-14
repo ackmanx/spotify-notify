@@ -5,9 +5,11 @@
 </head>
 <body>
 
-<div id="login">
-    <h1>First, log in to spotify</h1>
+<h2><%= loggedInMessage %></h2>
+
+<%if (!loggedIn) { %>
     <a href="/auth/login">Log in</a>
-</div>
+<% } %>
+
 </body>
 </html>

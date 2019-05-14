@@ -4,13 +4,16 @@ const router = express.Router();
 // ---------------------------------------------------------------------------------
 // Page renders
 // ---------------------------------------------------------------------------------
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Spotify Notify' });
+router.get('/', function (req, res, next) {
+    let loggedIn = false
+    let loggedInMessage = "Dude, you've gotta log into Spotify first";
+
+    if (req.session.accessToken) {
+        loggedIn = true
+        loggedInMessage = "You've totally got access"
+    }
+
+    res.render('index', { title: 'Spotify Notify', loggedInMessage, loggedIn });
 });
-
-
-router.get('/yay', function (req, res) {
-    res.json(req.session.accessToken)
-})
 
 module.exports = router;
