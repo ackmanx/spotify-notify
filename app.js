@@ -7,6 +7,7 @@ const passport = require('passport')
 const session = require('express-session')
 
 const indexRouter = require('./routes/index');
+const apiRouter = require('./routes/api');
 const authRouter = require('./routes/auth');
 
 const app = express();
@@ -48,6 +49,7 @@ passport.deserializeUser(function(obj, done) {
 // Routes
 // ---------------------------------------------------------------------------------
 app.use('/', indexRouter);
+app.use('/api', apiRouter);
 app.use('/auth', authRouter);
 
 
