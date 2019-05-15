@@ -14,8 +14,6 @@ router.get('/new-albums', async function (req, res) {
         }
     }
 
-    console.log('###', req.session.accessToken) //todo majerus... why are you undefined?!
-
     const followedArtistsResponse = await fetch('https://api.spotify.com/v1/me/following', options)
     const followedArtistsBody = await followedArtistsResponse.json()
 

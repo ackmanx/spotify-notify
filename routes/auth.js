@@ -37,10 +37,10 @@ router.get('/login', passport.authenticate(strategy, {
     //Spotify redirects the request, so this handler will never be called
 });
 
-router.get('/callback', passport.authenticate(strategy, {failureRedirect: '/auth/login#loginFail'}),
+router.get('/callback', passport.authenticate(strategy, {failureRedirect: '/#loginFailed'}),
     function success(req, res) {
         req.session.accessToken = req.query.code
-        res.redirect('/#loginSuccess');
+        res.redirect('/');
     }
 );
 

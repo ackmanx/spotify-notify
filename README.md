@@ -1,7 +1,10 @@
-First:
+Refresh token guide:
+https://developer.spotify.com/documentation/general/guides/authorization-guide/#4-requesting-a-refreshed-access-token-spotify-returns-a-new-access-token-to-your-app
+
+First:  
 https://developer.spotify.com/documentation/web-api/reference-beta/#endpoint-get-followed
 
-Then for each artist in first call:
+Then for each artist in first call:  
 https://developer.spotify.com/documentation/web-api/reference-beta/#endpoint-get-an-artists-albums
 
 Services allow max of 50 items per request, so need to use paging.

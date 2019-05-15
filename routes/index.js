@@ -4,7 +4,7 @@ const router = express.Router();
 // ---------------------------------------------------------------------------------
 // Page renders
 // ---------------------------------------------------------------------------------
-router.get('/', function (req, res, next) {
+router.get('/', function (req, res) {
     let loggedIn = false
     let loggedInMessage = "Dude, you've gotta log into Spotify first";
 
