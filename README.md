@@ -1,4 +1,13 @@
+First:
 https://developer.spotify.com/documentation/web-api/reference-beta/#endpoint-get-followed
+
+Then for each artist in first call:
+https://developer.spotify.com/documentation/web-api/reference-beta/#endpoint-get-an-artists-albums
+
+Services allow max of 50 items per request, so need to use paging.
+There are unknown rate limit caps, so try sending them all and then waiting on rejection
+
+
 
 I want to be notified when there's new music.
 

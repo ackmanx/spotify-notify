@@ -31,7 +31,7 @@ passport.use(
 const strategy = 'spotify'
 
 router.get('/login', passport.authenticate(strategy, {
-    scope: ['user-read-email', 'user-read-private'],
+    scope: ['user-follow-modify'],
     showDialog: false
 }), function () {
     //Spotify redirects the request, so this handler will never be called
