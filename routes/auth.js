@@ -23,7 +23,7 @@ const request = require('request')
 
 const client_id = 'e466e7a286954e13b501d8e7bc4669cc'
 const client_secret = '76f2fd5049574e09899dcf84810e5fef' //this will live in heroku config so it isn't exposed via git, but until then store it here and regen a new key later
-const redirect_uri = 'http://me:3000/auth/callback' //where to be sent by spotify after logging in. this must be whitelisted in spotify developer dashboard first
+const redirect_uri = 'http://me:3666/auth/callback' //where to be sent by spotify after logging in. this must be whitelisted in spotify developer dashboard first
 const scope = 'user-follow-read'
 
 const stateKey = 'spotify_auth_state'
@@ -87,7 +87,7 @@ router.get('/callback', function (req, res) {
             return res.redirect('/')
         }
 
-        res.redirect(`/#${querystring.stringify({error: 'invalid_token'})}`)
+        res.redirect(`/#${querystring.stringify({ error: 'invalid_token' })}`)
     })
 })
 
@@ -95,7 +95,7 @@ router.get('/refresh_token', function (req, res) {
     const refresh_token = req.query.refresh_token
     const authOptions = {
         url: 'https://accounts.spotify.com/api/token',
-        headers: {'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))},
+        headers: { 'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) },
         form: {
             grant_type: 'refresh_token',
             refresh_token,
@@ -106,7 +106,7 @@ router.get('/refresh_token', function (req, res) {
     request.post(authOptions, function (error, response, body) {
         if (!error && response.statusCode === 200) {
             const access_token = body.access_token
-            res.send({access_token})
+            res.send({ access_token })
         }
     })
 })
