@@ -1,0 +1,406 @@
+{
+    "href": "https://api.spotify.com/v1/artists/03SZv6slUnLnHI3IfwG0gl/albums?offset=0&limit=50&include_groups=album,single&market=US",
+    "items": [
+        {
+            "album_group": "album",
+            "album_type": "album",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/03SZv6slUnLnHI3IfwG0gl"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/03SZv6slUnLnHI3IfwG0gl",
+                    "id": "03SZv6slUnLnHI3IfwG0gl",
+                    "name": "Grossstadtgeflüster",
+                    "type": "artist",
+                    "uri": "spotify:artist:03SZv6slUnLnHI3IfwG0gl"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/3W1VPKOZuwemvEnxCt55a0"
+            },
+            "href": "https://api.spotify.com/v1/albums/3W1VPKOZuwemvEnxCt55a0",
+            "id": "3W1VPKOZuwemvEnxCt55a0",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/3f81c183504cb7894e5e9d3f6cbeeabb6fc9025e",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/eed973bca74078a323dc1871b4e35770b022db5b",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/238ce7d442b392d484d682ef28e90aa151030783",
+                    "width": 64
+                }
+            ],
+            "name": "Alles Muss Man Selber Machen",
+            "release_date": "2010-04-30",
+            "release_date_precision": "day",
+            "total_tracks": 13,
+            "type": "album",
+            "uri": "spotify:album:3W1VPKOZuwemvEnxCt55a0"
+        },
+        {
+            "album_group": "single",
+            "album_type": "single",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/03SZv6slUnLnHI3IfwG0gl"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/03SZv6slUnLnHI3IfwG0gl",
+                    "id": "03SZv6slUnLnHI3IfwG0gl",
+                    "name": "Grossstadtgeflüster",
+                    "type": "artist",
+                    "uri": "spotify:artist:03SZv6slUnLnHI3IfwG0gl"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/3hxj3PCyMZ8sw1CLJmwNOL"
+            },
+            "href": "https://api.spotify.com/v1/albums/3hxj3PCyMZ8sw1CLJmwNOL",
+            "id": "3hxj3PCyMZ8sw1CLJmwNOL",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/1ecc92437992da5183db77123fbcff58896f3681",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/b21cea5f9ad79687166b6888ac20d421e4dadfdc",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/2ce4ba8ea9135d4356e0c060d81069b6ba5e5815",
+                    "width": 64
+                }
+            ],
+            "name": "Neue Freunde",
+            "release_date": "2019-03-14",
+            "release_date_precision": "day",
+            "total_tracks": 1,
+            "type": "album",
+            "uri": "spotify:album:3hxj3PCyMZ8sw1CLJmwNOL"
+        },
+        {
+            "album_group": "single",
+            "album_type": "single",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/03SZv6slUnLnHI3IfwG0gl"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/03SZv6slUnLnHI3IfwG0gl",
+                    "id": "03SZv6slUnLnHI3IfwG0gl",
+                    "name": "Grossstadtgeflüster",
+                    "type": "artist",
+                    "uri": "spotify:artist:03SZv6slUnLnHI3IfwG0gl"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/72EDxwi1dk0kbW17j0RbM8"
+            },
+            "href": "https://api.spotify.com/v1/albums/72EDxwi1dk0kbW17j0RbM8",
+            "id": "72EDxwi1dk0kbW17j0RbM8",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/580e696579cb87c13122ebd50bdd714d054736f9",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/30701b26a87318a4626070f5dcc6e5edcc528175",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/0c47edfc5632512a0b2a3a5588535159701b3c95",
+                    "width": 64
+                }
+            ],
+            "name": "Feierabend",
+            "release_date": "2018-12-13",
+            "release_date_precision": "day",
+            "total_tracks": 1,
+            "type": "album",
+            "uri": "spotify:album:72EDxwi1dk0kbW17j0RbM8"
+        },
+        {
+            "album_group": "single",
+            "album_type": "single",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/03SZv6slUnLnHI3IfwG0gl"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/03SZv6slUnLnHI3IfwG0gl",
+                    "id": "03SZv6slUnLnHI3IfwG0gl",
+                    "name": "Grossstadtgeflüster",
+                    "type": "artist",
+                    "uri": "spotify:artist:03SZv6slUnLnHI3IfwG0gl"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/3RJHv4CKib7TnAJmIIp6cE"
+            },
+            "href": "https://api.spotify.com/v1/albums/3RJHv4CKib7TnAJmIIp6cE",
+            "id": "3RJHv4CKib7TnAJmIIp6cE",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/71e527bf537abc85fc043777fd43f7ebbbe9520e",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/ad62fea2a56010fc3e0d7c2e1ea541df48734928",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/562d359a161be67b93f01a4ffbf323a7570ed5b9",
+                    "width": 64
+                }
+            ],
+            "name": "Wie man Feuer macht",
+            "release_date": "2017-03-31",
+            "release_date_precision": "day",
+            "total_tracks": 1,
+            "type": "album",
+            "uri": "spotify:album:3RJHv4CKib7TnAJmIIp6cE"
+        },
+        {
+            "album_group": "single",
+            "album_type": "single",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/03SZv6slUnLnHI3IfwG0gl"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/03SZv6slUnLnHI3IfwG0gl",
+                    "id": "03SZv6slUnLnHI3IfwG0gl",
+                    "name": "Grossstadtgeflüster",
+                    "type": "artist",
+                    "uri": "spotify:artist:03SZv6slUnLnHI3IfwG0gl"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/4Du0xnYcDmMyFdFK3rtDBf"
+            },
+            "href": "https://api.spotify.com/v1/albums/4Du0xnYcDmMyFdFK3rtDBf",
+            "id": "4Du0xnYcDmMyFdFK3rtDBf",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/e765083e967245da7f8b2483f4024309f39ecc00",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/447d52cbefb15c26a2e3ba54844ea4be9a38a7fc",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/b005607a1c1eb36da6be0a43c9478122854282a2",
+                    "width": 64
+                }
+            ],
+            "name": "Ich boykottiere dich (Episode 2)",
+            "release_date": "2016-09-16",
+            "release_date_precision": "day",
+            "total_tracks": 5,
+            "type": "album",
+            "uri": "spotify:album:4Du0xnYcDmMyFdFK3rtDBf"
+        },
+        {
+            "album_group": "single",
+            "album_type": "single",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/03SZv6slUnLnHI3IfwG0gl"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/03SZv6slUnLnHI3IfwG0gl",
+                    "id": "03SZv6slUnLnHI3IfwG0gl",
+                    "name": "Grossstadtgeflüster",
+                    "type": "artist",
+                    "uri": "spotify:artist:03SZv6slUnLnHI3IfwG0gl"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/0ys8pXuROuilOvihIy2Hsq"
+            },
+            "href": "https://api.spotify.com/v1/albums/0ys8pXuROuilOvihIy2Hsq",
+            "id": "0ys8pXuROuilOvihIy2Hsq",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/76070fa15026e85574a2cc96da46289c154d64a3",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/4684f92dd1f0cc0b305f5a50b4c9eddb4b755afa",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/3a3fa30262c08881fe5084ed8b7621600a43ab03",
+                    "width": 64
+                }
+            ],
+            "name": "Ich rollator mit meim Besten",
+            "release_date": "2016-06-03",
+            "release_date_precision": "day",
+            "total_tracks": 1,
+            "type": "album",
+            "uri": "spotify:album:0ys8pXuROuilOvihIy2Hsq"
+        },
+        {
+            "album_group": "single",
+            "album_type": "single",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/03SZv6slUnLnHI3IfwG0gl"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/03SZv6slUnLnHI3IfwG0gl",
+                    "id": "03SZv6slUnLnHI3IfwG0gl",
+                    "name": "Grossstadtgeflüster",
+                    "type": "artist",
+                    "uri": "spotify:artist:03SZv6slUnLnHI3IfwG0gl"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/69CxasDbGDE7jDy3rY0uXU"
+            },
+            "href": "https://api.spotify.com/v1/albums/69CxasDbGDE7jDy3rY0uXU",
+            "id": "69CxasDbGDE7jDy3rY0uXU",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/288d06f3743e51fa417433cc620a851b88a3f32c",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/839ad8f420851a3fea5066692e9a8b3ce0cdbaf8",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ea82e46f86463d0130ab794ab2ae57e5bb456af2",
+                    "width": 64
+                }
+            ],
+            "name": "Fickt-Euch-Allee EP",
+            "release_date": "2015-11-13",
+            "release_date_precision": "day",
+            "total_tracks": 5,
+            "type": "album",
+            "uri": "spotify:album:69CxasDbGDE7jDy3rY0uXU"
+        },
+        {
+            "album_group": "single",
+            "album_type": "single",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/03SZv6slUnLnHI3IfwG0gl"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/03SZv6slUnLnHI3IfwG0gl",
+                    "id": "03SZv6slUnLnHI3IfwG0gl",
+                    "name": "Grossstadtgeflüster",
+                    "type": "artist",
+                    "uri": "spotify:artist:03SZv6slUnLnHI3IfwG0gl"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/66j7ISt8Lu4vkFUM4rDq75"
+            },
+            "href": "https://api.spotify.com/v1/albums/66j7ISt8Lu4vkFUM4rDq75",
+            "id": "66j7ISt8Lu4vkFUM4rDq75",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/288d06f3743e51fa417433cc620a851b88a3f32c",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/839ad8f420851a3fea5066692e9a8b3ce0cdbaf8",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/ea82e46f86463d0130ab794ab2ae57e5bb456af2",
+                    "width": 64
+                }
+            ],
+            "name": "Fickt-Euch-Allee EP (Bonus Track Version)",
+            "release_date": "2015-11-13",
+            "release_date_precision": "day",
+            "total_tracks": 6,
+            "type": "album",
+            "uri": "spotify:album:66j7ISt8Lu4vkFUM4rDq75"
+        },
+        {
+            "album_group": "single",
+            "album_type": "single",
+            "artists": [
+                {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/03SZv6slUnLnHI3IfwG0gl"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/03SZv6slUnLnHI3IfwG0gl",
+                    "id": "03SZv6slUnLnHI3IfwG0gl",
+                    "name": "Grossstadtgeflüster",
+                    "type": "artist",
+                    "uri": "spotify:artist:03SZv6slUnLnHI3IfwG0gl"
+                }
+            ],
+            "external_urls": {
+                "spotify": "https://open.spotify.com/album/2lVRaxzFTng4bR8Vi3G140"
+            },
+            "href": "https://api.spotify.com/v1/albums/2lVRaxzFTng4bR8Vi3G140",
+            "id": "2lVRaxzFTng4bR8Vi3G140",
+            "images": [
+                {
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/e522b7cdde6a66537fa23460916f948020931169",
+                    "width": 640
+                },
+                {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/86c6d7447b7f471e9fe7027412f5984a26dfd6cb",
+                    "width": 300
+                },
+                {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/c34d3563df3cb94a43036ecac0315acfc81e2421",
+                    "width": 64
+                }
+            ],
+            "name": "Fickt-Euch-Allee",
+            "release_date": "2015-10-16",
+            "release_date_precision": "day",
+            "total_tracks": 1,
+            "type": "album",
+            "uri": "spotify:album:2lVRaxzFTng4bR8Vi3G140"
+        }
+    ],
+    "limit": 50,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total": 9
+}

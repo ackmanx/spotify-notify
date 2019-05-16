@@ -2,19 +2,30 @@
 <html>
 <head>
     <title><%= title %></title>
-    <link id=favicon rel="shortcut icon" type=image/png href="/fav-icon.png" />
+    <link id=favicon rel="shortcut icon" type=image/png href="/fav-icon.png"/>
 </head>
 <body>
 
 <h2><%= loggedInMessage %></h2>
 
-<%if (!loggedIn) { %>
+<% if (!loggedIn) { %>
     <a href="/auth/login">Log in</a>
 <% } %>
 
-<div>
-<a href="/api/get-following">new albums json</a>
-</div>
+<ul>
+    <li>
+        <a href="/api/get-following">get all artist that I am following</a>
+        <ul>
+            <li><a href="/api/mock/get-following">mock</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="/api/get-artist-albums?artistId=03SZv6slUnLnHI3IfwG0gl">get all albums for an artist</a>
+        <ul>
+            <li><a href="/api/mock/get-artist-albums">mock</a></li>
+        </ul>
+    </li>
+</ul>
 
 </body>
 </html>
