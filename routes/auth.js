@@ -78,25 +78,11 @@ router.get('/callback', function (req, res) {
         if (!error && response.statusCode === 200) {
             console.log('### auth body:', body);
 
-            const access_token = body.access_token
-            const refresh_token = body.refresh_token
+            req.session.access_token = body.access_token
+            req.session.refresh_token = body.refresh_token
 
-            req.session.access_token = access_token
-            req.session.refresh_token = refresh_token
-
-            res.cookie('access_token', access_token)
-            res.cookie('refresh_token', refresh_token)
-
-            const options = {
-                url: 'https://api.spotify.com/v1/me/following?type=artist',
-                headers: {'Authorization': 'Bearer ' + access_token},
-                json: true
-            }
-
-            //Example using the token to make an authenticated API call
-            request.get(options, function (error, response, body) {
-                console.log('### /v1/me/following body:', body)
-            })
+            res.cookie('access_token', body.access_token)
+            res.cookie('refresh_token', body.refresh_token)
 
             return res.redirect('/')
         }
@@ -125,4 +111,14 @@ router.get('/refresh_token', function (req, res) {
     })
 })
 
-module.exports = router
+function ensureAuthenticated(req, res, next) {
+    if (req.session.access_token) {
+        return next();
+    }
+    res.redirect('/');
+}
+
+module.exports = {
+    authRouter: router,
+    ensureAuthenticated,
+}

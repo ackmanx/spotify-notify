@@ -1,0 +1,808 @@
+{
+    "_NOTES": "This is page 1 of my own profile's response. https://developer.spotify.com/documentation/web-api/reference-beta/#endpoint-get-followed",
+    "artists": {
+        "items": [
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/03SZv6slUnLnHI3IfwG0gl"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 45240
+                },
+                "genres": [
+                    "antideutsche",
+                    "electropunk",
+                    "german indie",
+                    "german pop",
+                    "german rock"
+                ],
+                "href": "https://api.spotify.com/v1/artists/03SZv6slUnLnHI3IfwG0gl",
+                "id": "03SZv6slUnLnHI3IfwG0gl",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/45b2aabf832035fab7fe10d9e8161ce5e2045727",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/4724cda108d09d530a419004f9e67457a82ef3e6",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/9b4b1250aeb0aa46b886727a873b30200faa6b65",
+                        "width": 160
+                    }
+                ],
+                "name": "Grossstadtgeflüster",
+                "popularity": 53,
+                "type": "artist",
+                "uri": "spotify:artist:03SZv6slUnLnHI3IfwG0gl"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/053q0ukIDRgzwTr4vNSwab"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 819477
+                },
+                "genres": [
+                    "art pop",
+                    "canadian electropop",
+                    "chillwave",
+                    "dance pop",
+                    "dream pop",
+                    "electropop",
+                    "escape room",
+                    "grave wave",
+                    "indietronica",
+                    "metropopolis",
+                    "new rave",
+                    "pop"
+                ],
+                "href": "https://api.spotify.com/v1/artists/053q0ukIDRgzwTr4vNSwab",
+                "id": "053q0ukIDRgzwTr4vNSwab",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/d80fc574389731bddc9dbeed7255e7d084803e9c",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/98c9924d85f2a08c3ffd5238322e99e4241ef948",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/6ea203945c3c84d0728d81c4ea0d6ae903ee3ffc",
+                        "width": 160
+                    }
+                ],
+                "name": "Grimes",
+                "popularity": 68,
+                "type": "artist",
+                "uri": "spotify:artist:053q0ukIDRgzwTr4vNSwab"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/07ZhipyrvoyNoJejeyM0PQ"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 136141
+                },
+                "genres": [
+                    "chinese hip hop",
+                    "underground hip hop"
+                ],
+                "href": "https://api.spotify.com/v1/artists/07ZhipyrvoyNoJejeyM0PQ",
+                "id": "07ZhipyrvoyNoJejeyM0PQ",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/a52a769a42fc6b836e270823eb3035306e3ec0bf",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/7342c58e9d9433da98017c3b88af89a4d2566271",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/e2ff92d11a6f6655d9fffab5f5e345273719790c",
+                        "width": 160
+                    }
+                ],
+                "name": "Higher Brothers",
+                "popularity": 69,
+                "type": "artist",
+                "uri": "spotify:artist:07ZhipyrvoyNoJejeyM0PQ"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0DLfONSFG8AA0cQvh1yCrz"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 32599
+                },
+                "genres": [
+                    "aggrotech",
+                    "dark wave",
+                    "ebm",
+                    "electro-industrial",
+                    "futurepop",
+                    "industrial metal",
+                    "industrial rock",
+                    "neue deutsche harte",
+                    "neue deutsche todeskunst"
+                ],
+                "href": "https://api.spotify.com/v1/artists/0DLfONSFG8AA0cQvh1yCrz",
+                "id": "0DLfONSFG8AA0cQvh1yCrz",
+                "images": [
+                    {
+                        "height": 1268,
+                        "url": "https://i.scdn.co/image/e9348dbe0feba8e284a202159b5939869d2b2dc9",
+                        "width": 842
+                    },
+                    {
+                        "height": 964,
+                        "url": "https://i.scdn.co/image/01693e6386551d96d58836b8fcf755c26c188170",
+                        "width": 640
+                    },
+                    {
+                        "height": 301,
+                        "url": "https://i.scdn.co/image/a8e91234d44ee5658a2f2041b7b4a228f00b0397",
+                        "width": 200
+                    },
+                    {
+                        "height": 96,
+                        "url": "https://i.scdn.co/image/5a4e0e18e00c310e6a8b3445e3ddba2e6cafa29e",
+                        "width": 64
+                    }
+                ],
+                "name": "Project Pitchfork",
+                "popularity": 43,
+                "type": "artist",
+                "uri": "spotify:artist:0DLfONSFG8AA0cQvh1yCrz"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0GDGKpJFhVpcjIGF8N6Ewt"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 433004
+                },
+                "genres": [
+                    "alternative metal",
+                    "french metal",
+                    "groove metal",
+                    "metal",
+                    "nu metal",
+                    "progressive metal"
+                ],
+                "href": "https://api.spotify.com/v1/artists/0GDGKpJFhVpcjIGF8N6Ewt",
+                "id": "0GDGKpJFhVpcjIGF8N6Ewt",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/1ad6844cd3a0d5a195f2df98f44abfcbfe2f4d5e",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/aa05402b64cf462e74b1d0aef90f2fc58aff3e50",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/76d5d53e5649d896b215009fef0415929855b6c7",
+                        "width": 160
+                    }
+                ],
+                "name": "Gojira",
+                "popularity": 65,
+                "type": "artist",
+                "uri": "spotify:artist:0GDGKpJFhVpcjIGF8N6Ewt"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0MLOZd8nYoXxHpOzDH0vXJ"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 18628
+                },
+                "genres": [
+                    "ambient idm",
+                    "indie dream pop"
+                ],
+                "href": "https://api.spotify.com/v1/artists/0MLOZd8nYoXxHpOzDH0vXJ",
+                "id": "0MLOZd8nYoXxHpOzDH0vXJ",
+                "images": [
+                    {
+                        "height": 1000,
+                        "url": "https://i.scdn.co/image/b906053f9707cd88a64bb165f19244ed3bbd6b0a",
+                        "width": 1000
+                    },
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/243e6ad5f1ed99d9c7bd5bfda7ace5698b7a3d7c",
+                        "width": 640
+                    },
+                    {
+                        "height": 200,
+                        "url": "https://i.scdn.co/image/24f66e0ade99f8948eb76d09c962548e0551af7d",
+                        "width": 200
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/3bfaae1f44c5e9c772a9c633caa8d69eb1ab59c8",
+                        "width": 64
+                    }
+                ],
+                "name": "MMOTHS",
+                "popularity": 29,
+                "type": "artist",
+                "uri": "spotify:artist:0MLOZd8nYoXxHpOzDH0vXJ"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0OTY72l7CC7ynKzp6N2o5b"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 24956
+                },
+                "genres": [
+                    "deep chiptune",
+                    "retro electro"
+                ],
+                "href": "https://api.spotify.com/v1/artists/0OTY72l7CC7ynKzp6N2o5b",
+                "id": "0OTY72l7CC7ynKzp6N2o5b",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/d696bf1490c19b072c414e220e89dda5be84f24b",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/9d6c04f08d3457b1eee8a6545db9d38c556ab394",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/162c8e254133a88957a722a2b29da4d51273d4d7",
+                        "width": 160
+                    }
+                ],
+                "name": "Daniel Deluxe",
+                "popularity": 52,
+                "type": "artist",
+                "uri": "spotify:artist:0OTY72l7CC7ynKzp6N2o5b"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0RqtSIYZmd4fiBKVFqyIqD"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 2213748
+                },
+                "genres": [
+                    "modern rock",
+                    "pop nacional",
+                    "pop punk",
+                    "post-grunge",
+                    "rock"
+                ],
+                "href": "https://api.spotify.com/v1/artists/0RqtSIYZmd4fiBKVFqyIqD",
+                "id": "0RqtSIYZmd4fiBKVFqyIqD",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/77c0b320fcd21be3329a0b2251409a2081247b57",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/e45c3f34b1a88245f5c8ef16c5b9fb6b0fe1c8a9",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/731ed9a97b37aa46ee522317ede95895c3f3ec89",
+                        "width": 160
+                    }
+                ],
+                "name": "Thirty Seconds To Mars",
+                "popularity": 73,
+                "type": "artist",
+                "uri": "spotify:artist:0RqtSIYZmd4fiBKVFqyIqD"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0UF7XLthtbSF2Eur7559oV"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 498283
+                },
+                "genres": [
+                    "filter house",
+                    "new rave"
+                ],
+                "href": "https://api.spotify.com/v1/artists/0UF7XLthtbSF2Eur7559oV",
+                "id": "0UF7XLthtbSF2Eur7559oV",
+                "images": [
+                    {
+                        "height": 1220,
+                        "url": "https://i.scdn.co/image/8827ad40fd7e7f89fa33affa5217f23bfe1a7067",
+                        "width": 1000
+                    },
+                    {
+                        "height": 781,
+                        "url": "https://i.scdn.co/image/8c0785fed9f30cae6b12e6007de5bd4ca91a8eb9",
+                        "width": 640
+                    },
+                    {
+                        "height": 244,
+                        "url": "https://i.scdn.co/image/08b58d51feae3c69588d3929475e54bddb0d123f",
+                        "width": 200
+                    },
+                    {
+                        "height": 78,
+                        "url": "https://i.scdn.co/image/52f8e9a14f69c38362023f79ed86be9b528e8d25",
+                        "width": 64
+                    }
+                ],
+                "name": "Kavinsky",
+                "popularity": 61,
+                "type": "artist",
+                "uri": "spotify:artist:0UF7XLthtbSF2Eur7559oV"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0Z43xNK0ZhtPW2eKi1L1OP"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 7885
+                },
+                "genres": [
+                    "deep chiptune"
+                ],
+                "href": "https://api.spotify.com/v1/artists/0Z43xNK0ZhtPW2eKi1L1OP",
+                "id": "0Z43xNK0ZhtPW2eKi1L1OP",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/515509704d0999f9d93a950e720f5eb7bcf02072",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/a9b7a049733a7968d6ccd091dd390a21a70d201c",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/da9eea4d3ada8403554be8d07bc3bfcd8d66203c",
+                        "width": 160
+                    }
+                ],
+                "name": "El Tigr3",
+                "popularity": 38,
+                "type": "artist",
+                "uri": "spotify:artist:0Z43xNK0ZhtPW2eKi1L1OP"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0a7PEqrMMgqFe6NCzSNNyq"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 1533
+                },
+                "genres": [],
+                "href": "https://api.spotify.com/v1/artists/0a7PEqrMMgqFe6NCzSNNyq",
+                "id": "0a7PEqrMMgqFe6NCzSNNyq",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/fe5f07c6008fa55dfe84ea95144a6ec6c4aa4dce",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/5bd1e4546a85e9ae61d15e587fb0a2539da2fd04",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/57853fbd646f7a4e20f8f087affaa5278b052985",
+                        "width": 64
+                    }
+                ],
+                "name": "The Gothsicles",
+                "popularity": 12,
+                "type": "artist",
+                "uri": "spotify:artist:0a7PEqrMMgqFe6NCzSNNyq"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0cMQ1u5neB0RWhQiSCXjdH"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 16852
+                },
+                "genres": [
+                    "aggrotech",
+                    "electro-industrial",
+                    "industrial",
+                    "industrial metal",
+                    "industrial rock",
+                    "neue deutsche harte"
+                ],
+                "href": "https://api.spotify.com/v1/artists/0cMQ1u5neB0RWhQiSCXjdH",
+                "id": "0cMQ1u5neB0RWhQiSCXjdH",
+                "images": [
+                    {
+                        "height": 1000,
+                        "url": "https://i.scdn.co/image/adad23819f67ba3a1c59ceebae6e5599469dbeb2",
+                        "width": 1000
+                    },
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/9e48d39fcf23277c60fac00f5a43e421eb2f8e13",
+                        "width": 640
+                    },
+                    {
+                        "height": 200,
+                        "url": "https://i.scdn.co/image/b248c1ae2e68ba6ef031d17c393c58dfe173673a",
+                        "width": 200
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/09606330294a7373d6951c34240b9696e53fe871",
+                        "width": 64
+                    }
+                ],
+                "name": "Hanzel und Gretyl",
+                "popularity": 35,
+                "type": "artist",
+                "uri": "spotify:artist:0cMQ1u5neB0RWhQiSCXjdH"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0daugAjUgbJSqdlyYNwIbT"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 255420
+                },
+                "genres": [
+                    "big room",
+                    "catstep",
+                    "dance pop",
+                    "edm",
+                    "electro house",
+                    "pop",
+                    "pop edm",
+                    "progressive electro house",
+                    "tracestep",
+                    "tropical house"
+                ],
+                "href": "https://api.spotify.com/v1/artists/0daugAjUgbJSqdlyYNwIbT",
+                "id": "0daugAjUgbJSqdlyYNwIbT",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/fd41e3b82bedaaa95a0363fdd0f1c942e1939f02",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/6d32a07b78a982befa0f916c83d3a0513acd4e9f",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/1105e0cea72ecb37034f4fde18bff704fbc37a01",
+                        "width": 160
+                    }
+                ],
+                "name": "Vicetone",
+                "popularity": 69,
+                "type": "artist",
+                "uri": "spotify:artist:0daugAjUgbJSqdlyYNwIbT"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0ervG9shMGJvl2Uw2RFmNW"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 641
+                },
+                "genres": [
+                    "cyberpunk",
+                    "retro electro"
+                ],
+                "href": "https://api.spotify.com/v1/artists/0ervG9shMGJvl2Uw2RFmNW",
+                "id": "0ervG9shMGJvl2Uw2RFmNW",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/b306d1160e7483c2cec6fc5549cd37dd5f7c79d5",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/6b3396cef0003cc92940eae4e6dc573b411bc724",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/db0a39e236e5be4d901e0f829e550a4da9f9b8f4",
+                        "width": 64
+                    }
+                ],
+                "name": "Ex Machina",
+                "popularity": 23,
+                "type": "artist",
+                "uri": "spotify:artist:0ervG9shMGJvl2Uw2RFmNW"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0gvrCzDfdcHWrTOanKBlJL"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 15110
+                },
+                "genres": [
+                    "experimental techno"
+                ],
+                "href": "https://api.spotify.com/v1/artists/0gvrCzDfdcHWrTOanKBlJL",
+                "id": "0gvrCzDfdcHWrTOanKBlJL",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/f49476bc9a3d1dde33f2a36ad581c19315508d67",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/37dbc68cf711666289fb3ec230e2cbd7c520d0ca",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/2d8aa4744b8e4826fe0c0a7227208cb9b2fb02ca",
+                        "width": 160
+                    }
+                ],
+                "name": "Schwefelgelb",
+                "popularity": 38,
+                "type": "artist",
+                "uri": "spotify:artist:0gvrCzDfdcHWrTOanKBlJL"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0lP5aPV834goEtT6asKAek"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 25038
+                },
+                "genres": [
+                    "german hip hop",
+                    "hamburg hip hop"
+                ],
+                "href": "https://api.spotify.com/v1/artists/0lP5aPV834goEtT6asKAek",
+                "id": "0lP5aPV834goEtT6asKAek",
+                "images": [
+                    {
+                        "height": 1500,
+                        "url": "https://i.scdn.co/image/a77e6ce8ee78ccf21ef96d419b88d0b9886f9b7d",
+                        "width": 1000
+                    },
+                    {
+                        "height": 960,
+                        "url": "https://i.scdn.co/image/7e0f6d15c3be5915c56f82d2d1b567101c2f6672",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/e2b0ed89b02b862e04f24fa604b31c64ca0cfec6",
+                        "width": 200
+                    },
+                    {
+                        "height": 96,
+                        "url": "https://i.scdn.co/image/e6f73552fa5ba4f86015ed4a33b2f7e82b15acbd",
+                        "width": 64
+                    }
+                ],
+                "name": "Das Bo",
+                "popularity": 37,
+                "type": "artist",
+                "uri": "spotify:artist:0lP5aPV834goEtT6asKAek"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/0tQn2q1TIEenLgodtb8Nhx"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 18492
+                },
+                "genres": [
+                    "dark wave",
+                    "ebm",
+                    "electro-industrial",
+                    "futurepop",
+                    "industrial metal",
+                    "industrial rock",
+                    "neue deutsche harte"
+                ],
+                "href": "https://api.spotify.com/v1/artists/0tQn2q1TIEenLgodtb8Nhx",
+                "id": "0tQn2q1TIEenLgodtb8Nhx",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/8b8ac20114a2589b8281b20f2008bfec3387c4b6",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/c72398c4f9195c7c6cd608ff4818336c22ff75cb",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/fb290bfdbaf4466308d65451ba965f570841d772",
+                        "width": 64
+                    }
+                ],
+                "name": "Zeromancer",
+                "popularity": 37,
+                "type": "artist",
+                "uri": "spotify:artist:0tQn2q1TIEenLgodtb8Nhx"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/11S00dFcvNvJahis8MTGMD"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 18154
+                },
+                "genres": [
+                    "k-hop"
+                ],
+                "href": "https://api.spotify.com/v1/artists/11S00dFcvNvJahis8MTGMD",
+                "id": "11S00dFcvNvJahis8MTGMD",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/b1ff63cac2625b5d016d38bb04f3b7851ff985fc",
+                        "width": 640
+                    },
+                    {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/c923b12c3a717cebe1a75eeb203c2ee08670d9f7",
+                        "width": 300
+                    },
+                    {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/b0936f7354965e70ec9f90403722472ffc81afef",
+                        "width": 64
+                    }
+                ],
+                "name": "Tiger JK",
+                "popularity": 46,
+                "type": "artist",
+                "uri": "spotify:artist:11S00dFcvNvJahis8MTGMD"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/163tK9Wjr9P9DmM0AVK7lm"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 4339233
+                },
+                "genres": [
+                    "art pop",
+                    "dance pop",
+                    "electropop",
+                    "metropopolis",
+                    "nz pop",
+                    "pop"
+                ],
+                "href": "https://api.spotify.com/v1/artists/163tK9Wjr9P9DmM0AVK7lm",
+                "id": "163tK9Wjr9P9DmM0AVK7lm",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/d25fc756cd04c8b3ea196b7c07c6d057685cc405",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/ca2e7772dcdfd03401cdd0c66aeee1bea8ea3904",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/2f22ea3ea1597887d86441a030204dac49a74a81",
+                        "width": 160
+                    }
+                ],
+                "name": "Lorde",
+                "popularity": 79,
+                "type": "artist",
+                "uri": "spotify:artist:163tK9Wjr9P9DmM0AVK7lm"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/16yUpGkBRgc2eDMd3bB3Uw"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 76958
+                },
+                "genres": [
+                    "brostep",
+                    "catstep",
+                    "chillstep",
+                    "complextro",
+                    "edm",
+                    "electro house",
+                    "filthstep",
+                    "pop edm",
+                    "tracestep"
+                ],
+                "href": "https://api.spotify.com/v1/artists/16yUpGkBRgc2eDMd3bB3Uw",
+                "id": "16yUpGkBRgc2eDMd3bB3Uw",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/f69630aa54c1e88b3b4c859ff5072eacec79b4f2",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/01ece39a39b448c7ab26faf6ed2e131272b72a8a",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/32228c6885370c9c483bccd3a5aacb90516a74c8",
+                        "width": 160
+                    }
+                ],
+                "name": "MitiS",
+                "popularity": 55,
+                "type": "artist",
+                "uri": "spotify:artist:16yUpGkBRgc2eDMd3bB3Uw"
+            }
+        ],
+        "next": "https://api.spotify.com/v1/me/following?type=artist&after=16yUpGkBRgc2eDMd3bB3Uw&limit=20",
+        "total": 167,
+        "cursors": {
+            "after": "16yUpGkBRgc2eDMd3bB3Uw"
+        },
+        "limit": 20,
+        "href": "https://api.spotify.com/v1/me/following?type=artist&limit=20"
+    }
+}

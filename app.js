@@ -7,7 +7,7 @@ const session = require('express-session')
 
 const indexRouter = require('./routes/index')
 const apiRouter = require('./routes/api')
-const authRouter = require('./routes/auth')
+const {authRouter} = require('./routes/auth')
 
 const app = express()
 
