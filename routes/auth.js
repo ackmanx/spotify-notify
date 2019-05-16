@@ -46,68 +46,65 @@ router.get('/login', function (req, res) {
 })
 
 router.get('/callback', function (req, res) {
-    // your application requests refresh and access tokens
-    // after checking the state parameter
+    const code = req.query.code
+    const state = req.query.state
+    const storedState = req.cookies[stateKey]
 
-    const code = req.query.code || null
-    const state = req.query.state || null
-    const storedState = req.cookies ? req.cookies[stateKey] : null
-
-    console.log('state :', state)
-    console.log('stored:', storedState)
-
-    if (state === null || state !== storedState) {
-        res.redirect('/#' +
+    //Spotify wants you to make sure state ID from them matches the one you sent earlier
+    if (state !== storedState) {
+        return res.redirect('/#' +
             querystring.stringify({
                 error: 'state_mismatch'
             }))
-    } else {
-        res.clearCookie(stateKey)
-        const authOptions = {
-            url: 'https://accounts.spotify.com/api/token',
-            form: {
-                code,
-                redirect_uri,
-                grant_type: 'authorization_code'
-            },
-            headers: {
-                'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
-            },
-            json: true
+    }
+
+    res.clearCookie(stateKey)
+
+    const authOptions = {
+        url: 'https://accounts.spotify.com/api/token',
+        form: {
+            code,
+            redirect_uri,
+            grant_type: 'authorization_code'
+        },
+        headers: {
+            'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))
+        },
+        json: true
+    }
+
+    request.post(authOptions, function (error, response, body) {
+        if (!error && response.statusCode === 200) {
+            console.log('### auth body:', body);
+
+            const access_token = body.access_token
+            const refresh_token = body.refresh_token
+
+            req.session.access_token = access_token
+            req.session.refresh_token = refresh_token
+
+            res.cookie('access_token', access_token)
+            res.cookie('refresh_token', refresh_token)
+
+            const options = {
+                url: 'https://api.spotify.com/v1/me',
+                headers: {'Authorization': 'Bearer ' + access_token},
+                json: true
+            }
+
+            //Example using the token to make an authenticated API call
+            request.get(options, function (error, response, body) {
+                console.log('### /v1/me body:', body)
+            })
+
+            return res.redirect('/')
         }
 
-        request.post(authOptions, function (error, response, body) {
-            if (!error && response.statusCode === 200) {
-
-                const access_token = body.access_token
-                const refresh_token = body.refresh_token
-
-                const options = {
-                    url: 'https://api.spotify.com/v1/me',
-                    headers: {'Authorization': 'Bearer ' + access_token},
-                    json: true
-                }
-
-                //Example using the token to make an authenticated API call
-                request.get(options, function (error, response, body) {
-                    console.log('### /v1/me body:', body)
-                })
-
-                // we can also pass the token to the browser to make requests from there
-                res.redirect('/#' +
-                    querystring.stringify({
-                        access_token,
-                        refresh_token,
-                    }))
-            } else {
-                res.redirect(`/#${querystring.stringify({error: 'invalid_token'})}`)
-            }
-        })
-    }
+        res.redirect(`/#${querystring.stringify({error: 'invalid_token'})}`)
+    })
 })
 
 router.get('/refresh_token', function (req, res) {
-    // requesting access token from refresh token
     const refresh_token = req.query.refresh_token
     const authOptions = {
         url: 'https://accounts.spotify.com/api/token',
