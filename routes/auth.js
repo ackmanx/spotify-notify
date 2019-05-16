@@ -24,6 +24,7 @@ const request = require('request')
 const client_id = 'e466e7a286954e13b501d8e7bc4669cc'
 const client_secret = '76f2fd5049574e09899dcf84810e5fef' //this will live in heroku config so it isn't exposed via git, but until then store it here and regen a new key later
 const redirect_uri = 'http://me:3000/auth/callback' //where to be sent by spotify after logging in. this must be whitelisted in spotify developer dashboard first
+const scope = 'user-follow-read'
 
 const stateKey = 'spotify_auth_state'
 
@@ -37,7 +38,7 @@ router.get('/login', function (req, res) {
     const queryString = querystring.stringify({
         response_type: 'code',
         client_id,
-        scope: 'user-follow-modify',
+        scope,
         redirect_uri,
         state,
     })
@@ -87,14 +88,14 @@ router.get('/callback', function (req, res) {
             res.cookie('refresh_token', refresh_token)
 
             const options = {
-                url: 'https://api.spotify.com/v1/me',
+                url: 'https://api.spotify.com/v1/me/following?type=artist',
                 headers: {'Authorization': 'Bearer ' + access_token},
                 json: true
             }
 
             //Example using the token to make an authenticated API call
             request.get(options, function (error, response, body) {
-                console.log('### /v1/me body:', body)
+                console.log('### /v1/me/following body:', body)
             })
 
             return res.redirect('/')
