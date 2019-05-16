@@ -8,7 +8,7 @@ router.get('/', function (req, res) {
     let loggedIn = false
     let loggedInMessage = "Dude, you've gotta log into Spotify first"
 
-    if (req.session.accessToken) {
+    if (req.session.access_token) {
         loggedIn = true
         loggedInMessage = "You've totally got access"
     }

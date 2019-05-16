@@ -9,7 +9,7 @@ const fetch = require('node-fetch')
 router.get('/new-albums', async function (req, res) {
     const options = {
         headers: {
-            Authorization: `Bearer ${req.session.accessToken}`,
+            Authorization: `Bearer ${req.session.access_token}`,
         }
     }
 
