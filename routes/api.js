@@ -1,5 +1,5 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 const fetch = require('node-fetch')
 
 
@@ -17,6 +17,6 @@ router.get('/new-albums', async function (req, res) {
     const followedArtistsBody = await followedArtistsResponse.json()
 
     res.json(followedArtistsBody)
-});
+})
 
-module.exports = router;
+module.exports = router
