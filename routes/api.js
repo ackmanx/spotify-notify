@@ -42,5 +42,15 @@ router.get('/mock/get-artist-albums', function (req, res) {
     res.json(require('../mock/v1-artist-albums'))
 })
 
+router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
+    const followedArtistsAPIResponse = await spotifyAPI(req, '/me/following?type=artist&limit=50')
+    const followedArtistsIDs = followedArtistsAPIResponse.artists.items.map(artist => artist.id)
+
+    //todo: now have a list of artist IDs. I can loop through and get album list from each.
+
+    res.json(followedArtistsIDs)
+})
+
+
 
 module.exports = router

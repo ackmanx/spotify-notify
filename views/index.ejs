@@ -27,5 +27,12 @@
     </li>
 </ul>
 
+<script>
+    document.addEventListener('DOMContentLoaded', async function () {
+        const blah = await window.fetch('/api/get-new-albums')
+        console.log(await blah.json());
+    })
+</script>
+
 </body>
 </html>
