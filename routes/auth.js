@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const querystring = require('querystring')
 const request = require('request')
+const fetch = require('node-fetch')
 
 /*
  * # Authorization is a multi-step process
@@ -74,7 +75,7 @@ router.get('/callback', function (req, res) {
         json: true
     }
 
-    request.post(authOptions, function (error, response, body) {
+    request.post(authOptions, async function (error, response, body) {
         if (!error && response.statusCode === 200) {
             console.log('### auth body:', body);
 
@@ -84,10 +85,18 @@ router.get('/callback', function (req, res) {
             res.cookie('access_token', body.access_token)
             res.cookie('refresh_token', body.refresh_token)
 
+            const response = await fetch('https://api.spotify.com/v1/me', {
+                headers: {
+                    Authorization: `Bearer ${req.session.access_token}`,
+                }
+            })
+
+            req.session.userId = await response.json().id
+
             return res.redirect('/')
         }
 
-        res.redirect(`/#${querystring.stringify({ error: 'invalid_token' })}`)
+        res.redirect(`/#${querystring.stringify({error: 'invalid_token'})}`)
     })
 })
 
@@ -95,7 +104,7 @@ router.get('/refresh_token', function (req, res) {
     const refresh_token = req.query.refresh_token
     const authOptions = {
         url: 'https://accounts.spotify.com/api/token',
-        headers: { 'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) },
+        headers: {'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64'))},
         form: {
             grant_type: 'refresh_token',
             refresh_token,
@@ -106,7 +115,7 @@ router.get('/refresh_token', function (req, res) {
     request.post(authOptions, function (error, response, body) {
         if (!error && response.statusCode === 200) {
             const access_token = body.access_token
-            res.send({ access_token })
+            res.send({access_token})
         }
     })
 })
