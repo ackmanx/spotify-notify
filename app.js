@@ -4,6 +4,7 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const session = require('express-session')
+const compression = require('compression')
 
 const indexRouter = require('./routes/index')
 const apiRouter = require('./routes/api')
@@ -26,6 +27,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(compression())
 
 app.use(session({
     secret: 'oh-boy-oh-boy',
