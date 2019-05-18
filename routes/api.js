@@ -45,20 +45,36 @@ router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
         }
     )
 
-    // const allAlbumsPromises = []
-    //
-    // followedArtistsIDs.forEach(artistId =>
-    //     allAlbumsPromises.push(spotifyAPI(req, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`))
-    // )
-    //
-    // try {
-    //     body = await Promise.all(allAlbumsPromises)
-    // } catch (error) {
-    //     body = {error}
-    // }
+    const allAlbumsPromises = []
+
+    for (let artistId in body) {
+        allAlbumsPromises.push(spotifyAPI(req, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`))
+    }
+
+    try {
+        const allAlbumsFollowedArtists = await Promise.all(allAlbumsPromises)
+        allAlbumsFollowedArtists.forEach(allAlbumsForSingleArtist => {
+            const [, artistId] = allAlbumsForSingleArtist.href.match(/artists\/(.+)\/albums/)
+
+            let albums = body[artistId].albums
+            if (!Array.isArray(albums)) albums = []
+
+            allAlbumsForSingleArtist.items.forEach(album => {
+                albums.push({
+                    id: album.id,
+                    name: album.name,
+                    url: album.external_urls.spotify,
+                    coverArt: album.images[1].url, //response always has 3 images of diff sizes, and I always want the middle one
+                })
+            })
+
+            body[artistId].albums = albums
+        })
+    } catch (error) {
+        body = {error}
+    }
 
     res.json(body)
-
 })
 
 module.exports = router
