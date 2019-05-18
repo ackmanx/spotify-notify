@@ -43,14 +43,27 @@ router.get('/mock/get-artist-albums', function (req, res) {
 })
 
 router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
-    const followedArtistsAPIResponse = await spotifyAPI(req, '/me/following?type=artist&limit=50')
-    const followedArtistsIDs = followedArtistsAPIResponse.artists.items.map(artist => artist.id)
+    // const followedArtistsAPIResponse = await spotifyAPI(req, '/me/following?type=artist&limit=50')
+    // const followedArtistsIDs = followedArtistsAPIResponse.artists.items.map(artist => artist.id)
+    const followedArtistsIDs = ['03SZv6slUnLnHI3IfwG0gl', '053q0ukIDRgzwTr4vNSwab', '07ZhipyrvoyNoJejeyM0PQ']
 
-    //todo: now have a list of artist IDs. I can loop through and get album list from each.
+    const allAlbumsPromises = []
 
-    res.json(followedArtistsIDs)
+    followedArtistsIDs.forEach(artistId =>
+        allAlbumsPromises.push(spotifyAPI(req, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`))
+    )
+
+    let body
+
+    try {
+        body = await Promise.all(allAlbumsPromises)
+    }
+    catch (error) {
+        body = {error}
+    }
+
+    res.json(body)
+
 })
-
-
 
 module.exports = router
