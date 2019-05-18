@@ -35,24 +35,27 @@ router.get('/get-artist-albums', ensureAuthenticated, async function (req, res) 
 })
 
 router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
-    // const followedArtistsAPIResponse = await spotifyAPI(req, '/me/following?type=artist&limit=50')
-    // const followedArtistsIDs = followedArtistsAPIResponse.artists.items.map(artist => artist.id)
-    const followedArtistsIDs = ['03SZv6slUnLnHI3IfwG0gl', '053q0ukIDRgzwTr4vNSwab', '07ZhipyrvoyNoJejeyM0PQ']
+    let body = {}
 
-    const allAlbumsPromises = []
-
-    followedArtistsIDs.forEach(artistId =>
-        allAlbumsPromises.push(spotifyAPI(req, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`))
+    const followedArtistsFromSpotify = await spotifyAPI(req, '/me/following?type=artist&limit=50')
+    followedArtistsFromSpotify.artists.items.forEach(artist =>
+        body[artist.id] = {
+            id: artist.id,
+            name: artist.name,
+        }
     )
 
-    let body
-
-    try {
-        body = await Promise.all(allAlbumsPromises)
-    }
-    catch (error) {
-        body = {error}
-    }
+    // const allAlbumsPromises = []
+    //
+    // followedArtistsIDs.forEach(artistId =>
+    //     allAlbumsPromises.push(spotifyAPI(req, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`))
+    // )
+    //
+    // try {
+    //     body = await Promise.all(allAlbumsPromises)
+    // } catch (error) {
+    //     body = {error}
+    // }
 
     res.json(body)
 
