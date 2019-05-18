@@ -36,6 +36,7 @@ router.get('/get-artist-albums', ensureAuthenticated, async function (req, res) 
 
 router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
     let body = {}
+    //todo: Get my saved list of albums from db
 
     const followedArtistsFromSpotify = await spotifyAPI(req, '/me/following?type=artist&limit=50')
     followedArtistsFromSpotify.artists.items.forEach(artist =>
@@ -51,28 +52,25 @@ router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
         allAlbumsPromises.push(spotifyAPI(req, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`))
     }
 
-    try {
-        const allAlbumsFollowedArtists = await Promise.all(allAlbumsPromises)
-        allAlbumsFollowedArtists.forEach(allAlbumsForSingleArtist => {
-            const [, artistId] = allAlbumsForSingleArtist.href.match(/artists\/(.+)\/albums/)
+    const allAlbumsFollowedArtists = await Promise.all(allAlbumsPromises)
+    allAlbumsFollowedArtists.forEach(allAlbumsForSingleArtist => {
+        const [, artistId] = allAlbumsForSingleArtist.href.match(/artists\/(.+)\/albums/)
 
-            let albums = body[artistId].albums
-            if (!Array.isArray(albums)) albums = []
+        let albums = body[artistId].albums
+        if (!Array.isArray(albums)) albums = []
 
-            allAlbumsForSingleArtist.items.forEach(album => {
-                albums.push({
-                    id: album.id,
-                    name: album.name,
-                    url: album.external_urls.spotify,
-                    coverArt: album.images[1].url, //response always has 3 images of diff sizes, and I always want the middle one
-                })
+        allAlbumsForSingleArtist.items.forEach(album => {
+            //todo: If album.id here is in seen album list, then skip this iteration
+            albums.push({
+                id: album.id,
+                name: album.name,
+                url: album.external_urls.spotify,
+                coverArt: album.images[1].url, //response always has 3 images of diff sizes, and I always want the middle one
             })
-
-            body[artistId].albums = albums
         })
-    } catch (error) {
-        body = {error}
-    }
+
+        body[artistId].albums = albums
+    })
 
     res.json(body)
 })
