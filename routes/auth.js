@@ -91,7 +91,7 @@ router.get('/callback', function (req, res) {
                 }
             })
 
-            req.session.userId = await response.json().id
+            req.session.user = await response.json()
 
             return res.redirect('/')
         }
