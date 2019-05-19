@@ -4,6 +4,8 @@ const fetch = require('node-fetch')
 const dirty = require('dirty')
 const {ensureAuthenticated} = require('./auth')
 
+const db = dirty('seenAlbums.db')
+
 async function spotifyAPI(req, endpoint) {
     const options = {
         headers: {
@@ -36,23 +38,17 @@ router.get('/get-artist-albums', ensureAuthenticated, async function (req, res) 
 })
 
 router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
-    const db = dirty('seenAlbums.db')
     const userSeenAlbums = db.get(req.session.user.id) || []
+    let body = {}
 
-    //todo: clear this back to empty object
-    let body = {
-        '2A7wOjGoGRwaT3rY6UqgXd': {}
-    }
-    //todo: Get my saved list of albums from db
+    const followedArtistsFromSpotify = await spotifyAPI(req, '/me/following?type=artist&limit=50')
+    followedArtistsFromSpotify.artists.items.forEach(artist =>
+        body[artist.id] = {
+            id: artist.id,
+            name: artist.name,
+        }
+    )
 
-    // const followedArtistsFromSpotify = await spotifyAPI(req, '/me/following?type=artist&limit=50')
-    // followedArtistsFromSpotify.artists.items.forEach(artist =>
-    //     body[artist.id] = {
-    //         id: artist.id,
-    //         name: artist.name,
-    //     }
-    // )
-    //
     const allAlbumsPromises = []
 
     for (let artistId in body) {
@@ -67,7 +63,6 @@ router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
         if (!Array.isArray(albums)) albums = []
 
         allAlbumsForSingleArtist.items.forEach(album => {
-            //todo: this didn't work...
             if (userSeenAlbums.includes(album.id)) return
 
             albums.push({
