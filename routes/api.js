@@ -49,32 +49,35 @@ router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
         }
     )
 
-    const allAlbumsPromises = []
+    //todo majerus: this is finished, but commented out so I don't make 200 requests to spotify at the same time
+    //todo majerus: fake the body request above to include only a couple artists and it should be okay
 
-    for (let artistId in body) {
-        allAlbumsPromises.push(spotifyAPI(req, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`))
-    }
-
-    const allAlbumsFollowedArtists = await Promise.all(allAlbumsPromises)
-    allAlbumsFollowedArtists.forEach(allAlbumsForSingleArtist => {
-        const [, artistId] = allAlbumsForSingleArtist.href.match(/artists\/(.+)\/albums/)
-
-        let albums = body[artistId].albums
-        if (!Array.isArray(albums)) albums = []
-
-        allAlbumsForSingleArtist.items.forEach(album => {
-            if (userSeenAlbums.includes(album.id)) return
-
-            albums.push({
-                id: album.id,
-                name: album.name,
-                url: album.external_urls.spotify,
-                coverArt: album.images[1].url, //response always has 3 images of diff sizes, and I always want the middle one
-            })
-        })
-
-        body[artistId].albums = albums
-    })
+    // const allAlbumsPromises = []
+    //
+    // for (let artistId in body) {
+    //     allAlbumsPromises.push(spotifyAPI(req, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`))
+    // }
+    //
+    // const allAlbumsFollowedArtists = await Promise.all(allAlbumsPromises)
+    // allAlbumsFollowedArtists.forEach(allAlbumsForSingleArtist => {
+    //     const [, artistId] = allAlbumsForSingleArtist.href.match(/artists\/(.+)\/albums/)
+    //
+    //     let albums = body[artistId].albums
+    //     if (!Array.isArray(albums)) albums = []
+    //
+    //     allAlbumsForSingleArtist.items.forEach(album => {
+    //         if (userSeenAlbums.includes(album.id)) return
+    //
+    //         albums.push({
+    //             id: album.id,
+    //             name: album.name,
+    //             url: album.external_urls.spotify,
+    //             coverArt: album.images[1].url, //response always has 3 images of diff sizes, and I always want the middle one
+    //         })
+    //     })
+    //
+    //     body[artistId].albums = albums
+    // })
 
     res.json(body)
 })
