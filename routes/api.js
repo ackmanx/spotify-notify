@@ -41,13 +41,15 @@ router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
     const userSeenAlbums = db.get(req.session.user.id) || []
     let body = {}
 
-    const followedArtistsFromSpotify = await spotifyAPI(req, '/me/following?type=artist&limit=50')
-    followedArtistsFromSpotify.artists.items.forEach(artist =>
-        body[artist.id] = {
-            id: artist.id,
-            name: artist.name,
-        }
-    )
+    res.json(require('../mock/api/get-new-albums'))
+
+    // const followedArtistsFromSpotify = await spotifyAPI(req, '/me/following?type=artist&limit=50')
+    // followedArtistsFromSpotify.artists.items.forEach(artist =>
+    //     body[artist.id] = {
+    //         id: artist.id,
+    //         name: artist.name,
+    //     }
+    // )
 
     //todo majerus: this is finished, but commented out so I don't make 200 requests to spotify at the same time
     //todo majerus: fake the body request above to include only a couple artists and it should be okay
@@ -79,7 +81,7 @@ router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
     //     body[artistId].albums = albums
     // })
 
-    res.json(body)
+    // res.json(body)
 })
 
 module.exports = router
