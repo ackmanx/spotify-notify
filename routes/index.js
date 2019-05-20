@@ -6,14 +6,12 @@ const router = express.Router()
 // ---------------------------------------------------------------------------------
 router.get('/', function (req, res) {
     let loggedIn = false
-    let loggedInMessage = "Dude, you've gotta log into Spotify first"
 
     if (req.session.access_token) {
         loggedIn = true
-        loggedInMessage = "You've totally got access"
     }
 
-    res.render('index', {title: 'Spotify Notify', loggedInMessage, loggedIn})
+    res.render('index', {title: 'Spotify Notify', loggedIn})
 })
 
 module.exports = router
