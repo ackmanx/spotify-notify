@@ -1,37 +1,28 @@
 import React, {useContext, useEffect, useState} from 'react'
 import {AppContext} from './context'
+import {Artist} from './artist'
 
 export class App extends React.Component {
     constructor(props) {
         super(props)
-        // this.state = {
-        //     albums: {},
-        //     setAlbums: this.setAlbums.bind(this)
-        // }
+        this.state = {
+            albums: {},
+        }
 
-        async function init() {
+        const init = async () => {
             const response = await fetch('/api/get-new-albums')
-            const newAlbums = await response.json()
+            this.state.albums = await response.json()
         }
 
         init()
     }
 
-    // setAlbums(albums) {
-    //     this.setState({albums})
-    // }
-
     render() {
         return (
-            <AppContext.Provider value={'hello'}>
-                <SomethingElse />
+            <AppContext.Provider value={this.state}>
+                {/* loop through state albums here, building artist for each */}
+                <Artist />
             </AppContext.Provider>
         )
-    }
-}
-
-class SomethingElse extends React.Component {
-    render() {
-        return <AppContext.Consumer>{context => context}</AppContext.Consumer>
     }
 }
