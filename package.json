@@ -3,11 +3,14 @@
     "version": "0.0.0",
     "private": true,
     "scripts": {
+        "build:prod": "rm -rf public; export NODE_ENV=production; webpack",
+        "build:watch": "rm -rf public; webpack --watch",
         "start": "node ./bin/www"
     },
     "dependencies": {
         "compression": "1.7.4",
         "cookie-parser": "1.4.4",
+        "copy-webpack-plugin": "5.0.3",
         "debug": "2.6.9",
         "dirty": "1.1.0",
         "ejs": "2.6.1",
@@ -17,6 +20,20 @@
         "morgan": "1.9.1",
         "node-fetch": "2.5.0",
         "querystring": "0.2.0",
+        "react": "16.8.6",
+        "react-dom": "16.8.6",
         "request": "2.88.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "7.4.4",
+        "@babel/core": "7.4.5",
+        "@babel/polyfill": "7.4.4",
+        "@babel/preset-env": "7.4.5",
+        "@babel/preset-react": "7.0.0",
+        "babel-loader": "8.0.6",
+        "css-loader": "2.1.1",
+        "style-loader": "0.23.1",
+        "webpack": "4.32.2",
+        "webpack-cli": "3.3.2"
     }
 }
