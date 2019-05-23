@@ -6,12 +6,12 @@ export class App extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            albums: {},
+            artistsWithNewAlbums: {},
         }
 
         const init = async () => {
             const response = await fetch('/api/get-new-albums')
-            this.state.albums = await response.json()
+            this.setState({artistsWithNewAlbums: await response.json()})
         }
 
         init()
@@ -20,8 +20,7 @@ export class App extends React.Component {
     render() {
         return (
             <AppContext.Provider value={this.state}>
-                {/* loop through state albums here, building artist for each */}
-                <Artist />
+                {Object.keys(this.state.artistsWithNewAlbums).map(artistID => <Artist key={artistID} data={this.state.artistsWithNewAlbums[artistID]} />)}
             </AppContext.Provider>
         )
     }

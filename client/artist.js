@@ -6,7 +6,7 @@ export class Artist extends React.Component {
         return (
             <AppContext.Consumer>
                 {context =>
-                    <h1>hello context</h1>
+                    <div>{this.props.data.name}</div>
                 }
             </AppContext.Consumer>
         )
