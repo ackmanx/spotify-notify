@@ -5,7 +5,7 @@ export const Album = ({album: {id, name, url, coverArt}}) => {
     return (
         <>
             <a href={url} target='_blank'>
-                <img src={coverArt} alt={name}/>
+                <img src={coverArt} title={name} alt={name}/>
             </a>
         </>
     )
