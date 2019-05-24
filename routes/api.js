@@ -51,6 +51,8 @@ router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
     //     }
     // )
 
+    //todo majerus: see if i can batch get albums for artists
+
     //todo majerus: this is finished, but commented out so I don't make 200 requests to spotify at the same time
     //todo majerus: fake the body request above to include only a couple artists and it should be okay
 
