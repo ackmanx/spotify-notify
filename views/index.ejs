@@ -12,9 +12,9 @@
 <div id="root"></div>
 
 <% if (!loggedIn) { %>
-    <div class="login-container">
-        <a class="login-link" href="/auth/login">log in</a>
-    </div>
+    <a class="login-link" href="/auth/login">
+        <div class="login-link-text">log in</div>
+    </a>
 <% } else { %>
     <script src="bundle.js"></script>
 <% } %>

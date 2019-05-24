@@ -11,14 +11,19 @@ a {
     text-decoration: none;
 }
 
-.login-container {
+.login-link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 72px;
+    color: #2196f3;
+}
+
+.login-link-text {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.login-link {
-    font-size: 72px;
-    color: #2196f3;
 }
