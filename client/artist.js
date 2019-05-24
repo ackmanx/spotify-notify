@@ -1,14 +1,10 @@
+import './artist.css'
 import React from 'react'
-import {AppContext} from './context'
 
-export class Artist extends React.Component {
-    render() {
-        return (
-            <AppContext.Consumer>
-                {context =>
-                    <div>{this.props.data.name}</div>
-                }
-            </AppContext.Consumer>
-        )
-    }
+export const Artist = ({name, albums}) => {
+    return (
+        <div>
+            <h2 className='artist-name'>{name}</h2>
+        </div>
+    )
 }

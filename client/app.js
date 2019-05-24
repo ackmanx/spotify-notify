@@ -1,13 +1,14 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React from 'react'
 import {AppContext} from './context'
 import {Artist} from './artist'
 
 export class App extends React.Component {
+    state = {
+        artistsWithNewAlbums: {},
+    }
+
     constructor(props) {
         super(props)
-        this.state = {
-            artistsWithNewAlbums: {},
-        }
 
         const init = async () => {
             const response = await fetch('/api/get-new-albums')
@@ -20,7 +21,12 @@ export class App extends React.Component {
     render() {
         return (
             <AppContext.Provider value={this.state}>
-                {Object.keys(this.state.artistsWithNewAlbums).map(artistID => <Artist key={artistID} data={this.state.artistsWithNewAlbums[artistID]} />)}
+                {Object
+                    .keys(this.state.artistsWithNewAlbums)
+                    .map(artistID => {
+                        const artist = this.state.artistsWithNewAlbums[artistID];
+                        return <Artist key={artistID} name={artist.name} albums={artist.albums}/>
+                    })}
             </AppContext.Provider>
         )
     }
