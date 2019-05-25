@@ -39,7 +39,7 @@ router.get('/get-artist-albums', ensureAuthenticated, async function (req, res) 
 
 router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
     if (req.query.refresh !== 'true') {
-        return res.json(require('../mock/api/get-new-albums--cached'))
+        return res.json(getNewAlbumCache(req.session.user.id))
     }
 
     let body = {}
@@ -83,5 +83,9 @@ router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
 
     res.json(body)
 })
+
+function getNewAlbumCache(userId) {
+    return require('../mock/api/get-new-albums--cached')
+}
 
 module.exports = router
