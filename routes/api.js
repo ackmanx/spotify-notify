@@ -21,11 +21,13 @@ async function spotifyAPI(req, endpoint) {
 // REST
 // ---------------------------------------------------------------------------------
 
+/* DEV testing endpoint */
 //https://developer.spotify.com/documentation/web-api/reference-beta/#endpoint-get-followed
 router.get('/get-following', ensureAuthenticated, async function (req, res) {
     res.json(await spotifyAPI(req, '/me/following?type=artist&limit=50'))
 })
 
+/* DEV testing endpoint */
 //https://developer.spotify.com/documentation/web-api/reference-beta/#endpoint-get-an-artists-albums
 router.get('/get-artist-albums', ensureAuthenticated, async function (req, res) {
     const id = req.query.artistId
@@ -37,6 +39,7 @@ router.get('/get-artist-albums', ensureAuthenticated, async function (req, res) 
     res.json(await spotifyAPI(req, `/artists/${id}/albums?include_groups=album,single&market=US&limit=50`))
 })
 
+/* This is the only endpoint the app uses to fetch Spotify data */
 router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
     if (req.query.refresh !== 'true') {
         return res.json(getNewAlbumCache(req.session.user.id))
@@ -56,7 +59,6 @@ router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
     const allAlbumsPromises = []
 
     for (let artistId in body) {
-        //todo majerus: see if i can batch get albums for artists
         allAlbumsPromises.push(spotifyAPI(req, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`))
     }
 
