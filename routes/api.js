@@ -46,48 +46,56 @@ router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
     }
 
     let body = {}
-    const userSeenAlbums = db.get(req.session.user.id) || []
+    const dbRecord = db.get(req.session.user.id)
+    const userSeenAlbums = dbRecord.seenAlbums || []
 
-    const followedArtistsFromSpotify = await spotifyAPI(req, '/me/following?type=artist&limit=50')
-    followedArtistsFromSpotify.artists.items.forEach(artist =>
-        body[artist.id] = {
-            id: artist.id,
-            name: artist.name,
-        }
-    )
 
-    const allAlbumsPromises = []
 
-    for (let artistId in body) {
-        allAlbumsPromises.push(spotifyAPI(req, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`))
-    }
+    // const followedArtistsFromSpotify = await spotifyAPI(req, '/me/following?type=artist&limit=50')
+    // followedArtistsFromSpotify.artists.items.forEach(artist =>
+    //     body[artist.id] = {
+    //         id: artist.id,
+    //         name: artist.name,
+    //     }
+    // )
+    //
+    // const allAlbumsPromises = []
+    //
+    // for (let artistId in body) {
+    //     allAlbumsPromises.push(spotifyAPI(req, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`))
+    // }
+    //
+    // const allAlbumsFollowedArtists = await Promise.all(allAlbumsPromises)
+    // allAlbumsFollowedArtists.forEach(allAlbumsForSingleArtist => {
+    //     const [, artistId] = allAlbumsForSingleArtist.href.match(/artists\/(.+)\/albums/)
+    //
+    //     let albums = body[artistId].albums
+    //     if (!Array.isArray(albums)) albums = []
+    //
+    //     allAlbumsForSingleArtist.items.forEach(album => {
+    //         if (userSeenAlbums.includes(album.id)) return
+    //
+    //         albums.push({
+    //             id: album.id,
+    //             name: album.name,
+    //             url: album.external_urls.spotify,
+    //             coverArt: album.images[1].url, //response always has 3 images of diff sizes, and I always want the middle one
+    //         })
+    //     })
+    //
+    //     body[artistId].albums = albums
+    // })
 
-    const allAlbumsFollowedArtists = await Promise.all(allAlbumsPromises)
-    allAlbumsFollowedArtists.forEach(allAlbumsForSingleArtist => {
-        const [, artistId] = allAlbumsForSingleArtist.href.match(/artists\/(.+)\/albums/)
-
-        let albums = body[artistId].albums
-        if (!Array.isArray(albums)) albums = []
-
-        allAlbumsForSingleArtist.items.forEach(album => {
-            if (userSeenAlbums.includes(album.id)) return
-
-            albums.push({
-                id: album.id,
-                name: album.name,
-                url: album.external_urls.spotify,
-                coverArt: album.images[1].url, //response always has 3 images of diff sizes, and I always want the middle one
-            })
-        })
-
-        body[artistId].albums = albums
-    })
+    dbRecord.newAlbumsCache = body
+    db.set(req.session.user.id, dbRecord)
 
     res.json(body)
 })
 
 function getNewAlbumCache(userId) {
     return require('../mock/api/get-new-albums--cached')
+
+    return db.get(userId).newAlbumsCache
 }
 
 module.exports = router
