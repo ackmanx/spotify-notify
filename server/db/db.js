@@ -1,11 +1,9 @@
-const db = require('dirty')('server/seenAlbums.db')
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
 
-db.on('load', function() {
-    console.log('Dirty: DB is loaded');
-})
+const db = low(new FileSync('server/db/database.json'))
 
-db.on('drain', function() {
-    console.log('Dirty: All records are saved on disk now')
-})
+db.defaults({seenAlbums: {}, newAlbumsCache: {}})
+    .write()
 
 module.exports = db

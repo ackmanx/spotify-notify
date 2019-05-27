@@ -6,6 +6,9 @@ const logger = require('morgan')
 const session = require('express-session')
 const compression = require('compression')
 
+//Invoke db for init
+require('./db/db')
+
 const renderRouter = require('./routes/render')
 const apiRouter = require('./routes/api')
 const {authRouter} = require('./routes/auth')
