@@ -49,7 +49,7 @@ router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
     const dbRecord = db.get(req.session.user.id)
     const userSeenAlbums = dbRecord.seenAlbums || []
 
-
+    body = require('../mock/api/get-new-albums--cached')
 
     // const followedArtistsFromSpotify = await spotifyAPI(req, '/me/following?type=artist&limit=50')
     // followedArtistsFromSpotify.artists.items.forEach(artist =>
@@ -93,7 +93,7 @@ router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
 })
 
 function getNewAlbumCache(userId) {
-    return require('../mock/api/get-new-albums--cached')
+    // return require('../mock/api/get-new-albums--cached')
 
     return db.get(userId).newAlbumsCache
 }
