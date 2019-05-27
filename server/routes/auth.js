@@ -5,7 +5,7 @@ const request = require('request')
 const fetch = require('node-fetch')
 const dirty = require('dirty')
 
-const db = dirty('seenAlbums.db')
+const db = dirty('server/seenAlbums.db')
 
 /*
  * # Authorization is a multi-step process

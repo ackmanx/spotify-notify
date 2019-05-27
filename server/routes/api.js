@@ -4,7 +4,7 @@ const fetch = require('node-fetch')
 const dirty = require('dirty')
 const {ensureAuthenticated} = require('./auth')
 
-const db = dirty('seenAlbums.db')
+const db = dirty('server/seenAlbums.db')
 
 async function spotifyAPI(req, endpoint) {
     const options = {

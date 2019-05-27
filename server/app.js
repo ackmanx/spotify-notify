@@ -7,7 +7,7 @@ const session = require('express-session')
 const compression = require('compression')
 const dirty = require('dirty')
 
-const indexRouter = require('./routes/index')
+const renderRouter = require('./routes/render')
 const apiRouter = require('./routes/api')
 const {authRouter} = require('./routes/auth')
 
@@ -27,7 +27,7 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use(cookieParser())
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, '..', 'public')))
 app.use(compression())
 
 app.use(session({
@@ -39,7 +39,7 @@ app.use(session({
 // ---------------------------------------------------------------------------------
 // Routes
 // ---------------------------------------------------------------------------------
-app.use('/', indexRouter)
+app.use('/', renderRouter)
 app.use('/api', apiRouter)
 app.use('/auth', authRouter)
 
@@ -65,7 +65,7 @@ app.use(function (err, req, res) {
 // ---------------------------------------------------------------------------------
 // Initialize DB
 // ---------------------------------------------------------------------------------
-const db = dirty('seenAlbums.db')
+const db = dirty('server/seenAlbums.db')
 
 db.on('load', function() {
     console.log('Dirty: DB is loaded');
