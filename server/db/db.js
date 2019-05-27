@@ -17,17 +17,14 @@ db
     })
     .write()
 
-function initializeDatabaseForUser(userId) {
+exports.initializeDatabaseForUser = function initializeDatabaseForUser(userId) {
     if (!db.get(SLICES.users).value()[userId]) {
-        db.get(SLICES.users).value()[userId] = null
-        db.get(SLICES.newAlbumsCache).value()[userId] = null
-        db.get(SLICES.seenAlbums).value()[userId] = null
+        db.get(SLICES.users).value()[userId] = true
+        db.get(SLICES.newAlbumsCache).value()[userId] = {}
+        db.get(SLICES.seenAlbums).value()[userId] = []
 
         db.write()
     }
 }
 
-module.exports = {
-    db,
-    initializeDatabaseForUser,
-}
+exports.getNewAlbumsCache = () => db.get(SLICES.newAlbumsCache).value()

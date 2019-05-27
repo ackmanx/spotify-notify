@@ -1,11 +1,198 @@
 {
-  "seenAlbums": {
-    "ackmanx": null
-  },
   "newAlbumsCache": {
-    "ackmanx": null
+    "ackmanx": {
+      "1l2oLiukA9i5jEtIyNWIEP": {
+        "id": "1l2oLiukA9i5jEtIyNWIEP",
+        "name": "Carpenter Brut",
+        "albums": [
+          {
+            "id": "7fy6Wpnn5NZllJzUXDeDpS",
+            "name": "Leather Teeth",
+            "url": "https://open.spotify.com/album/7fy6Wpnn5NZllJzUXDeDpS",
+            "coverArt": "https://i.scdn.co/image/878f652904ef84d9d357a3df9d92d8da313b3f12"
+          },
+          {
+            "id": "6kJuATIGbPYxHmRoWCC5IB",
+            "name": "CARPENTERBRUTLIVE",
+            "url": "https://open.spotify.com/album/6kJuATIGbPYxHmRoWCC5IB",
+            "coverArt": "https://i.scdn.co/image/717e5e15e9f0b04f93f02bdcb5b9d23cc189813d"
+          },
+          {
+            "id": "0io5pe55YRCTVqEjwlOBdN",
+            "name": "TRILOGY",
+            "url": "https://open.spotify.com/album/0io5pe55YRCTVqEjwlOBdN",
+            "coverArt": "https://i.scdn.co/image/b49a1cd58dcf0fd318c7a61951d572fcbd323504"
+          },
+          {
+            "id": "6Ld5Q7THk9sNHF6HWPPFod",
+            "name": "Hush Sally, Hush!",
+            "url": "https://open.spotify.com/album/6Ld5Q7THk9sNHF6HWPPFod",
+            "coverArt": "https://i.scdn.co/image/740a43b3d324faa524f5541c5c429bc408cf85ba"
+          },
+          {
+            "id": "3EzAWwnyiV5pBh6xH8UDix",
+            "name": "Turbo Killer (Live)",
+            "url": "https://open.spotify.com/album/3EzAWwnyiV5pBh6xH8UDix",
+            "coverArt": "https://i.scdn.co/image/717e5e15e9f0b04f93f02bdcb5b9d23cc189813d"
+          },
+          {
+            "id": "5hJfHH1TMapNDq1DuCCIIV",
+            "name": "Maniac (Live)",
+            "url": "https://open.spotify.com/album/5hJfHH1TMapNDq1DuCCIIV",
+            "coverArt": "https://i.scdn.co/image/717e5e15e9f0b04f93f02bdcb5b9d23cc189813d"
+          },
+          {
+            "id": "5Vl0eTVLLSRDOyC0maQF9J",
+            "name": "Night Stalker (From \"The Rise of the Synths\")",
+            "url": "https://open.spotify.com/album/5Vl0eTVLLSRDOyC0maQF9J",
+            "coverArt": "https://i.scdn.co/image/fa0d055946fab995e8df785fc517efa86b22ce53"
+          }
+        ]
+      },
+      "1oA1SW4FRAis6e8krh5YAf": {
+        "id": "1oA1SW4FRAis6e8krh5YAf",
+        "name": "We Butter The Bread With Butter",
+        "albums": [
+          {
+            "id": "2o8c58hCJJ6MT7uEQqbnt6",
+            "name": "Wieder geil!",
+            "url": "https://open.spotify.com/album/2o8c58hCJJ6MT7uEQqbnt6",
+            "coverArt": "https://i.scdn.co/image/ea388d4bc5de34fe5699105bde732debc8a00d93"
+          },
+          {
+            "id": "7e0Xa2nOINTesH5wJiT5Dw",
+            "name": "Goldkinder",
+            "url": "https://open.spotify.com/album/7e0Xa2nOINTesH5wJiT5Dw",
+            "coverArt": "https://i.scdn.co/image/f45c563c46c0da4f2ad834bae68d75e84db176de"
+          },
+          {
+            "id": "48EAs1VbS7ZxW23dmbkhzJ",
+            "name": "Goldkinder",
+            "url": "https://open.spotify.com/album/48EAs1VbS7ZxW23dmbkhzJ",
+            "coverArt": "https://i.scdn.co/image/f95c6f83c2065baa75f31ecdaf33e581b283b552"
+          },
+          {
+            "id": "54aw2F9s6Ot4Z4D1WmIdBO",
+            "name": "Projekt Herz",
+            "url": "https://open.spotify.com/album/54aw2F9s6Ot4Z4D1WmIdBO",
+            "coverArt": "https://i.scdn.co/image/2368c16b81e4ee1f27dc931e21101df0f06ed3a1"
+          },
+          {
+            "id": "3iUfTGKCE4VIeLURRWPeDk",
+            "name": "Der Tag an dem die Welt unterging",
+            "url": "https://open.spotify.com/album/3iUfTGKCE4VIeLURRWPeDk",
+            "coverArt": "https://i.scdn.co/image/904a18dc8b731d602454a2cba69f290e452f5549"
+          },
+          {
+            "id": "5lGf3E5ZsTkNFx5zd54vAI",
+            "name": "Das Monster aus dem Schrank",
+            "url": "https://open.spotify.com/album/5lGf3E5ZsTkNFx5zd54vAI",
+            "coverArt": "https://i.scdn.co/image/0bea3ce1f3440f448630366e26ca8aac00d7caf4"
+          },
+          {
+            "id": "5yAQsYYToy9zFvmLyPkEUB",
+            "name": "Man’s Not Hot",
+            "url": "https://open.spotify.com/album/5yAQsYYToy9zFvmLyPkEUB",
+            "coverArt": "https://i.scdn.co/image/1298dc98fab7c30cdda05e294c34614e277e3436"
+          },
+          {
+            "id": "600MvhEvNU3RQ2SuPS4kgP",
+            "name": "Klicks. Likes. Fame. Geil!",
+            "url": "https://open.spotify.com/album/600MvhEvNU3RQ2SuPS4kgP",
+            "coverArt": "https://i.scdn.co/image/91234d36a2a3b117fe0e868fe84b01f0bafec1de"
+          },
+          {
+            "id": "48IGd6QMOLhBxGI1keGqjE",
+            "name": "Santa Claus is Coming to Town",
+            "url": "https://open.spotify.com/album/48IGd6QMOLhBxGI1keGqjE",
+            "coverArt": "https://i.scdn.co/image/89c1bc4f544d35fe8cce3c9630f28ecb5743d075"
+          },
+          {
+            "id": "0wEErdsNcFgm9r49rGph87",
+            "name": "Anarchy",
+            "url": "https://open.spotify.com/album/0wEErdsNcFgm9r49rGph87",
+            "coverArt": "https://i.scdn.co/image/3ac46069fd66553586930e42d2e17e81a6f0d608"
+          },
+          {
+            "id": "6RSMJk0bwA1hz18UMdl1e3",
+            "name": "Berlin, Berlin!",
+            "url": "https://open.spotify.com/album/6RSMJk0bwA1hz18UMdl1e3",
+            "coverArt": "https://i.scdn.co/image/21ada8c7dfd581a5b95ec448a376b08bed7af0ef"
+          },
+          {
+            "id": "4TLPOkpaTWgdRJe9xPK4uT",
+            "name": "Bang Bang Bang",
+            "url": "https://open.spotify.com/album/4TLPOkpaTWgdRJe9xPK4uT",
+            "coverArt": "https://i.scdn.co/image/7c6de9053731fa7ce0dfb776b7fef05b516f4523"
+          },
+          {
+            "id": "6Z0n2fhXRK5meu0dUMcCLH",
+            "name": "Ich mach was mit Medien",
+            "url": "https://open.spotify.com/album/6Z0n2fhXRK5meu0dUMcCLH",
+            "coverArt": "https://i.scdn.co/image/9635ca9a2c67aa2ecbb144ef0c3589644c025349"
+          }
+        ]
+      },
+      "1r0vOsQYMTyq1qkDv7p9QD": {
+        "id": "1r0vOsQYMTyq1qkDv7p9QD",
+        "name": "Starr Chen",
+        "albums": [
+          {
+            "id": "4o3IiQzwTzPdWoHI0GBB1U",
+            "name": "WELCOME TO THE NEXT LEVEL",
+            "url": "https://open.spotify.com/album/4o3IiQzwTzPdWoHI0GBB1U",
+            "coverArt": "https://i.scdn.co/image/27774e06b52d50f70772ca4ea30667367b61a061"
+          },
+          {
+            "id": "61FyAVe6ly5GyL7qtwNQpI",
+            "name": "EGO-HOLIC戀我癖",
+            "url": "https://open.spotify.com/album/61FyAVe6ly5GyL7qtwNQpI",
+            "coverArt": "https://i.scdn.co/image/7182f9c97eb30961cd1a61f61b28feaa6640860c"
+          },
+          {
+            "id": "47E1nUOLbYrAsIuljKiYzL",
+            "name": "宇宙至尊",
+            "url": "https://open.spotify.com/album/47E1nUOLbYrAsIuljKiYzL",
+            "coverArt": "https://i.scdn.co/image/18ee172ab98a0e9d0d312c85043b6b284ad3f882"
+          }
+        ]
+      },
+      "1r9DuPTHiQ7hnRRZ99B8nL": {
+        "id": "1r9DuPTHiQ7hnRRZ99B8nL",
+        "name": "Jolin Tsai",
+        "albums": [
+          {
+            "id": "7HFFEjrwzZNpbee44SJnn9",
+            "name": "Ugly Beauty",
+            "url": "https://open.spotify.com/album/7HFFEjrwzZNpbee44SJnn9",
+            "coverArt": "https://i.scdn.co/image/21fc3a06a6dc5e1d4520c89d76ace5f56d27fa00"
+          },
+          {
+            "id": "0OoMR5pLX81q4aRHA4Feik",
+            "name": "蔡依林 Play世界巡迴演唱會 (Live)",
+            "url": "https://open.spotify.com/album/0OoMR5pLX81q4aRHA4Feik",
+            "coverArt": "https://i.scdn.co/image/76eb239c7854e3274cd105c502d0c1bc93c1b96e"
+          },
+          {
+            "id": "4usIO3u7K4KGzQyMUZ8xJ5",
+            "name": "呸",
+            "url": "https://open.spotify.com/album/4usIO3u7K4KGzQyMUZ8xJ5",
+            "coverArt": "https://i.scdn.co/image/e9f9b0c38bffe3e02541d1fd086e393b8abd336c"
+          },
+          {
+            "id": "6qi72orb10gTm8uiKSJXV5",
+            "name": "MUSE",
+            "url": "https://open.spotify.com/album/6qi72orb10gTm8uiKSJXV5",
+            "coverArt": "https://i.scdn.co/image/9b84119dc2c97bd8d6d5ef522d287c104be2d8e1"
+          }
+        ]
+      }
+    }
+  },
+  "seenAlbums": {
+    "ackmanx": []
   },
   "users": {
-    "ackmanx": null
+    "ackmanx": true
   }
 }
