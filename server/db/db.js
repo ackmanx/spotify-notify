@@ -3,7 +3,31 @@ const FileSync = require('lowdb/adapters/FileSync')
 
 const db = low(new FileSync('server/db/database.json'))
 
-db.defaults({seenAlbums: {}, newAlbumsCache: {}})
+const SLICES = {
+    newAlbumsCache: 'newAlbumsCache',
+    seenAlbums: 'seenAlbums',
+    users: 'users',
+}
+
+db
+    .defaults({
+        newAlbumsCache: {},
+        seenAlbums: {},
+        users: {}
+    })
     .write()
 
-module.exports = db
+function initializeDatabaseForUser(userId) {
+    if (!db.get(SLICES.users).value()[userId]) {
+        db.get(SLICES.users).value()[userId] = null
+        db.get(SLICES.newAlbumsCache).value()[userId] = null
+        db.get(SLICES.seenAlbums).value()[userId] = null
+
+        db.write()
+    }
+}
+
+module.exports = {
+    db,
+    initializeDatabaseForUser,
+}

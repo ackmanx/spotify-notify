@@ -92,9 +92,7 @@ router.get('/callback', function (req, res) {
 
             req.session.user = await response.json()
 
-            if (!db.get(req.session.user.id)) {
-                db.set(req.session.user.id, {})
-            }
+            db.initializeDatabaseForUser(req.session.user.id)
 
             return res.redirect('/')
         }

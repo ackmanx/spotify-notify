@@ -1,4 +1,11 @@
 {
-  "seenAlbums": {},
-  "newAlbumsCache": {}
+  "seenAlbums": {
+    "ackmanx": null
+  },
+  "newAlbumsCache": {
+    "ackmanx": null
+  },
+  "users": {
+    "ackmanx": null
+  }
 }
