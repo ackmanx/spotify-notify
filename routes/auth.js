@@ -3,6 +3,9 @@ const router = express.Router()
 const querystring = require('querystring')
 const request = require('request')
 const fetch = require('node-fetch')
+const dirty = require('dirty')
+
+const db = dirty('seenAlbums.db')
 
 /*
  * # Authorization is a multi-step process
@@ -92,6 +95,7 @@ router.get('/callback', function (req, res) {
             })
 
             req.session.user = await response.json()
+            db.set(req.session.user.id, {})
 
             return res.redirect('/')
         }

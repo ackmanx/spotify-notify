@@ -93,8 +93,6 @@ router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
 })
 
 function getNewAlbumCache(userId) {
-    // return require('../mock/api/get-new-albums--cached')
-
     return db.get(userId).newAlbumsCache
 }
 
