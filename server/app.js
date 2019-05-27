@@ -5,7 +5,6 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const session = require('express-session')
 const compression = require('compression')
-const dirty = require('dirty')
 
 const renderRouter = require('./routes/render')
 const apiRouter = require('./routes/api')
@@ -60,20 +59,5 @@ app.use(function (err, req, res) {
     res.status(err.status || 500)
     res.render('error')
 })
-
-
-// ---------------------------------------------------------------------------------
-// Initialize DB
-// ---------------------------------------------------------------------------------
-const db = dirty('server/seenAlbums.db')
-
-db.on('load', function() {
-    console.log('Dirty: DB is loaded');
-})
-
-db.on('drain', function() {
-    console.log('Dirty: All records are saved on disk now')
-})
-
 
 module.exports = app

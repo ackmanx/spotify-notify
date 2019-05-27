@@ -3,9 +3,7 @@ const router = express.Router()
 const querystring = require('querystring')
 const request = require('request')
 const fetch = require('node-fetch')
-const dirty = require('dirty')
-
-const db = dirty('server/seenAlbums.db')
+const db = require('../db/db')
 
 /*
  * # Authorization is a multi-step process
@@ -80,8 +78,6 @@ router.get('/callback', function (req, res) {
 
     request.post(authOptions, async function (error, response, body) {
         if (!error && response.statusCode === 200) {
-            console.log('### auth body:', body);
-
             req.session.access_token = body.access_token
             req.session.refresh_token = body.refresh_token
 
@@ -95,7 +91,10 @@ router.get('/callback', function (req, res) {
             })
 
             req.session.user = await response.json()
-            db.set(req.session.user.id, {})
+
+            if (!db.get(req.session.user.id)) {
+                db.set(req.session.user.id, {})
+            }
 
             return res.redirect('/')
         }
