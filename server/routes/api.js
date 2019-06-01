@@ -15,39 +15,15 @@ async function spotifyAPI(req, endpoint) {
     return await response.json()
 }
 
-// ---------------------------------------------------------------------------------
-// REST
-// ---------------------------------------------------------------------------------
-
-/* DEV testing endpoint */
-//https://developer.spotify.com/documentation/web-api/reference-beta/#endpoint-get-followed
-router.get('/get-following', ensureAuthenticated, async function (req, res) {
-    res.json(await spotifyAPI(req, '/me/following?type=artist&limit=50'))
-})
-
-/* DEV testing endpoint */
-//https://developer.spotify.com/documentation/web-api/reference-beta/#endpoint-get-an-artists-albums
-router.get('/get-artist-albums', ensureAuthenticated, async function (req, res) {
-    const id = req.query.artistId
-
-    if (!id) {
-        return res.json({error: 'You need to specify an artist ID'})
-    }
-
-    res.json(await spotifyAPI(req, `/artists/${id}/albums?include_groups=album,single&market=US&limit=50`))
-})
-
-/* This is the only endpoint the app uses to fetch Spotify data */
 router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
+    const userId = req.session.user.id
+
     if (req.query.refresh !== 'true') {
-        return res.json(getNewAlbumCache(req.session.user.id))
+        return res.json(getNewAlbumCache(userId))
     }
 
     let body = {}
-    const dbRecord = db.get(req.session.user.id)
-    const userSeenAlbums = dbRecord.seenAlbums || []
-
-    body = require('../mock/api/get-new-albums--cached')
+    // const userSeenAlbums = db.getSeenAlbums()[userId]
 
     // const followedArtistsFromSpotify = await spotifyAPI(req, '/me/following?type=artist&limit=50')
     // followedArtistsFromSpotify.artists.items.forEach(artist =>
@@ -64,7 +40,9 @@ router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
     // }
     //
     // const allAlbumsFollowedArtists = await Promise.all(allAlbumsPromises)
+    //
     // allAlbumsFollowedArtists.forEach(allAlbumsForSingleArtist => {
+    //     //Pull out the artistId from the album URL, being I sort albums by artist
     //     const [, artistId] = allAlbumsForSingleArtist.href.match(/artists\/(.+)\/albums/)
     //
     //     let albums = body[artistId].albums
@@ -84,8 +62,7 @@ router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
     //     body[artistId].albums = albums
     // })
 
-    dbRecord.newAlbumsCache = body
-    db.set(req.session.user.id, dbRecord)
+    db.saveNewAlbumsCache(userId, body)
 
     res.json(body)
 })

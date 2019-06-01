@@ -27,4 +27,14 @@ exports.initializeDatabaseForUser = function initializeDatabaseForUser(userId) {
     }
 }
 
+//Returns the new albums cache for all users, which currently is just ackmanx
 exports.getNewAlbumsCache = () => db.get(SLICES.newAlbumsCache).value()
+
+//Saves a fresh new albums cache for a given user
+exports.saveNewAlbumsCache = (userId, cache) => db.set(`${SLICES.newAlbumsCache}.${userId}`, cache).write()
+
+//Returns the seen albums cache for all users, which currently is just ackmanx
+exports.getSeenAlbums = () => db.get(SLICES.seenAlbums).value()
+
+//Saves seen albums cache for a given user
+exports.saveSeenAlbums = (userId, seenAlbums) => db.set(`${SLICES.seenAlbums}.${userId}`, seenAlbums).write()

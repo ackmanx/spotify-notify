@@ -11,6 +11,7 @@ require('./db/db')
 
 const renderRouter = require('./routes/render')
 const apiRouter = require('./routes/api')
+const devRouter = require('./routes/dev')
 const {authRouter} = require('./routes/auth')
 
 const app = express()
@@ -42,6 +43,7 @@ app.use(session({
 // Routes
 // ---------------------------------------------------------------------------------
 app.use('/', renderRouter)
+app.use('/dev', devRouter)
 app.use('/api', apiRouter)
 app.use('/auth', authRouter)
 
