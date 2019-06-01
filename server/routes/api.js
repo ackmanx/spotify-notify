@@ -68,7 +68,7 @@ router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
 })
 
 function getNewAlbumCache(userId) {
-    return db.getNewAlbumsCache()[userId]
+    return db.getNewAlbumsCache(userId)
 }
 
 module.exports = router
