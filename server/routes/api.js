@@ -12,6 +12,11 @@ async function spotifyAPI(req, endpoint) {
     }
 
     const response = await fetch(`https://api.spotify.com/v1${endpoint}`, options)
+
+    if (response.statusCode === 429) {
+        console.log('### Too many requests! Spotify says you need to wait:', response.headers['Retry-After'])
+    }
+
     return await response.json()
 }
 
