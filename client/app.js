@@ -1,6 +1,7 @@
 import React from 'react'
 import {AppContext} from './context'
 import {Artist} from './artist'
+import {ActionBar} from './action-bar'
 
 export class App extends React.Component {
     state = {
@@ -21,6 +22,7 @@ export class App extends React.Component {
     render() {
         return (
             <AppContext.Provider value={this.state}>
+                <ActionBar />
                 {Object
                     .keys(this.state.artistsWithNewAlbums)
                     .map(artistID => {

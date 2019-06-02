@@ -25,6 +25,7 @@ module.exports = function () {
             new CopyWebpackPlugin([
                 {from: './fav-icon.png'},
                 {from: './client/not-logged-in.css'},
+                {from: './client/images'},
             ]),
         ],
         module: {
