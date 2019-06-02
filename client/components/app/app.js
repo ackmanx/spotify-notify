@@ -1,5 +1,5 @@
 import React from 'react'
-import {AppContext} from '../context'
+import {AppContext} from '../../context'
 import {Artist} from '../artist/artist'
 import {ActionBar} from '../action-bar/action-bar'
 
