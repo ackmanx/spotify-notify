@@ -1,7 +1,7 @@
 import React from 'react'
-import {AppContext} from './context'
-import {Artist} from './artist'
-import {ActionBar} from './action-bar'
+import {AppContext} from '../context'
+import {Artist} from '../artist/artist'
+import {ActionBar} from '../action-bar/action-bar'
 
 export class App extends React.Component {
     state = {

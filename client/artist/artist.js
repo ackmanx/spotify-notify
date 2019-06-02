@@ -1,6 +1,6 @@
 import './artist.css'
 import React from 'react'
-import {Album} from './album'
+import {Album} from '../album/album'
 
 export const Artist = ({name, albums}) => {
     return (
