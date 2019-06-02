@@ -6,6 +6,7 @@ import {ActionBar} from '../action-bar/action-bar'
 export class App extends React.Component {
     state = {
         artistsWithNewAlbums: {},
+        refreshNewAlbums: this.refreshNewAlbums.bind(this),
     }
 
     constructor(props) {
@@ -31,5 +32,10 @@ export class App extends React.Component {
                     })}
             </AppContext.Provider>
         )
+    }
+
+    async refreshNewAlbums() {
+        const response = await fetch('/api/get-new-albums?refresh=true')
+        this.setState({artistsWithNewAlbums: await response.json()})
     }
 }
