@@ -4,8 +4,8 @@ import React from 'react'
 export const ActionBar = () => {
     return (
         <div className='action-bar'>
-            <button>
-                <img className='refresh' src="refresh-icon.png" />
+            <button className='refresh-button'>
+                <img className='refresh-icon' src="refresh-icon.png" />
             </button>
         </div>
     )

@@ -6,6 +6,21 @@
     border-bottom: 3px solid #999;
 }
 
-.refresh {
-    height: 30px;
+.refresh-button {
+    border: 1px dashed black;
+    cursor: pointer;
+    display: flex;
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+}
+
+.refresh-button:hover {
+    border: 2px dashed black;
+    padding: 4px;
+}
+
+.refresh-icon {
+    max-width: 100%;
+    height: auto;
 }
