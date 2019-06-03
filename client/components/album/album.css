@@ -1,7 +1,25 @@
-a {
+.album {
+    position: relative;
     display: inline-block;
     margin: 20px;
     width: 300px;
     height: 300px;
     text-align: center;
+}
+
+.album-overlay {
+    position: absolute;
+    top: 0;
+    color: white;
+}
+
+.spotify-link, .mark-as-seen {
+    display: inline-block;
+    width: 150px;
+    height: 300px;
+}
+
+.spotify-link:hover, .mark-as-seen:hover {
+    background-color: rgba(0, 0, 0, .75);
+    transition: background-color .3s;
 }
