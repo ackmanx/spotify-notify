@@ -9,6 +9,7 @@
 
 .album-overlay {
     position: absolute;
+    display: flex;
     top: 0;
     color: white;
 }
@@ -17,9 +18,17 @@
     display: inline-block;
     width: 150px;
     height: 300px;
+    cursor: pointer;
 }
 
 .spotify-link:hover, .mark-as-seen:hover {
     background-color: rgba(0, 0, 0, .75);
     transition: background-color .3s;
+}
+
+.overlay-link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
 }
