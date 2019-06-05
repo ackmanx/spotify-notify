@@ -7,6 +7,10 @@
     text-align: center;
 }
 
+.album-selected {
+    outline: 10px dashed #999;
+}
+
 .album-overlay {
     position: absolute;
     display: flex;

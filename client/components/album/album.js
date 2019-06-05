@@ -1,15 +1,19 @@
 import './album.css'
-import React, {useState} from 'react'
+import React, {useContext, useState} from 'react'
+import {AppContext} from '../../context'
 
 export const Album = ({album: {id, name, url, coverArt}, artist}) => {
+    const context = useContext(AppContext)
     const artistAlbumName = `${artist} - ${name}`
 
     const [hover, setHover] = useState(false);
 
     const toggleOverlay = () => setHover(!hover)
 
+    const selected = context.seenAlbums.includes(id)
+
     return (
-        <div className='album'>
+        <div className={`album ${selected ? 'album-selected' : ''}`}>
             <img className='album-cover-art'
                  src={coverArt}
                  title={artistAlbumName}
@@ -23,7 +27,7 @@ export const Album = ({album: {id, name, url, coverArt}, artist}) => {
                             <img src='spotify-icon.png' alt='spotify logo'/>
                         </div>
                     </a>
-                    <a className='mark-as-seen' href='#' onClick={() => console.log('something')}>
+                    <a className='mark-as-seen' href='#' onClick={() => context.markAsSeen(id)}>
                         <div className='overlay-link-container'>
                             <img src='mark-as-seen.png' alt='mark as seen'/>
                         </div>

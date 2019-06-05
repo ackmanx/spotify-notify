@@ -6,7 +6,9 @@ import {ActionBar} from '../action-bar/action-bar'
 export class App extends React.Component {
     state = {
         artistsWithNewAlbums: {},
+        markAsSeen: this.markAsSeen.bind(this),
         refreshNewAlbums: this.refreshNewAlbums.bind(this),
+        seenAlbums: [],
     }
 
     constructor(props) {
@@ -37,5 +39,20 @@ export class App extends React.Component {
     async refreshNewAlbums() {
         const response = await fetch('/api/get-new-albums?refresh=true')
         this.setState({artistsWithNewAlbums: await response.json()})
+    }
+
+    markAsSeen(albumId) {
+        const seenAlbums = [...this.state.seenAlbums]
+
+        const seenAlbumIndex = seenAlbums.indexOf(albumId)
+
+        if (seenAlbumIndex !== -1) {
+            seenAlbums.splice(seenAlbumIndex, 1)
+        }
+        else {
+            seenAlbums.push(albumId)
+        }
+
+        this.setState({seenAlbums})
     }
 }
