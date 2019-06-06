@@ -6,26 +6,21 @@ import {ActionBar} from '../action-bar/action-bar'
 export class App extends React.Component {
     state = {
         artistsWithNewAlbums: {},
+        seenAlbums: [],
         markAsSeen: this.markAsSeen.bind(this),
         refreshNewAlbums: this.refreshNewAlbums.bind(this),
-        seenAlbums: [],
+        submitSeenAlbums: this.submitSeenAlbums.bind(this),
     }
 
     constructor(props) {
         super(props)
-
-        const init = async () => {
-            const response = await fetch('/api/get-new-albums')
-            this.setState({artistsWithNewAlbums: await response.json()})
-        }
-
-        init()
+        this.getNewAlbums()
     }
 
     render() {
         return (
             <AppContext.Provider value={this.state}>
-                <ActionBar />
+                <ActionBar/>
                 {Object
                     .keys(this.state.artistsWithNewAlbums)
                     .map(artistID => {
@@ -34,6 +29,11 @@ export class App extends React.Component {
                     })}
             </AppContext.Provider>
         )
+    }
+
+    async getNewAlbums() {
+        const response = await fetch('/api/get-new-albums')
+        this.setState({artistsWithNewAlbums: await response.json()})
     }
 
     async refreshNewAlbums() {
@@ -48,11 +48,25 @@ export class App extends React.Component {
 
         if (seenAlbumIndex !== -1) {
             seenAlbums.splice(seenAlbumIndex, 1)
-        }
-        else {
+        } else {
             seenAlbums.push(albumId)
         }
 
         this.setState({seenAlbums})
+    }
+
+    async submitSeenAlbums() {
+        await fetch('/api/update-seen-albums',
+            {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({albumIds: this.state.seenAlbums}),
+            }
+        )
+
+        document.location.reload()
     }
 }

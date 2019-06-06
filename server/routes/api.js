@@ -85,6 +85,14 @@ router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
     res.json(body)
 })
 
+router.post('/update-seen-albums', ensureAuthenticated, async function (req, res) {
+    const seenAlbums = db.getSeenAlbums(req.session.user.id)
+
+    db.saveSeenAlbums(req.session.user.id, seenAlbums.concat(req.body.albumIds))
+
+    res.json({success: true})
+})
+
 function getNewAlbumCache(userId) {
     return db.getNewAlbumsCache(userId)
 }
