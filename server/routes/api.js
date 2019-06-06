@@ -22,14 +22,22 @@ async function spotifyAPI(req, endpoint) {
 
 router.get('/get-new-albums', ensureAuthenticated, async function (req, res) {
     const userId = req.session.user.id
+    const userSeenAlbums = db.getSeenAlbums(userId)
 
     if (req.query.refresh !== 'true') {
-        return res.json(getNewAlbumCache(userId))
+        const cache = getNewAlbumCache(userId)
+
+        Object.keys(cache).forEach(artistId => {
+            const artist = cache[artistId]
+            artist.albums = artist.albums.filter(album => !userSeenAlbums.includes(album.id))
+        })
+
+        db.saveNewAlbumsCache(userId, cache)
+
+        return res.json(cache)
     }
 
     let body = {}
-    const userSeenAlbums = db.getSeenAlbums(userId)
-
 
     //This mock is for getting a smaller set of followed artists than I would get making the real call below
     body = {
