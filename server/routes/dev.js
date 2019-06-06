@@ -44,7 +44,7 @@ router.get('/get-db-newAlbumsCache', ensureAuthenticated, async function (req, r
 })
 
 router.get('/set-db-newAlbumsCache', ensureAuthenticated, async function (req, res) {
-    res.json(db.saveNewAlbumsCache(req.session.user.id, require('../mock/api/get-new-albums--refresh')))
+    res.json(db.saveNewAlbumsCache(req.session.user.id, require('../mock/api/new-albums--refresh')))
 })
 
 module.exports = router

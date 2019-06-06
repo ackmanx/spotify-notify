@@ -3,7 +3,7 @@ const schema = {
     seenAlbums: {
         '<userId>': ['<albumbId>']
     },
-    //This is the response from /get-new-albums
+    //This is the response from /new-albums
     //It will persist until the user forces a refresh of the endpoint and will be replaced with the new response
     newAlbumsCache: {
         '<userId>': {
