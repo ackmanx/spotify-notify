@@ -23,92 +23,21 @@ async function spotifyAPI(req, endpoint) {
 router.get('/new-albums/cached', ensureAuthenticated, async function (req, res) {
     const userId = req.session.user.id
     const userSeenAlbums = db.getSeenAlbums(userId)
+    const cache = db.getNewAlbumsCache(userId)
 
-    if (req.query.refresh !== 'true') {
-        const cache = getNewAlbumCache(userId)
-
-        Object.keys(cache).forEach(artistId => {
-            const artist = cache[artistId]
-            artist.albums = artist.albums.filter(album => !userSeenAlbums.includes(album.id))
-        })
-
-        db.saveNewAlbumsCache(userId, cache)
-
-        return res.json(cache)
-    }
-
-    let body = {}
-
-    //This mock is for getting a smaller set of followed artists than I would get making the real call below
-    body = {
-        "0UF7XLthtbSF2Eur7559oV": {
-            "id": "0UF7XLthtbSF2Eur7559oV",
-            "name": "Kavinsky"
-        },
-        "0lP5aPV834goEtT6asKAek": {
-            "id": "0lP5aPV834goEtT6asKAek",
-            "name": "Das Bo"
-        },
-    }
-
-    // const followedArtistsFromSpotify = await spotifyAPI(req, '/me/following?type=artist&limit=50')
-    // followedArtistsFromSpotify.artists.items.forEach(artist =>
-    //     body[artist.id] = {
-    //         id: artist.id,
-    //         name: artist.name,
-    //     }
-    // )
-
-    const allAlbumsPromises = []
-
-    for (let artistId in body) {
-        allAlbumsPromises.push(spotifyAPI(req, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`))
-    }
-
-    const allAlbumsFollowedArtists = await Promise.all(allAlbumsPromises)
-
-    allAlbumsFollowedArtists.forEach(allAlbumsForSingleArtist => {
-        //Pull out the artistId from the album URL, being I sort albums by artist
-        const [, artistId] = allAlbumsForSingleArtist.href.match(/artists\/(.+)\/albums/)
-
-        let albums = body[artistId].albums
-        if (!Array.isArray(albums)) albums = []
-
-        allAlbumsForSingleArtist.items.forEach(album => {
-            if (userSeenAlbums.includes(album.id)) return
-
-            albums.push({
-                id: album.id,
-                name: album.name,
-                url: album.external_urls.spotify,
-                coverArt: album.images[1].url, //response always has 3 images of diff sizes, and I always want the middle one
-            })
-        })
-
-        body[artistId].albums = albums
+    Object.keys(cache).forEach(artistId => {
+        const artist = cache[artistId]
+        artist.albums = artist.albums.filter(album => !userSeenAlbums.includes(album.id))
     })
 
-    db.saveNewAlbumsCache(userId, body)
+    db.saveNewAlbumsCache(userId, cache)
 
-    res.json(body)
+    return res.json(cache)
 })
 
 router.get('/new-albums/refresh', ensureAuthenticated, async function (req, res) {
     const userId = req.session.user.id
     const userSeenAlbums = db.getSeenAlbums(userId)
-
-    if (req.query.refresh !== 'true') {
-        const cache = getNewAlbumCache(userId)
-
-        Object.keys(cache).forEach(artistId => {
-            const artist = cache[artistId]
-            artist.albums = artist.albums.filter(album => !userSeenAlbums.includes(album.id))
-        })
-
-        db.saveNewAlbumsCache(userId, cache)
-
-        return res.json(cache)
-    }
 
     let body = {}
 
@@ -173,9 +102,5 @@ router.post('/update-seen-albums', ensureAuthenticated, async function (req, res
 
     res.json({success: true})
 })
-
-function getNewAlbumCache(userId) {
-    return db.getNewAlbumsCache(userId)
-}
 
 module.exports = router
