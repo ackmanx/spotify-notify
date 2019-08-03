@@ -14,7 +14,8 @@ export class App extends React.Component {
 
     constructor(props) {
         super(props)
-        this.getNewAlbums()
+        //todo: this should make a call for cached, not refresh. dev purposes only
+        this.refreshNewAlbums()
     }
 
     render() {

@@ -41,15 +41,12 @@ router.get('/new-albums/refresh', ensureAuthenticated, async function (req, res)
 
     let body = {}
 
+    //todo: Steve Aoki has more than 50 results for albums, so use him for paging
     //This mock is for getting a smaller set of followed artists than I would get making the real call below
     body = {
-        "0UF7XLthtbSF2Eur7559oV": {
-            "id": "0UF7XLthtbSF2Eur7559oV",
-            "name": "Kavinsky"
-        },
-        "0lP5aPV834goEtT6asKAek": {
-            "id": "0lP5aPV834goEtT6asKAek",
-            "name": "Das Bo"
+        "77AiFEVeAVj2ORpC85QVJs": {
+            "id": "77AiFEVeAVj2ORpC85QVJs",
+            "name": "Steve Aoki"
         },
     }
 
@@ -64,6 +61,7 @@ router.get('/new-albums/refresh', ensureAuthenticated, async function (req, res)
     const allAlbumsPromises = []
 
     for (let artistId in body) {
+        //todo: this is where the albums call is made and paging needs to happen
         allAlbumsPromises.push(spotifyAPI(req, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`))
     }
 
