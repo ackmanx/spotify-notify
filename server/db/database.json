@@ -1,189 +1,1143 @@
 {
   "newAlbumsCache": {
     "ackmanx": {
-      "1l2oLiukA9i5jEtIyNWIEP": {
-        "id": "1l2oLiukA9i5jEtIyNWIEP",
-        "name": "Carpenter Brut",
+      "77AiFEVeAVj2ORpC85QVJs": {
+        "id": "77AiFEVeAVj2ORpC85QVJs",
+        "name": "Steve Aoki",
         "albums": [
           {
-            "id": "7fy6Wpnn5NZllJzUXDeDpS",
-            "name": "Leather Teeth",
-            "url": "https://open.spotify.com/album/7fy6Wpnn5NZllJzUXDeDpS",
-            "coverArt": "https://i.scdn.co/image/878f652904ef84d9d357a3df9d92d8da313b3f12"
+            "id": "2dRuXHSYXjRubjTkjMFZFD",
+            "name": "Crash Into Me",
+            "url": "https://open.spotify.com/album/2dRuXHSYXjRubjTkjMFZFD",
+            "coverArt": "https://i.scdn.co/image/b9debb5d2e81f1c24fdc8c8cbf6c1fab10292942",
+            "releaseDate": "2019-07-12"
           },
           {
-            "id": "6kJuATIGbPYxHmRoWCC5IB",
-            "name": "CARPENTERBRUTLIVE",
-            "url": "https://open.spotify.com/album/6kJuATIGbPYxHmRoWCC5IB",
-            "coverArt": "https://i.scdn.co/image/717e5e15e9f0b04f93f02bdcb5b9d23cc189813d"
+            "id": "2VpuZS3WC5PkI9DdnbVLjt",
+            "name": "Rave (feat. Kris Kiss)",
+            "url": "https://open.spotify.com/album/2VpuZS3WC5PkI9DdnbVLjt",
+            "coverArt": "https://i.scdn.co/image/fcb146fc670bec33f02ad436420d446a2e4e6ad7",
+            "releaseDate": "2019-06-28"
           },
           {
-            "id": "0io5pe55YRCTVqEjwlOBdN",
-            "name": "TRILOGY",
-            "url": "https://open.spotify.com/album/0io5pe55YRCTVqEjwlOBdN",
-            "coverArt": "https://i.scdn.co/image/b49a1cd58dcf0fd318c7a61951d572fcbd323504"
+            "id": "6ikuGDbXwhur7AmfxjAuXP",
+            "name": "Warp 2.019 (feat. Steve Aoki) [Steve Aoki & Kayzo Remix]",
+            "url": "https://open.spotify.com/album/6ikuGDbXwhur7AmfxjAuXP",
+            "coverArt": "https://i.scdn.co/image/b80b4e6f4ce5d432da36c20206b5486e5dc08ec9",
+            "releaseDate": "2019-06-07"
           },
           {
-            "id": "6Ld5Q7THk9sNHF6HWPPFod",
-            "name": "Hush Sally, Hush!",
-            "url": "https://open.spotify.com/album/6Ld5Q7THk9sNHF6HWPPFod",
-            "coverArt": "https://i.scdn.co/image/740a43b3d324faa524f5541c5c429bc408cf85ba"
+            "id": "4aQ94ikYmGhgOugrcxX5g0",
+            "name": "Hit Your Heart (Steve Aoki’s Oh Sh*t Remix)",
+            "url": "https://open.spotify.com/album/4aQ94ikYmGhgOugrcxX5g0",
+            "coverArt": "https://i.scdn.co/image/4e70fb79f9d4a6a6a7d6e9006d7f6cc182940be8",
+            "releaseDate": "2019-05-31"
           },
           {
-            "id": "3EzAWwnyiV5pBh6xH8UDix",
-            "name": "Turbo Killer (Live)",
-            "url": "https://open.spotify.com/album/3EzAWwnyiV5pBh6xH8UDix",
-            "coverArt": "https://i.scdn.co/image/717e5e15e9f0b04f93f02bdcb5b9d23cc189813d"
+            "id": "48hO0qLgH7XOXUAhWs7TDq",
+            "name": "Play It Cool (Quintino Remix)",
+            "url": "https://open.spotify.com/album/48hO0qLgH7XOXUAhWs7TDq",
+            "coverArt": "https://i.scdn.co/image/29521dc54dcbb508be32dfb186a7916e1958f400",
+            "releaseDate": "2019-05-24"
           },
           {
-            "id": "5hJfHH1TMapNDq1DuCCIIV",
-            "name": "Maniac (Live)",
-            "url": "https://open.spotify.com/album/5hJfHH1TMapNDq1DuCCIIV",
-            "coverArt": "https://i.scdn.co/image/717e5e15e9f0b04f93f02bdcb5b9d23cc189813d"
+            "id": "7CyIBelDka5WEsNaGvl5Sc",
+            "name": "Play It Cool (DVBBS Remix)",
+            "url": "https://open.spotify.com/album/7CyIBelDka5WEsNaGvl5Sc",
+            "coverArt": "https://i.scdn.co/image/218ad1c49be26c1d08575c07375e55deb3dcd5c4",
+            "releaseDate": "2019-05-24"
           },
           {
-            "id": "5Vl0eTVLLSRDOyC0maQF9J",
-            "name": "Night Stalker (From \"The Rise of the Synths\")",
-            "url": "https://open.spotify.com/album/5Vl0eTVLLSRDOyC0maQF9J",
-            "coverArt": "https://i.scdn.co/image/fa0d055946fab995e8df785fc517efa86b22ce53"
-          }
-        ]
-      },
-      "1oA1SW4FRAis6e8krh5YAf": {
-        "id": "1oA1SW4FRAis6e8krh5YAf",
-        "name": "We Butter The Bread With Butter",
-        "albums": [
-          {
-            "id": "2o8c58hCJJ6MT7uEQqbnt6",
-            "name": "Wieder geil!",
-            "url": "https://open.spotify.com/album/2o8c58hCJJ6MT7uEQqbnt6",
-            "coverArt": "https://i.scdn.co/image/ea388d4bc5de34fe5699105bde732debc8a00d93"
+            "id": "3DqwEZxp5sxXr0yFyKIAOC",
+            "name": "Are You Lonely (feat. ISÁK) [Remixes]",
+            "url": "https://open.spotify.com/album/3DqwEZxp5sxXr0yFyKIAOC",
+            "coverArt": "https://i.scdn.co/image/c21c00d3e701bcfa990b74d51e33476f1275e3c8",
+            "releaseDate": "2019-05-17"
           },
           {
-            "id": "7e0Xa2nOINTesH5wJiT5Dw",
-            "name": "Goldkinder",
-            "url": "https://open.spotify.com/album/7e0Xa2nOINTesH5wJiT5Dw",
-            "coverArt": "https://i.scdn.co/image/f45c563c46c0da4f2ad834bae68d75e84db176de"
+            "id": "2BFSmAQErYgjumBJo8mpct",
+            "name": "Medicine (Steve Aoki from the Block Remix)",
+            "url": "https://open.spotify.com/album/2BFSmAQErYgjumBJo8mpct",
+            "coverArt": "https://i.scdn.co/image/abea9d24e5d6ccc345558b4bd2cffc4010deff57",
+            "releaseDate": "2019-05-17"
           },
           {
-            "id": "48EAs1VbS7ZxW23dmbkhzJ",
-            "name": "Goldkinder",
-            "url": "https://open.spotify.com/album/48EAs1VbS7ZxW23dmbkhzJ",
-            "coverArt": "https://i.scdn.co/image/f95c6f83c2065baa75f31ecdaf33e581b283b552"
+            "id": "0tU4PaLkusKLWhNszHFo9T",
+            "name": "Do It Again",
+            "url": "https://open.spotify.com/album/0tU4PaLkusKLWhNszHFo9T",
+            "coverArt": "https://i.scdn.co/image/91884b90e3b67c49fc8d35dad9bd410eb6aea16d",
+            "releaseDate": "2019-04-19"
           },
           {
-            "id": "54aw2F9s6Ot4Z4D1WmIdBO",
-            "name": "Projekt Herz",
-            "url": "https://open.spotify.com/album/54aw2F9s6Ot4Z4D1WmIdBO",
-            "coverArt": "https://i.scdn.co/image/2368c16b81e4ee1f27dc931e21101df0f06ed3a1"
+            "id": "147GPz3okDO3ZjSUtIb9zs",
+            "name": "Play It Cool",
+            "url": "https://open.spotify.com/album/147GPz3okDO3ZjSUtIb9zs",
+            "coverArt": "https://i.scdn.co/image/5dc6c382e9b95fbf3a73b9f3ae32ce68eebc4933",
+            "releaseDate": "2019-03-22"
           },
           {
-            "id": "3iUfTGKCE4VIeLURRWPeDk",
-            "name": "Der Tag an dem die Welt unterging",
-            "url": "https://open.spotify.com/album/3iUfTGKCE4VIeLURRWPeDk",
-            "coverArt": "https://i.scdn.co/image/904a18dc8b731d602454a2cba69f290e452f5549"
+            "id": "5gZ8FpmwJL0Gyt1kImB4iU",
+            "name": "Hit Your Heart",
+            "url": "https://open.spotify.com/album/5gZ8FpmwJL0Gyt1kImB4iU",
+            "coverArt": "https://i.scdn.co/image/87abf3796b62ba2296960a9814102e6516696947",
+            "releaseDate": "2019-03-08"
           },
           {
-            "id": "5lGf3E5ZsTkNFx5zd54vAI",
-            "name": "Das Monster aus dem Schrank",
-            "url": "https://open.spotify.com/album/5lGf3E5ZsTkNFx5zd54vAI",
-            "coverArt": "https://i.scdn.co/image/0bea3ce1f3440f448630366e26ca8aac00d7caf4"
+            "id": "7kfaArlpn1f192XMoWQs5U",
+            "name": "Are You Lonely (feat. ISÁK)",
+            "url": "https://open.spotify.com/album/7kfaArlpn1f192XMoWQs5U",
+            "coverArt": "https://i.scdn.co/image/8b53e572582f95de4ca8aa7bc1e9342b4325850f",
+            "releaseDate": "2019-02-22"
           },
           {
-            "id": "5yAQsYYToy9zFvmLyPkEUB",
-            "name": "Man’s Not Hot",
-            "url": "https://open.spotify.com/album/5yAQsYYToy9zFvmLyPkEUB",
-            "coverArt": "https://i.scdn.co/image/1298dc98fab7c30cdda05e294c34614e277e3436"
+            "id": "5J5G5yoAxZ2eaJromTbB19",
+            "name": "Neon Future III (Remixes)",
+            "url": "https://open.spotify.com/album/5J5G5yoAxZ2eaJromTbB19",
+            "coverArt": "https://i.scdn.co/image/70ca1b877b069a81d23869849ee29122f9ec28d9",
+            "releaseDate": "2019-02-15"
           },
           {
-            "id": "600MvhEvNU3RQ2SuPS4kgP",
-            "name": "Klicks. Likes. Fame. Geil!",
-            "url": "https://open.spotify.com/album/600MvhEvNU3RQ2SuPS4kgP",
-            "coverArt": "https://i.scdn.co/image/91234d36a2a3b117fe0e868fe84b01f0bafec1de"
+            "id": "2BYF8W64qYVK9TlZSOhspQ",
+            "name": "Feeling of Falling (Steve Aoki Remix)",
+            "url": "https://open.spotify.com/album/2BYF8W64qYVK9TlZSOhspQ",
+            "coverArt": "https://i.scdn.co/image/06460ccdcc2b46f851494e11f4a53823690a386c",
+            "releaseDate": "2019-01-15"
           },
           {
-            "id": "48IGd6QMOLhBxGI1keGqjE",
-            "name": "Santa Claus is Coming to Town",
-            "url": "https://open.spotify.com/album/48IGd6QMOLhBxGI1keGqjE",
-            "coverArt": "https://i.scdn.co/image/89c1bc4f544d35fe8cce3c9630f28ecb5743d075"
+            "id": "2PhT55bxbMXksIvGgMM9eb",
+            "name": "Waste It On Me (feat. BTS) [Steve Aoki The Bold Tender Sneeze Remix]",
+            "url": "https://open.spotify.com/album/2PhT55bxbMXksIvGgMM9eb",
+            "coverArt": "https://i.scdn.co/image/e5ad9c9b6fda3cae7ade994ea5f8ffdb7f06dab2",
+            "releaseDate": "2018-12-25"
           },
           {
-            "id": "0wEErdsNcFgm9r49rGph87",
-            "name": "Anarchy",
-            "url": "https://open.spotify.com/album/0wEErdsNcFgm9r49rGph87",
-            "coverArt": "https://i.scdn.co/image/3ac46069fd66553586930e42d2e17e81a6f0d608"
+            "id": "0B2WnxpbWaajMOcuwMRvlj",
+            "name": "Waste It On Me (W&W Remix)",
+            "url": "https://open.spotify.com/album/0B2WnxpbWaajMOcuwMRvlj",
+            "coverArt": "https://i.scdn.co/image/622f7e8d528538b48f7c262dc0cd93fa0ff697ca",
+            "releaseDate": "2018-12-21"
           },
           {
-            "id": "6RSMJk0bwA1hz18UMdl1e3",
-            "name": "Berlin, Berlin!",
-            "url": "https://open.spotify.com/album/6RSMJk0bwA1hz18UMdl1e3",
-            "coverArt": "https://i.scdn.co/image/21ada8c7dfd581a5b95ec448a376b08bed7af0ef"
+            "id": "05Add8AL8U4XqpZIfSm7UT",
+            "name": "Tie Me Down (with Elley Duhé) [Steve Aoki Remix]",
+            "url": "https://open.spotify.com/album/05Add8AL8U4XqpZIfSm7UT",
+            "coverArt": "https://i.scdn.co/image/927f288d471e56038582bd1024cbe80aa63aec18",
+            "releaseDate": "2018-12-19"
           },
           {
-            "id": "4TLPOkpaTWgdRJe9xPK4uT",
-            "name": "Bang Bang Bang",
-            "url": "https://open.spotify.com/album/4TLPOkpaTWgdRJe9xPK4uT",
-            "coverArt": "https://i.scdn.co/image/7c6de9053731fa7ce0dfb776b7fef05b516f4523"
+            "id": "5i8uaYzlZK1oIjRVCCj7R1",
+            "name": "Waste It On Me (Cheat Codes Remix)",
+            "url": "https://open.spotify.com/album/5i8uaYzlZK1oIjRVCCj7R1",
+            "coverArt": "https://i.scdn.co/image/98e951c33199aa9f6f36b5de3771a30ea9a180e8",
+            "releaseDate": "2018-12-14"
           },
           {
-            "id": "6Z0n2fhXRK5meu0dUMcCLH",
-            "name": "Ich mach was mit Medien",
-            "url": "https://open.spotify.com/album/6Z0n2fhXRK5meu0dUMcCLH",
-            "coverArt": "https://i.scdn.co/image/9635ca9a2c67aa2ecbb144ef0c3589644c025349"
-          }
-        ]
-      },
-      "1r0vOsQYMTyq1qkDv7p9QD": {
-        "id": "1r0vOsQYMTyq1qkDv7p9QD",
-        "name": "Starr Chen",
-        "albums": [
-          {
-            "id": "4o3IiQzwTzPdWoHI0GBB1U",
-            "name": "WELCOME TO THE NEXT LEVEL",
-            "url": "https://open.spotify.com/album/4o3IiQzwTzPdWoHI0GBB1U",
-            "coverArt": "https://i.scdn.co/image/27774e06b52d50f70772ca4ea30667367b61a061"
+            "id": "1ioOTDEIBYDSfkeLQ5qxWd",
+            "name": "Waste It On Me (Slushii Remix)",
+            "url": "https://open.spotify.com/album/1ioOTDEIBYDSfkeLQ5qxWd",
+            "coverArt": "https://i.scdn.co/image/67984271f419ecad3d5932364efd248e4e2b9611",
+            "releaseDate": "2018-12-07"
           },
           {
-            "id": "61FyAVe6ly5GyL7qtwNQpI",
-            "name": "EGO-HOLIC戀我癖",
-            "url": "https://open.spotify.com/album/61FyAVe6ly5GyL7qtwNQpI",
-            "coverArt": "https://i.scdn.co/image/7182f9c97eb30961cd1a61f61b28feaa6640860c"
+            "id": "1VFgefav92A6JzlPSUatzV",
+            "name": "Neon Future III",
+            "url": "https://open.spotify.com/album/1VFgefav92A6JzlPSUatzV",
+            "coverArt": "https://i.scdn.co/image/1c9d72761d479e1b0c3e4f88f304fc2bc0bfed93",
+            "releaseDate": "2018-11-09"
           },
           {
-            "id": "47E1nUOLbYrAsIuljKiYzL",
-            "name": "宇宙至尊",
-            "url": "https://open.spotify.com/album/47E1nUOLbYrAsIuljKiYzL",
-            "coverArt": "https://i.scdn.co/image/18ee172ab98a0e9d0d312c85043b6b284ad3f882"
-          }
-        ]
-      },
-      "1r9DuPTHiQ7hnRRZ99B8nL": {
-        "id": "1r9DuPTHiQ7hnRRZ99B8nL",
-        "name": "Jolin Tsai",
-        "albums": [
-          {
-            "id": "7HFFEjrwzZNpbee44SJnn9",
-            "name": "Ugly Beauty",
-            "url": "https://open.spotify.com/album/7HFFEjrwzZNpbee44SJnn9",
-            "coverArt": "https://i.scdn.co/image/21fc3a06a6dc5e1d4520c89d76ace5f56d27fa00"
+            "id": "2zGbALuLN1QjFgddq9kIz1",
+            "name": "Waste It On Me (feat. BTS)",
+            "url": "https://open.spotify.com/album/2zGbALuLN1QjFgddq9kIz1",
+            "coverArt": "https://i.scdn.co/image/670f6dd0fbde00d1ccfd5e32569f8f78d012bb05",
+            "releaseDate": "2018-10-25"
           },
           {
-            "id": "0OoMR5pLX81q4aRHA4Feik",
-            "name": "蔡依林 Play世界巡迴演唱會 (Live)",
-            "url": "https://open.spotify.com/album/0OoMR5pLX81q4aRHA4Feik",
-            "coverArt": "https://i.scdn.co/image/76eb239c7854e3274cd105c502d0c1bc93c1b96e"
+            "id": "0BWtB7h7nck4zFX1eaYLE0",
+            "name": "Be Somebody (feat. Kiiara) [Tyron Hapi Remix]",
+            "url": "https://open.spotify.com/album/0BWtB7h7nck4zFX1eaYLE0",
+            "coverArt": "https://i.scdn.co/image/25bcd5bef9c68e65ee4e7009660f6441eac65900",
+            "releaseDate": "2018-10-12"
           },
           {
-            "id": "4usIO3u7K4KGzQyMUZ8xJ5",
-            "name": "呸",
-            "url": "https://open.spotify.com/album/4usIO3u7K4KGzQyMUZ8xJ5",
-            "coverArt": "https://i.scdn.co/image/e9f9b0c38bffe3e02541d1fd086e393b8abd336c"
+            "id": "1FWuFhIU9p72irRZPDc6UV",
+            "name": "Hoovela",
+            "url": "https://open.spotify.com/album/1FWuFhIU9p72irRZPDc6UV",
+            "coverArt": "https://i.scdn.co/image/11e0fab8f53d74c0bd781c5616452ea6519c5909",
+            "releaseDate": "2018-10-05"
           },
           {
-            "id": "6qi72orb10gTm8uiKSJXV5",
-            "name": "MUSE",
-            "url": "https://open.spotify.com/album/6qi72orb10gTm8uiKSJXV5",
-            "coverArt": "https://i.scdn.co/image/9b84119dc2c97bd8d6d5ef522d287c104be2d8e1"
+            "id": "6VDoSX37HjE1QnFP18Ooe3",
+            "name": "Jaleo",
+            "url": "https://open.spotify.com/album/6VDoSX37HjE1QnFP18Ooe3",
+            "coverArt": "https://i.scdn.co/image/1a063758220acdba9d25b859079bfe1be8697ff4",
+            "releaseDate": "2018-10-05"
+          },
+          {
+            "id": "5W13ZzUYhO72qMATBo1PVR",
+            "name": "Be Somebody",
+            "url": "https://open.spotify.com/album/5W13ZzUYhO72qMATBo1PVR",
+            "coverArt": "https://i.scdn.co/image/ae11838b7e9570d88f97b3a4ad4284f7c50ea554",
+            "releaseDate": "2018-09-07"
+          },
+          {
+            "id": "02MaO9u0fLZggBBXLmB5GY",
+            "name": "Lie To Me (feat. Ina Wroldsen) [Remixes Part 2]",
+            "url": "https://open.spotify.com/album/02MaO9u0fLZggBBXLmB5GY",
+            "coverArt": "https://i.scdn.co/image/b0c40840198412d6d6ae1a10a501cf7324b3cb48",
+            "releaseDate": "2018-08-31"
+          },
+          {
+            "id": "1rNscK0OVBjTbnzimIcGPS",
+            "name": "Me On You (Steve Aoki Remixes)",
+            "url": "https://open.spotify.com/album/1rNscK0OVBjTbnzimIcGPS",
+            "coverArt": "https://i.scdn.co/image/b3bb12b36cfe6df291fecc094138339b74c45e9c",
+            "releaseDate": "2018-08-29"
+          },
+          {
+            "id": "09fZhmvFH2DZatzvYFbNXK",
+            "name": "Lie To Me (feat. Ina Wroldsen) [Remixes Part 1]",
+            "url": "https://open.spotify.com/album/09fZhmvFH2DZatzvYFbNXK",
+            "coverArt": "https://i.scdn.co/image/b0c40840198412d6d6ae1a10a501cf7324b3cb48",
+            "releaseDate": "2018-08-24"
+          },
+          {
+            "id": "5k4Td8bbfUihyI56y8MQs3",
+            "name": "Lie To Me",
+            "url": "https://open.spotify.com/album/5k4Td8bbfUihyI56y8MQs3",
+            "coverArt": "https://i.scdn.co/image/a232bf367a0f82d17f07eb7888f4f08dbf80103d",
+            "releaseDate": "2018-07-20"
+          },
+          {
+            "id": "2qMVggAbHG7iUTt0u5C9MX",
+            "name": "Pretender (feat. Lil Yachty & AJR) (feat. Lil Yachty & AJR) [Remixes]",
+            "url": "https://open.spotify.com/album/2qMVggAbHG7iUTt0u5C9MX",
+            "coverArt": "https://i.scdn.co/image/cd98f8f80fb2e06e2ff10f2113c0bc5d8e23b4e3",
+            "releaseDate": "2018-07-13"
+          },
+          {
+            "id": "2QmesDlTVu1SelSLBqb1b5",
+            "name": "Shakalaka (Steve Aoki, Deorro, MAKJ & Max Styler)",
+            "url": "https://open.spotify.com/album/2QmesDlTVu1SelSLBqb1b5",
+            "coverArt": "https://i.scdn.co/image/22108f85ab070bc3529ef94eb603b3036a8a4210",
+            "releaseDate": "2018-06-15"
+          },
+          {
+            "id": "5d1XsHb8rXS0LtRMPjVxfX",
+            "name": "Bella Ciao",
+            "url": "https://open.spotify.com/album/5d1XsHb8rXS0LtRMPjVxfX",
+            "coverArt": "https://i.scdn.co/image/4e79783920f482827d7afef9022697a3c39da728",
+            "releaseDate": "2018-06-10"
+          },
+          {
+            "id": "1ghdoPIVExIwYsdSark8Cm",
+            "name": "Girls (feat. Cardi B, Bebe Rexha & Charli XCX) [Steve Aoki Remix]",
+            "url": "https://open.spotify.com/album/1ghdoPIVExIwYsdSark8Cm",
+            "coverArt": "https://i.scdn.co/image/c8c8e56a7f74718ff1f1a46ec137e004a219ed35",
+            "releaseDate": "2018-06-08"
+          },
+          {
+            "id": "4B3ZuTgGRhNX1gX3G5Ga5S",
+            "name": "Pop It Off (feat. Lisa Mercedez) [Steve Aoki Remix]",
+            "url": "https://open.spotify.com/album/4B3ZuTgGRhNX1gX3G5Ga5S",
+            "coverArt": "https://i.scdn.co/image/d58409bb1218d158e127e515ad9f6afd58eb0cb6",
+            "releaseDate": "2018-06-01"
+          },
+          {
+            "id": "0KIXtHKY35Fx93u2xl3lOV",
+            "name": "Pretender (feat. Lil Yachty & AJR)",
+            "url": "https://open.spotify.com/album/0KIXtHKY35Fx93u2xl3lOV",
+            "coverArt": "https://i.scdn.co/image/059270ba6df7244fbd712f5e628610f35215b4bf",
+            "releaseDate": "2018-05-18"
+          },
+          {
+            "id": "13HdODPBFKF9ebrlO5TF6r",
+            "name": "Lonely (feat. MAX) [Steve Aoki Remix]",
+            "url": "https://open.spotify.com/album/13HdODPBFKF9ebrlO5TF6r",
+            "coverArt": "https://i.scdn.co/image/0c635636e4c47c19cb3c7966c9c4dd94eb853332",
+            "releaseDate": "2018-05-11"
+          },
+          {
+            "id": "7J5petLEkkFdDzTRTV9WhH",
+            "name": "5OKI",
+            "url": "https://open.spotify.com/album/7J5petLEkkFdDzTRTV9WhH",
+            "coverArt": "https://i.scdn.co/image/b4ddd5e4741dd58a4cac0c6ece65946f90ac1e5a",
+            "releaseDate": "2018-04-27"
+          },
+          {
+            "id": "2TxRZD9B1rfspcr5pu90rV",
+            "name": "Moshi Moshi (feat. Mama Aoki)",
+            "url": "https://open.spotify.com/album/2TxRZD9B1rfspcr5pu90rV",
+            "coverArt": "https://i.scdn.co/image/78de2e28b587a844c95ed58c7faaf19830d91978",
+            "releaseDate": "2018-04-20"
+          },
+          {
+            "id": "6nCsO0TtG2liHMTGM3hnkG",
+            "name": "Anthem (feat. Kris Kiss)",
+            "url": "https://open.spotify.com/album/6nCsO0TtG2liHMTGM3hnkG",
+            "coverArt": "https://i.scdn.co/image/6c28e17036b6e828629b3a324e303c7052dcc018",
+            "releaseDate": "2018-04-13"
+          },
+          {
+            "id": "5A5FawnaycQo1SS38soAvy",
+            "name": "It's Time (feat. Bruce Buffer)",
+            "url": "https://open.spotify.com/album/5A5FawnaycQo1SS38soAvy",
+            "coverArt": "https://i.scdn.co/image/bc2ae8986c70b0b1aa6286399aa57014dde802f2",
+            "releaseDate": "2018-04-06"
+          },
+          {
+            "id": "2iEr758QNc4p7INAgzPPGy",
+            "name": "Pika Pika",
+            "url": "https://open.spotify.com/album/2iEr758QNc4p7INAgzPPGy",
+            "coverArt": "https://i.scdn.co/image/25987908bb5649af3e456ed9e2e3efc4d5808854",
+            "releaseDate": "2018-03-30"
+          },
+          {
+            "id": "6Pu2vZbZ5MXBjCamZ9tMKA",
+            "name": "Mayhem",
+            "url": "https://open.spotify.com/album/6Pu2vZbZ5MXBjCamZ9tMKA",
+            "coverArt": "https://i.scdn.co/image/610014702f721634a428395336d1fe64a2b8fc2b",
+            "releaseDate": "2018-03-23"
+          },
+          {
+            "id": "67wBwMPxu7776dQF5ETTQ9",
+            "name": "All Night (Remixes)",
+            "url": "https://open.spotify.com/album/67wBwMPxu7776dQF5ETTQ9",
+            "coverArt": "https://i.scdn.co/image/1c04c517d34b55d20063e45abb578289a539fedc",
+            "releaseDate": "2018-03-09"
+          },
+          {
+            "id": "7mrSuQ2STzPpd9p4XgLhbT",
+            "name": "Plur Genocide (feat. Lockdown)",
+            "url": "https://open.spotify.com/album/7mrSuQ2STzPpd9p4XgLhbT",
+            "coverArt": "https://i.scdn.co/image/da4baaa03e75c0df88e245da8dbbf6ab745ec88f",
+            "releaseDate": "2018-02-23"
+          },
+          {
+            "id": "5LSqEb2yiUoWM91rUnvDjS",
+            "name": "Azukita (Steve Aoki, Daddy Yankee, Play-N-Skillz & Elvis Crespo) (feat. Elvis Crespo)",
+            "url": "https://open.spotify.com/album/5LSqEb2yiUoWM91rUnvDjS",
+            "coverArt": "https://i.scdn.co/image/e31e580cfe49ac51ba1177e3824a565abbfb3c6c",
+            "releaseDate": "2018-02-02"
+          },
+          {
+            "id": "34RHdfSXlsFSpGMZqAEK0q",
+            "name": "Steve Aoki Presents Kolony (Remixes)",
+            "url": "https://open.spotify.com/album/34RHdfSXlsFSpGMZqAEK0q",
+            "coverArt": "https://i.scdn.co/image/a46b40b6e0898c21710aaf9cf815d6db21b5cd8e",
+            "releaseDate": "2017-12-15"
+          },
+          {
+            "id": "3LpGFc7My7GQCRlnHOjzW9",
+            "name": "Steve Aoki Presents Kolony (Remixes)",
+            "url": "https://open.spotify.com/album/3LpGFc7My7GQCRlnHOjzW9",
+            "coverArt": "https://i.scdn.co/image/a46b40b6e0898c21710aaf9cf815d6db21b5cd8e",
+            "releaseDate": "2017-12-15"
+          },
+          {
+            "id": "0KaQCJshy3j3TKCu59Yh6X",
+            "name": "Smoke My Dope (with Steve Aoki & Lil Uzi Vert) (From Bright: The Album)",
+            "url": "https://open.spotify.com/album/0KaQCJshy3j3TKCu59Yh6X",
+            "coverArt": "https://i.scdn.co/image/9b49e7e6f25a1091b5aa36781f1ca8f480cda67a",
+            "releaseDate": "2017-12-15"
+          },
+          {
+            "id": "4Qq3Cm4Nxx9dleWA1Vr1zp",
+            "name": "What The Funk (feat. Danny Shah) [Steve Aoki Remix]",
+            "url": "https://open.spotify.com/album/4Qq3Cm4Nxx9dleWA1Vr1zp",
+            "coverArt": "https://i.scdn.co/image/3c5fa64b1b3343937417325572edf697e9fcfc63",
+            "releaseDate": "2017-12-08"
+          },
+          {
+            "id": "6mYbgBSqEDunQuFXaBk8SF",
+            "name": "Shine Good (feat. Julimar Santos) [Steve Aoki Remix]",
+            "url": "https://open.spotify.com/album/6mYbgBSqEDunQuFXaBk8SF",
+            "coverArt": "https://i.scdn.co/image/81ab4ba184b909ad7566e7dcdbce0a8989d83b2b",
+            "releaseDate": "2017-12-08"
+          },
+          {
+            "id": "2TpvJhw6RYTTn4eDrAb3eJ",
+            "name": "MIC Drop (feat. Desiigner) [Steve Aoki Remix]",
+            "url": "https://open.spotify.com/album/2TpvJhw6RYTTn4eDrAb3eJ",
+            "coverArt": "https://i.scdn.co/image/81a03ed1ee4187d826e566e4f43f10cfdbf024ea",
+            "releaseDate": "2017-11-24"
+          },
+          {
+            "id": "6HF0FyIRTFv8ZIfptFNmUo",
+            "name": "All Night",
+            "url": "https://open.spotify.com/album/6HF0FyIRTFv8ZIfptFNmUo",
+            "coverArt": "https://i.scdn.co/image/02b7a6507744d4975dece45ba4b257cb67209a80",
+            "releaseDate": "2017-11-17"
+          },
+          {
+            "id": "65bfx4vWwt7dHlFEqkdqCM",
+            "name": "$4,000,000 (feat. Ma$e & Big Gigantic) (feat. Ma$e & Big Gigantic) [Oliver Heldens Remix]",
+            "url": "https://open.spotify.com/album/65bfx4vWwt7dHlFEqkdqCM",
+            "coverArt": "https://i.scdn.co/image/f00044e27263d648eb591dbc31913fd9a674465a",
+            "releaseDate": "2017-11-03"
+          },
+          {
+            "id": "51WStYbzUKG6O0XZd5Ta9x",
+            "name": "One More Light (Steve Aoki Chester Forever Remix)",
+            "url": "https://open.spotify.com/album/51WStYbzUKG6O0XZd5Ta9x",
+            "coverArt": "https://i.scdn.co/image/c5d4c63f928b5daa15aa6b57fa437719b60753af",
+            "releaseDate": "2017-10-25"
+          },
+          {
+            "id": "1n0FjvYPZEciI3zWE06Lct",
+            "name": "Mi Gente (Steve Aoki Remix)",
+            "url": "https://open.spotify.com/album/1n0FjvYPZEciI3zWE06Lct",
+            "coverArt": "https://i.scdn.co/image/1740f45630362a6df57f9d365cbbfa784d255f56",
+            "releaseDate": "2017-10-20"
+          },
+          {
+            "id": "5FJXJVeE04CPfo0QytxfEp",
+            "name": "Darker Than The Light That Never Bleeds (Chester Forever Steve Aoki Remix)",
+            "url": "https://open.spotify.com/album/5FJXJVeE04CPfo0QytxfEp",
+            "coverArt": "https://i.scdn.co/image/317af5e11ccf9ada0b67bb12d7d1fcb9e2381796",
+            "releaseDate": "2017-09-08"
+          },
+          {
+            "id": "7uMQ1YhXvXNW93bHWGikKF",
+            "name": "Steve Aoki Presents Kolony",
+            "url": "https://open.spotify.com/album/7uMQ1YhXvXNW93bHWGikKF",
+            "coverArt": "https://i.scdn.co/image/ea1f25edebb3c29c8639c9dd928bc39e88f8f779",
+            "releaseDate": "2017-07-21"
+          },
+          {
+            "id": "6yRBGmz8cRTEtHXvz9q037",
+            "name": "Lit (feat. Gucci Mane & T-Pain)",
+            "url": "https://open.spotify.com/album/6yRBGmz8cRTEtHXvz9q037",
+            "coverArt": "https://i.scdn.co/image/22432290ef3d13619626622e46bbe38eefe37f36",
+            "releaseDate": "2017-07-07"
+          },
+          {
+            "id": "1RPUN2ONxxjjIIyWU9CJFy",
+            "name": "Night Call (feat. Lil Yachty & Migos)",
+            "url": "https://open.spotify.com/album/1RPUN2ONxxjjIIyWU9CJFy",
+            "coverArt": "https://i.scdn.co/image/18521fd7b1b86c1770f0508881f33741aca1baf1",
+            "releaseDate": "2017-06-16"
+          },
+          {
+            "id": "4NpMHgon5a3kCmTuJ4oc7C",
+            "name": "The Best (Steve Aoki Remix)",
+            "url": "https://open.spotify.com/album/4NpMHgon5a3kCmTuJ4oc7C",
+            "coverArt": "https://i.scdn.co/image/22959cddd7aed16028b651530d1e85ebd3bd49d2",
+            "releaseDate": "2017-05-12"
+          },
+          {
+            "id": "58Q8x1npyYrjr1ecL2Vpzv",
+            "name": "Without U (feat. 2 Chainz)",
+            "url": "https://open.spotify.com/album/58Q8x1npyYrjr1ecL2Vpzv",
+            "coverArt": "https://i.scdn.co/image/15fce56ee9df37897c8a5146d14c20bf5df1f1b9",
+            "releaseDate": "2017-04-28"
+          },
+          {
+            "id": "6lfe9dGFX5LljTSi0dtjLQ",
+            "name": "Just Hold On (Remixes)",
+            "url": "https://open.spotify.com/album/6lfe9dGFX5LljTSi0dtjLQ",
+            "coverArt": "https://i.scdn.co/image/a055529719b309b1102408847d718087a4c58e4e",
+            "releaseDate": "2017-03-24"
+          },
+          {
+            "id": "6NomK9f7zRLOuScvAyI1XX",
+            "name": "Just Hold On",
+            "url": "https://open.spotify.com/album/6NomK9f7zRLOuScvAyI1XX",
+            "coverArt": "https://i.scdn.co/image/3f31e79c320ece8b2d3763b717cf256d1f77bc17",
+            "releaseDate": "2016-12-10"
+          },
+          {
+            "id": "35SlXuFs1ZZTL5mU2PMclU",
+            "name": "Welcome to the Black Parade (Steve Aoki 10th Anniversary Remix)",
+            "url": "https://open.spotify.com/album/35SlXuFs1ZZTL5mU2PMclU",
+            "coverArt": "https://i.scdn.co/image/2daebb08ceff9a50a294da672914970243a5b570",
+            "releaseDate": "2016-11-28"
+          },
+          {
+            "id": "5n5ibNFAzDiCujbs4NXXZU",
+            "name": "Back 2 U (feat. WALK THE MOON) [William Black Remix]",
+            "url": "https://open.spotify.com/album/5n5ibNFAzDiCujbs4NXXZU",
+            "coverArt": "https://i.scdn.co/image/55f1ca0ccf6647b72b080e5bdb014dfa411f2e15",
+            "releaseDate": "2016-11-18"
+          },
+          {
+            "id": "7qGE03NpCmSno605Tn92eV",
+            "name": "What We Started (feat. BullySongs)",
+            "url": "https://open.spotify.com/album/7qGE03NpCmSno605Tn92eV",
+            "coverArt": "https://i.scdn.co/image/7229500b96c527b24692858c0e265d899ba18aec",
+            "releaseDate": "2016-11-04"
+          },
+          {
+            "id": "2TsbVSnijetugD1VZfzcTq",
+            "name": "Supernova (Interstellar) [Radio Edit]",
+            "url": "https://open.spotify.com/album/2TsbVSnijetugD1VZfzcTq",
+            "coverArt": "https://i.scdn.co/image/db83c87e7015604c58a7da6ad637cbfddcb018c3",
+            "releaseDate": "2016-09-30"
+          },
+          {
+            "id": "0moVuA1zxOGd1TZqaMXMti",
+            "name": "How Else (feat. Rich The Kid & ILoveMakonnen) [Remixes]",
+            "url": "https://open.spotify.com/album/0moVuA1zxOGd1TZqaMXMti",
+            "coverArt": "https://i.scdn.co/image/47d86a07ce9b6717d20aeef31aa71dae58a3c5b0",
+            "releaseDate": "2016-09-16"
+          },
+          {
+            "id": "3UfFBZ8671xN3fnuXgPXOC",
+            "name": "Can't Go Home (feat. Adam Lambert) [Remixes]",
+            "url": "https://open.spotify.com/album/3UfFBZ8671xN3fnuXgPXOC",
+            "coverArt": "https://i.scdn.co/image/ab5610a7b217c7c21075652b384ea4580101d901",
+            "releaseDate": "2016-08-26"
+          },
+          {
+            "id": "5sFrSXuKVYJfRsWoAfR4hc",
+            "name": "Back 2 U (feat. WALK THE MOON) [Remixes]",
+            "url": "https://open.spotify.com/album/5sFrSXuKVYJfRsWoAfR4hc",
+            "coverArt": "https://i.scdn.co/image/55f1ca0ccf6647b72b080e5bdb014dfa411f2e15",
+            "releaseDate": "2016-08-05"
+          },
+          {
+            "id": "6Pd8kpxNZJxRXjs16NA83D",
+            "name": "4OKI",
+            "url": "https://open.spotify.com/album/6Pd8kpxNZJxRXjs16NA83D",
+            "coverArt": "https://i.scdn.co/image/f94c4d8b65702d7843e75bba7a7e9a727a96d48f",
+            "releaseDate": "2016-07-29"
+          },
+          {
+            "id": "1CWG3c3iL9iffWr3lbYGi4",
+            "name": "Kids",
+            "url": "https://open.spotify.com/album/1CWG3c3iL9iffWr3lbYGi4",
+            "coverArt": "https://i.scdn.co/image/94fa7c51bc9065385c468b334a52498a547927fb",
+            "releaseDate": "2016-07-26"
+          },
+          {
+            "id": "4JVdNaJhGZeuzJqOFo4BvJ",
+            "name": "Bring The Funk Back",
+            "url": "https://open.spotify.com/album/4JVdNaJhGZeuzJqOFo4BvJ",
+            "coverArt": "https://i.scdn.co/image/ab11204e4e3663d3d53e551b3ca5aa65252e7689",
+            "releaseDate": "2016-07-22"
+          },
+          {
+            "id": "7EeaevX4KlWbix2R9oLiLx",
+            "name": "Dope Girlz",
+            "url": "https://open.spotify.com/album/7EeaevX4KlWbix2R9oLiLx",
+            "coverArt": "https://i.scdn.co/image/ed05539fd245c07ded5bf2bc354ff5b1f72cbb07",
+            "releaseDate": "2016-07-15"
+          },
+          {
+            "id": "5agkPeI4qTpeiAy5s3TpRA",
+            "name": "ILYSM",
+            "url": "https://open.spotify.com/album/5agkPeI4qTpeiAy5s3TpRA",
+            "coverArt": "https://i.scdn.co/image/43680964c0882d2daf143f049999d315c28b4356",
+            "releaseDate": "2016-07-08"
+          },
+          {
+            "id": "2znRh11EN9xEBTfliKw2AT",
+            "name": "How Else (feat. Rich The Kid & ILoveMakonnen)",
+            "url": "https://open.spotify.com/album/2znRh11EN9xEBTfliKw2AT",
+            "coverArt": "https://i.scdn.co/image/a1f4748f81f6c75e12862f0119e0c5b30345eb13",
+            "releaseDate": "2016-06-24"
+          },
+          {
+            "id": "1dapyycFT2gKbyGC758y81",
+            "name": "How Else (feat. Rich The Kid & ILoveMakonnen)",
+            "url": "https://open.spotify.com/album/1dapyycFT2gKbyGC758y81",
+            "coverArt": "https://i.scdn.co/image/090fb8b17bbdc7db195ff1c10ee265d365238dc0",
+            "releaseDate": "2016-06-24"
+          },
+          {
+            "id": "4ZfTPNeqmobT7mopG2PR3V",
+            "name": "Back 2 U (feat. WALK THE MOON)",
+            "url": "https://open.spotify.com/album/4ZfTPNeqmobT7mopG2PR3V",
+            "coverArt": "https://i.scdn.co/image/f3c77a934afd847839983be11de200c0f8c1b491",
+            "releaseDate": "2016-05-19"
+          },
+          {
+            "id": "6GdAKB6SIprtDiSrSzNZWX",
+            "name": "Melody (Radio Mix)",
+            "url": "https://open.spotify.com/album/6GdAKB6SIprtDiSrSzNZWX",
+            "coverArt": "https://i.scdn.co/image/b1549b3601d789e5f47616162f64b794cbc00268",
+            "releaseDate": "2016-04-29"
+          },
+          {
+            "id": "5lXZdPOjp9Mt5RrPae0NYv",
+            "name": "Can't Go Home (feat. Adam Lambert) [Radio Edit]",
+            "url": "https://open.spotify.com/album/5lXZdPOjp9Mt5RrPae0NYv",
+            "coverArt": "https://i.scdn.co/image/a88524287a5ba002d3a323bcf00ac9605ac87b8c",
+            "releaseDate": "2016-03-25"
+          },
+          {
+            "id": "0NoYsLYQAfrD0L00MjB2qP",
+            "name": "Feel (The Power Of Now)",
+            "url": "https://open.spotify.com/album/0NoYsLYQAfrD0L00MjB2qP",
+            "coverArt": "https://i.scdn.co/image/52172d84bace03777837879080d44e5af4a50183",
+            "releaseDate": "2016-03-11"
+          },
+          {
+            "id": "1N6exS5KqtzV02I2RCNR2G",
+            "name": "Youth Dem (Turn Up) (feat. Snoop Lion) [Remixes]",
+            "url": "https://open.spotify.com/album/1N6exS5KqtzV02I2RCNR2G",
+            "coverArt": "https://i.scdn.co/image/6c2abe8b101de629e244ac059a9177d3d20891f0",
+            "releaseDate": "2016-03-04"
+          },
+          {
+            "id": "0PiBNOEBsMTiezfMn1lxrO",
+            "name": "Light Years (feat. Rivers Cuomo) [Remixes]",
+            "url": "https://open.spotify.com/album/0PiBNOEBsMTiezfMn1lxrO",
+            "coverArt": "https://i.scdn.co/image/ebe8f046df943105198a4903c89e240947471c8f",
+            "releaseDate": "2016-03-04"
+          },
+          {
+            "id": "3STGaJ286ufKPzrVqO633A",
+            "name": "Hysteria (feat. Matthew Koma) [Remixes]",
+            "url": "https://open.spotify.com/album/3STGaJ286ufKPzrVqO633A",
+            "coverArt": "https://i.scdn.co/image/0ed40bc95e127ac82fd30d24b98a8587d5956a94",
+            "releaseDate": "2016-02-12"
+          },
+          {
+            "id": "6nIyQWhwmhJAEedtoEwT4i",
+            "name": "Heaven On Earth (feat. Sherry St. Germain) [The Remixes]",
+            "url": "https://open.spotify.com/album/6nIyQWhwmhJAEedtoEwT4i",
+            "coverArt": "https://i.scdn.co/image/1c2d54434666567d53dc3412df8779119c7ba581",
+            "releaseDate": "2016-01-29"
+          },
+          {
+            "id": "0j1ttvApj2y4Jqrkc4SMdT",
+            "name": "The Power of Now (Crystal Lake Remix)",
+            "url": "https://open.spotify.com/album/0j1ttvApj2y4Jqrkc4SMdT",
+            "coverArt": "https://i.scdn.co/image/95aa1949bbeedca6a02ee0fe6b130c89b4379053",
+            "releaseDate": "2015-12-18"
+          },
+          {
+            "id": "2LNF9F04mkpGJKgD2H5pYv",
+            "name": "Home We'll Go (Take My Hand) [Remixes]",
+            "url": "https://open.spotify.com/album/2LNF9F04mkpGJKgD2H5pYv",
+            "coverArt": "https://i.scdn.co/image/d115cd9b03d89302b0964435a0cfebb5390ed130",
+            "releaseDate": "2015-12-11"
+          },
+          {
+            "id": "3Zr2P1HhWWzf2pmKlr5J8o",
+            "name": "Lightning Strikes (Remixes)",
+            "url": "https://open.spotify.com/album/3Zr2P1HhWWzf2pmKlr5J8o",
+            "coverArt": "https://i.scdn.co/image/a6d58f0cd361e26e5034eb732a53f6a3044c9918",
+            "releaseDate": "2015-11-20"
+          },
+          {
+            "id": "5JKx4rBs1E4MWe2uJgFcry",
+            "name": "The Shape (Steve Aoki Edit)",
+            "url": "https://open.spotify.com/album/5JKx4rBs1E4MWe2uJgFcry",
+            "coverArt": "https://i.scdn.co/image/dbdf07d5e79f6129ed7e03b1e49659e17223c0d6",
+            "releaseDate": "2015-10-06"
+          },
+          {
+            "id": "157JjdX9ocNiUg85KtqMrg",
+            "name": "The Power of Now",
+            "url": "https://open.spotify.com/album/157JjdX9ocNiUg85KtqMrg",
+            "coverArt": "https://i.scdn.co/image/f3b47e75f6eca897d475d1748d81e7be28047c0b",
+            "releaseDate": "2015-10-02"
+          },
+          {
+            "id": "1jCnqnJdjCvP3XvbQttVTK",
+            "name": "Neon Future Odyssey",
+            "url": "https://open.spotify.com/album/1jCnqnJdjCvP3XvbQttVTK",
+            "coverArt": "https://i.scdn.co/image/809c5436061fd4735f8e0132a96ef62c8aea34fa",
+            "releaseDate": "2015-10-02"
+          },
+          {
+            "id": "3YOrbkvihGzHx2hNWrNB4K",
+            "name": "Darker Than Blood (feat. Linkin Park) [Remixes]",
+            "url": "https://open.spotify.com/album/3YOrbkvihGzHx2hNWrNB4K",
+            "coverArt": "https://i.scdn.co/image/20a3ab8d7329aa980f94f80f2df716165bf21e83",
+            "releaseDate": "2015-08-28"
+          },
+          {
+            "id": "4UHYwe4606fDvuYBTxACZC",
+            "name": "La Prisión (feat. Steve Aoki) [Remix]",
+            "url": "https://open.spotify.com/album/4UHYwe4606fDvuYBTxACZC",
+            "coverArt": "https://i.scdn.co/image/377c0f43d15a31e41948e53787c0ad4c1544eeb4",
+            "releaseDate": "2015-07-24"
+          },
+          {
+            "id": "1on1I9aUZoDMbDrOM53j5g",
+            "name": "Neon Future (Remixes)",
+            "url": "https://open.spotify.com/album/1on1I9aUZoDMbDrOM53j5g",
+            "coverArt": "https://i.scdn.co/image/113d04e58aa617f6647cd8f3187c40d0740e9cb4",
+            "releaseDate": "2015-07-17"
+          },
+          {
+            "id": "4OQmBajMcx0cRBtG5FojJu",
+            "name": "I Love It When You Cry (Moxoki) [Remixes]",
+            "url": "https://open.spotify.com/album/4OQmBajMcx0cRBtG5FojJu",
+            "coverArt": "https://i.scdn.co/image/fc4a5d6e66bac8a9eb351e477e0a643e69493158",
+            "releaseDate": "2015-06-16"
+          },
+          {
+            "id": "3sMR5aEMRrKwonHEA2VYF5",
+            "name": "Afroki (feat. Bonnie McKee) [Remixes]",
+            "url": "https://open.spotify.com/album/3sMR5aEMRrKwonHEA2VYF5",
+            "coverArt": "https://i.scdn.co/image/3899880124c3334b62de6ba3a38d70f4cd7cedb9",
+            "releaseDate": "2015-06-01"
+          },
+          {
+            "id": "4Bx8NxZeTAC53GjxVxXp2W",
+            "name": "Neon Future II",
+            "url": "https://open.spotify.com/album/4Bx8NxZeTAC53GjxVxXp2W",
+            "coverArt": "https://i.scdn.co/image/85c7c8788da13bb078719f3aa0e84bf424c3a8de",
+            "releaseDate": "2015-05-11"
+          },
+          {
+            "id": "68vzCb8CzlIbVEyYiujppe",
+            "name": "Hysteria",
+            "url": "https://open.spotify.com/album/68vzCb8CzlIbVEyYiujppe",
+            "coverArt": "https://i.scdn.co/image/85c7c8788da13bb078719f3aa0e84bf424c3a8de",
+            "releaseDate": "2015-04-27"
+          },
+          {
+            "id": "3YQQB41J1XGjkgzqHz5s0c",
+            "name": "Back To Earth (Remixes)",
+            "url": "https://open.spotify.com/album/3YQQB41J1XGjkgzqHz5s0c",
+            "coverArt": "https://i.scdn.co/image/b6427de008b93545ce67939d47fbedce2ef9cdfa",
+            "releaseDate": "2015-04-17"
+          },
+          {
+            "id": "24fA2PIGG6mstE6MIjg8RL",
+            "name": "Darker Than Blood",
+            "url": "https://open.spotify.com/album/24fA2PIGG6mstE6MIjg8RL",
+            "coverArt": "https://i.scdn.co/image/d98a2361f3baf354b0ced9487a58e1c6198dabe4",
+            "releaseDate": "2015-04-14"
+          },
+          {
+            "id": "4A1CZ5GMKRgpmMDWmnj91W",
+            "name": "Free The Madness (feat. Machine Gun Kelly) [Remixes]",
+            "url": "https://open.spotify.com/album/4A1CZ5GMKRgpmMDWmnj91W",
+            "coverArt": "https://i.scdn.co/image/57828d2a0bc5b02542f052b1de806ceae9d50613",
+            "releaseDate": "2015-03-15"
+          },
+          {
+            "id": "21XQAQKh0F4NpHdUNvt67c",
+            "name": "Get Me Outta Here (feat. Flux Pavilion) [Remixes]",
+            "url": "https://open.spotify.com/album/21XQAQKh0F4NpHdUNvt67c",
+            "coverArt": "https://i.scdn.co/image/4460d07f2632cc04082124f84a3392da1b372584",
+            "releaseDate": "2015-02-17"
+          },
+          {
+            "id": "6toQMR7r6zpaZxe9zULlMZ",
+            "name": "I Love It When You Cry (Moxoki) [Radio Edit]",
+            "url": "https://open.spotify.com/album/6toQMR7r6zpaZxe9zULlMZ",
+            "coverArt": "https://i.scdn.co/image/6b8dea3e7389960de06f959599d5f3dd88eb6545",
+            "releaseDate": "2015-02-10"
+          },
+          {
+            "id": "3LLhNlCpem3vZsdRdrsXJt",
+            "name": "Born To Get Wild (feat. will.i.am) [Remixes]",
+            "url": "https://open.spotify.com/album/3LLhNlCpem3vZsdRdrsXJt",
+            "coverArt": "https://i.scdn.co/image/4597739b916d7cf424f0e27f5c585c8f4c95b6d5",
+            "releaseDate": "2014-12-16"
+          },
+          {
+            "id": "0SmMMkJeizNShDYxvDisem",
+            "name": "Neon Future I - Commentary",
+            "url": "https://open.spotify.com/album/0SmMMkJeizNShDYxvDisem",
+            "coverArt": "https://i.scdn.co/image/0b1ff9ddbe2e3fcb85d1b76a694b100ea3543fc3",
+            "releaseDate": "2014-09-30"
+          },
+          {
+            "id": "3KYFjFzw34AhmlxQC8r5W6",
+            "name": "Neon Future I",
+            "url": "https://open.spotify.com/album/3KYFjFzw34AhmlxQC8r5W6",
+            "coverArt": "https://i.scdn.co/image/0b1ff9ddbe2e3fcb85d1b76a694b100ea3543fc3",
+            "releaseDate": "2014-09-29"
+          },
+          {
+            "id": "5Qy5ZLRy8g27aNXxQhqe5N",
+            "name": "Free the Madness (feat. Machine Gun Kelly) [Commentary]",
+            "url": "https://open.spotify.com/album/5Qy5ZLRy8g27aNXxQhqe5N",
+            "coverArt": "https://i.scdn.co/image/41f053f27abc7d195ca5e9b676d88373ebd3a617",
+            "releaseDate": "2014-09-23"
+          },
+          {
+            "id": "1bFb35D3BGVH2wRIgh4dre",
+            "name": "Rage the Night Away (feat. Waka Flocka Flame) [Commentary]",
+            "url": "https://open.spotify.com/album/1bFb35D3BGVH2wRIgh4dre",
+            "coverArt": "https://i.scdn.co/image/427e04035b4057f42f5d604f51eb63e6ffb2a852",
+            "releaseDate": "2014-09-23"
+          },
+          {
+            "id": "4ynbMZa9l2xAKzTqUaRj5S",
+            "name": "Delirious (Boneless) [Remixes]",
+            "url": "https://open.spotify.com/album/4ynbMZa9l2xAKzTqUaRj5S",
+            "coverArt": "https://i.scdn.co/image/9c50ec692dd1d914e361c9364a88cf4d43786c65",
+            "releaseDate": "2014-09-22"
+          },
+          {
+            "id": "6lvt1aKx06hrTURP4mEMiW",
+            "name": "Get Me Outta Here (feat. Flux Pavilion) [Commentary]",
+            "url": "https://open.spotify.com/album/6lvt1aKx06hrTURP4mEMiW",
+            "coverArt": "https://i.scdn.co/image/b91e10d7a5ecbc7b7263803058f85b78a849a9f5",
+            "releaseDate": "2014-09-19"
+          },
+          {
+            "id": "3ymAIZiV7RoYx9GCaenRMC",
+            "name": "Delirious (Boneless) (feat. Kid Ink) [Commentary]",
+            "url": "https://open.spotify.com/album/3ymAIZiV7RoYx9GCaenRMC",
+            "coverArt": "https://i.scdn.co/image/c926e0acacedc375f33549f7757e227dbd346ef5",
+            "releaseDate": "2014-09-17"
+          },
+          {
+            "id": "4qnmNA41MjgWU68Ch8ppWF",
+            "name": "Get Me Outta Here (feat. Flux Pavilion)",
+            "url": "https://open.spotify.com/album/4qnmNA41MjgWU68Ch8ppWF",
+            "coverArt": "https://i.scdn.co/image/b91e10d7a5ecbc7b7263803058f85b78a849a9f5",
+            "releaseDate": "2014-09-15"
+          },
+          {
+            "id": "1IKwPLtIe21pLznAenifCM",
+            "name": "Rage the Night Away (Remixes) (feat. Waka Flocka Flame)",
+            "url": "https://open.spotify.com/album/1IKwPLtIe21pLznAenifCM",
+            "coverArt": "https://i.scdn.co/image/deb4d39bccae79800520187bd17179bb87e07305",
+            "releaseDate": "2014-08-25"
+          },
+          {
+            "id": "2qcRNlyMoTIFICjk4WMMQE",
+            "name": "Delirious (Boneless) (feat. Kid Ink)",
+            "url": "https://open.spotify.com/album/2qcRNlyMoTIFICjk4WMMQE",
+            "coverArt": "https://i.scdn.co/image/c926e0acacedc375f33549f7757e227dbd346ef5",
+            "releaseDate": "2014-06-23"
+          },
+          {
+            "id": "6Vkwuu2Xu8QFvEEDoqsswF",
+            "name": "Free the Madness (feat. Machine Gun Kelly)",
+            "url": "https://open.spotify.com/album/6Vkwuu2Xu8QFvEEDoqsswF",
+            "coverArt": "https://i.scdn.co/image/41f053f27abc7d195ca5e9b676d88373ebd3a617",
+            "releaseDate": "2014-06-23"
+          },
+          {
+            "id": "1ECrpPHRkWLnKlVZTAtlxJ",
+            "name": "Bring You To Life (Transcend) [Remixes, Pt. 2]",
+            "url": "https://open.spotify.com/album/1ECrpPHRkWLnKlVZTAtlxJ",
+            "coverArt": "https://i.scdn.co/image/02f72aee8c9c3df02f262d9b4b8e679082e1fa7e",
+            "releaseDate": "2014-06-13"
+          },
+          {
+            "id": "0vsrVvW3lzpQyLj8fHL947",
+            "name": "Rage the Night Away (feat. Waka Flocka Flame)",
+            "url": "https://open.spotify.com/album/0vsrVvW3lzpQyLj8fHL947",
+            "coverArt": "https://i.scdn.co/image/06b65509f32a96970714c81b086709db77f11bab",
+            "releaseDate": "2014-04-21"
+          },
+          {
+            "id": "6MqRddRy7pNc77sFtxQBej",
+            "name": "Freak",
+            "url": "https://open.spotify.com/album/6MqRddRy7pNc77sFtxQBej",
+            "coverArt": "https://i.scdn.co/image/a894a61714f23b78dc1ed7b567ee9bd36ad00aa3",
+            "releaseDate": "2014-03-19"
+          },
+          {
+            "id": "7HbglxdnNLv7Kp9MoS4Sa4",
+            "name": "Feedback",
+            "url": "https://open.spotify.com/album/7HbglxdnNLv7Kp9MoS4Sa4",
+            "coverArt": "https://i.scdn.co/image/c2cb5aa9c8b31ede8a45d579aaecc9da0183252a",
+            "releaseDate": "2014-02-07"
+          },
+          {
+            "id": "3pAK9CBxoSpsJuV4NHzZTf",
+            "name": "Can't Stop The Swag",
+            "url": "https://open.spotify.com/album/3pAK9CBxoSpsJuV4NHzZTf",
+            "coverArt": "https://i.scdn.co/image/41471b57d786a4b007da14254767a415eda1c94d",
+            "releaseDate": "2014-01-28"
+          },
+          {
+            "id": "1q0ssuc2Lw1DkzYFwtgxM2",
+            "name": "A LIGHT THAT NEVER COMES REMIX",
+            "url": "https://open.spotify.com/album/1q0ssuc2Lw1DkzYFwtgxM2",
+            "coverArt": "https://i.scdn.co/image/127dbd9546fd2bbd004b1a8c78448888c7b93764",
+            "releaseDate": "2014-01-21"
+          },
+          {
+            "id": "592sPr6HLtk6W5xJwJB3RR",
+            "name": "Flight",
+            "url": "https://open.spotify.com/album/592sPr6HLtk6W5xJwJB3RR",
+            "coverArt": "https://i.scdn.co/image/0e9a0561508c6229173077ad221942a07ce542be",
+            "releaseDate": "2013-12-16"
+          },
+          {
+            "id": "3tk8NaRPD6Ly2w4rJlyXA8",
+            "name": "Bring You To Life (Transcend) [feat. RAS] [Remixes]",
+            "url": "https://open.spotify.com/album/3tk8NaRPD6Ly2w4rJlyXA8",
+            "coverArt": "https://i.scdn.co/image/c28d3f8de1f4ce67ae657c107ec19b8242a32966",
+            "releaseDate": "2013-12-03"
+          },
+          {
+            "id": "65SdnSaylYmDGMc5vqw0RZ",
+            "name": "Bring You To Life (Transcend) [feat. RAS]",
+            "url": "https://open.spotify.com/album/65SdnSaylYmDGMc5vqw0RZ",
+            "coverArt": "https://i.scdn.co/image/9ac5cbb949e16896f1d122f78fb56d6b3cdcb359",
+            "releaseDate": "2013-10-15"
+          },
+          {
+            "id": "2aXItG3t99T9Siy4kXae5P",
+            "name": "Boneless (Remixes)",
+            "url": "https://open.spotify.com/album/2aXItG3t99T9Siy4kXae5P",
+            "coverArt": "https://i.scdn.co/image/fcafb83c3efa1aaa8a505dea72ba24d12f8b4582",
+            "releaseDate": "2013-09-09"
+          },
+          {
+            "id": "1SgH7rDTCgQ4UwqWnKBdbF",
+            "name": "Beat Down (feat. Iggy Azalea)",
+            "url": "https://open.spotify.com/album/1SgH7rDTCgQ4UwqWnKBdbF",
+            "coverArt": "https://i.scdn.co/image/3d06502212d39c8fc0c8cd1f1f05e6a0d1f1c22d",
+            "releaseDate": "2013-07-22"
+          },
+          {
+            "id": "1GtIj1n3JBCGZ6sBWLKM2V",
+            "name": "Steve Jobs (Mason Remix)",
+            "url": "https://open.spotify.com/album/1GtIj1n3JBCGZ6sBWLKM2V",
+            "coverArt": "https://i.scdn.co/image/cc2f4ddc4a493fa12b6e92714aa1b13443905e8a",
+            "releaseDate": "2013-07-22"
+          },
+          {
+            "id": "6TtwheWZkRRvYSX1vHOCFL",
+            "name": "Wonderland (Remixed)",
+            "url": "https://open.spotify.com/album/6TtwheWZkRRvYSX1vHOCFL",
+            "coverArt": "https://i.scdn.co/image/b25c57f66e7c23c22d1bb118dd23b27eb086ded3",
+            "releaseDate": "2013-07-22"
+          },
+          {
+            "id": "48XEYYOMnsnYlOPJ3z68O0",
+            "name": "The Kids Will Have Their Say (feat. Sick Boy with former members of The Exploited and Die Kreuzen)",
+            "url": "https://open.spotify.com/album/48XEYYOMnsnYlOPJ3z68O0",
+            "coverArt": "https://i.scdn.co/image/df3e8c4078d3552ea79384bf03407ae3270acc7c",
+            "releaseDate": "2013-07-22"
+          },
+          {
+            "id": "4brWtS9xkyddHqra9VeNTJ",
+            "name": "Control Freak (feat. Blaqstarr & Kay)",
+            "url": "https://open.spotify.com/album/4brWtS9xkyddHqra9VeNTJ",
+            "coverArt": "https://i.scdn.co/image/7e5bf080fbae1bdfdae6f9a1b6e03d2e9b70f0f8",
+            "releaseDate": "2013-07-22"
+          },
+          {
+            "id": "5YejGxYHa7OMi2geGLmTAv",
+            "name": "Steve Jobs (feat. Angger Dimas)",
+            "url": "https://open.spotify.com/album/5YejGxYHa7OMi2geGLmTAv",
+            "coverArt": "https://i.scdn.co/image/3282efa10593b299cc4fc3a2f53c7ac0f870e5a9",
+            "releaseDate": "2013-07-22"
+          },
+          {
+            "id": "3sdIjVJb4t5KGdqEhbYVKd",
+            "name": "Cudi The Kid (feat. Kid Cudi & Travis Barker)",
+            "url": "https://open.spotify.com/album/3sdIjVJb4t5KGdqEhbYVKd",
+            "coverArt": "https://i.scdn.co/image/bd1bbad5f8c1790f3125363efe4ac45ce48b0caa",
+            "releaseDate": "2013-07-22"
+          },
+          {
+            "id": "1IsLvEfw9OJ21zg1vC52CG",
+            "name": "Come With Me (Deadmeat) [Remixes]",
+            "url": "https://open.spotify.com/album/1IsLvEfw9OJ21zg1vC52CG",
+            "coverArt": "https://i.scdn.co/image/36234b3ef18800a8c2c470ff225c8e78c2dcdcdd",
+            "releaseDate": "2013-07-22"
+          },
+          {
+            "id": "60RNEI12hR2SY9Q4Mv0Rgf",
+            "name": "Beat Down (feat. Iggy Azalea)",
+            "url": "https://open.spotify.com/album/60RNEI12hR2SY9Q4Mv0Rgf",
+            "coverArt": "https://i.scdn.co/image/25d998e35faab94e52d422f1ced2d0c29f43fbc7",
+            "releaseDate": "2013-07-22"
+          },
+          {
+            "id": "2vKbV0f0RDlKYxvod8sqj1",
+            "name": "Emergency (feat. Lil Jon & Chiddy Bang)",
+            "url": "https://open.spotify.com/album/2vKbV0f0RDlKYxvod8sqj1",
+            "coverArt": "https://i.scdn.co/image/dd9c086315d1162af8e85f8ac35f7da0d06f2e7a",
+            "releaseDate": "2013-07-22"
+          },
+          {
+            "id": "6fUAjMtbTDlgq6FOTDLVme",
+            "name": "Singularity",
+            "url": "https://open.spotify.com/album/6fUAjMtbTDlgq6FOTDLVme",
+            "coverArt": "https://i.scdn.co/image/537d8e24c5a7cf873867e0aad29b64314b5f32d6",
+            "releaseDate": "2013-07-22"
+          },
+          {
+            "id": "42ETocUW1Tq0Zpi7hA1Bxe",
+            "name": "Ladi Dadi (feat. Wynter Gordon)",
+            "url": "https://open.spotify.com/album/42ETocUW1Tq0Zpi7hA1Bxe",
+            "coverArt": "https://i.scdn.co/image/c628539d476055a844ce4e94f4a4d844c5b45e56",
+            "releaseDate": "2013-07-22"
+          },
+          {
+            "id": "5xagx90OMTz34wCyBnNCZY",
+            "name": "Heartbreaker (Nadastrom Remix)",
+            "url": "https://open.spotify.com/album/5xagx90OMTz34wCyBnNCZY",
+            "coverArt": "https://i.scdn.co/image/87ccc82028fa0a1c6008f509db61d3d48f8f2887",
+            "releaseDate": "2013-07-22"
+          },
+          {
+            "id": "2YSoUhFpBVlDQrTtlWLbZd",
+            "name": "Singularity (Remixes)",
+            "url": "https://open.spotify.com/album/2YSoUhFpBVlDQrTtlWLbZd",
+            "coverArt": "https://i.scdn.co/image/5e68acfce63e9200e41921f87462b1e64161dd44",
+            "releaseDate": "2013-05-13"
+          },
+          {
+            "id": "42tP8vjIvHQzA28jG8Inl5",
+            "name": "Ohh (Remixes)",
+            "url": "https://open.spotify.com/album/42tP8vjIvHQzA28jG8Inl5",
+            "coverArt": "https://i.scdn.co/image/4d94fa59b2182fbcca22f59a272fd5518d58db35",
+            "releaseDate": "2013-03-25"
+          },
+          {
+            "id": "0E6WYFDaw2qP8gA7PLVvit",
+            "name": "Phat Brahms (Remixes)",
+            "url": "https://open.spotify.com/album/0E6WYFDaw2qP8gA7PLVvit",
+            "coverArt": "https://i.scdn.co/image/d35e2e033271a8ccd3646093448a2854e8fffffc",
+            "releaseDate": "2013-02-05"
+          },
+          {
+            "id": "4wkPR407KVEBAP93nn3RN3",
+            "name": "It's The End Of The World As We Know It EP",
+            "url": "https://open.spotify.com/album/4wkPR407KVEBAP93nn3RN3",
+            "coverArt": "https://i.scdn.co/image/bd34d65f1def0ae2c54359c4fc71ec32249ffe83",
+            "releaseDate": "2012-12-11"
+          },
+          {
+            "id": "0Es0ZWsnpKhZiRMMiMHYFG",
+            "name": "Phat Brahms",
+            "url": "https://open.spotify.com/album/0Es0ZWsnpKhZiRMMiMHYFG",
+            "coverArt": "https://i.scdn.co/image/e513e0dc013522f3d4ac3422daeaa2400fc38377",
+            "releaseDate": "2012-10-02"
+          },
+          {
+            "id": "4nRi2gsb2J8hDSXaC2cyXO",
+            "name": "Tornado (Remixes)",
+            "url": "https://open.spotify.com/album/4nRi2gsb2J8hDSXaC2cyXO",
+            "coverArt": "https://i.scdn.co/image/f6e280f50949bfecff07cb53d158de8020cf0c29",
+            "releaseDate": "2012-09-11"
+          },
+          {
+            "id": "1JSY6OcUsD0SeAJgDRupfG",
+            "name": "Wonderland",
+            "url": "https://open.spotify.com/album/1JSY6OcUsD0SeAJgDRupfG",
+            "coverArt": "https://i.scdn.co/image/089972898ea03ed01b1859eb765a007e15b605dc",
+            "releaseDate": "2012"
+          },
+          {
+            "id": "4luA0wf1L052vjEZQwUTGW",
+            "name": "Tornado",
+            "url": "https://open.spotify.com/album/4luA0wf1L052vjEZQwUTGW",
+            "coverArt": "https://i.scdn.co/image/ef8dcc906d876d0279756a4c9312ed1e6f310772",
+            "releaseDate": "2011-11-29"
+          },
+          {
+            "id": "4BnyVVSNrKPT34YJx7hhe3",
+            "name": "Wake Up Call (Remixes)",
+            "url": "https://open.spotify.com/album/4BnyVVSNrKPT34YJx7hhe3",
+            "coverArt": "https://i.scdn.co/image/4ec78df860074a6861bc33b8505079e83b2b9b7c",
+            "releaseDate": "2011-02-22"
+          },
+          {
+            "id": "6GiZh2fglnX4itTt0o2rI3",
+            "name": "Ladi Dadi (Noisestorm Remix)",
+            "url": "https://open.spotify.com/album/6GiZh2fglnX4itTt0o2rI3",
+            "coverArt": "https://i.scdn.co/image/4d81a3511789db422c435fe05a168bb278356234",
+            "releaseDate": "2011"
+          },
+          {
+            "id": "7F3L4psFR18cVsWjI1NYmO",
+            "name": "Earthquakey People (feat. Rivers Cuomo)",
+            "url": "https://open.spotify.com/album/7F3L4psFR18cVsWjI1NYmO",
+            "coverArt": "https://i.scdn.co/image/ea2c1299908776b1f0c3c439cecc5f31ba9a34d7",
+            "releaseDate": "2011"
+          },
+          {
+            "id": "7kzCLuZvslR6gl12NR5yAm",
+            "name": "Turbulence (feat. Lil Jon) [Radio Edit]",
+            "url": "https://open.spotify.com/album/7kzCLuZvslR6gl12NR5yAm",
+            "coverArt": "https://i.scdn.co/image/69e6c195ca30409bbc2824e523455b570646a0c0",
+            "releaseDate": "2011"
+          },
+          {
+            "id": "0peHFxEbaz4sGmKEOczCRO",
+            "name": "Ladi Dadi (Pt.2) (feat. Wynter Gordon)",
+            "url": "https://open.spotify.com/album/0peHFxEbaz4sGmKEOczCRO",
+            "coverArt": "https://i.scdn.co/image/782bf41fb010547e613640e17073c2eeac13254d",
+            "releaseDate": "2011"
+          },
+          {
+            "id": "0eueEwLvkysEA9P1zqWV7G",
+            "name": "No Beef",
+            "url": "https://open.spotify.com/album/0eueEwLvkysEA9P1zqWV7G",
+            "coverArt": "https://i.scdn.co/image/d5e8bbe01fbc5971f01e2fc00c47552a854aebd9",
+            "releaseDate": "2011"
+          },
+          {
+            "id": "4cmKDRbPlW5wyceLRoYPII",
+            "name": "Turbulence (feat. Lil Jon)",
+            "url": "https://open.spotify.com/album/4cmKDRbPlW5wyceLRoYPII",
+            "coverArt": "https://i.scdn.co/image/b357ffd1bde8d6c89c41d5b09de354b623236f49",
+            "releaseDate": "2011"
+          },
+          {
+            "id": "5zEEPRgeDkfke4RcHwBnnR",
+            "name": "Earthquakey People (feat. Rivers Cuomo)",
+            "url": "https://open.spotify.com/album/5zEEPRgeDkfke4RcHwBnnR",
+            "coverArt": "https://i.scdn.co/image/71758a46dbecf9aa81441d12f698588675b3cdbb",
+            "releaseDate": "2011"
+          },
+          {
+            "id": "1nbarLeJDzE4PsPQTN5IW4",
+            "name": "No Beef (Manufactured Superstars, Jquintel and Jeziel Quintela Remix)",
+            "url": "https://open.spotify.com/album/1nbarLeJDzE4PsPQTN5IW4",
+            "coverArt": "https://i.scdn.co/image/7df1dc092f7dec0ae6d0afa1e1812c003ca73330",
+            "releaseDate": "2011"
+          },
+          {
+            "id": "1t54r62JlGKJhv0Y56qWyg",
+            "name": "BRRRAT! (Remixes)",
+            "url": "https://open.spotify.com/album/1t54r62JlGKJhv0Y56qWyg",
+            "coverArt": "https://i.scdn.co/image/77a64b9adba0e6d8507df71e2b2a6c8b89817795",
+            "releaseDate": "2010-12-07"
+          },
+          {
+            "id": "5JOtrLvqTsHIKta9QRvjDy",
+            "name": "Wake Up Call",
+            "url": "https://open.spotify.com/album/5JOtrLvqTsHIKta9QRvjDy",
+            "coverArt": "https://i.scdn.co/image/7bc7dc0bd53ca347850c5a8d9253c1e282dfcc11",
+            "releaseDate": "2010-11-30"
+          },
+          {
+            "id": "4lTw8bZzlyHGoqBzkml0nQ",
+            "name": "New Noise (feat. Refused)",
+            "url": "https://open.spotify.com/album/4lTw8bZzlyHGoqBzkml0nQ",
+            "coverArt": "https://i.scdn.co/image/adb2f2ab48dccbdcba73107adb4d508c23ef87b2",
+            "releaseDate": "2010-07-13"
+          },
+          {
+            "id": "6LE9qphmXekTx4vAsXF4U8",
+            "name": "I'm In The House",
+            "url": "https://open.spotify.com/album/6LE9qphmXekTx4vAsXF4U8",
+            "coverArt": "https://i.scdn.co/image/4d95f8e7c39b12c16b47f36cc14275ed23784add",
+            "releaseDate": "2010-01-01"
+          },
+          {
+            "id": "4MiRPypVinuciNHiyIsZ3l",
+            "name": "I'm In The House",
+            "url": "https://open.spotify.com/album/4MiRPypVinuciNHiyIsZ3l",
+            "coverArt": "https://i.scdn.co/image/287b24cc8186d17acf03b20328a922b0ff74d1d9",
+            "releaseDate": "2010-01-01"
+          },
+          {
+            "id": "3o96CyuZ2W3fIcXe2Ya1Rw",
+            "name": "Pillowface and His Airplane Chronicles",
+            "url": "https://open.spotify.com/album/3o96CyuZ2W3fIcXe2Ya1Rw",
+            "coverArt": "https://i.scdn.co/image/8b6277da5dce7b3cc326899edc4224c838eaa689",
+            "releaseDate": "2007-01-01"
+          },
+          {
+            "id": "49e5vfidOwb2OkHCT64RfG",
+            "name": "BRRRAT!",
+            "url": "https://open.spotify.com/album/49e5vfidOwb2OkHCT64RfG",
+            "coverArt": "https://i.scdn.co/image/7df6acc454ad4129bc1fdeab7c173af40da29ff8",
+            "releaseDate": "2005-07-02"
           }
         ]
       }
