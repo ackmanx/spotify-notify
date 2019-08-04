@@ -8,7 +8,7 @@
 }
 
 .album-selected {
-    outline: 10px dashed #999;
+    outline: 10px dashed black;
 }
 
 .album-overlay {

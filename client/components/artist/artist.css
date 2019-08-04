@@ -1,10 +1,16 @@
 .artist-group {
     margin-bottom: 30px;
     padding-bottom: 30px;
-    border-bottom: 5px dashed #999;
     text-align: center;
 }
 
 .artist-group:last-child {
     border: none;
+}
+
+.artist-name {
+    background-color: black;
+    color: whitesmoke;
+    font-size: 32px;
+    padding: 10px;
 }
