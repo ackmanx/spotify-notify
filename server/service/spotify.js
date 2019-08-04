@@ -25,7 +25,7 @@ async function fetchAlbumsAllPages(accessToken, artistId) {
 
     albums.push(albumsResponse)
 
-    while(hasNext) {
+    while (hasNext) {
         albumsResponse = await spotifyAPI(accessToken, albumsResponse.next)
         hasNext = albumsResponse.next
         albums.push(albumsResponse)
@@ -82,8 +82,12 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
                 name: album.name,
                 url: album.external_urls.spotify,
                 coverArt: album.images[1].url, //response always has 3 images of diff sizes, and I always want the middle one
+                releaseDate: album.release_date,
             })
         })
+
+        //Sort albums in descending order by their release date
+        albums.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
 
         body[artistId].albums = albums
     })
