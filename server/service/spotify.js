@@ -17,6 +17,23 @@ async function spotifyAPI(accessToken, endpoint) {
     return response.json()
 }
 
+async function fetchAlbumsAllPages(accessToken, artistId) {
+    const albums = []
+
+    let albumsResponse = await spotifyAPI(accessToken, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`)
+    let hasNext = albumsResponse.next
+
+    albums.push(albumsResponse)
+
+    while(hasNext) {
+        albumsResponse = await spotifyAPI(accessToken, albumsResponse.next)
+        hasNext = albumsResponse.next
+        albums.push(albumsResponse)
+    }
+
+    return albums
+}
+
 exports.checkForNewAlbums = async function checkForNewAlbums(session) {
     const userId = session.user.id
     const userSeenAlbums = db.getSeenAlbums(userId)
@@ -43,33 +60,15 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
     const allAlbumsFollowedArtists = []
 
     for (let artistId in body) {
-        let artistAlbumsPageOne, page2 = {}, page3 = {}, page4 = {}
-
-        //todo: left off here
-        //todo: can make a function that takes the response, adds it, then checks for a next. set a flag then iterate until done
-        //todo: or, have recurisve function that keeps calling itself when there's a next, passing an accumulator
-        artistAlbumsPageOne = await spotifyAPI(session.access_token, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`)
-
-        allAlbumsFollowedArtists.push(artistAlbumsPageOne)
-
-        if (artistAlbumsPageOne.next) {
-            page2 = await spotifyAPI(session.access_token, artistAlbumsPageOne.next)
-            allAlbumsFollowedArtists.push(page2)
-        }
-
-        if (page2.next) {
-            page3 = await spotifyAPI(session.access_token, page2.next)
-            allAlbumsFollowedArtists.push(page3)
-        }
-
-        if (page3.next) {
-            page4 = await spotifyAPI(session.access_token, page3.next)
-            allAlbumsFollowedArtists.push(page4)
-        }
+        const albums = await fetchAlbumsAllPages(session.access_token, artistId)
+        //Spread albums because fetchAlbumsAllPages returns an array of responses, and we want this array to be flat
+        allAlbumsFollowedArtists.push(...albums)
     }
 
     allAlbumsFollowedArtists.forEach(allAlbumsForSingleArtist => {
-        //Pull out the artistId from the album URL, being I sort albums by artist
+        //The albums response does not contain the artistId used for searching except in the href and artists array
+        //However, being the album could be a collab, there may be multiple artists in the array and order is not predictable
+        //Being we don't know the artistId used for searching in this loop, we have to pull it out of the href
         const [, artistId] = allAlbumsForSingleArtist.href.match(/artists\/(.+)\/albums/)
 
         let albums = body[artistId].albums
