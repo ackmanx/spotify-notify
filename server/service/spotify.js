@@ -10,11 +10,17 @@ async function spotifyAPI(accessToken, endpoint) {
 
     const response = await fetch(endpoint.startsWith('http') ? endpoint : `https://api.spotify.com/v1${endpoint}`, options)
 
-    if (response.statusCode === 429) {
-        console.log('### Too many requests! Spotify says you need to wait:', response.headers['Retry-After'])
+    if (response.status >= 400) {
+        console.log(`### Yikes! There was an error. Here's some headers for this call:`, endpoint, response.headers)
     }
 
     return response.json()
+}
+
+function getPagingNextUrl(response) {
+    if (response.next) return response.next
+
+    if (response.artists && response.artists.next) return response.artists.next
 }
 
 //Spotify puts the paging object in different places for their APIs, so we have to check multiple locations for `next`
@@ -22,13 +28,13 @@ async function fetchAllPages(accessToken, relativeSpotifyUrl) {
     const results = []
 
     let response = await spotifyAPI(accessToken, relativeSpotifyUrl)
-    let nextPageAbsoluteUrl = response.next || response.artists.next
+    let nextPageAbsoluteUrl = getPagingNextUrl(response)
 
     results.push(response)
 
     while (nextPageAbsoluteUrl) {
         response = await spotifyAPI(accessToken, nextPageAbsoluteUrl)
-        nextPageAbsoluteUrl = response.next || response.artists.next
+        nextPageAbsoluteUrl = getPagingNextUrl(response)
         results.push(response)
     }
 
