@@ -11,13 +11,13 @@ async function spotifyAPI(req, endpoint) {
         }
     }
 
-    const response = await fetch(`https://api.spotify.com/v1${endpoint}`, options)
+    const response = await fetch(endpoint.startsWith('http') ? endpoint : `https://api.spotify.com/v1${endpoint}`, options)
 
     if (response.statusCode === 429) {
         console.log('### Too many requests! Spotify says you need to wait:', response.headers['Retry-After'])
     }
 
-    return await response.json()
+    return response.json()
 }
 
 router.get('/new-albums/cached', ensureAuthenticated, async function (req, res) {
@@ -58,14 +58,30 @@ router.get('/new-albums/refresh', ensureAuthenticated, async function (req, res)
     //     }
     // )
 
-    const allAlbumsPromises = []
+    const allAlbumsFollowedArtists = []
 
     for (let artistId in body) {
-        //todo: this is where the albums call is made and paging needs to happen
-        allAlbumsPromises.push(spotifyAPI(req, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`))
-    }
+        let artistAlbumsPageOne, page2 = {}, page3 = {}, page4 = {}
 
-    const allAlbumsFollowedArtists = await Promise.all(allAlbumsPromises)
+        artistAlbumsPageOne = await spotifyAPI(req, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`)
+
+        allAlbumsFollowedArtists.push(artistAlbumsPageOne)
+
+        if (artistAlbumsPageOne.next) {
+            page2 = await spotifyAPI(req, artistAlbumsPageOne.next)
+            allAlbumsFollowedArtists.push(page2)
+        }
+
+        if (page2.next) {
+            page3 = await spotifyAPI(req, page2.next)
+            allAlbumsFollowedArtists.push(page3)
+        }
+
+        if (page3.next) {
+            page4 = await spotifyAPI(req, page3.next)
+            allAlbumsFollowedArtists.push(page4)
+        }
+    }
 
     allAlbumsFollowedArtists.forEach(allAlbumsForSingleArtist => {
         //Pull out the artistId from the album URL, being I sort albums by artist
