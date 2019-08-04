@@ -9,578 +9,27 @@
       "053q0ukIDRgzwTr4vNSwab": {
         "id": "053q0ukIDRgzwTr4vNSwab",
         "name": "Grimes",
-        "albums": [
-          {
-            "id": "3fXawdqJ5KvmXQeBNlHHVl",
-            "name": "We Appreciate Power (Radio Edit)",
-            "url": "https://open.spotify.com/album/3fXawdqJ5KvmXQeBNlHHVl",
-            "coverArt": "https://i.scdn.co/image/94ce58199516903a194a8d8fb4188b6886254b38",
-            "releaseDate": "2019-04-10"
-          },
-          {
-            "id": "3saDZIHSjWBBdQTCN1aG6t",
-            "name": "Pretty Dark (Demo)",
-            "url": "https://open.spotify.com/album/3saDZIHSjWBBdQTCN1aG6t",
-            "coverArt": "https://i.scdn.co/image/f7986df69ab5b0707f7ab46676e7e3225f345599",
-            "releaseDate": "2019-03-18"
-          },
-          {
-            "id": "3e1ufGpxuRNvBwxCMkkAEd",
-            "name": "We Appreciate Power (BloodPop® Remix)",
-            "url": "https://open.spotify.com/album/3e1ufGpxuRNvBwxCMkkAEd",
-            "coverArt": "https://i.scdn.co/image/d6a0b97afc5e92b80011a186cfbbe0fcbfad41ce",
-            "releaseDate": "2019-01-18"
-          },
-          {
-            "id": "65hPTJNhxg9P2bIHyKkZUE",
-            "name": "We Appreciate Power",
-            "url": "https://open.spotify.com/album/65hPTJNhxg9P2bIHyKkZUE",
-            "coverArt": "https://i.scdn.co/image/640b45cbd975745ef12cff33049891969ab783f9",
-            "releaseDate": "2019-01-18"
-          },
-          {
-            "id": "22snh4CaxLlqDOVoxBRuMa",
-            "name": "Pynk (feat. Grimes) [King Arthur Remix]",
-            "url": "https://open.spotify.com/album/22snh4CaxLlqDOVoxBRuMa",
-            "coverArt": "https://i.scdn.co/image/ebd10490d7430e1eccc0434c51097676f5f8359e",
-            "releaseDate": "2018-10-19"
-          },
-          {
-            "id": "0nvZei3QjZYJybYqITDsoY",
-            "name": "Kill V. Maim (Little Jimmy Urine Remix)",
-            "url": "https://open.spotify.com/album/0nvZei3QjZYJybYqITDsoY",
-            "coverArt": "https://i.scdn.co/image/b9e7d340757bdf0321fe836c831c1f5b2ae5ee19",
-            "releaseDate": "2016-03-04"
-          },
-          {
-            "id": "5hB4jVN4ZHpubyiMmW81K1",
-            "name": "Art Angels",
-            "url": "https://open.spotify.com/album/5hB4jVN4ZHpubyiMmW81K1",
-            "coverArt": "https://i.scdn.co/image/0faef4408eb4f1eed3f4876532a0987fd2ee1d10",
-            "releaseDate": "2015-11-06"
-          },
-          {
-            "id": "4KL4FiVZkya6twUbXgVkMF",
-            "name": "Entropy",
-            "url": "https://open.spotify.com/album/4KL4FiVZkya6twUbXgVkMF",
-            "coverArt": "https://i.scdn.co/image/480a285c733e8863437f15eebe380225376c06fe",
-            "releaseDate": "2015-03-15"
-          },
-          {
-            "id": "3paoaYGth9o39VgYg974GI",
-            "name": "REALiTi (Demo)",
-            "url": "https://open.spotify.com/album/3paoaYGth9o39VgYg974GI",
-            "coverArt": "https://i.scdn.co/image/edd8089091cef0bb92f623cdeb95526db5b93b35",
-            "releaseDate": "2015-03-12"
-          },
-          {
-            "id": "5UIDadF0rMa4LqHAucuMpK",
-            "name": "Go",
-            "url": "https://open.spotify.com/album/5UIDadF0rMa4LqHAucuMpK",
-            "coverArt": "https://i.scdn.co/image/6680a71a8e77242370110a8e3eb262eeb87eeb61",
-            "releaseDate": "2014-07-03"
-          },
-          {
-            "id": "48a7rOjTzpD1zzJAteeveE",
-            "name": "Visions",
-            "url": "https://open.spotify.com/album/48a7rOjTzpD1zzJAteeveE",
-            "coverArt": "https://i.scdn.co/image/3074a8a63cd7022ad08dbe7bb4f07df3f7f00e30",
-            "releaseDate": "2012-02-21"
-          },
-          {
-            "id": "4ObLcUJkqg7dTx0mjUrAtr",
-            "name": "Darkbloom",
-            "url": "https://open.spotify.com/album/4ObLcUJkqg7dTx0mjUrAtr",
-            "coverArt": "https://i.scdn.co/image/30763a4ef543179fc78fdb4a5b7888fc8abf245f",
-            "releaseDate": "2011-04-18"
-          },
-          {
-            "id": "3ttWoxpmhvizD9yvhxfMqd",
-            "name": "Halfaxa",
-            "url": "https://open.spotify.com/album/3ttWoxpmhvizD9yvhxfMqd",
-            "coverArt": "https://i.scdn.co/image/6ffffc580cfe3b4351271a65f0dd6badf22c6ebd",
-            "releaseDate": "2010-10-05"
-          },
-          {
-            "id": "3M5v4kVIOcncI9O8KpINc1",
-            "name": "Geidi Primes",
-            "url": "https://open.spotify.com/album/3M5v4kVIOcncI9O8KpINc1",
-            "coverArt": "https://i.scdn.co/image/47496bf4b5a5eec788a4a17690e3d8763d8c848c",
-            "releaseDate": "2010-10-01"
-          }
-        ]
+        "albums": []
       },
       "07MiScs25YZlJ3OrsF3GIK": {
         "id": "07MiScs25YZlJ3OrsF3GIK",
         "name": "Mihka!",
-        "albums": [
-          {
-            "id": "5JZUX3yc3Bv9f7skbJXqzk",
-            "name": "Watch Me",
-            "url": "https://open.spotify.com/album/5JZUX3yc3Bv9f7skbJXqzk",
-            "coverArt": "https://i.scdn.co/image/77eb7c17cafe55027497b0bead8f93b7334a7e05",
-            "releaseDate": "2018-12-07"
-          },
-          {
-            "id": "1MIB8cmDHB9YJanl8uG3YB",
-            "name": "Call Thru",
-            "url": "https://open.spotify.com/album/1MIB8cmDHB9YJanl8uG3YB",
-            "coverArt": "https://i.scdn.co/image/2eb2125735533dd26878ec76eaef83ac235eb60d",
-            "releaseDate": "2018-08-30"
-          },
-          {
-            "id": "2yqLzDZ8KB5Kw0S3E8Aw27",
-            "name": "Star Crossed",
-            "url": "https://open.spotify.com/album/2yqLzDZ8KB5Kw0S3E8Aw27",
-            "coverArt": "https://i.scdn.co/image/38a825e1ac4108cd865e4d8686683be24217542c",
-            "releaseDate": "2018-02-28"
-          },
-          {
-            "id": "4CDIEPg8qVhaz1GqLeTKzX",
-            "name": "No Notifications",
-            "url": "https://open.spotify.com/album/4CDIEPg8qVhaz1GqLeTKzX",
-            "coverArt": "https://i.scdn.co/image/46f8f24939081148a7c17722c3caa4328214021d",
-            "releaseDate": "2017-01-27"
-          },
-          {
-            "id": "7LTnfVNq8vRGBMOmUMMFxB",
-            "name": "Kodokushi",
-            "url": "https://open.spotify.com/album/7LTnfVNq8vRGBMOmUMMFxB",
-            "coverArt": "https://i.scdn.co/image/af593538e6336bca774f3b1ac21e553a4b6baadb",
-            "releaseDate": "2016-07-08"
-          },
-          {
-            "id": "5TyNYOYjto6fysPJNBFscC",
-            "name": "Sad Girls",
-            "url": "https://open.spotify.com/album/5TyNYOYjto6fysPJNBFscC",
-            "coverArt": "https://i.scdn.co/image/30d3d30c928f44d327202862e88b2fd9f562d3ab",
-            "releaseDate": "2016-04-28"
-          },
-          {
-            "id": "0OHCStEtJgiRJt4Tphfabd",
-            "name": "WiFi Tears",
-            "url": "https://open.spotify.com/album/0OHCStEtJgiRJt4Tphfabd",
-            "coverArt": "https://i.scdn.co/image/c7b23ba1fe5d3ede15cf1e7f7a2acdc4b97ef928",
-            "releaseDate": "2016-04-27"
-          }
-        ]
+        "albums": []
       },
       "07ZhipyrvoyNoJejeyM0PQ": {
         "id": "07ZhipyrvoyNoJejeyM0PQ",
         "name": "Higher Brothers",
-        "albums": [
-          {
-            "id": "01Vbz3MZmIjXyzXM5KuSAS",
-            "name": "China Town",
-            "url": "https://open.spotify.com/album/01Vbz3MZmIjXyzXM5KuSAS",
-            "coverArt": "https://i.scdn.co/image/43300fc45b960062bac4af5d224a2684f157a906",
-            "releaseDate": "2019-04-21"
-          },
-          {
-            "id": "3lnH9OOzXwxd8SlYOuJfyK",
-            "name": "Five Stars",
-            "url": "https://open.spotify.com/album/3lnH9OOzXwxd8SlYOuJfyK",
-            "coverArt": "https://i.scdn.co/image/3f7e5787258d2adcdc1aac2e818b308b279c02bb",
-            "releaseDate": "2019-02-22"
-          },
-          {
-            "id": "7KRn1bLb5oVCme4YXl37AK",
-            "name": "Five Stars",
-            "url": "https://open.spotify.com/album/7KRn1bLb5oVCme4YXl37AK",
-            "coverArt": "https://i.scdn.co/image/3f7e5787258d2adcdc1aac2e818b308b279c02bb",
-            "releaseDate": "2019-02-21"
-          },
-          {
-            "id": "6N6eFEt6TkmrF1K18E4a5Q",
-            "name": "功成名就",
-            "url": "https://open.spotify.com/album/6N6eFEt6TkmrF1K18E4a5Q",
-            "coverArt": "https://i.scdn.co/image/1130320081291f855e4f930c1b6b9318c3779201",
-            "releaseDate": "2018-04-20"
-          },
-          {
-            "id": "7i4rI30ADUcyKCEYTnCZYO",
-            "name": "Made In China",
-            "url": "https://open.spotify.com/album/7i4rI30ADUcyKCEYTnCZYO",
-            "coverArt": "https://i.scdn.co/image/66d0f1814946c0b665086b6c67fa9ef5722e97c9",
-            "releaseDate": "2018-04-13"
-          },
-          {
-            "id": "1p7KxrGpRfC99vetJWQTRD",
-            "name": "Type-3 - EP",
-            "url": "https://open.spotify.com/album/1p7KxrGpRfC99vetJWQTRD",
-            "coverArt": "https://i.scdn.co/image/777b0186d468ba9cab499a509383dae2fc0121ac",
-            "releaseDate": "2018-02-27"
-          },
-          {
-            "id": "4dPeDrrZjOAYVLHPIfVMsK",
-            "name": "Journey to the West - EP",
-            "url": "https://open.spotify.com/album/4dPeDrrZjOAYVLHPIfVMsK",
-            "coverArt": "https://i.scdn.co/image/d214d03f06f55057d7376aa512961f0acf9e2bb0",
-            "releaseDate": "2018-01-17"
-          },
-          {
-            "id": "6dvrQC6eAd0ALu8DE14Xzp",
-            "name": "Flo Rida",
-            "url": "https://open.spotify.com/album/6dvrQC6eAd0ALu8DE14Xzp",
-            "coverArt": "https://i.scdn.co/image/a100df688dd1aa00e4bf495204d91b794bd98eab",
-            "releaseDate": "2017-11-16"
-          },
-          {
-            "id": "1M07fnryBInT7PVKR3N6FP",
-            "name": "Nomadic (feat. Joji)",
-            "url": "https://open.spotify.com/album/1M07fnryBInT7PVKR3N6FP",
-            "coverArt": "https://i.scdn.co/image/9b1ce7f15447f12b07544851b9d3f53beae7d10f",
-            "releaseDate": "2017-07-13"
-          },
-          {
-            "id": "5tOzCSTS4RqujFbF5QM0U3",
-            "name": "Nomadic (feat. Joji)",
-            "url": "https://open.spotify.com/album/5tOzCSTS4RqujFbF5QM0U3",
-            "coverArt": "https://i.scdn.co/image/9b1ce7f15447f12b07544851b9d3f53beae7d10f",
-            "releaseDate": "2017-07-12"
-          },
-          {
-            "id": "4BmQkBwd3HWaVjtHhss6WH",
-            "name": "Black Cab",
-            "url": "https://open.spotify.com/album/4BmQkBwd3HWaVjtHhss6WH",
-            "coverArt": "https://i.scdn.co/image/1df342c10650670a1fcdb001162b6bf0ec617fa7",
-            "releaseDate": "2017-05-31"
-          },
-          {
-            "id": "2bvuphJA3SOomZVXsMqJ6U",
-            "name": "Black Cab",
-            "url": "https://open.spotify.com/album/2bvuphJA3SOomZVXsMqJ6U",
-            "coverArt": "https://i.scdn.co/image/1df342c10650670a1fcdb001162b6bf0ec617fa7",
-            "releaseDate": "2017-05-31"
-          },
-          {
-            "id": "1ytXPP3wvFoQe6AjabqTVV",
-            "name": "WeChat",
-            "url": "https://open.spotify.com/album/1ytXPP3wvFoQe6AjabqTVV",
-            "coverArt": "https://i.scdn.co/image/ad6452db27aab7eeba39b2772748a335e2a2aee6",
-            "releaseDate": "2017-05-24"
-          },
-          {
-            "id": "2i7St5ecMlhPk4eUtS0ES6",
-            "name": "Made in China",
-            "url": "https://open.spotify.com/album/2i7St5ecMlhPk4eUtS0ES6",
-            "coverArt": "https://i.scdn.co/image/99dfbe242b777e4ef5a67385c793570b933b7073",
-            "releaseDate": "2017-03-29"
-          },
-          {
-            "id": "25gRPqu471yAH9w1rZgyVX",
-            "name": "Bitch Don't Kill My Dab - Single",
-            "url": "https://open.spotify.com/album/25gRPqu471yAH9w1rZgyVX",
-            "coverArt": "https://i.scdn.co/image/73c9e4738f88f76b9c6bb8e8fe71c8fccc5f1435",
-            "releaseDate": "2016-08-31"
-          }
-        ]
+        "albums": []
       },
       "0DLfONSFG8AA0cQvh1yCrz": {
         "id": "0DLfONSFG8AA0cQvh1yCrz",
         "name": "Project Pitchfork",
-        "albums": [
-          {
-            "id": "3dnk1CJ4uz5xaSBvZNL3Le",
-            "name": "Fragment (Deluxe Version)",
-            "url": "https://open.spotify.com/album/3dnk1CJ4uz5xaSBvZNL3Le",
-            "coverArt": "https://i.scdn.co/image/53096bb8bb082f08da8f6c9d8ccceb4fdb7596e8",
-            "releaseDate": "2018-10-12"
-          },
-          {
-            "id": "31qspEjBZyRlvD5ttcPNm3",
-            "name": "Akkretion",
-            "url": "https://open.spotify.com/album/31qspEjBZyRlvD5ttcPNm3",
-            "coverArt": "https://i.scdn.co/image/132d88e8981c07ef6f5dc8d2797bccbdc24889ec",
-            "releaseDate": "2018-01-26"
-          },
-          {
-            "id": "4RNj7Y2berL4r16tWTWgUq",
-            "name": "Look up, I'm Down There",
-            "url": "https://open.spotify.com/album/4RNj7Y2berL4r16tWTWgUq",
-            "coverArt": "https://i.scdn.co/image/d6e3cbca427f4dac2316f88ff7d653dcc6a62883",
-            "releaseDate": "2016-10-28"
-          },
-          {
-            "id": "2K7H9IGuYmlCZ5NSkmq2wv",
-            "name": "Wonderland / One Million Faces (Remastered)",
-            "url": "https://open.spotify.com/album/2K7H9IGuYmlCZ5NSkmq2wv",
-            "coverArt": "https://i.scdn.co/image/c612d55e7fe806863e9e3e07c3bf73a16c3b0807",
-            "releaseDate": "2016-06-24"
-          },
-          {
-            "id": "7d3gGHZaVSw9NRenGuw15z",
-            "name": "Blood",
-            "url": "https://open.spotify.com/album/7d3gGHZaVSw9NRenGuw15z",
-            "coverArt": "https://i.scdn.co/image/18460f27f3325472812a056bb37bb2f45c340a63",
-            "releaseDate": "2014-10-14"
-          },
-          {
-            "id": "7pwGzC514Pohr45X9ap1C9",
-            "name": "Black",
-            "url": "https://open.spotify.com/album/7pwGzC514Pohr45X9ap1C9",
-            "coverArt": "https://i.scdn.co/image/230e9cd40ba69886759a5115f7649b8603d08694",
-            "releaseDate": "2013-01-25"
-          },
-          {
-            "id": "49VmLB1meAYFXTTOO733YB",
-            "name": "Quantum Mechanics",
-            "url": "https://open.spotify.com/album/49VmLB1meAYFXTTOO733YB",
-            "coverArt": "https://i.scdn.co/image/f9ac001356267e52b58f75be2fe53dafd376dc34",
-            "releaseDate": "2011-10-11"
-          },
-          {
-            "id": "5N9MiJyjiKPmiJT7si5QCq",
-            "name": "First Anthology",
-            "url": "https://open.spotify.com/album/5N9MiJyjiKPmiJT7si5QCq",
-            "coverArt": "https://i.scdn.co/image/24ac089574c2bc51a1225e6a4a9e00678b6d45eb",
-            "releaseDate": "2011-06-14"
-          },
-          {
-            "id": "27YpOAk628WwrvvFMBLt0l",
-            "name": "Continuum Ride",
-            "url": "https://open.spotify.com/album/27YpOAk628WwrvvFMBLt0l",
-            "coverArt": "https://i.scdn.co/image/e29ff9dc53ff85668af7f6ad1e0329ebc9004c36",
-            "releaseDate": "2010-09-14"
-          },
-          {
-            "id": "30svbVgfdbFq00ADnIwSA8",
-            "name": "Dream, Tiresias! Bonus Tracks",
-            "url": "https://open.spotify.com/album/30svbVgfdbFq00ADnIwSA8",
-            "coverArt": "https://i.scdn.co/image/bc7a76e83b46716c6b493fb09b1d68d253c18d91",
-            "releaseDate": "2010-08-08"
-          },
-          {
-            "id": "30xSvnLPbW29Eioih9p4Gw",
-            "name": "IO",
-            "url": "https://open.spotify.com/album/30xSvnLPbW29Eioih9p4Gw",
-            "coverArt": "https://i.scdn.co/image/a55989f114ea73efea60edc992ebc88bd0620f8f",
-            "releaseDate": "2010-07-05"
-          },
-          {
-            "id": "1HrphkHPaurbwzFDdxYiJp",
-            "name": "Remixed",
-            "url": "https://open.spotify.com/album/1HrphkHPaurbwzFDdxYiJp",
-            "coverArt": "https://i.scdn.co/image/dc6fe722d6ce460ebfc72001987e6d01f55ed2fe",
-            "releaseDate": "2010-03-23"
-          },
-          {
-            "id": "2cxvdQHBOiia6UxeD20Lp8",
-            "name": "Dream, Tiresias!",
-            "url": "https://open.spotify.com/album/2cxvdQHBOiia6UxeD20Lp8",
-            "coverArt": "https://i.scdn.co/image/b9400baf27919bafbdb42ec42e4aebb868f613df",
-            "releaseDate": "2009-07-14"
-          },
-          {
-            "id": "5DIEhe9wZO37dEHM0aQkta",
-            "name": "Feel!",
-            "url": "https://open.spotify.com/album/5DIEhe9wZO37dEHM0aQkta",
-            "coverArt": "https://i.scdn.co/image/eff56b31f48d16508029c6290655dd559c4c3c20",
-            "releaseDate": "2009-02-17"
-          },
-          {
-            "id": "4KytmP3DBfNsKR7I5YpRrn",
-            "name": "Earth Song",
-            "url": "https://open.spotify.com/album/4KytmP3DBfNsKR7I5YpRrn",
-            "coverArt": "https://i.scdn.co/image/b655ace06c9fc978dea3566f9b939c1edbda5c97",
-            "releaseDate": "2008-01-25"
-          },
-          {
-            "id": "1Nuu9KEhGBQItHUaUi9s4R",
-            "name": "Wonderland / One Million Faces",
-            "url": "https://open.spotify.com/album/1Nuu9KEhGBQItHUaUi9s4R",
-            "coverArt": "https://i.scdn.co/image/16e891ebd50d6259ca9aab08d55d779f6c830ad6",
-            "releaseDate": "2007-01-01"
-          },
-          {
-            "id": "6Jprq3KcSTAwmROcnltfqQ",
-            "name": "Kaskade",
-            "url": "https://open.spotify.com/album/6Jprq3KcSTAwmROcnltfqQ",
-            "coverArt": "https://i.scdn.co/image/a6515c47a6b1759707225556a139bafce47e3309",
-            "releaseDate": "2005-07-12"
-          },
-          {
-            "id": "5rWUcMXrjg8XPu0jwOZNti",
-            "name": "Kaskade",
-            "url": "https://open.spotify.com/album/5rWUcMXrjg8XPu0jwOZNti",
-            "coverArt": "https://i.scdn.co/image/6abebdb07d46877661b5daab79b3885277fdd247",
-            "releaseDate": "2005"
-          },
-          {
-            "id": "1uJlrGJHHOUK5mWxPuga6d",
-            "name": "View From A Throne",
-            "url": "https://open.spotify.com/album/1uJlrGJHHOUK5mWxPuga6d",
-            "coverArt": "https://i.scdn.co/image/49193dca5cdad65651120a20a1bb9f59801016ce",
-            "releaseDate": "2003-02-04"
-          },
-          {
-            "id": "3zaah1x6QvGpByvXr6Z7Ii",
-            "name": "Trialog",
-            "url": "https://open.spotify.com/album/3zaah1x6QvGpByvXr6Z7Ii",
-            "coverArt": "https://i.scdn.co/image/a589fe3ef3e1f30ea4490d9436f9b295a57c4147",
-            "releaseDate": "2003-02-04"
-          },
-          {
-            "id": "1JgfYeKEFbDpTKJd7r2VBP",
-            "name": "Inferno",
-            "url": "https://open.spotify.com/album/1JgfYeKEFbDpTKJd7r2VBP",
-            "coverArt": "https://i.scdn.co/image/6cce611f3a587e7368c04d4d44a7fe52b5532e8b",
-            "releaseDate": "2002-11-05"
-          },
-          {
-            "id": "0bXSSCiZL0vU4Oa2EWkcf1",
-            "name": "Daimonion",
-            "url": "https://open.spotify.com/album/0bXSSCiZL0vU4Oa2EWkcf1",
-            "coverArt": "https://i.scdn.co/image/63bb3d3a5967bae702f45b1fe30364d38eeae8b7",
-            "releaseDate": "2001-05-22"
-          },
-          {
-            "id": "20UIW7yzvT2KQSoTGGpb26",
-            "name": "Steelrose",
-            "url": "https://open.spotify.com/album/20UIW7yzvT2KQSoTGGpb26",
-            "coverArt": "https://i.scdn.co/image/0bad4a8d4a622eb79353873c0b454e99949b44f5",
-            "releaseDate": "1998-07-21"
-          },
-          {
-            "id": "6NwdYhXO4csMhBIlIQc778",
-            "name": "¡Chakra:Red!",
-            "url": "https://open.spotify.com/album/6NwdYhXO4csMhBIlIQc778",
-            "coverArt": "https://i.scdn.co/image/a586df7f0083bc7ed5ebe63b32ab0449817e1290",
-            "releaseDate": "1997"
-          },
-          {
-            "id": "6EzXcPyaOWUTDvPGXPVIqj",
-            "name": "En Garde!",
-            "url": "https://open.spotify.com/album/6EzXcPyaOWUTDvPGXPVIqj",
-            "coverArt": "https://i.scdn.co/image/260ef56ef78066a2e170c72693cddb5828ae53d0",
-            "releaseDate": "1996"
-          },
-          {
-            "id": "6eVuWHSTeFqzclqk4Fa6Rc",
-            "name": "CH'I",
-            "url": "https://open.spotify.com/album/6eVuWHSTeFqzclqk4Fa6Rc",
-            "coverArt": "https://i.scdn.co/image/fa0e5b2a0523ad41d56f10e354fc35114c3de1e3",
-            "releaseDate": "1995"
-          },
-          {
-            "id": "5Woh9n3DbPkFUGWvwSNdgA",
-            "name": "Alpha Omega",
-            "url": "https://open.spotify.com/album/5Woh9n3DbPkFUGWvwSNdgA",
-            "coverArt": "https://i.scdn.co/image/483793a04d4e0237d472fb99eda1b510635ffa9b",
-            "releaseDate": "1995-01-01"
-          },
-          {
-            "id": "4T5KX3DahK1pjXi5pmEc90",
-            "name": "Corps d'Amour",
-            "url": "https://open.spotify.com/album/4T5KX3DahK1pjXi5pmEc90",
-            "coverArt": "https://i.scdn.co/image/9f38ec4ad6d3057346cd63f51869905824257372",
-            "releaseDate": "1995-01-01"
-          },
-          {
-            "id": "3BRoprGn2K0KYeEcWGW4Bg",
-            "name": "Souls/Island",
-            "url": "https://open.spotify.com/album/3BRoprGn2K0KYeEcWGW4Bg",
-            "coverArt": "https://i.scdn.co/image/2a696db9337f5e8c1afb51b2ffec3f424b5f30f6",
-            "releaseDate": "1993-01-01"
-          },
-          {
-            "id": "3wD5ONXeN2YYlNKxbDugs7",
-            "name": "Carrion",
-            "url": "https://open.spotify.com/album/3wD5ONXeN2YYlNKxbDugs7",
-            "coverArt": "https://i.scdn.co/image/787271bc482386553cf4de4dd125f5062a5fb045",
-            "releaseDate": "1993-01-01"
-          },
-          {
-            "id": "6xCkWECWXTZj1DiMgqmpf8",
-            "name": "Entities",
-            "url": "https://open.spotify.com/album/6xCkWECWXTZj1DiMgqmpf8",
-            "coverArt": "https://i.scdn.co/image/fc73783c95c57877afba13e816b6c13646d208cf",
-            "releaseDate": "1992"
-          },
-          {
-            "id": "1pCfcd6mZLf7eSPbVLP9gs",
-            "name": "Lam-'Bras",
-            "url": "https://open.spotify.com/album/1pCfcd6mZLf7eSPbVLP9gs",
-            "coverArt": "https://i.scdn.co/image/32d45a03efff54db41c450274758bf9f6e4dc262",
-            "releaseDate": "1992"
-          },
-          {
-            "id": "6Pi3q7LweW2X7ynxxl7Ndb",
-            "name": "Psychic Torture",
-            "url": "https://open.spotify.com/album/6Pi3q7LweW2X7ynxxl7Ndb",
-            "coverArt": "https://i.scdn.co/image/5d9aad84eed2f925d03379f10ce65e7a163e582d",
-            "releaseDate": "1991"
-          }
-        ]
+        "albums": []
       },
       "0GDGKpJFhVpcjIGF8N6Ewt": {
         "id": "0GDGKpJFhVpcjIGF8N6Ewt",
         "name": "Gojira",
-        "albums": [
-          {
-            "id": "7D7V6M05UIOTjLdqbwRX0w",
-            "name": "Magma",
-            "url": "https://open.spotify.com/album/7D7V6M05UIOTjLdqbwRX0w",
-            "coverArt": "https://i.scdn.co/image/17203cf5279c31ba4d7a656447da88ccd84c5931",
-            "releaseDate": "2016-06-17"
-          },
-          {
-            "id": "2WrU1VLLBaZy4k5s0p5jzt",
-            "name": "L'Enfant Sauvage",
-            "url": "https://open.spotify.com/album/2WrU1VLLBaZy4k5s0p5jzt",
-            "coverArt": "https://i.scdn.co/image/c291afe0c2b1ac88d1ffab378937596da2679f45",
-            "releaseDate": "2012-06-26"
-          },
-          {
-            "id": "5dxqD5Kc6cRRi3rErmDfXG",
-            "name": "L'Enfant Sauvage (Special Edition)",
-            "url": "https://open.spotify.com/album/5dxqD5Kc6cRRi3rErmDfXG",
-            "coverArt": "https://i.scdn.co/image/c291afe0c2b1ac88d1ffab378937596da2679f45",
-            "releaseDate": "2012-06-26"
-          },
-          {
-            "id": "5aGo0ZXmsCooA4b3J0n0iQ",
-            "name": "Les Enfants Sauvages",
-            "url": "https://open.spotify.com/album/5aGo0ZXmsCooA4b3J0n0iQ",
-            "coverArt": "https://i.scdn.co/image/5750fa17cd58634110e2a4650bcf257c37a392ac",
-            "releaseDate": "2012-06-26"
-          },
-          {
-            "id": "4NDM4HzjJYI27hwvwmKj6s",
-            "name": "The Way of all Flesh",
-            "url": "https://open.spotify.com/album/4NDM4HzjJYI27hwvwmKj6s",
-            "coverArt": "https://i.scdn.co/image/9ea9193e99b0e4b155f0b3549fe4cf08cd746dad",
-            "releaseDate": "2008-10-13"
-          },
-          {
-            "id": "3jfojn8GJUDoxzBd1EPY2c",
-            "name": "From Mars to Sirius",
-            "url": "https://open.spotify.com/album/3jfojn8GJUDoxzBd1EPY2c",
-            "coverArt": "https://i.scdn.co/image/7ff1884ba9904a7d32857d3545fa0b2cbfdbacdd",
-            "releaseDate": "2005-09-07"
-          },
-          {
-            "id": "52nZXXzodwP7W0sxwhHbW3",
-            "name": "The Link Alive",
-            "url": "https://open.spotify.com/album/52nZXXzodwP7W0sxwhHbW3",
-            "coverArt": "https://i.scdn.co/image/0f5b335db781a5bbee855aac593b171e40b0e32a",
-            "releaseDate": "2004-04-16"
-          },
-          {
-            "id": "7fiHpzpjlgSHvngJUZjjon",
-            "name": "The Link",
-            "url": "https://open.spotify.com/album/7fiHpzpjlgSHvngJUZjjon",
-            "coverArt": "https://i.scdn.co/image/87f548c28fa29873326b1042d4fe4b8cdd6483a7",
-            "releaseDate": "2003-04-18"
-          },
-          {
-            "id": "3MzzFDuMUs2B0QGGmIK5HX",
-            "name": "Terra Incognita",
-            "url": "https://open.spotify.com/album/3MzzFDuMUs2B0QGGmIK5HX",
-            "coverArt": "https://i.scdn.co/image/28323199e71c2183387e35599d0ddd38c5fdd854",
-            "releaseDate": "2001-03-19"
-          }
-        ]
+        "albums": []
       },
       "0MLOZd8nYoXxHpOzDH0vXJ": {
         "id": "0MLOZd8nYoXxHpOzDH0vXJ",
@@ -967,57 +416,7 @@
       "0UF7XLthtbSF2Eur7559oV": {
         "id": "0UF7XLthtbSF2Eur7559oV",
         "name": "Kavinsky",
-        "albums": [
-          {
-            "id": "7wDbeqi7Zkf2QAAG76yJcU",
-            "name": "OutRun (US Version)",
-            "url": "https://open.spotify.com/album/7wDbeqi7Zkf2QAAG76yJcU",
-            "coverArt": "https://i.scdn.co/image/89ee1954803f14acdc31bad5614063aeadc0f11d",
-            "releaseDate": "2013-01-01"
-          },
-          {
-            "id": "3euRfc09m6LRXwplFPYtqh",
-            "name": "OutRun",
-            "url": "https://open.spotify.com/album/3euRfc09m6LRXwplFPYtqh",
-            "coverArt": "https://i.scdn.co/image/7508208d437ee76172b3e860e21c4cb77026e62f",
-            "releaseDate": "2013-01-01"
-          },
-          {
-            "id": "3FHMLI0Vz2t0gdypH1yImX",
-            "name": "Odd Look",
-            "url": "https://open.spotify.com/album/3FHMLI0Vz2t0gdypH1yImX",
-            "coverArt": "https://i.scdn.co/image/8249e2221b68a635b4baae5d83ca3938055beba5",
-            "releaseDate": "2013-01-01"
-          },
-          {
-            "id": "2EVhcuvC8xCKBurVPzeZFR",
-            "name": "ProtoVision",
-            "url": "https://open.spotify.com/album/2EVhcuvC8xCKBurVPzeZFR",
-            "coverArt": "https://i.scdn.co/image/fc0a48bdd0d7f79fe1f37c0922b3221b847a502a",
-            "releaseDate": "2013-01-01"
-          },
-          {
-            "id": "07nBld9enf1PyRysZAVSqJ",
-            "name": "Nightcall",
-            "url": "https://open.spotify.com/album/07nBld9enf1PyRysZAVSqJ",
-            "coverArt": "https://i.scdn.co/image/fadd72b5d0fb3e51312002baca113687a0ef0dec",
-            "releaseDate": "2010"
-          },
-          {
-            "id": "3wke2l2r3BQ9YJ75x5A1DK",
-            "name": "1986 - EP",
-            "url": "https://open.spotify.com/album/3wke2l2r3BQ9YJ75x5A1DK",
-            "coverArt": "https://i.scdn.co/image/ca6293af4686935fb5e09ea827bfbac48c2f1574",
-            "releaseDate": "2007-03-05"
-          },
-          {
-            "id": "279gt6kOQy96fv3lXt6yQB",
-            "name": "Teddy Boy - EP",
-            "url": "https://open.spotify.com/album/279gt6kOQy96fv3lXt6yQB",
-            "coverArt": "https://i.scdn.co/image/cd24e9b1918583e54ca07e138725f422149c79ed",
-            "releaseDate": "2006"
-          }
-        ]
+        "albums": []
       },
       "0Z43xNK0ZhtPW2eKi1L1OP": {
         "id": "0Z43xNK0ZhtPW2eKi1L1OP",
@@ -6473,13 +5872,6 @@
             "url": "https://open.spotify.com/album/2BKMXhr4tIPZrfT2dJIpCg",
             "coverArt": "https://i.scdn.co/image/041942e57d2ec203e9152d440335d42992db0f8d",
             "releaseDate": "2018-07-13"
-          },
-          {
-            "id": "6N6eFEt6TkmrF1K18E4a5Q",
-            "name": "功成名就",
-            "url": "https://open.spotify.com/album/6N6eFEt6TkmrF1K18E4a5Q",
-            "coverArt": "https://i.scdn.co/image/1130320081291f855e4f930c1b6b9318c3779201",
-            "releaseDate": "2018-04-20"
           },
           {
             "id": "5KiyA3k9DcdvQl7C0pKnAJ",
@@ -23762,7 +23154,92 @@
       "69CxasDbGDE7jDy3rY0uXU",
       "66j7ISt8Lu4vkFUM4rDq75",
       "2lVRaxzFTng4bR8Vi3G140",
-      "3W1VPKOZuwemvEnxCt55a0"
+      "3W1VPKOZuwemvEnxCt55a0",
+      "3fXawdqJ5KvmXQeBNlHHVl",
+      "3saDZIHSjWBBdQTCN1aG6t",
+      "3e1ufGpxuRNvBwxCMkkAEd",
+      "65hPTJNhxg9P2bIHyKkZUE",
+      "22snh4CaxLlqDOVoxBRuMa",
+      "0nvZei3QjZYJybYqITDsoY",
+      "5hB4jVN4ZHpubyiMmW81K1",
+      "4KL4FiVZkya6twUbXgVkMF",
+      "3paoaYGth9o39VgYg974GI",
+      "5UIDadF0rMa4LqHAucuMpK",
+      "48a7rOjTzpD1zzJAteeveE",
+      "4ObLcUJkqg7dTx0mjUrAtr",
+      "3ttWoxpmhvizD9yvhxfMqd",
+      "3M5v4kVIOcncI9O8KpINc1",
+      "5JZUX3yc3Bv9f7skbJXqzk",
+      "1MIB8cmDHB9YJanl8uG3YB",
+      "2yqLzDZ8KB5Kw0S3E8Aw27",
+      "4CDIEPg8qVhaz1GqLeTKzX",
+      "7LTnfVNq8vRGBMOmUMMFxB",
+      "5TyNYOYjto6fysPJNBFscC",
+      "0OHCStEtJgiRJt4Tphfabd",
+      "01Vbz3MZmIjXyzXM5KuSAS",
+      "3lnH9OOzXwxd8SlYOuJfyK",
+      "7KRn1bLb5oVCme4YXl37AK",
+      "6N6eFEt6TkmrF1K18E4a5Q",
+      "7i4rI30ADUcyKCEYTnCZYO",
+      "1p7KxrGpRfC99vetJWQTRD",
+      "4dPeDrrZjOAYVLHPIfVMsK",
+      "6dvrQC6eAd0ALu8DE14Xzp",
+      "1M07fnryBInT7PVKR3N6FP",
+      "5tOzCSTS4RqujFbF5QM0U3",
+      "4BmQkBwd3HWaVjtHhss6WH",
+      "2bvuphJA3SOomZVXsMqJ6U",
+      "1ytXPP3wvFoQe6AjabqTVV",
+      "2i7St5ecMlhPk4eUtS0ES6",
+      "25gRPqu471yAH9w1rZgyVX",
+      "3dnk1CJ4uz5xaSBvZNL3Le",
+      "31qspEjBZyRlvD5ttcPNm3",
+      "4RNj7Y2berL4r16tWTWgUq",
+      "2K7H9IGuYmlCZ5NSkmq2wv",
+      "7d3gGHZaVSw9NRenGuw15z",
+      "7pwGzC514Pohr45X9ap1C9",
+      "49VmLB1meAYFXTTOO733YB",
+      "5N9MiJyjiKPmiJT7si5QCq",
+      "27YpOAk628WwrvvFMBLt0l",
+      "30svbVgfdbFq00ADnIwSA8",
+      "30xSvnLPbW29Eioih9p4Gw",
+      "1HrphkHPaurbwzFDdxYiJp",
+      "2cxvdQHBOiia6UxeD20Lp8",
+      "5DIEhe9wZO37dEHM0aQkta",
+      "4KytmP3DBfNsKR7I5YpRrn",
+      "1Nuu9KEhGBQItHUaUi9s4R",
+      "6Jprq3KcSTAwmROcnltfqQ",
+      "5rWUcMXrjg8XPu0jwOZNti",
+      "1uJlrGJHHOUK5mWxPuga6d",
+      "3zaah1x6QvGpByvXr6Z7Ii",
+      "1JgfYeKEFbDpTKJd7r2VBP",
+      "0bXSSCiZL0vU4Oa2EWkcf1",
+      "20UIW7yzvT2KQSoTGGpb26",
+      "6NwdYhXO4csMhBIlIQc778",
+      "6EzXcPyaOWUTDvPGXPVIqj",
+      "6eVuWHSTeFqzclqk4Fa6Rc",
+      "5Woh9n3DbPkFUGWvwSNdgA",
+      "4T5KX3DahK1pjXi5pmEc90",
+      "3BRoprGn2K0KYeEcWGW4Bg",
+      "3wD5ONXeN2YYlNKxbDugs7",
+      "6xCkWECWXTZj1DiMgqmpf8",
+      "1pCfcd6mZLf7eSPbVLP9gs",
+      "6Pi3q7LweW2X7ynxxl7Ndb",
+      "7D7V6M05UIOTjLdqbwRX0w",
+      "2WrU1VLLBaZy4k5s0p5jzt",
+      "5dxqD5Kc6cRRi3rErmDfXG",
+      "5aGo0ZXmsCooA4b3J0n0iQ",
+      "4NDM4HzjJYI27hwvwmKj6s",
+      "3jfojn8GJUDoxzBd1EPY2c",
+      "52nZXXzodwP7W0sxwhHbW3",
+      "7fiHpzpjlgSHvngJUZjjon",
+      "3MzzFDuMUs2B0QGGmIK5HX",
+      "7wDbeqi7Zkf2QAAG76yJcU",
+      "3euRfc09m6LRXwplFPYtqh",
+      "3FHMLI0Vz2t0gdypH1yImX",
+      "2EVhcuvC8xCKBurVPzeZFR",
+      "07nBld9enf1PyRysZAVSqJ",
+      "3wke2l2r3BQ9YJ75x5A1DK",
+      "279gt6kOQy96fv3lXt6yQB"
     ]
   },
   "users": {
