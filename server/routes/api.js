@@ -4,10 +4,10 @@ const fetch = require('node-fetch')
 const {ensureAuthenticated} = require('./auth')
 const db = require('../db/db')
 
-async function spotifyAPI(req, endpoint) {
+async function spotifyAPI(accessToken, endpoint) {
     const options = {
         headers: {
-            Authorization: `Bearer ${req.session.access_token}`,
+            Authorization: `Bearer ${accessToken}`,
         }
     }
 
@@ -50,7 +50,7 @@ router.get('/new-albums/refresh', ensureAuthenticated, async function (req, res)
         },
     }
 
-    // const followedArtistsFromSpotify = await spotifyAPI(req, '/me/following?type=artist&limit=50')
+    // const followedArtistsFromSpotify = await spotifyAPI(req.session.access_token, '/me/following?type=artist&limit=50')
     // followedArtistsFromSpotify.artists.items.forEach(artist =>
     //     body[artist.id] = {
     //         id: artist.id,
@@ -63,22 +63,22 @@ router.get('/new-albums/refresh', ensureAuthenticated, async function (req, res)
     for (let artistId in body) {
         let artistAlbumsPageOne, page2 = {}, page3 = {}, page4 = {}
 
-        artistAlbumsPageOne = await spotifyAPI(req, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`)
+        artistAlbumsPageOne = await spotifyAPI(req.session.access_token, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`)
 
         allAlbumsFollowedArtists.push(artistAlbumsPageOne)
 
         if (artistAlbumsPageOne.next) {
-            page2 = await spotifyAPI(req, artistAlbumsPageOne.next)
+            page2 = await spotifyAPI(req.session.access_token, artistAlbumsPageOne.next)
             allAlbumsFollowedArtists.push(page2)
         }
 
         if (page2.next) {
-            page3 = await spotifyAPI(req, page2.next)
+            page3 = await spotifyAPI(req.session.access_token, page2.next)
             allAlbumsFollowedArtists.push(page3)
         }
 
         if (page3.next) {
-            page4 = await spotifyAPI(req, page3.next)
+            page4 = await spotifyAPI(req.session.access_token, page3.next)
             allAlbumsFollowedArtists.push(page4)
         }
     }
