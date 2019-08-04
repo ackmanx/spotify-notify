@@ -17,21 +17,22 @@ async function spotifyAPI(accessToken, endpoint) {
     return response.json()
 }
 
-async function fetchAlbumsAllPages(accessToken, artistId) {
-    const albums = []
+//Spotify puts the paging object in different places for their APIs, so we have to check multiple locations for `next`
+async function fetchAllPages(accessToken, relativeSpotifyUrl) {
+    const results = []
 
-    let albumsResponse = await spotifyAPI(accessToken, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`)
-    let hasNext = albumsResponse.next
+    let response = await spotifyAPI(accessToken, relativeSpotifyUrl)
+    let nextPageAbsoluteUrl = response.next || response.artists.next
 
-    albums.push(albumsResponse)
+    results.push(response)
 
-    while (hasNext) {
-        albumsResponse = await spotifyAPI(accessToken, albumsResponse.next)
-        hasNext = albumsResponse.next
-        albums.push(albumsResponse)
+    while (nextPageAbsoluteUrl) {
+        response = await spotifyAPI(accessToken, nextPageAbsoluteUrl)
+        nextPageAbsoluteUrl = response.next || response.artists.next
+        results.push(response)
     }
 
-    return albums
+    return results
 }
 
 exports.checkForNewAlbums = async function checkForNewAlbums(session) {
@@ -40,27 +41,28 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
 
     let body = {}
 
-    //todo: Steve Aoki has more than 50 results for albums, so use him for paging
-    //This mock is for getting a smaller set of followed artists than I would get making the real call below
-    body = {
-        "77AiFEVeAVj2ORpC85QVJs": {
-            "id": "77AiFEVeAVj2ORpC85QVJs",
-            "name": "Steve Aoki"
-        },
-    }
+    // //This mock is for getting a smaller set of followed artists than I would get making the real call below
+    // body = {
+    //     "77AiFEVeAVj2ORpC85QVJs": {
+    //         "id": "77AiFEVeAVj2ORpC85QVJs",
+    //         "name": "Steve Aoki"
+    //     },
+    // }
 
-    // const followedArtistsFromSpotify = await spotifyAPI(session.access_token, '/me/following?type=artist&limit=50')
-    // followedArtistsFromSpotify.artists.items.forEach(artist =>
-    //     body[artist.id] = {
-    //         id: artist.id,
-    //         name: artist.name,
-    //     }
-    // )
+    const followedArtistsFromSpotify = await fetchAllPages(session.access_token, '/me/following?type=artist&limit=50')
+    followedArtistsFromSpotify.forEach(followed =>
+        followed.artists.items.forEach(artist =>
+            body[artist.id] = {
+                id: artist.id,
+                name: artist.name,
+            }
+        )
+    )
 
     const allAlbumsFollowedArtists = []
 
     for (let artistId in body) {
-        const albums = await fetchAlbumsAllPages(session.access_token, artistId)
+        const albums = await fetchAllPages(session.access_token, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`)
         //Spread albums because fetchAlbumsAllPages returns an array of responses, and we want this array to be flat
         allAlbumsFollowedArtists.push(...albums)
     }
