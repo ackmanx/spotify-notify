@@ -4,85 +4,7 @@
       "03SZv6slUnLnHI3IfwG0gl": {
         "id": "03SZv6slUnLnHI3IfwG0gl",
         "name": "Grossstadtgeflüster",
-        "albums": [
-          {
-            "id": "64EHlRxOKVjlK1CY4RPjJz",
-            "name": "Hallus (feat. HGich.T)",
-            "url": "https://open.spotify.com/album/64EHlRxOKVjlK1CY4RPjJz",
-            "coverArt": "https://i.scdn.co/image/06b719e3b0813e11b8e7bf852b788ad2494d1fff",
-            "releaseDate": "2019-07-26"
-          },
-          {
-            "id": "5jsn3eI1p3zPxbOtdR5utg",
-            "name": "Huxley's (BadeShort Edit)",
-            "url": "https://open.spotify.com/album/5jsn3eI1p3zPxbOtdR5utg",
-            "coverArt": "https://i.scdn.co/image/3487a1514556842f316b521baf23ea82e587c73f",
-            "releaseDate": "2019-07-05"
-          },
-          {
-            "id": "3hxj3PCyMZ8sw1CLJmwNOL",
-            "name": "Neue Freunde",
-            "url": "https://open.spotify.com/album/3hxj3PCyMZ8sw1CLJmwNOL",
-            "coverArt": "https://i.scdn.co/image/b21cea5f9ad79687166b6888ac20d421e4dadfdc",
-            "releaseDate": "2019-03-14"
-          },
-          {
-            "id": "72EDxwi1dk0kbW17j0RbM8",
-            "name": "Feierabend",
-            "url": "https://open.spotify.com/album/72EDxwi1dk0kbW17j0RbM8",
-            "coverArt": "https://i.scdn.co/image/30701b26a87318a4626070f5dcc6e5edcc528175",
-            "releaseDate": "2018-12-13"
-          },
-          {
-            "id": "3RJHv4CKib7TnAJmIIp6cE",
-            "name": "Wie man Feuer macht",
-            "url": "https://open.spotify.com/album/3RJHv4CKib7TnAJmIIp6cE",
-            "coverArt": "https://i.scdn.co/image/ad62fea2a56010fc3e0d7c2e1ea541df48734928",
-            "releaseDate": "2017-03-31"
-          },
-          {
-            "id": "4Du0xnYcDmMyFdFK3rtDBf",
-            "name": "Ich boykottiere dich (Episode 2)",
-            "url": "https://open.spotify.com/album/4Du0xnYcDmMyFdFK3rtDBf",
-            "coverArt": "https://i.scdn.co/image/447d52cbefb15c26a2e3ba54844ea4be9a38a7fc",
-            "releaseDate": "2016-09-16"
-          },
-          {
-            "id": "0ys8pXuROuilOvihIy2Hsq",
-            "name": "Ich rollator mit meim Besten",
-            "url": "https://open.spotify.com/album/0ys8pXuROuilOvihIy2Hsq",
-            "coverArt": "https://i.scdn.co/image/4684f92dd1f0cc0b305f5a50b4c9eddb4b755afa",
-            "releaseDate": "2016-06-03"
-          },
-          {
-            "id": "69CxasDbGDE7jDy3rY0uXU",
-            "name": "Fickt-Euch-Allee EP",
-            "url": "https://open.spotify.com/album/69CxasDbGDE7jDy3rY0uXU",
-            "coverArt": "https://i.scdn.co/image/839ad8f420851a3fea5066692e9a8b3ce0cdbaf8",
-            "releaseDate": "2015-11-13"
-          },
-          {
-            "id": "66j7ISt8Lu4vkFUM4rDq75",
-            "name": "Fickt-Euch-Allee EP (Bonus Track Version)",
-            "url": "https://open.spotify.com/album/66j7ISt8Lu4vkFUM4rDq75",
-            "coverArt": "https://i.scdn.co/image/839ad8f420851a3fea5066692e9a8b3ce0cdbaf8",
-            "releaseDate": "2015-11-13"
-          },
-          {
-            "id": "2lVRaxzFTng4bR8Vi3G140",
-            "name": "Fickt-Euch-Allee",
-            "url": "https://open.spotify.com/album/2lVRaxzFTng4bR8Vi3G140",
-            "coverArt": "https://i.scdn.co/image/86c6d7447b7f471e9fe7027412f5984a26dfd6cb",
-            "releaseDate": "2015-10-16"
-          },
-          {
-            "id": "3W1VPKOZuwemvEnxCt55a0",
-            "name": "Alles Muss Man Selber Machen",
-            "url": "https://open.spotify.com/album/3W1VPKOZuwemvEnxCt55a0",
-            "coverArt": "https://i.scdn.co/image/eed973bca74078a323dc1871b4e35770b022db5b",
-            "releaseDate": "2010-04-30"
-          }
-        ]
+        "albums": []
       },
       "053q0ukIDRgzwTr4vNSwab": {
         "id": "053q0ukIDRgzwTr4vNSwab",
@@ -23829,7 +23751,19 @@
     }
   },
   "seenAlbums": {
-    "ackmanx": []
+    "ackmanx": [
+      "64EHlRxOKVjlK1CY4RPjJz",
+      "5jsn3eI1p3zPxbOtdR5utg",
+      "3hxj3PCyMZ8sw1CLJmwNOL",
+      "72EDxwi1dk0kbW17j0RbM8",
+      "3RJHv4CKib7TnAJmIIp6cE",
+      "4Du0xnYcDmMyFdFK3rtDBf",
+      "0ys8pXuROuilOvihIy2Hsq",
+      "69CxasDbGDE7jDy3rY0uXU",
+      "66j7ISt8Lu4vkFUM4rDq75",
+      "2lVRaxzFTng4bR8Vi3G140",
+      "3W1VPKOZuwemvEnxCt55a0"
+    ]
   },
   "users": {
     "ackmanx": true

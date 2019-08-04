@@ -7,6 +7,7 @@ export class App extends React.Component {
     state = {
         artistsWithNewAlbums: {},
         seenAlbums: [],
+        markArtistAsSeen: this.markArtistAsSeen.bind(this),
         markAsSeen: this.markAsSeen.bind(this),
         refreshNewAlbums: this.refreshNewAlbums.bind(this),
         submitSeenAlbums: this.submitSeenAlbums.bind(this),
@@ -23,9 +24,9 @@ export class App extends React.Component {
                 <ActionBar/>
                 {Object
                     .keys(this.state.artistsWithNewAlbums)
-                    .map(artistID => {
-                        const artist = this.state.artistsWithNewAlbums[artistID];
-                        return <Artist key={artistID} name={artist.name} albums={artist.albums}/>
+                    .map(artistId => {
+                        const artist = this.state.artistsWithNewAlbums[artistId];
+                        return <Artist key={artistId} artistId={artistId} name={artist.name} albums={artist.albums}/>
                     })}
             </AppContext.Provider>
         )
@@ -39,6 +40,13 @@ export class App extends React.Component {
     async refreshNewAlbums() {
         const response = await fetch('/api/new-albums/refresh')
         this.setState({artistsWithNewAlbums: await response.json()})
+    }
+
+    markArtistAsSeen(artistId) {
+        const artist = this.state.artistsWithNewAlbums[artistId]
+        const albumsByArtist = artist.albums.map(album => album.id)
+
+        this.setState({seenAlbums: [...this.state.seenAlbums, ...albumsByArtist]})
     }
 
     markAsSeen(albumId) {
