@@ -15,3 +15,5 @@
 
 * PROD: When I deploy, how will I backup my database?
     * Maybe have a script that will download it so I can version control updates periodically
+
+* IDEA: Sort albums first, then singles, show a divider, or indicate somehow which is which
