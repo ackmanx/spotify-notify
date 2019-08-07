@@ -17,6 +17,7 @@
     * Maybe have a script that will download it so I can version control updates periodically
 
 * IDEA: Sort albums first, then singles, show a divider, or indicate somehow which is which
+    * This requires a full refresh of the db because cached data does not have `type` property from Spotify
 
 * IDEA: Allow choosing to open spotify url (for web player) or spotify uri (which opens desktop player)
     * See `uri` in mock response
