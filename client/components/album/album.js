@@ -2,7 +2,7 @@ import './album.css'
 import React, {useContext, useState} from 'react'
 import {AppContext} from '../../context'
 
-export const Album = ({album: {id, name, url, coverArt}, artist}) => {
+export const Album = ({album: {id, name, url, coverArt, releaseDate}, artist}) => {
     const context = useContext(AppContext)
     const artistAlbumName = `${artist} - ${name}`
 
@@ -19,6 +19,8 @@ export const Album = ({album: {id, name, url, coverArt}, artist}) => {
                  title={artistAlbumName}
                  alt={artistAlbumName}
                  onMouseEnter={toggleOverlay}/>
+
+            {releaseDate}
 
             {hover && (
                 <div className='album-overlay' onMouseLeave={toggleOverlay}>
