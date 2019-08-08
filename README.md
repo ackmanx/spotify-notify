@@ -11,8 +11,6 @@
 
 * BUG: Clicking artist name twice adds again. The seenAlbums list in state needs to be a set.
 
-* CHORE: Rename `markAsSeen` to `markAlbumAsSeen`
-
 * PROD: When I deploy, how will I backup my database?
     * Maybe have a script that will download it so I can version control updates periodically
 
