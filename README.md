@@ -21,3 +21,13 @@
 
 * IDEA: Allow choosing to open spotify url (for web player) or spotify uri (which opens desktop player)
     * See `uri` in mock response
+
+
+## If there's performance issues with DB in the future...
+
+Do a quick performance test of current speeds, then swap this and see if it helps
+Also check file size before and after
+const db = low(new FileSync('server/db/database.json', {
+    serialize: (obj) => JSON.stringify(obj),
+    deserialize: (data) => JSON.parse(data)
+}

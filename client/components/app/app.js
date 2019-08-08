@@ -8,7 +8,7 @@ export class App extends React.Component {
         artistsWithNewAlbums: {},
         seenAlbums: [],
         markArtistAsSeen: this.markArtistAsSeen.bind(this),
-        markAsSeen: this.markAsSeen.bind(this),
+        markAlbumAsSeen: this.markAlbumAsSeen.bind(this),
         refreshNewAlbums: this.refreshNewAlbums.bind(this),
         submitSeenAlbums: this.submitSeenAlbums.bind(this),
     }
@@ -49,7 +49,7 @@ export class App extends React.Component {
         this.setState({seenAlbums: [...this.state.seenAlbums, ...albumsByArtist]})
     }
 
-    markAsSeen(albumId) {
+    markAlbumAsSeen(albumId) {
         const seenAlbums = [...this.state.seenAlbums]
 
         const seenAlbumIndex = seenAlbums.indexOf(albumId)

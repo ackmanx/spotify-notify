@@ -29,7 +29,7 @@ export const Album = ({album: {id, name, url, coverArt, releaseDate}, artist}) =
                             <img src='spotify-icon.png' alt='spotify logo'/>
                         </div>
                     </a>
-                    <a className='mark-as-seen' href='#' onClick={() => context.markAsSeen(id)}>
+                    <a className='mark-as-seen' href='#' onClick={() => context.markAlbumAsSeen(id)}>
                         <div className='overlay-link-container'>
                             <img src='mark-as-seen.png' alt='mark as seen'/>
                         </div>
