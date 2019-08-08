@@ -7,8 +7,6 @@
 
 * BUG: Screen jumps to top after selecting
 
-* STYLE: Artist name should act like a button and not a div
-
 * BUG: Clicking artist name twice adds again. The seenAlbums list in state needs to be a set.
 
 * PROD: When I deploy, how will I backup my database?
