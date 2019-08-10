@@ -45,77 +45,88 @@
             "name": "Territory",
             "url": "https://open.spotify.com/album/7sAspG14R2muJBcJ3HcFcp",
             "coverArt": "https://i.scdn.co/image/4ffb0a1554dc7ad4b8ce30c553eef8210a81d3af",
-            "releaseDate": "2018-06-22"
+            "releaseDate": "2018-06-22",
+            "type": "single"
           },
           {
             "id": "5SouYKZ1fel9wei3Zh9veL",
             "name": "Instruments of Retribution",
             "url": "https://open.spotify.com/album/5SouYKZ1fel9wei3Zh9veL",
             "coverArt": "https://i.scdn.co/image/4aaa9da558638211c2d5b1058917248274bcc41c",
-            "releaseDate": "2017-12-06"
+            "releaseDate": "2017-12-06",
+            "type": "album"
           },
           {
             "id": "3p6hvxfVtP5u9jnp9Izqyh",
             "name": "Corruptor",
             "url": "https://open.spotify.com/album/3p6hvxfVtP5u9jnp9Izqyh",
             "coverArt": "https://i.scdn.co/image/bf97e3fe75dae80ca8fb94a75436780ecf7578ba",
-            "releaseDate": "2016-04-08"
+            "releaseDate": "2016-04-08",
+            "type": "album"
           },
           {
             "id": "3gJMNZYTAJMhyynMTVx7mS",
             "name": "Kindred",
             "url": "https://open.spotify.com/album/3gJMNZYTAJMhyynMTVx7mS",
             "coverArt": "https://i.scdn.co/image/13e5b1099b1844aa0e314e80b7fe8d3b101ed365",
-            "releaseDate": "2016-03-12"
+            "releaseDate": "2016-03-12",
+            "type": "single"
           },
           {
             "id": "1JkFI4p8wEuvm5bQyuKvmn",
             "name": "King Cyborg",
             "url": "https://open.spotify.com/album/1JkFI4p8wEuvm5bQyuKvmn",
             "coverArt": "https://i.scdn.co/image/13e5b1099b1844aa0e314e80b7fe8d3b101ed365",
-            "releaseDate": "2016-03-12"
+            "releaseDate": "2016-03-12",
+            "type": "single"
           },
           {
             "id": "65ZMoXwE2EPxEoe76t9x1A",
             "name": "Mars",
             "url": "https://open.spotify.com/album/65ZMoXwE2EPxEoe76t9x1A",
             "coverArt": "https://i.scdn.co/image/13e5b1099b1844aa0e314e80b7fe8d3b101ed365",
-            "releaseDate": "2016-03-12"
+            "releaseDate": "2016-03-12",
+            "type": "single"
           },
           {
             "id": "0HwzVdJ5jANEauPAPT3pY8",
             "name": "Night Stalker",
             "url": "https://open.spotify.com/album/0HwzVdJ5jANEauPAPT3pY8",
             "coverArt": "https://i.scdn.co/image/30bd459958555fde74f341a6f1b48ecfecf65601",
-            "releaseDate": "2016-03-12"
+            "releaseDate": "2016-03-12",
+            "type": "single"
           },
           {
             "id": "6eTo9qN48KrlYlpQ49YjDP",
             "name": "Purification",
             "url": "https://open.spotify.com/album/6eTo9qN48KrlYlpQ49YjDP",
             "coverArt": "https://i.scdn.co/image/13e5b1099b1844aa0e314e80b7fe8d3b101ed365",
-            "releaseDate": "2016-03-12"
+            "releaseDate": "2016-03-12",
+            "type": "single"
           },
           {
             "id": "5Vzx2QYxLGsmntb21tVL9d",
             "name": "The Getaway",
             "url": "https://open.spotify.com/album/5Vzx2QYxLGsmntb21tVL9d",
             "coverArt": "https://i.scdn.co/image/13e5b1099b1844aa0e314e80b7fe8d3b101ed365",
-            "releaseDate": "2016-03-12"
+            "releaseDate": "2016-03-12",
+            "type": "single"
           },
           {
             "id": "1QVc6mQVsm8e2UEzTe5BWm",
             "name": "Wasteland",
             "url": "https://open.spotify.com/album/1QVc6mQVsm8e2UEzTe5BWm",
             "coverArt": "https://i.scdn.co/image/13e5b1099b1844aa0e314e80b7fe8d3b101ed365",
-            "releaseDate": "2016-03-12"
+            "releaseDate": "2016-03-12",
+            "type": "single"
           },
           {
             "id": "1fw9QzRLdH01FAInVNT702",
             "name": "Darkness",
             "url": "https://open.spotify.com/album/1fw9QzRLdH01FAInVNT702",
             "coverArt": "https://i.scdn.co/image/31fefcf1c3e4c6e3f1ceb9728d8b4ce203973dbb",
-            "releaseDate": "2014-02-04"
+            "releaseDate": "2014-02-04",
+            "type": "single"
           }
         ]
       },

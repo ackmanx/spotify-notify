@@ -13,7 +13,9 @@ export const Artist = ({artistId, name, albums}) => {
     return (
         <div className='artist-group'>
             <div className='artist-name' onClick={() => context.markArtistAsSeen(artistId)}>{name}</div>
-            {albums.map(album => <Album key={album.id} artist={name} album={album}/>)}
+            {albums.filter(album => album.type === 'album').map(album => <Album key={album.id} artist={name} album={album}/>)}
+            <hr/>
+            {albums.filter(album => album.type === 'single').map(album => <Album key={album.id} artist={name} album={album}/>)}
         </div>
     )
 }
