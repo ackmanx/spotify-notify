@@ -2,10 +2,12 @@ import React from 'react'
 import {AppContext} from '../context'
 import {Artist} from './artist/artist'
 import {ActionBar} from './action-bar/action-bar'
+import {Banner} from './banner/banner'
 
 export class App extends React.Component {
     state = {
         artistsWithNewAlbums: {},
+        loading: true,
         seenAlbums: [],
         markArtistAsSeen: this.markArtistAsSeen.bind(this),
         markAlbumAsSeen: this.markAlbumAsSeen.bind(this),
@@ -19,15 +21,21 @@ export class App extends React.Component {
     }
 
     render() {
+        const artistsWithNewAlbums = Object.keys(this.state.artistsWithNewAlbums)
+
         return (
             <AppContext.Provider value={this.state}>
                 <ActionBar/>
-                {Object
-                    .keys(this.state.artistsWithNewAlbums)
-                    .map(artistId => {
+
+                {this.state.loading && <Banner text='Loading...'/>}
+                {!this.state.loading && !artistsWithNewAlbums.length && <Banner text='Nothing new :('/>}
+
+                {!!artistsWithNewAlbums.length && (
+                    artistsWithNewAlbums.map(artistId => {
                         const artist = this.state.artistsWithNewAlbums[artistId];
                         return <Artist key={artist.id} artist={artist}/>
-                    })}
+                    })
+                )}
             </AppContext.Provider>
         )
     }
