@@ -9,3 +9,5 @@
     * Maybe have a script that will download it so I can version control updates periodically
 
 * IDEA: Time to style this bitch
+
+* IDEA: No results message, loading message (loading should not go away until rendering is finished)
