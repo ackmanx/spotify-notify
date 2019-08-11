@@ -6,12 +6,12 @@
     height: 300px;
     text-align: center;
     opacity: 1;
-    transition: opacity .2s ease-out;
+    transition: opacity .15s ease-out;
 }
 
 .album--selected {
     opacity: .25;
-    transition: opacity .2s ease-out;
+    transition: opacity .15s ease-out;
 }
 
 .album-actions {
