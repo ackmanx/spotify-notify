@@ -25,14 +25,14 @@ export const Album = ({album, artistName}) => {
             {hover && (
                 <div className='album-actions' onMouseLeave={toggleOverlay}>
                     <div className='actions-container'>
-                        <a className='action-trigger two-actions' href={album.spotifyWebPlayerUrl} target='_blank'>
+                        <a className='action-trigger two-actions' href={album.spotifyUri} target='_blank'>
                             <div className='action-image-container'>
                                 <img src='spotify-icon.png' alt='spotify logo'/>
                             </div>
                         </a>
-                        <a className='action-trigger two-actions' href={album.spotifyUri} target='_blank'>
+                        <a className='action-trigger two-actions' href={album.spotifyWebPlayerUrl} target='_blank'>
                             <div className='action-image-container'>
-                                <img src='spotify-icon.png' alt='spotify logo'/>
+                                <img src='google-chrome-icon.png' alt='spotify logo'/>
                             </div>
                         </a>
                     </div>
