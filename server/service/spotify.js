@@ -53,9 +53,41 @@ async function fetchAllPages(accessToken, relativeSpotifyUrl) {
     return results
 }
 
+function transformSpotifyAlbums(albums, body, userId) {
+    const userSeenAlbums = db.getSeenAlbums(userId)
+
+    albums.forEach(allAlbumsForSingleArtist => {
+        //The albums response does not contain the artistId used for searching except in the href and artists array
+        //However, being the album could be a collab, there may be multiple artists in the array and order is not predictable
+        //Being we don't know the artistId used for searching in this loop, we have to pull it out of the href
+        const [, artistId] = allAlbumsForSingleArtist.href.match(/artists\/(.+)\/albums/)
+
+        let albums = body[artistId].albums
+        if (!Array.isArray(albums)) albums = []
+
+        allAlbumsForSingleArtist.items.forEach(album => {
+            if (userSeenAlbums.includes(album.id)) return
+
+            albums.push({
+                id: album.id,
+                name: album.name,
+                coverArt: album.images[1].url, //response always has 3 images of diff sizes, and I always want the middle one
+                releaseDate: album.release_date,
+                type: album.album_type,
+                spotifyUri: album.uri,
+                spotifyWebPlayerUrl: album.external_urls.spotify,
+            })
+        })
+
+        //Sort albums in descending order by their release date
+        albums.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
+
+        body[artistId].albums = albums
+    })
+}
+
 exports.checkForNewAlbums = async function checkForNewAlbums(session) {
     const userId = session.user.id
-    const userSeenAlbums = db.getSeenAlbums(userId)
 
     let body = {}
 
@@ -90,34 +122,7 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
         allAlbumsFollowedArtists.push(...albums)
     }
 
-    allAlbumsFollowedArtists.forEach(allAlbumsForSingleArtist => {
-        //The albums response does not contain the artistId used for searching except in the href and artists array
-        //However, being the album could be a collab, there may be multiple artists in the array and order is not predictable
-        //Being we don't know the artistId used for searching in this loop, we have to pull it out of the href
-        const [, artistId] = allAlbumsForSingleArtist.href.match(/artists\/(.+)\/albums/)
-
-        let albums = body[artistId].albums
-        if (!Array.isArray(albums)) albums = []
-
-        allAlbumsForSingleArtist.items.forEach(album => {
-            if (userSeenAlbums.includes(album.id)) return
-
-            albums.push({
-                id: album.id,
-                name: album.name,
-                coverArt: album.images[1].url, //response always has 3 images of diff sizes, and I always want the middle one
-                releaseDate: album.release_date,
-                type: album.album_type,
-                spotifyUri: album.uri,
-                spotifyWebPlayerUrl: album.external_urls.spotify,
-            })
-        })
-
-        //Sort albums in descending order by their release date
-        albums.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
-
-        body[artistId].albums = albums
-    })
+    transformSpotifyAlbums(allAlbumsFollowedArtists, body, userId)
 
     db.saveNewAlbumsCache(userId, body)
 
