@@ -17,14 +17,21 @@
     top: 0;
 }
 
-.spotify-link, .mark-as-seen {
+.album-action-spotify-webapp {
     display: inline-block;
     width: 150px;
     height: 300px;
     cursor: pointer;
 }
 
-.spotify-link:hover, .mark-as-seen:hover {
+.album-action-mark-as-seen {
+    display: inline-block;
+    width: 150px;
+    height: 300px;
+    cursor: pointer;
+}
+
+.album-action-spotify-webapp:hover, .album-action-mark-as-seen:hover {
     background-color: rgba(0, 0, 0, .75);
     transition: background-color .3s;
 }

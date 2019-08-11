@@ -24,12 +24,12 @@ export const Album = ({album: {id, name, url, coverArt, releaseDate}, artist}) =
 
             {hover && (
                 <div className='album-actions-container' onMouseLeave={toggleOverlay}>
-                    <a className='spotify-link' href={url} target='_blank'>
+                    <a className='album-action-spotify-webapp' href={url} target='_blank'>
                         <div className='overlay-link-container'>
                             <img src='spotify-icon.png' alt='spotify logo'/>
                         </div>
                     </a>
-                    <a className='mark-as-seen' href='#' onClick={() => context.markAlbumAsSeen(id)}>
+                    <a className='album-action-mark-as-seen' href='#' onClick={() => context.markAlbumAsSeen(id)}>
                         <div className='overlay-link-container'>
                             <img src='mark-as-seen.png' alt='mark as seen'/>
                         </div>
