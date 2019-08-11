@@ -37,11 +37,11 @@ export const Album = ({album, artistName}) => {
                         </a>
                     </div>
                     <div className='actions-container'>
-                        <a className='action-trigger one-action' href='#' onClick={() => context.markAlbumAsSeen(album.id)}>
+                        <button className='action-trigger one-action' onClick={() => context.markAlbumAsSeen(album.id)}>
                             <div className='action-image-container'>
                                 <img src='mark-as-seen.png' alt='mark as seen'/>
                             </div>
-                        </a>
+                        </button>
                     </div>
                 </div>
             )}
