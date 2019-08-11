@@ -1,7 +1,11 @@
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 
-const db = low(new FileSync('server/db/database.json'))
+//Providing serialize/deserialize functions to remove whitespace. By default lowdb outputs a nicely formatted JSON file
+const db = low(new FileSync('server/db/database.json', {
+    serialize: obj => JSON.stringify(obj),
+    deserialize: data => JSON.parse(data)
+}))
 
 const SLICES = {
     newAlbumsCache: 'newAlbumsCache',
