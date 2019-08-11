@@ -5,7 +5,8 @@
  */
 
 const app = require('../server/app')
-const debug = require('debug')('spotify-notify:server')
+const path = require('path')
+const debug = require('debug')(`sn:${path.basename(__filename)}`)
 const http = require('http')
 
 /**

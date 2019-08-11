@@ -1,5 +1,11 @@
 const db = require('../db/db')
 const fetch = require('node-fetch')
+const path = require('path')
+const debug = require('debug')(`sn:${path.basename(__filename)}`)
+
+function sleep(seconds) {
+    return new Promise(resolve => setTimeout(resolve, seconds * 1000))
+}
 
 async function spotifyAPI(accessToken, endpoint) {
     const options = {
@@ -8,10 +14,16 @@ async function spotifyAPI(accessToken, endpoint) {
         }
     }
 
-    const response = await fetch(endpoint.startsWith('http') ? endpoint : `https://api.spotify.com/v1${endpoint}`, options)
+    const spotifyApiURL = endpoint.startsWith('http') ? endpoint : `https://api.spotify.com/v1${endpoint}`
 
-    if (response.status >= 400) {
-        console.log(`### Yikes! There was an error. Here's some headers for this call:`, endpoint, response.headers)
+    let response = await fetch(spotifyApiURL, options)
+
+    const retryAfterSeconds = response.headers['retry-after']
+
+    if (retryAfterSeconds) {
+        debug(`Throttled by Spotify, retrying ${spotifyApiURL} after ${retryAfterSeconds} seconds`)
+        await sleep(retryAfterSeconds)
+        response = await fetch(spotifyApiURL, options)
     }
 
     return response.json()
@@ -56,6 +68,8 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
     //     },
     // }
 
+    debug(`Getting followed artists for ${userId}`)
+
     const followedArtistsFromSpotify = await fetchAllPages(session.access_token, '/me/following?type=artist&limit=50')
     followedArtistsFromSpotify.forEach(followed =>
         followed.artists.items.forEach(artist =>
@@ -65,6 +79,8 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
             }
         )
     )
+
+    debug(`Found ${Object.keys(body).length} artists`)
 
     const allAlbumsFollowedArtists = []
 
