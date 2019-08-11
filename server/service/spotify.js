@@ -47,13 +47,14 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
 
     let body = {}
 
-    //This mock is for getting a smaller set of followed artists than I would get making the real call below
-    body = {
-        "77AiFEVeAVj2ORpC85QVJs": {
-            "id": "77AiFEVeAVj2ORpC85QVJs",
-            "name": "Steve Aoki"
-        },
-    }
+    // //This mock is for getting a smaller set of followed artists than I would get making the real call below
+    // //Don't forget to comment out the followedArtistsFromSpotify block
+    // body = {
+    //     "77AiFEVeAVj2ORpC85QVJs": {
+    //         "id": "77AiFEVeAVj2ORpC85QVJs",
+    //         "name": "Steve Aoki"
+    //     },
+    // }
 
     const followedArtistsFromSpotify = await fetchAllPages(session.access_token, '/me/following?type=artist&limit=50')
     followedArtistsFromSpotify.forEach(followed =>
