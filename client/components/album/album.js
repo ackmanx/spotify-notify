@@ -23,7 +23,7 @@ export const Album = ({album: {id, name, url, coverArt, releaseDate}, artist}) =
             {releaseDate}
 
             {hover && (
-                <div className='album-overlay' onMouseLeave={toggleOverlay}>
+                <div className='album-actions-container' onMouseLeave={toggleOverlay}>
                     <a className='spotify-link' href={url} target='_blank'>
                         <div className='overlay-link-container'>
                             <img src='spotify-icon.png' alt='spotify logo'/>
