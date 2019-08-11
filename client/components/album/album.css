@@ -1,5 +1,5 @@
 .album {
-    position: relative;
+    position: relative; /* this is so the overlay positions correctly over the album art */
     display: inline-block;
     margin: 20px;
     width: 300px;
@@ -14,9 +14,15 @@
     transition: opacity .15s ease-out;
 }
 
+.album-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .album-actions {
-    display: flex; /* this is flex to align the icon children vertically */
     position: absolute; /* this is absolute to the album, so that it covers the whole album and doesn't flow after it */
+    display: flex; /* this is flex to align the icon children vertically */
     top: 0;
 }
 

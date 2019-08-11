@@ -9,9 +9,15 @@
 }
 
 .artist-name {
-    background-color: black;
-    color: whitesmoke;
-    font-size: 32px;
-    padding: 10px;
+    font-size: 72px;
     cursor: pointer;
+}
+
+.album-group-title-albums {
+    font-size: 35px;
+}
+
+.album-group-title-singles {
+    font-size: 35px;
+    padding-top: 20px;
 }

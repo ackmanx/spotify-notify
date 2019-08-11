@@ -16,11 +16,11 @@ export const Album = ({album, artistName}) => {
         <div className={`album ${selected ? 'album--selected' : ''}`}>
             <img className='album-cover-art'
                  src={album.coverArt}
-                 title={artistAlbumName}
                  alt={artistAlbumName}
                  onMouseEnter={toggleOverlay}/>
 
-            {album.releaseDate}
+            <div className='album-name'>{album.name}</div>
+            <div>{album.releaseDate}</div>
 
             {hover && (
                 <div className='album-actions' onMouseLeave={toggleOverlay}>
