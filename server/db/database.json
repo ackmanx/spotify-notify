@@ -19,17 +19,7 @@
       "07ZhipyrvoyNoJejeyM0PQ": {
         "id": "07ZhipyrvoyNoJejeyM0PQ",
         "name": "Higher Brothers",
-        "albums": [
-          {
-            "id": "1vOm6i4taczaOrnLxZXVCL",
-            "name": "Friends & Foes (feat. Snoop Dogg)",
-            "coverArt": "https://i.scdn.co/image/12401c00a3a951ff40a3e80dfb8d7414d4368403",
-            "releaseDate": "2019-08-05",
-            "type": "single",
-            "spotifyUri": "spotify:album:1vOm6i4taczaOrnLxZXVCL",
-            "spotifyWebPlayerUrl": "https://open.spotify.com/album/1vOm6i4taczaOrnLxZXVCL"
-          }
-        ]
+        "albums": []
       },
       "0Cd6nHYwecCNM1sVEXKlYr": {
         "id": "0Cd6nHYwecCNM1sVEXKlYr",
@@ -31089,7 +31079,8 @@
       "6LK6EZErGqnEPQWajbMugc",
       "5v3x1wmSWDQoM4YcpTZ9Fr",
       "47OCQnUPiw8LZX6g9mWI0d",
-      "093ZtFewc3h0tKh1N8hZ8j"
+      "093ZtFewc3h0tKh1N8hZ8j",
+      "1vOm6i4taczaOrnLxZXVCL"
     ]
   },
   "users": {
