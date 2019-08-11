@@ -7,38 +7,42 @@
     text-align: center;
 }
 
-.album-selected {
+.album--selected {
     outline: 10px dashed black;
 }
 
-.album-actions-container {
+.album-actions {
     display: flex; /* this is flex to align the icon children vertically */
     position: absolute; /* this is absolute to the album, so that it covers the whole album and doesn't flow after it */
     top: 0;
 }
 
-.album-action-spotify-webapp {
+.actions-container {
+    width: 50%;
+}
+
+.action-trigger {
     display: inline-block;
     width: 150px;
-    height: 300px;
     cursor: pointer;
 }
 
-.album-action-mark-as-seen {
-    display: inline-block;
-    width: 150px;
-    height: 300px;
-    cursor: pointer;
-}
-
-.album-action-spotify-webapp:hover, .album-action-mark-as-seen:hover {
+.action-trigger:hover {
     background-color: rgba(0, 0, 0, .75);
     transition: background-color .3s;
 }
 
-.overlay-link-container {
+.one-action {
+    height: 300px;
+}
+
+.two-actions {
+    height: 150px;
+}
+
+.action-image-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    height: 100%;
 }

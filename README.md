@@ -1,6 +1,7 @@
 # Remaining
 
 * Need to somehow batch and retry after rate limit hit
+    * Spotify will send this header with the number of seconds you need to wait: `'retry-after': '1'`,
 
 * BUG: Extreme performance problems with huge list, selecting and deselecting  super-cpu intensive and has huge delays until state is reflected
     * Maybe I can optimize `markAsSeen`
@@ -11,11 +12,6 @@
 
 * PROD: When I deploy, how will I backup my database?
     * Maybe have a script that will download it so I can version control updates periodically
-
-* IDEA: Allow choosing to open spotify url (for web player) or spotify uri (which opens desktop player)
-    * Manually update database with some mock data so can wait on a full refresh
-    * This requires a full refresh of the db because cached data does not have `uri` property from Spotify
-    * See `uri` in mock response
 
 
 ## If there's performance issues with DB in the future...

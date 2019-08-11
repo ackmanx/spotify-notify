@@ -1,7 +1,7 @@
 import React from 'react'
-import {AppContext} from '../../context'
-import {Artist} from '../artist/artist'
-import {ActionBar} from '../action-bar/action-bar'
+import {AppContext} from '../context'
+import {Artist} from './artist/artist'
+import {ActionBar} from './action-bar/action-bar'
 
 export class App extends React.Component {
     state = {
@@ -26,7 +26,7 @@ export class App extends React.Component {
                     .keys(this.state.artistsWithNewAlbums)
                     .map(artistId => {
                         const artist = this.state.artistsWithNewAlbums[artistId];
-                        return <Artist key={artistId} artistId={artistId} name={artist.name} albums={artist.albums}/>
+                        return <Artist key={artist.id} name={artist.name} albums={artist.albums}/>
                     })}
             </AppContext.Provider>
         )

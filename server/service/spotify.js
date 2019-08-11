@@ -48,6 +48,7 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
     let body = {}
 
     // //This mock is for getting a smaller set of followed artists than I would get making the real call below
+    // //Don't forget to comment out the followedArtistsFromSpotify block
     // body = {
     //     "77AiFEVeAVj2ORpC85QVJs": {
     //         "id": "77AiFEVeAVj2ORpC85QVJs",
@@ -88,9 +89,11 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
             albums.push({
                 id: album.id,
                 name: album.name,
-                url: album.external_urls.spotify,
                 coverArt: album.images[1].url, //response always has 3 images of diff sizes, and I always want the middle one
                 releaseDate: album.release_date,
+                type: album.album_type,
+                spotifyUri: album.uri,
+                spotifyWebPlayerUrl: album.external_urls.spotify,
             })
         })
 
