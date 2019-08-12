@@ -14,3 +14,9 @@
 
 * CHORE: generate a new client secret with spotify. then add a heroku config for it and reference that in the code
     * For local development, I'll need to keep the secret handy outside of git, maybe read it from a file somewhere and make same env var that heroku uses
+
+* FEATURE: Mobile friendly
+
+* FEATURE: Disable buttons until requests finish
+
+Question, what happens if you refresh spotify, reload the page then do it again?
