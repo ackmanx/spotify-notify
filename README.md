@@ -19,4 +19,8 @@
 
 * FEATURE: Disable buttons until requests finish
 
+* BUG?: Merima had a cached entry. I updated mark as seen in the db and now it seems merima's data is entirely gone
+    * Did it not persist to disk?
+    * Did my save overwrite the db?
+
 Question, what happens if you refresh spotify, reload the page then do it again?
