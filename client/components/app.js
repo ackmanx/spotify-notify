@@ -42,7 +42,7 @@ export class App extends React.Component {
 
     async getNewAlbums() {
         const response = await fetch('/api/new-albums/cached')
-        this.setState({artistsWithNewAlbums: await response.json()})
+        this.setState({artistsWithNewAlbums: await response.json(), loading: false})
     }
 
     async refreshNewAlbums() {
