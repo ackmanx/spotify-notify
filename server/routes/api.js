@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const fetch = require('node-fetch')
+const fs = require('fs')
+const {promisify} = require('util')
+const readFile = promisify(fs.readFile)
+
 const {ensureAuthenticated} = require('./auth')
 const db = require('../db/db')
 const {checkForNewAlbums} = require('../service/spotify')
@@ -30,6 +33,11 @@ router.post('/update-seen-albums', ensureAuthenticated, async function (req, res
     db.saveSeenAlbums(req.session.user.id, seenAlbums.concat(req.body.albumIds))
 
     res.json({success: true})
+})
+
+router.get('/dump', async function (req, res) {
+    const dump = await readFile('server/db/database.json', {encoding: 'utf8'})
+    res.json(JSON.parse(dump))
 })
 
 module.exports = router
