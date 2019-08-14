@@ -19,8 +19,7 @@
 
 * FEATURE: Disable buttons until requests finish
 
-* BUG?: Merima had a cached entry. I updated mark as seen in the db and now it seems merima's data is entirely gone
-    * Did it not persist to disk?
-    * Did my save overwrite the db?
+* BUG: db not being written to disk so after heroku sleeps my server I lost the changes
+    * Also, if two users updated at the same time what would happen?
 
-Question, what happens if you refresh spotify, reload the page then do it again?
+Question, what happens if you refresh spotify, reload the page then do it again before the first finishes?
