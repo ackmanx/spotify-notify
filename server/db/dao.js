@@ -34,7 +34,7 @@ exports.getSeenAlbums = async userId => {
 // exports.saveSeenAlbums = (userId, seenAlbums) => db.set(`${SLICES.seenAlbums}.${userId}`, seenAlbums).write()
 
 
-
+exports.dump = async () => await getUserDataCollection().find({}).toArray()
 
 
 //todo: LEFT OFF HERE

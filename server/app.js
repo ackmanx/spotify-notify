@@ -49,6 +49,7 @@ app.use('/auth', authRouter)
 
 //If we made it this far, none of our routes were triggered, so it is a 404
 app.use(function (req, res, next) {
+    debug(`No resource found for ${req.url}, creating 404 error`)
     next(createError(404))
 })
 

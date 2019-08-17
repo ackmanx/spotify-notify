@@ -33,9 +33,9 @@ router.post('/update-seen-albums', ensureAuthenticated, async function (req, res
     res.json({success: true})
 })
 
-router.get('/dump', async function (req, res) {
-    const dump = await readFile('server/db/database.json', {encoding: 'utf8'})
-    res.json(JSON.parse(dump))
+router.get('/dump', ensureAuthenticated, async function (req, res) {
+    debug('Performing whole database dump')
+    res.json(await dao.dump())
 })
 
 module.exports = router
