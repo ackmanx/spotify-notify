@@ -1,24 +1,25 @@
-const schema = {
-    //This is the list of albumId that the user has acknowledged as no longer being considered new
-    seenAlbums: {
-        '<userId>': ['<albumbId>']
-    },
-    //This is the response from /new-albums
-    //It will persist until the user forces a refresh of the endpoint and will be replaced with the new response
-    newAlbumsCache: {
-        '<userId>': {
-            '1l2oLiukA9i5jEtIyNWIEP': {
-                id: '1l2oLiukA9i5jEtIyNWIEP',
-                name: 'Carpenter Brut',
-                albums: [
+const schema = [
+    {
+        "userId": "ackmanx",
+        "newAlbumsCache": {
+            "0OTY72l7CC7ynKzp6N2o5b": { //artistId
+                "id": "0OTY72l7CC7ynKzp6N2o5b",
+                "name": "Daniel Deluxe",
+                "albums": [
                     {
-                        id: '7fy6Wpnn5NZllJzUXDeDpS',
-                        name: 'Leather Teeth',
-                        url: 'https://open.spotify.com/album/7fy6Wpnn5NZllJzUXDeDpS',
-                        coverArt: 'https://i.scdn.co/image/878f652904ef84d9d357a3df9d92d8da313b3f12'
+                        "id": "7sAspG14R2muJBcJ3HcFcp",
+                        "name": "Territory",
+                        "coverArt": "https://i.scdn.co/image/4ffb0a1554dc7ad4b8ce30c553eef8210a81d3af",
+                        "releaseDate": "2018-06-22",
+                        "type": "single",
+                        "spotifyUri": "spotify:album:7sAspG14R2muJBcJ3HcFcp",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/7sAspG14R2muJBcJ3HcFcp"
                     }
                 ]
             }
-        }
+        },
+        "seenAlbums": [
+            "64EHlRxOKVjlK1CY4RPjJz" //albumId
+        ]
     }
-}
+]

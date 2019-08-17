@@ -18,9 +18,9 @@ exports.initDatabase = callback => {
 
         debug("Connected successfully to MongoDB server")
 
-        const shutdown = reason => async () => {
-            debug(`${reason} signal received from Heroku dyno manager. Shutting down`)
-            await client.close()
+        const shutdown = reason => () => {
+            debug(`${reason} signal received. Shutting MongoDB server down...`)
+            client.close()
         }
 
         process
