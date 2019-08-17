@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const session = require('express-session')
 const compression = require('compression')
+const debug = require('debug')(`sn:${path.basename(__filename)}`)
 
 const renderRouter = require('./routes/render')
 const apiRouter = require('./routes/api')
