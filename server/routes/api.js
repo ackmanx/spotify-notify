@@ -27,9 +27,10 @@ router.get('/new-albums/refresh', ensureAuthenticated, async function (req, res)
 })
 
 router.post('/update-seen-albums', ensureAuthenticated, async function (req, res) {
-    const seenAlbums = dao.getSeenAlbums(req.session.user.id)
+    const userId = req.session.user.id
+    const userSeenAlbums = await dao.getSeenAlbums(userId)
 
-    dao.saveSeenAlbums(req.session.user.id, seenAlbums.concat(req.body.albumIds))
+    await dao.saveSeenAlbums(userId, userSeenAlbums.concat(req.body.albumIds))
 
     res.json({success: true})
 })

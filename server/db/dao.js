@@ -30,10 +30,14 @@ exports.getSeenAlbums = async userId => {
     return document.seenAlbums
 }
 
-// //Saves seen albums cache for a given user
-// exports.saveSeenAlbums = (userId, seenAlbums) => db.set(`${SLICES.seenAlbums}.${userId}`, seenAlbums).write()
+/*
+ * Replaces the user's seen albums with the passed array using Mongo's `$set` update operator
+ */
+exports.saveSeenAlbums = async (userId, seenAlbums) => await getUserDataCollection().updateOne({userId}, {$set: {seenAlbums}})
 
-
+/*
+ * Dumps the entire database. A sledgehammer of curiosity if I don't want to go to the MongoDB Atlas dashboard
+ */
 exports.dump = async () => await getUserDataCollection().find({}).toArray()
 
 
