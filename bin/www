@@ -1,39 +1,35 @@
 #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
-
-const app = require('../server/app')
 const path = require('path')
 const debug = require('debug')(`sn:${path.basename(__filename)}`)
 const http = require('http')
 
+const app = require('../server/app')
+const db = require('../server/db/mongo')
+
 /**
  * Get port from environment and store in Express.
  */
-
 const port = normalizePort(process.env.PORT || '3666')
 app.set('port', port)
 
 /**
  * Create HTTP server.
  */
-
 const server = http.createServer(app)
 
 /**
  * Listen on provided port, on all network interfaces.
  */
-
-server.listen(port)
-server.on('error', onError)
-server.on('listening', onListening)
+db.initDatabase(() => {
+    server.listen(port)
+    server.on('error', onError)
+    server.on('listening', onListening)
+})
 
 /**
  * Normalize a port into a number, string, or false.
  */
-
 function normalizePort(val) {
     const port = parseInt(val, 10)
 

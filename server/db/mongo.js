@@ -1,27 +1,34 @@
 const path = require('path')
 const debug = require('debug')(`sn:${path.basename(__filename)}`)
-
-//This was provided by the mongodb website dashboard
-const connectionUrl = 'mongodb+srv://admin:F8cHHZjWza0SRGOx@spotify-notify-f6tmy.mongodb.net/test?retryWrites=true&w=majority'
-
 const MongoClient = require('mongodb').MongoClient
 
-const client = new MongoClient(connectionUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+let client
 
-client.connect(function (err) {
-    if (err) {
-        debug(err)
-        return
-    }
+exports.initDatabase = callback => {
+    //This was provided by the mongodb website dashboard
+    const connectionUrl = 'mongodb+srv://admin:F8cHHZjWza0SRGOx@spotify-notify-f6tmy.mongodb.net/test?retryWrites=true&w=majority'
 
-    debug("Connected successfully to MongoDB server")
+    client = new MongoClient(connectionUrl, { useNewUrlParser: true, useUnifiedTopology: true })
 
-    const shutdown = reason => () => {
-        debug(`${reason} signal received from Heroku dyno manager. Shutting down`)
-        client.close()
-    }
+    client.connect(function (err) {
+        if (err) {
+            debug(err)
+            return
+        }
 
-    process
-        .on('SIGTERM', shutdown('SIGTERM'))
-        .on('SIGINT', shutdown('SIGINT'))
-})
+        debug("Connected successfully to MongoDB server")
+
+        const shutdown = reason => async () => {
+            debug(`${reason} signal received from Heroku dyno manager. Shutting down`)
+            await client.close()
+        }
+
+        process
+            .on('SIGTERM', shutdown('SIGTERM'))
+            .on('SIGINT', shutdown('SIGINT'))
+
+        callback()
+    })
+}
+
+exports.getUserDataCollection = () => client.db('spotify-notify').collection('user-data')
