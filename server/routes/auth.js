@@ -3,7 +3,7 @@ const router = express.Router()
 const querystring = require('querystring')
 const request = require('request')
 const fetch = require('node-fetch')
-const db = require('../db/db')
+const dao = require('../db/dao')
 
 /*
  * # Authorization is a multi-step process
@@ -99,7 +99,7 @@ router.get('/callback', function (req, res) {
 
             req.session.user = await response.json()
 
-            db.initializeDatabaseForUser(req.session.user.id)
+            await dao.initializeDatabaseForUser(req.session.user.id)
 
             return res.redirect('/')
         }

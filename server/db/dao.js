@@ -17,8 +17,10 @@ exports.getNewAlbumsCache = async userId => {
     return document.newAlbumsCache
 }
 
-// //Saves a fresh new albums cache for a given user
-// exports.saveNewAlbumsCache = (userId, cache) => db.set(`${SLICES.newAlbumsCache}.${userId}`, cache).write()
+/*
+ * Replaces the user's new albums cache with the passed cache using Mongo's `$set` update operator
+ */
+exports.saveNewAlbumsCache = async (userId, newAlbumsCache) => await getUserDataCollection().updateOne({userId}, {$set: {newAlbumsCache}})
 
 /*
  * The DB has a single `collection` that contains all user data. Each `document` corresponds to a single user
@@ -35,11 +37,14 @@ exports.getSeenAlbums = async userId => {
  */
 exports.saveSeenAlbums = async (userId, seenAlbums) => await getUserDataCollection().updateOne({userId}, {$set: {seenAlbums}})
 
+
+exports.initializeDatabaseForUser = async userId => {
+    if (!getUserDataCollection().find({userId}).count()) {
+        await getUserDataCollection().insertOne({userId})
+    }
+}
+
 /*
  * Dumps the entire database. A sledgehammer of curiosity if I don't want to go to the MongoDB Atlas dashboard
  */
 exports.dump = async () => await getUserDataCollection().find({}).toArray()
-
-
-//todo: LEFT OFF HERE
-//todo: have to implement the two save functions. update spotify.js with it. update auth.js if it uses it.
