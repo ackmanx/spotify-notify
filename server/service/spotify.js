@@ -1,4 +1,4 @@
-const db = require('../db/db')
+const dao = require('../db/dao')
 const fetch = require('node-fetch')
 const path = require('path')
 const debug = require('debug')(`sn:${path.basename(__filename)}`)
@@ -39,6 +39,8 @@ function getPagingNextUrl(response) {
 async function fetchAllPages(accessToken, relativeSpotifyUrl) {
     const results = []
 
+    debug(`Fetching albums for ${relativeSpotifyUrl}`)
+
     let response = await spotifyAPI(accessToken, relativeSpotifyUrl)
     let nextPageAbsoluteUrl = getPagingNextUrl(response)
 
@@ -53,16 +55,18 @@ async function fetchAllPages(accessToken, relativeSpotifyUrl) {
     return results
 }
 
-function transformSpotifyAlbums(albums, body, userId) {
-    const userSeenAlbums = db.getSeenAlbums(userId)
+async function transformSpotifyAlbums(albums, newCache, userId) {
+    const userSeenAlbums = await dao.getSeenAlbums(userId)
+
 
     albums.forEach(allAlbumsForSingleArtist => {
-        //The albums response does not contain the artistId used for searching except in the href and artists array
+        //The albums response from Spotify does not contain the artistId used for searching except in the href and artists array
         //However, being the album could be a collab, there may be multiple artists in the array and order is not predictable
         //Being we don't know the artistId used for searching in this loop, we have to pull it out of the href
         const [, artistId] = allAlbumsForSingleArtist.href.match(/artists\/(.+)\/albums/)
 
-        let albums = body[artistId].albums
+        //todo: try and move this until after, so we don't add artists with no new albums to the cache
+        let albums = newCache[artistId].albums
         if (!Array.isArray(albums)) albums = []
 
         allAlbumsForSingleArtist.items.forEach(album => {
@@ -82,21 +86,21 @@ function transformSpotifyAlbums(albums, body, userId) {
         //Sort albums in descending order by their release date
         albums.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
 
-        body[artistId].albums = albums
+        newCache[artistId].albums = albums
     })
 }
 
 exports.checkForNewAlbums = async function checkForNewAlbums(session) {
     const userId = session.user.id
 
-    let body = {}
+    let newCache = {}
 
     // //This mock is for getting a smaller set of followed artists than I would get making the real call below
     // //Don't forget to comment out the followedArtistsFromSpotify block
-    // body = {
-    //     "77AiFEVeAVj2ORpC85QVJs": {
-    //         "id": "77AiFEVeAVj2ORpC85QVJs",
-    //         "name": "Steve Aoki"
+    // newCache = {
+    //     "03SZv6slUnLnHI3IfwG0gl": {
+    //         "id": "03SZv6slUnLnHI3IfwG0gl",
+    //         "name": "Grossstadtgeflüster"
     //     },
     // }
 
@@ -105,26 +109,26 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
     const followedArtistsFromSpotify = await fetchAllPages(session.access_token, '/me/following?type=artist&limit=50')
     followedArtistsFromSpotify.forEach(followed =>
         followed.artists.items.forEach(artist =>
-            body[artist.id] = {
+            newCache[artist.id] = {
                 id: artist.id,
                 name: artist.name,
             }
         )
     )
 
-    debug(`Found ${Object.keys(body).length} artists`)
+    debug(`Found ${Object.keys(newCache).length} artists`)
 
     const allAlbumsFollowedArtists = []
 
-    for (let artistId in body) {
+    for (let artistId in newCache) {
         const albums = await fetchAllPages(session.access_token, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`)
         //Spread albums because fetchAlbumsAllPages returns an array of responses, and we want this array to be flat
         allAlbumsFollowedArtists.push(...albums)
     }
 
-    transformSpotifyAlbums(allAlbumsFollowedArtists, body, userId)
+    await transformSpotifyAlbums(allAlbumsFollowedArtists, newCache, userId)
 
-    db.saveNewAlbumsCache(userId, body)
+    await dao.saveNewAlbumsCache(userId, newCache)
 
-    return body
+    return newCache
 }

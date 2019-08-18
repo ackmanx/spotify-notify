@@ -19,7 +19,6 @@
 
 * FEATURE: Disable buttons until requests finish
 
-* BUG: db not being written to disk so after heroku sleeps my server I lost the changes
-    * Also, if two users updated at the same time what would happen?
+* CHORE: Add heroku env variable with mongodb url
 
 Question, what happens if you refresh spotify, reload the page then do it again before the first finishes?

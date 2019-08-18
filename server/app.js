@@ -5,9 +5,7 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const session = require('express-session')
 const compression = require('compression')
-
-//Invoke db for init
-require('./db/db')
+const debug = require('debug')(`sn:${path.basename(__filename)}`)
 
 const renderRouter = require('./routes/render')
 const apiRouter = require('./routes/api')
@@ -52,6 +50,7 @@ app.use('/auth', authRouter)
 
 //If we made it this far, none of our routes were triggered, so it is a 404
 app.use(function (req, res, next) {
+    debug(`No resource found for ${req.url}, creating 404 error`)
     next(createError(404))
 })
 
