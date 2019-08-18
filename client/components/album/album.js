@@ -27,19 +27,19 @@ export const Album = ({album, artistName}) => {
                     <div className='actions-container'>
                         <a className='action-trigger two-actions' href={album.spotifyUri} target='_blank'>
                             <div className='action-image-container'>
-                                <img src='spotify-icon.png' alt='spotify logo'/>
+                                <img src='album-actions/spotify.png' alt='spotify logo'/>
                             </div>
                         </a>
                         <a className='action-trigger two-actions' href={album.spotifyWebPlayerUrl} target='_blank'>
                             <div className='action-image-container'>
-                                <img src='google-chrome-icon.png' alt='spotify logo'/>
+                                <img src='album-actions/google-chrome.png' alt='spotify logo'/>
                             </div>
                         </a>
                     </div>
                     <div className='actions-container'>
                         <button className='action-trigger one-action' onClick={() => context.markAlbumAsSeen(album.id)}>
                             <div className='action-image-container'>
-                                <img src='mark-as-seen.png' alt='mark as seen'/>
+                                <img src='album-actions/ghost.png' alt='mark as seen'/>
                             </div>
                         </button>
                     </div>
