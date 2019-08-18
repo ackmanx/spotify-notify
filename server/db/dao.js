@@ -14,7 +14,7 @@ function fetchUserData(userId) {
  */
 exports.getNewAlbumsCache = async userId => {
     const [document = {}] = await fetchUserData(userId).project({newAlbumsCache: 1}).toArray()
-    return document.newAlbumsCache
+    return document.newAlbumsCache || {}
 }
 
 /*
@@ -29,7 +29,7 @@ exports.saveNewAlbumsCache = async (userId, newAlbumsCache) => await getUserData
  */
 exports.getSeenAlbums = async userId => {
     const [document = {}] = await fetchUserData(userId).project({seenAlbums: 1}).toArray()
-    return document.seenAlbums
+    return document.seenAlbums || []
 }
 
 /*
@@ -39,7 +39,9 @@ exports.saveSeenAlbums = async (userId, seenAlbums) => await getUserDataCollecti
 
 
 exports.initializeDatabaseForUser = async userId => {
-    if (!getUserDataCollection().find({userId}).count()) {
+    const userAlreadyInDatabase = await getUserDataCollection().find({userId}).count()
+
+    if (!userAlreadyInDatabase) {
         await getUserDataCollection().insertOne({userId})
     }
 }
