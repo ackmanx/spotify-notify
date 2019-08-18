@@ -13,7 +13,7 @@ function fetchUserData(userId) {
  * Because this returns a MongoDB `Cursor`, we have to convert to an array
  */
 exports.getNewAlbumsCache = async userId => {
-    const [document] = await fetchUserData(userId).project({newAlbumsCache: 1}).toArray()
+    const [document = {}] = await fetchUserData(userId).project({newAlbumsCache: 1}).toArray()
     return document.newAlbumsCache
 }
 
@@ -28,7 +28,7 @@ exports.saveNewAlbumsCache = async (userId, newAlbumsCache) => await getUserData
  * Because this returns a MongoDB `Cursor`, we have to convert to an array
  */
 exports.getSeenAlbums = async userId => {
-    const [document] = await fetchUserData(userId).project({seenAlbums: 1}).toArray()
+    const [document = {}] = await fetchUserData(userId).project({seenAlbums: 1}).toArray()
     return document.seenAlbums
 }
 
