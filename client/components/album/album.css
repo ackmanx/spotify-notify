@@ -23,6 +23,7 @@
     position: absolute; /* this is absolute to the album, so that it covers the whole album and doesn't flow after it */
     display: flex; /* this is flex to align the icon children vertically */
     top: 0;
+    background-color: rgba(0, 0, 0, .33);
 }
 
 .actions-container {
