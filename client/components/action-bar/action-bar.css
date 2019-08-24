@@ -5,32 +5,37 @@
     height: 50px;
 }
 
-.refresh-button {
+.action-button {
     border: 1px dashed black;
-    display: flex;
-    width: 30px;
     height: 30px;
     padding: 5px;
 }
 
-.refresh-button:hover, .mark-as-seen-button:hover {
+.action-button:hover {
     border: 2px dashed black;
     padding: 4px;
 }
 
-.refresh-icon {
-    max-width: 100%;
-    height: auto;
+.refresh-button {
+    display: flex;
+    width: 30px;
 }
 
 .mark-as-seen-button {
-    border: 1px dashed black;
-    height: 30px;
     margin-left: 20px;
+}
+
+.disabled {
+    background-color: darkgray;
+}
+
+.disabled:hover {
+    border: 1px dashed black;
     padding: 5px;
 }
 
-.mark-as-seen-icon {
+.action-icon {
+    max-width: 100%;
     max-height: 100%;
     width: auto;
 }

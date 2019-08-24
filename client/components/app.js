@@ -46,6 +46,10 @@ export class App extends React.Component {
     }
 
     async refreshNewAlbums() {
+        if (this.state.loading) return
+
+        this.setState({loading: true})
+
         const response = await fetch('/api/new-albums/refresh')
         this.setState({artistsWithNewAlbums: await response.json()})
     }
@@ -72,6 +76,10 @@ export class App extends React.Component {
     }
 
     async submitSeenAlbums() {
+        if (this.state.loading) return
+
+        this.setState({loading: true})
+
         await fetch('/api/update-seen-albums',
             {
                 method: 'POST',
