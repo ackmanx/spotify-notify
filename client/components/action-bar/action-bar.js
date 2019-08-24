@@ -4,14 +4,14 @@ import {AppContext} from '../../context'
 import {ActionButton} from './action-button'
 
 export const ActionBar = () => {
-    const {refreshNewAlbums, seenAlbums, submitSeenAlbums} = useContext(AppContext)
+    const {getNewAlbums, seenAlbums, submitSeenAlbums} = useContext(AppContext)
 
     return (
         <div className='action-bar'>
             <ActionButton className='refresh-button'
                           imagePath='refresh-icon.png'
                           imageAltText='refresh'
-                          handler={refreshNewAlbums}/>
+                          handler={getNewAlbums}/>
 
             <ActionButton className='mark-as-seen-button'
                           imagePath='update-mark-as-seens.png'

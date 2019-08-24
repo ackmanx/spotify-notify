@@ -3,21 +3,21 @@ import {AppContext} from '../context'
 import {Artist} from './artist/artist'
 import {ActionBar} from './action-bar/action-bar'
 import {Banner} from './banner/banner'
+import {fetchNewAlbums} from '../api/api-helpers'
 
 export class App extends React.Component {
     state = {
         artistsWithNewAlbums: {},
-        loading: true,
+        loading: false,
         seenAlbums: [],
+        getNewAlbums: this.getNewAlbums.bind(this),
         markArtistAsSeen: this.markArtistAsSeen.bind(this),
         markAlbumAsSeen: this.markAlbumAsSeen.bind(this),
-        refreshNewAlbums: this.refreshNewAlbums.bind(this),
         submitSeenAlbums: this.submitSeenAlbums.bind(this),
     }
 
-    constructor(props) {
-        super(props)
-        this.getNewAlbums()
+    componentDidMount() {
+        this.getNewAlbums({shouldGetCached: true})
     }
 
     render() {
@@ -40,18 +40,15 @@ export class App extends React.Component {
         )
     }
 
-    async getNewAlbums() {
-        const response = await fetch('/api/new-albums/cached')
-        this.setState({artistsWithNewAlbums: await response.json(), loading: false})
-    }
-
-    async refreshNewAlbums() {
+    getNewAlbums({shouldGetCached}) {
         if (this.state.loading) return
 
-        this.setState({loading: true})
-
-        const response = await fetch('/api/new-albums/refresh')
-        this.setState({artistsWithNewAlbums: await response.json()})
+        this.setState({loading: true}, async () =>
+            this.setState({
+                artistsWithNewAlbums: await fetchNewAlbums(shouldGetCached),
+                loading: false
+            })
+        )
     }
 
     markArtistAsSeen(artistId) {
@@ -77,8 +74,6 @@ export class App extends React.Component {
 
     async submitSeenAlbums() {
         if (this.state.loading) return
-
-        this.setState({loading: true})
 
         await fetch('/api/update-seen-albums',
             {
