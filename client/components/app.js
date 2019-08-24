@@ -21,17 +21,17 @@ export class App extends React.Component {
     }
 
     render() {
-        const artistsWithNewAlbums = Object.keys(this.state.artistsWithNewAlbums)
+        const artistsWithNewAlbumsKeys = Object.keys(this.state.artistsWithNewAlbums)
 
         return (
             <AppContext.Provider value={this.state}>
                 <ActionBar/>
 
                 {this.state.loading && <Banner text='Loading...'/>}
-                {!this.state.loading && !artistsWithNewAlbums.length && <Banner text='Nothing new :('/>}
+                {!this.state.loading && !artistsWithNewAlbumsKeys.length && <Banner text='Nothing new :('/>}
 
-                {!!artistsWithNewAlbums.length && (
-                    artistsWithNewAlbums.map(artistId => {
+                {!!artistsWithNewAlbumsKeys.length && (
+                    artistsWithNewAlbumsKeys.map(artistId => {
                         const artist = this.state.artistsWithNewAlbums[artistId];
                         return <Artist key={artist.id} artist={artist}/>
                     })

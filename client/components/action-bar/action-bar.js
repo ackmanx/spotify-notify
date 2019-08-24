@@ -1,19 +1,24 @@
 import './action-bar.css'
 import React, { useContext } from 'react'
 import {AppContext} from '../../context'
+import {ActionButton} from './action-button'
 
 export const ActionBar = () => {
-    const {loading, refreshNewAlbums, seenAlbums, submitSeenAlbums} = useContext(AppContext)
+    const {refreshNewAlbums, seenAlbums, submitSeenAlbums} = useContext(AppContext)
 
     return (
         <div className='action-bar'>
-            <button className={`action-button refresh-button ${loading ? 'disabled' : ''}`} onClick={refreshNewAlbums} disabled={loading}>
-                <img className='action-icon' src="refresh-icon.png" alt='refresh'/>
-            </button>
-            <button className={`action-button mark-as-seen-button ${loading ? 'disabled' : ''}`} onClick={submitSeenAlbums} disabled={loading}>
-                <img className='action-icon' src="update-mark-as-seens.png" alt='mark as seen'/>
+            <ActionButton className='refresh-button'
+                          imagePath='refresh-icon.png'
+                          imageAltText='refresh'
+                          handler={refreshNewAlbums}/>
+
+            <ActionButton className='mark-as-seen-button'
+                          imagePath='update-mark-as-seens.png'
+                          imageAltText='mark as seen'
+                          handler={submitSeenAlbums}>
                 {seenAlbums.length}
-            </button>
+            </ActionButton>
         </div>
     )
 }
