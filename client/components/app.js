@@ -3,7 +3,7 @@ import {AppContext} from '../context'
 import {Artist} from './artist/artist'
 import {ActionBar} from './action-bar/action-bar'
 import {Banner} from './banner/banner'
-import {fetchNewAlbums} from '../api/api-helpers'
+import {fetchNewAlbums, postSeenAlbums} from '../api/api-helpers'
 
 export class App extends React.Component {
     state = {
@@ -75,16 +75,7 @@ export class App extends React.Component {
     async submitSeenAlbums() {
         if (this.state.loading) return
 
-        await fetch('/api/update-seen-albums',
-            {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({albumIds: this.state.seenAlbums}),
-            }
-        )
+        await postSeenAlbums(this.state.seenAlbums)
 
         document.location.reload()
     }
