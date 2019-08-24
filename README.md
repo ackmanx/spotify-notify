@@ -17,8 +17,6 @@
 
 * FEATURE: Mobile friendly
 
-* FEATURE: Disable buttons until requests finish
-
 * CHORE: Add heroku env variable with mongodb url
 
 * FEATURE: Lazy-load images
