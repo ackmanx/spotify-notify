@@ -11,6 +11,12 @@
 .artist-name {
     font-size: 72px;
     cursor: pointer;
+    color: white;
+    background-color: black;
+}
+
+.artist-name:hover {
+    background-color: #333;
 }
 
 .album-group-title-albums {
