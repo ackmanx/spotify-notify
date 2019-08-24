@@ -21,4 +21,6 @@
 
 * CHORE: Add heroku env variable with mongodb url
 
+* FEATURE: Lazy-load images
+
 Question, what happens if you refresh spotify, reload the page then do it again before the first finishes?
