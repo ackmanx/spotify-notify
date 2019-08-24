@@ -43,3 +43,4 @@ Send back in data set how many followed artists there are
 
 We can use this to see if the user is following any artists and report that to the screen
 
+This work can be done with the refactor to `releases` naming
