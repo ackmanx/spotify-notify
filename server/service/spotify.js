@@ -116,7 +116,9 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
         )
     )
 
-    debug(`Found ${Object.keys(newCache).length} artists`)
+    const followedArtistsCount = Object.keys(newCache).length
+
+    debug(`Found ${followedArtistsCount} artists`)
 
     const allAlbumsFollowedArtists = []
 
