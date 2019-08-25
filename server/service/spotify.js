@@ -39,8 +39,6 @@ function getPagingNextUrl(response) {
 async function fetchAllPages(accessToken, relativeSpotifyUrl) {
     const results = []
 
-    debug(`Fetching albums for ${relativeSpotifyUrl}`)
-
     let response = await spotifyAPI(accessToken, relativeSpotifyUrl)
     let nextPageAbsoluteUrl = getPagingNextUrl(response)
 
@@ -57,7 +55,6 @@ async function fetchAllPages(accessToken, relativeSpotifyUrl) {
 
 async function transformSpotifyAlbums(albums, newCache, userId) {
     const userSeenAlbums = await dao.getSeenAlbums(userId)
-
 
     albums.forEach(allAlbumsForSingleArtist => {
         //The albums response from Spotify does not contain the artistId used for searching except in the href and artists array
