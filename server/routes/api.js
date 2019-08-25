@@ -8,7 +8,7 @@ const {ensureAuthenticated} = require('./auth')
 const dao = require('../db/dao')
 const {checkForNewAlbums} = require('../service/spotify')
 
-router.get('/new-albums/cached', ensureAuthenticated, async function (req, res) {
+router.get('/albums/cached', ensureAuthenticated, async function (req, res) {
     const userId = req.session.user.id
     const userSeenAlbums = await dao.getSeenAlbums(userId)
     const cache = await dao.getNewAlbumsCache(userId)
@@ -21,11 +21,11 @@ router.get('/new-albums/cached', ensureAuthenticated, async function (req, res) 
     return res.json(cache)
 })
 
-router.get('/new-albums/refresh', ensureAuthenticated, async function (req, res) {
+router.get('/albums/refresh', ensureAuthenticated, async function (req, res) {
     res.json(await checkForNewAlbums(req.session))
 })
 
-router.post('/update-seen-albums', ensureAuthenticated, async function (req, res) {
+router.post('/seen-albums/update', ensureAuthenticated, async function (req, res) {
     const userId = req.session.user.id
     const userSeenAlbums = await dao.getSeenAlbums(userId)
 
