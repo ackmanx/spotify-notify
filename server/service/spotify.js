@@ -85,10 +85,18 @@ async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, newC
             })
         })
 
-        //Sort albums in descending order by their release date
-        allAlbumsForAnArtist.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
-
         newCache[artistId].albums = allAlbumsForAnArtist
+    })
+
+    Object.entries(newCache).forEach(([artistId, artist]) => {
+        //Remove artists from cache if all of their albums have been seen
+        if (!artist.albums.length) {
+            delete newCache[artistId]
+            return
+        }
+
+        //Sort albums in descending order by their release date
+        artist.albums.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
     })
 }
 

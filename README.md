@@ -18,30 +18,12 @@
 
 * FEATURE: Lazy-load images
 
-Question, what happens if you refresh spotify, reload the page then do it again before the first finishes?
-
-# Bug
-After everything is marked as seen, the response is:
-{
-    "5k4FRe5qvkCjlqLYS1o3Jn": {
-        "id": "5k4FRe5qvkCjlqLYS1o3Jn",
-        "name": "The Background Musicians",
-        "albums": []
-    }
-}
-
-This is not triggering "Nothing new :(" text because the response has keys, just no albums.
-
-We need to not return results for artists that have no new albums
-
-
 # Feature
 Send back in data set how many followed artists there are
 
 We can use this to see if the user is following any artists and report that to the screen
 
-# Chore
-try and move this until after, so we don't add artists with no new albums to the cache
+See cache contract v2
 
 # Bug
 `sleep` is not working. I get all my requests fired off at the same time, then they all try to sleep at the same time
