@@ -1,11 +1,8 @@
+const delay = require('delay')
 const dao = require('../db/dao')
 const fetch = require('node-fetch')
 const path = require('path')
 const debug = require('debug')(`sn:${path.basename(__filename)}`)
-
-function sleep(seconds) {
-    return new Promise(resolve => setTimeout(resolve, seconds * 1000))
-}
 
 async function spotifyAPI(accessToken, endpoint) {
     const options = {
@@ -23,8 +20,13 @@ async function spotifyAPI(accessToken, endpoint) {
 
         debug(`Throttled by Spotify, retrying ${spotifyApiURL} after ${retryAfterSeconds} seconds`)
 
-        await sleep(retryAfterSeconds)
+        await delay(retryAfterSeconds)
+
         response = await fetch(spotifyApiURL, options)
+
+        if (!response.ok) {
+            debug(`Uh oh, the retry after throttle failed too! We got a ${response.status} ${response.statusText} from Spotify`)
+        }
     }
 
     return response.json()
