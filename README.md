@@ -44,3 +44,11 @@ Send back in data set how many followed artists there are
 We can use this to see if the user is following any artists and report that to the screen
 
 This work can be done with the refactor to `releases` naming
+
+# Chore
+try and move this until after, so we don't add artists with no new albums to the cache
+
+# Bug
+`sleep` is not working. I get all my requests fired off at the same time, then they all try to sleep at the same time
+Then errors start flying
+I don't even think they're sleeping for the correct amount of time even though that function worked when I tested it

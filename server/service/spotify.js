@@ -18,10 +18,11 @@ async function spotifyAPI(accessToken, endpoint) {
 
     let response = await fetch(spotifyApiURL, options)
 
-    const retryAfterSeconds = response.headers['retry-after']
+    if (response.status === 429) {
+        const retryAfterSeconds = response.headers.get('retry-after') //for some reason `get` is the official way to return headers
 
-    if (retryAfterSeconds) {
         debug(`Throttled by Spotify, retrying ${spotifyApiURL} after ${retryAfterSeconds} seconds`)
+
         await sleep(retryAfterSeconds)
         response = await fetch(spotifyApiURL, options)
     }
@@ -39,8 +40,6 @@ function getPagingNextUrl(response) {
 async function fetchAllPages(accessToken, relativeSpotifyUrl) {
     const results = []
 
-    debug(`Fetching albums for ${relativeSpotifyUrl}`)
-
     let response = await spotifyAPI(accessToken, relativeSpotifyUrl)
     let nextPageAbsoluteUrl = getPagingNextUrl(response)
 
@@ -57,7 +56,6 @@ async function fetchAllPages(accessToken, relativeSpotifyUrl) {
 
 async function transformSpotifyAlbums(albums, newCache, userId) {
     const userSeenAlbums = await dao.getSeenAlbums(userId)
-
 
     albums.forEach(allAlbumsForSingleArtist => {
         //The albums response from Spotify does not contain the artistId used for searching except in the href and artists array
@@ -116,7 +114,9 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
         )
     )
 
-    debug(`Found ${Object.keys(newCache).length} artists`)
+    const followedArtistsCount = Object.keys(newCache).length
+
+    debug(`Found ${followedArtistsCount} artists`)
 
     const allAlbumsFollowedArtists = []
 
