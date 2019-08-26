@@ -97,20 +97,13 @@ exports.checkForNewReleases = async function checkForNewReleases(session) {
 
     let newCache = {}
 
-    // //This mock is for getting a smaller set of followed artists than I would get making the real call below
-    // //Don't forget to comment out the followedArtistsPagesFromSpotify block
-    // newCache = {
-    //     "77AiFEVeAVj2ORpC85QVJs": {
-    //         "id": "77AiFEVeAVj2ORpC85QVJs",
-    //         "name": "Steve Aoki"
-    //     },
-    // }
-
     debug(`Getting followed artists for ${userId}`)
 
-    const followedArtistsPagesFromSpotify = await fetchAllPages(session.access_token, '/me/following?type=artist&limit=50')
+    //This mock is for getting a smaller set of followed artists than I would get making the real call below
+    const followedArtistsPagesFromSpotify = [require('../resources/mocks/spotify/v1-me-following')]
+    // const followedArtistsPagesFromSpotify = await fetchAllPages(session.access_token, '/me/following?type=artist&limit=50')
 
-    const totalFollowedArtists = followedArtistsPagesFromSpotify[0].total
+    const totalFollowedArtists = followedArtistsPagesFromSpotify[0].artists.total
     debug(`Found ${totalFollowedArtists} artists`)
 
     followedArtistsPagesFromSpotify.forEach(followedPage =>

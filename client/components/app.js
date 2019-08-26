@@ -3,7 +3,7 @@ import {AppContext} from '../context'
 import {Artist} from './artist/artist'
 import {ActionBar} from './action-bar/action-bar'
 import {Banner} from './banner/banner'
-import {fetchNewAlbums, postSeenAlbums} from '../api/request-utils'
+import {fetchNewReleases, postSeenReleases} from '../api/request-utils'
 
 export class App extends React.Component {
     state = {
@@ -45,7 +45,7 @@ export class App extends React.Component {
 
         this.setState({loading: true}, async () =>
             this.setState({
-                artistsWithNewAlbums: await fetchNewAlbums(shouldGetCached),
+                artistsWithNewAlbums: await fetchNewReleases(shouldGetCached),
                 loading: false
             })
         )
@@ -75,7 +75,7 @@ export class App extends React.Component {
     async submitSeenAlbums() {
         if (this.state.loading) return
 
-        await postSeenAlbums(this.state.seenAlbums)
+        await postSeenReleases(this.state.seenAlbums)
 
         document.location.reload()
     }
