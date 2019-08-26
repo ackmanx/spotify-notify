@@ -3,12 +3,12 @@ export async function doGet(url) {
     return await response.json()
 }
 
-export async function fetchNewReleases(shouldGetCached) {
-    return await doGet(shouldGetCached ? '/api/releases/cached' : '/api/releases/refresh')
+export async function fetchNewAlbums(shouldGetCached) {
+    return await doGet(shouldGetCached ? '/api/albums/cached' : '/api/albums/refresh')
 }
 
-export async function postSeenReleases(seenAlbums) {
-    await fetch('/api/seen-releases/update',
+export async function postSeenAlbums(seenAlbums) {
+    await fetch('/api/seen-albums/update',
         {
             method: 'POST',
             headers: {
