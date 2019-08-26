@@ -18,10 +18,11 @@ async function spotifyAPI(accessToken, endpoint) {
 
     let response = await fetch(spotifyApiURL, options)
 
-    const retryAfterSeconds = response.headers['retry-after']
+    if (response.status === 429) {
+        const retryAfterSeconds = response.headers.get('retry-after') //for some reason `get` is the official way to return headers
 
-    if (retryAfterSeconds) {
         debug(`Throttled by Spotify, retrying ${spotifyApiURL} after ${retryAfterSeconds} seconds`)
+
         await sleep(retryAfterSeconds)
         response = await fetch(spotifyApiURL, options)
     }
