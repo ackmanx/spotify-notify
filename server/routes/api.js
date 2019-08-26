@@ -6,7 +6,7 @@ const debug = require('debug')(`sn:${path.basename(__filename)}`)
 
 const {ensureAuthenticated} = require('./auth')
 const dao = require('../db/dao')
-const {checkForNewReleases} = require('../service/spotify')
+const {checkForNewAlbums} = require('../service/spotify')
 
 /*
  * Grab the user's cache from the DB so we don't pester Spotify each time we load the page (plus this is ridiculously faster)
@@ -33,7 +33,7 @@ router.get('/albums/cached', ensureAuthenticated, async function (req, res) {
  * Lastly it will remove the albums we've seen and save the cache to the DB before sending it to the user
  */
 router.get('/albums/refresh', ensureAuthenticated, async function (req, res) {
-    res.json(await checkForNewReleases(req.session))
+    res.json(await checkForNewAlbums(req.session))
 })
 
 router.post('/seen-albums/update', ensureAuthenticated, async function (req, res) {

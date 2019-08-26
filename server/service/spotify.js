@@ -55,44 +55,44 @@ async function fetchAllPages(accessToken, relativeSpotifyUrl) {
 }
 
 /*
- * This transforms a single artist's albums responses from Spotify into the contract for the cache
- * Note that Spotify refers to "album albums" and "album singles", whereas I'm using the terminology "release album" and "release single"
+ * This transforms lists of artists' albums responses from Spotify into the contract for the cache
+ * This operates on all the artists and their albums, not just a single artist's albums
+ * Note that this is an array of API response pages, so there may be several pages for a single artist if they have a lot of albums
  */
-async function transformSpotifyReleasesToCache(pagesOfArtistsAndTheirReleases, newCache, userId) {
+async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, newCache, userId) {
     const userSeenAlbums = await dao.getSeenAlbums(userId)
 
-    //`pagesOfArtistsAndTheirReleases` is all artists and all their releases, but in pages if they have over 50 releases
-    pagesOfArtistsAndTheirReleases.forEach(singlePageOfArtistAndReleases => {
+    pagesOfArtistAlbums.forEach(artistAlbumPage => {
         //The albums response from Spotify does not contain the artistId used for searching except in the href and artists array
         //However, being the album could be a collab, there may be multiple artists in the array and order is not predictable
         //Being we don't know the artistId used for searching in this loop, we have to pull it out of the href
-        const [, artistId] = singlePageOfArtistAndReleases.href.match(/artists\/(.+)\/albums/)
+        const [, artistId] = artistAlbumPage.href.match(/artists\/(.+)\/albums/)
 
-        let releases = newCache[artistId].albums //todo: change to releases and update UI
-        if (!Array.isArray(releases)) releases = []
+        let allAlbumsForAnArtist = newCache[artistId].albums || []
 
-        singlePageOfArtistAndReleases.items.forEach(release => {
-            if (userSeenAlbums.includes(release.id)) return
+        //Build the cache for each album in this artist page
+        artistAlbumPage.items.forEach(album => {
+            if (userSeenAlbums.includes(album.id)) return
 
-            releases.push({
-                id: release.id,
-                name: release.name,
-                coverArt: release.images[1].url, //response always has 3 images of diff sizes, and I always want the middle one
-                releaseDate: release.release_date,
-                type: release.album_type,
-                spotifyUri: release.uri,
-                spotifyWebPlayerUrl: release.external_urls.spotify,
+            allAlbumsForAnArtist.push({
+                id: album.id,
+                name: album.name,
+                coverArt: album.images[1].url, //response always has 3 images of diff sizes, and I always want the middle one
+                releaseDate: album.release_date,
+                type: album.album_type,
+                spotifyUri: album.uri,
+                spotifyWebPlayerUrl: album.external_urls.spotify,
             })
         })
 
-        //Sort releases in descending order by their release date
-        releases.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
+        //Sort albums in descending order by their release date
+        allAlbumsForAnArtist.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
 
-        newCache[artistId].albums = releases
+        newCache[artistId].albums = allAlbumsForAnArtist
     })
 }
 
-exports.checkForNewReleases = async function checkForNewReleases(session) {
+exports.checkForNewAlbums = async function checkForNewAlbums(session) {
     const userId = session.user.id
 
     let newCache = {}
@@ -102,7 +102,7 @@ exports.checkForNewReleases = async function checkForNewReleases(session) {
     //This mock is for getting a smaller set of followed artists than I would get making the real call below
     const followedArtistsPagesFromSpotify = [require('../resources/mocks/spotify/v1-me-following')]
     // const followedArtistsPagesFromSpotify = await fetchAllPages(session.access_token, '/me/following?type=artist&limit=50')
-    
+
     const totalFollowedArtists = followedArtistsPagesFromSpotify[0].total
     debug(`Found ${totalFollowedArtists} artists`)
 
@@ -123,7 +123,7 @@ exports.checkForNewReleases = async function checkForNewReleases(session) {
         allAlbumsPagesOfFollowedArtists.push(...albumsPages)
     }
 
-    await transformSpotifyReleasesToCache(allAlbumsPagesOfFollowedArtists, newCache, userId)
+    await transformSpotifyArtistAlbumPagesToCache(allAlbumsPagesOfFollowedArtists, newCache, userId)
 
     await dao.saveNewAlbumsCache(userId, newCache)
 
