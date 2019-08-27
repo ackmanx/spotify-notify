@@ -43,12 +43,15 @@ export class App extends React.Component {
     getNewAlbums({shouldGetCached}) {
         if (this.state.loading) return
 
-        this.setState({loading: true}, async () =>
+        this.setState({loading: true}, async () => {
+            const res = await fetchNewAlbums(shouldGetCached)
+
             this.setState({
-                artistsWithNewAlbums: await fetchNewAlbums(shouldGetCached),
-                loading: false
+                artistsWithNewAlbums: res.artists,
+                totalFollowedArtists: res.totalFollowedArtists,
+                loading: false,
             })
-        )
+        })
     }
 
     markArtistAsSeen(artistId) {
