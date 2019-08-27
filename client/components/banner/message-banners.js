@@ -16,7 +16,7 @@ export const MessageBanners = () => {
         else if (!context.totalFollowedArtists) {
             banner = <Banner text="Whoa boy, it looks like you aren't following any artists on Spotify! Do that and come back."/>
         }
-        else if (!Object.keys(context.artistsWithNewAlbums || {}).length) {
+        else if (!context.totalNewAlbums) {
             banner = <Banner text="Nothing new :("/>
         }
     }

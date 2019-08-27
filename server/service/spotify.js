@@ -68,7 +68,7 @@ async function fetchAllPages(accessToken, relativeSpotifyUrl) {
  * This operates on all the artists and their albums, not just a single artist's albums
  * Note that this is an array of API response pages, so there may be several pages for a single artist if they have a lot of albums
  */
-async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, newCacheArtists, userId) {
+async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, newCache, userId) {
     const userSeenAlbums = await dao.getSeenAlbums(userId)
 
     pagesOfArtistAlbums.forEach(artistAlbumPage => {
@@ -77,7 +77,7 @@ async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, newC
         //Being we don't know the artistId used for searching in this loop, we have to pull it out of the href
         const [, artistId] = artistAlbumPage.href.match(/artists\/(.+)\/albums/)
 
-        let allAlbumsForAnArtist = newCacheArtists[artistId].albums || []
+        let allAlbumsForAnArtist = newCache.artists[artistId].albums || []
 
         //Build the cache for each album in this artist page
         artistAlbumPage.items.forEach(album => {
@@ -94,19 +94,25 @@ async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, newC
             })
         })
 
-        newCacheArtists[artistId].albums = allAlbumsForAnArtist
+        newCache.artists[artistId].albums = allAlbumsForAnArtist
     })
 
-    Object.entries(newCacheArtists).forEach(([artistId, artist]) => {
+    let totalNewAlbums = 0
+
+    Object.entries(newCache.artists).forEach(([artistId, artist]) => {
         //Remove artists from cache if all of their albums have been seen
         if (!artist.albums.length) {
-            delete newCacheArtists[artistId]
+            delete newCache.artists[artistId]
             return
         }
+
+        totalNewAlbums++
 
         //Sort albums in descending order by their release date
         artist.albums.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
     })
+
+    newCache.totalNewAlbums = totalNewAlbums
 }
 
 exports.checkForNewAlbums = async function checkForNewAlbums(session) {
@@ -150,7 +156,7 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
     }
 
     //Update the Spotify responses to conform to our cache contract
-    await transformSpotifyArtistAlbumPagesToCache(allAlbumsPagesOfFollowedArtists, newCache.artists, userId)
+    await transformSpotifyArtistAlbumPagesToCache(allAlbumsPagesOfFollowedArtists, newCache, userId)
 
     await dao.saveNewAlbumsCache(userId, newCache)
 

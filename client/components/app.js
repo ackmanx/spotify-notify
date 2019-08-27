@@ -14,6 +14,7 @@ export class App extends React.Component {
         loading: true,
         seenAlbums: [],
         totalFollowedArtists: 0,
+        totalNewAlbums: 0,
         getNewAlbums: this.getNewAlbums.bind(this),
         markArtistAsSeen: this.markArtistAsSeen.bind(this),
         markAlbumAsSeen: this.markAlbumAsSeen.bind(this),
@@ -54,6 +55,7 @@ export class App extends React.Component {
             this.setState({
                 artistsWithNewAlbums: res.artists,
                 totalFollowedArtists: res.totalFollowedArtists,
+                totalNewAlbums: res.totalNewAlbums,
                 //If we're getting the cache the user may be first-time, but if you are refreshing then you are no longer a first-time user
                 firstTimeUser: shouldGetCached ? res.firstTimeUser : false,
                 loading: false,
