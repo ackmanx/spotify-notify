@@ -17,15 +17,3 @@
 * CHORE: Add heroku env variable with mongodb url
 
 * FEATURE: Lazy-load images
-
-# Feature
-Send back in data set how many followed artists there are
-
-We can use this to see if the user is following any artists and report that to the screen
-
-See cache contract v2
-
-# Bug
-`sleep` is not working. I get all my requests fired off at the same time, then they all try to sleep at the same time
-Then errors start flying
-I don't even think they're sleeping for the correct amount of time even though that function worked when I tested it

@@ -1,11 +1,8 @@
+const delay = require('delay')
 const dao = require('../db/dao')
 const fetch = require('node-fetch')
 const path = require('path')
 const debug = require('debug')(`sn:${path.basename(__filename)}`)
-
-function sleep(seconds) {
-    return new Promise(resolve => setTimeout(resolve, seconds * 1000))
-}
 
 async function spotifyAPI(accessToken, endpoint) {
     const options = {
@@ -23,11 +20,23 @@ async function spotifyAPI(accessToken, endpoint) {
 
         debug(`Throttled by Spotify, retrying ${spotifyApiURL} after ${retryAfterSeconds} seconds`)
 
-        await sleep(retryAfterSeconds)
+        await delay(retryAfterSeconds)
+
         response = await fetch(spotifyApiURL, options)
+
+        if (!response.ok) {
+            debug(`Uh oh, the retry after throttle failed too! We got a ${response.status} ${response.statusText} from Spotify`)
+        }
     }
 
-    return response.json()
+    const responseBody = await response.json()
+
+    if (!response.ok) {
+        debug(`Uh oh, the Spotify API request failed (${spotifyApiURL})! Here's what they had to say: ${JSON.stringify(responseBody)}`)
+        return
+    }
+
+    return responseBody
 }
 
 function getPagingNextUrl(response) {
@@ -59,7 +68,7 @@ async function fetchAllPages(accessToken, relativeSpotifyUrl) {
  * This operates on all the artists and their albums, not just a single artist's albums
  * Note that this is an array of API response pages, so there may be several pages for a single artist if they have a lot of albums
  */
-async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, newCache, userId) {
+async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, newCacheArtists, userId) {
     const userSeenAlbums = await dao.getSeenAlbums(userId)
 
     pagesOfArtistAlbums.forEach(artistAlbumPage => {
@@ -68,7 +77,7 @@ async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, newC
         //Being we don't know the artistId used for searching in this loop, we have to pull it out of the href
         const [, artistId] = artistAlbumPage.href.match(/artists\/(.+)\/albums/)
 
-        let allAlbumsForAnArtist = newCache[artistId].albums || []
+        let allAlbumsForAnArtist = newCacheArtists[artistId].albums || []
 
         //Build the cache for each album in this artist page
         artistAlbumPage.items.forEach(album => {
@@ -85,13 +94,13 @@ async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, newC
             })
         })
 
-        newCache[artistId].albums = allAlbumsForAnArtist
+        newCacheArtists[artistId].albums = allAlbumsForAnArtist
     })
 
-    Object.entries(newCache).forEach(([artistId, artist]) => {
+    Object.entries(newCacheArtists).forEach(([artistId, artist]) => {
         //Remove artists from cache if all of their albums have been seen
         if (!artist.albums.length) {
-            delete newCache[artistId]
+            delete newCacheArtists[artistId]
             return
         }
 
@@ -103,8 +112,6 @@ async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, newC
 exports.checkForNewAlbums = async function checkForNewAlbums(session) {
     const userId = session.user.id
 
-    let newCache = {}
-
     debug(`Getting followed artists for ${userId}`)
 
     //This mock is for getting a smaller set of followed artists than I would get making the real call below
@@ -112,11 +119,17 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
     const followedArtistsPagesFromSpotify = await fetchAllPages(session.access_token, '/me/following?type=artist&limit=50')
 
     const totalFollowedArtists = followedArtistsPagesFromSpotify[0].artists.total
+
+    let newCache = {
+        artists: {},
+        totalFollowedArtists,
+    }
+
     debug(`Found ${totalFollowedArtists} artists`)
 
     followedArtistsPagesFromSpotify.forEach(followedPage =>
         followedPage.artists.items.forEach(artist =>
-            newCache[artist.id] = {
+            newCache.artists[artist.id] = {
                 id: artist.id,
                 name: artist.name,
             }
@@ -125,13 +138,19 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
 
     const allAlbumsPagesOfFollowedArtists = []
 
-    for (let artistId in newCache) {
-        const albumsPages = await fetchAllPages(session.access_token, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`)
-        //Spread albums because fetchAlbumsAllPages returns an array of responses, and we want this array to be flat of all artists and albums
-        allAlbumsPagesOfFollowedArtists.push(...albumsPages)
+    for (let artistId in newCache.artists) {
+        try {
+            const albumsPages = await fetchAllPages(session.access_token, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`)
+            //Spread albums because fetchAlbumsAllPages returns an array of responses, and we want this array to be flat of all artists and albums
+            allAlbumsPagesOfFollowedArtists.push(...albumsPages)
+        }
+        catch (e) {
+            console.error(e)
+        }
     }
 
-    await transformSpotifyArtistAlbumPagesToCache(allAlbumsPagesOfFollowedArtists, newCache, userId)
+    //Update the Spotify responses to conform to our cache contract
+    await transformSpotifyArtistAlbumPagesToCache(allAlbumsPagesOfFollowedArtists, newCache.artists, userId)
 
     await dao.saveNewAlbumsCache(userId, newCache)
 

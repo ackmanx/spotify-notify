@@ -15,6 +15,7 @@
         "cookie-parser": "1.4.4",
         "copy-webpack-plugin": "5.0.3",
         "debug": "2.6.9",
+        "delay": "4.3.0",
         "ejs": "2.6.1",
         "express": "4.16.1",
         "express-session": "1.16.1",
