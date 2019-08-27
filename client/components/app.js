@@ -4,12 +4,16 @@ import {Artist} from './artist/artist'
 import {ActionBar} from './action-bar/action-bar'
 import {Banner} from './banner/banner'
 import {fetchNewAlbums, postSeenAlbums} from '../api/request-utils'
+import {MessageBanners} from './banner/message-banners'
 
 export class App extends React.Component {
     state = {
         artistsWithNewAlbums: {},
-        loading: false,
+        firstTimeUser: false,
+        //Default this to true so the message banners aren't rendered before we get results back
+        loading: true,
         seenAlbums: [],
+        totalFollowedArtists: 0,
         getNewAlbums: this.getNewAlbums.bind(this),
         markArtistAsSeen: this.markArtistAsSeen.bind(this),
         markAlbumAsSeen: this.markAlbumAsSeen.bind(this),
@@ -17,20 +21,20 @@ export class App extends React.Component {
     }
 
     componentDidMount() {
-        this.getNewAlbums({shouldGetCached: true})
+        this.getNewAlbums({shouldGetCached: true, appJustLoaded: true})
     }
 
     render() {
-        const artistsWithNewAlbumsKeys = Object.keys(this.state.artistsWithNewAlbums)
+        const artistsWithNewAlbumsKeys = Object.keys(this.state.artistsWithNewAlbums || {})
+        const hasNewAlbums = !!artistsWithNewAlbumsKeys.length
 
         return (
             <AppContext.Provider value={this.state}>
                 <ActionBar/>
 
-                {this.state.loading && <Banner text='Loading...'/>}
-                {!this.state.loading && !artistsWithNewAlbumsKeys.length && <Banner text='Nothing new :('/>}
+                <MessageBanners/>
 
-                {!!artistsWithNewAlbumsKeys.length && (
+                {hasNewAlbums && (
                     artistsWithNewAlbumsKeys.map(artistId => {
                         const artist = this.state.artistsWithNewAlbums[artistId];
                         return <Artist key={artist.id} artist={artist}/>
@@ -40,8 +44,9 @@ export class App extends React.Component {
         )
     }
 
-    getNewAlbums({shouldGetCached}) {
-        if (this.state.loading) return
+    getNewAlbums({shouldGetCached, appJustLoaded}) {
+        //Prevent double-submissions, but also check this isn't a first-time load for a user
+        if (this.state.loading && !appJustLoaded) return
 
         this.setState({loading: true}, async () => {
             const res = await fetchNewAlbums(shouldGetCached)
@@ -49,6 +54,8 @@ export class App extends React.Component {
             this.setState({
                 artistsWithNewAlbums: res.artists,
                 totalFollowedArtists: res.totalFollowedArtists,
+                //If we're getting the cache the user may be first-time, but if you are refreshing then you are no longer a first-time user
+                firstTimeUser: shouldGetCached ? res.firstTimeUser : false,
                 loading: false,
             })
         })

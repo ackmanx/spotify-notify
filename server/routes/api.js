@@ -16,6 +16,11 @@ router.get('/albums/cached', ensureAuthenticated, async function (req, res) {
     const userSeenAlbums = await dao.getSeenAlbums(userId)
     const cache = await dao.getNewAlbumsCache(userId)
 
+    //If a user's never been here, they won't have had this fetched from Spotify yet
+    if (!cache.totalFollowedArtists) {
+        return res.json({firstTimeUser: true})
+    }
+
     //Go through each artist in the cache and filter out seen albums
     //We don't cache seen albums, but the cache isn't rebuilt until the user does a refresh
     //So, this is to hide them until a refresh
