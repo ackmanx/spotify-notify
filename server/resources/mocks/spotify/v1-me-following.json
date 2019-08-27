@@ -39,7 +39,47 @@
                 "popularity": 53,
                 "type": "artist",
                 "uri": "spotify:artist:03SZv6slUnLnHI3IfwG0gl"
+            },
+            {
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/03SZv6slUnLnHI3IfwG0gl"
+                },
+                "followers": {
+                    "href": null,
+                    "total": 45240
+                },
+                "genres": [
+                    "antideutsche",
+                    "electropunk",
+                    "german indie",
+                    "german pop",
+                    "german rock"
+                ],
+                "href": "https://api.spotify.com/v1/artists/03SZv6slUnLnHI3IfwG0gl",
+                "id": "1r9DuPTHiQ7hnRRZ99B8nL",
+                "images": [
+                    {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/45b2aabf832035fab7fe10d9e8161ce5e2045727",
+                        "width": 640
+                    },
+                    {
+                        "height": 320,
+                        "url": "https://i.scdn.co/image/4724cda108d09d530a419004f9e67457a82ef3e6",
+                        "width": 320
+                    },
+                    {
+                        "height": 160,
+                        "url": "https://i.scdn.co/image/9b4b1250aeb0aa46b886727a873b30200faa6b65",
+                        "width": 160
+                    }
+                ],
+                "name": "Jolin Tsai",
+                "popularity": 53,
+                "type": "artist",
+                "uri": "spotify:artist:03SZv6slUnLnHI3IfwG0gl"
             }
+
         ],
         "next": "https://api.spotify.com/v1/me/following?type=artist&after=16yUpGkBRgc2eDMd3bB3Uw&limit=20",
         "total": 167,

@@ -19,8 +19,7 @@ router.get('/albums/cached', ensureAuthenticated, async function (req, res) {
     //Go through each artist in the cache and filter out seen albums
     //We don't cache seen albums, but the cache isn't rebuilt until the user does a refresh
     //So, this is to hide them until a refresh
-    Object.keys(cache).forEach(artistId => {
-        const artist = cache[artistId]
+    Object.entries(cache.artists || []).forEach(([, artist]) => {
         artist.albums = artist.albums.filter(album => !userSeenAlbums.includes(album.id))
     })
 
