@@ -17,3 +17,5 @@
 * CHORE: Add heroku env variable with mongodb url
 
 * FEATURE: Lazy-load images
+
+* PROD: Have to add new whitelisted URLs for my custom domain and remove the heroku URL
