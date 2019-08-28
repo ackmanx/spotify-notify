@@ -19,11 +19,7 @@
     background-color: #333;
 }
 
-.album-group-title-albums {
-    font-size: 35px;
-}
-
-.album-group-title-singles {
+.album-group-title {
     font-size: 35px;
     padding-top: 20px;
 }

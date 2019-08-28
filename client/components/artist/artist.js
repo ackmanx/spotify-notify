@@ -18,12 +18,12 @@ export const Artist = ({artist}) => {
             <div className='artist-name' onClick={() => context.markArtistAsSeen(artist.id)}>{artist.name}</div>
 
             {!!albums.length && <>
-                <div className='album-group-title-albums'>Albums</div>
+                <div className='album-group-title'>Albums</div>
                 {albums.map(album => <Album key={album.id} artistName={artist.name} album={album}/>)}
             </>}
 
             {!!singles.length && <>
-                <div className='album-group-title-singles'>Singles</div>
+                <div className='album-group-title'>Singles</div>
                 {singles.map(album => <Album key={album.id} artistName={artist.name} album={album}/>)}
             </>}
         </div>
