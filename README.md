@@ -12,5 +12,3 @@
 * FEATURE: Mobile friendly
 
 * CHORE: Add heroku env variable with mongodb url
-
-* FEATURE: Lazy-load images
