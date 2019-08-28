@@ -31,7 +31,7 @@ const stateKey = 'spotify_auth_state'
 let redirect_uri //where to be sent by spotify after logging in. this must be whitelisted in spotify developer dashboard first
 
 if (process.env.NODE_ENV === 'production') {
-    redirect_uri = 'https://www.ialreadysawthat.com/auth/callback'
+    redirect_uri = 'http://www.ialreadysawthat.com/auth/callback'
 }
 else {
     redirect_uri = 'http://me:3666/auth/callback'
