@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title><%= title %></title>
     <link id=favicon rel="shortcut icon" type=image/png href="/fav-icon.png"/>
@@ -7,6 +7,15 @@
     <% if (!loggedIn) { %>
         <link rel="stylesheet" href="not-logged-in.css"/>
     <% } %>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-36320417-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-36320417-3');
+    </script>
 </head>
 <body>
 
