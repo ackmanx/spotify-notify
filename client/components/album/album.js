@@ -1,5 +1,7 @@
 import './album.css'
+import { Placeholder } from './placeholder';
 import React, {useContext, useState} from 'react'
+import LazyLoad from 'react-lazyload'
 import {AppContext} from '../../context'
 
 export const Album = ({album, artistName}) => {
@@ -14,10 +16,14 @@ export const Album = ({album, artistName}) => {
 
     return (
         <div className={`album ${selected ? 'album--selected' : ''}`}>
-            <img className='album-cover-art'
-                 src={album.coverArt}
-                 alt={artistAlbumName}
-                 onMouseEnter={toggleOverlay}/>
+            <LazyLoad placeholder={<Placeholder/>}
+                      offset={500}
+                      once>
+                <img className='album-cover-art'
+                     src={album.coverArt}
+                     alt={artistAlbumName}
+                     onMouseEnter={toggleOverlay}/>
+            </LazyLoad>
 
             <div className='album-name'>{album.name}</div>
             <div>{album.releaseDate}</div>
