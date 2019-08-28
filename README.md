@@ -1,14 +1,16 @@
 # Remaining
 
-* TRAINING: Introduce styled components
+## Styled Components
 
-* TRAINING: Convert to TypeScript
+## Convert to TypeScript
 
-* DOC: Explain how this works. Explain setup required (like in ganjing for heroku) but also mention Spotify developer dashboard and whitelisting URLs
+## Mobile friendly
 
-* CHORE: generate a new client secret with spotify. then add a heroku config for it and reference that in the code
-    * For local development, I'll need to keep the secret handy outside of git, maybe read it from a file somewhere and make same env var that heroku uses
+## Docs
+Explain how this works. 
+Explain setup required (like in ganjing for heroku) but also mention Spotify developer dashboard and whitelisting URLs
 
-* FEATURE: Mobile friendly
+## Generate a new client secret with spotify
+Then add a heroku config for it and reference that in the code
+For local development, I'll need to keep the secret handy outside of git, maybe read it from a file somewhere and make same env var that heroku uses
 
-* CHORE: Add heroku env variable with mongodb url
