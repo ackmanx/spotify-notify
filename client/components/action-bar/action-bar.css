@@ -1,12 +1,20 @@
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
 .action-bar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: 50px;
+    margin: 0 10px;
 }
 
 .action-button {
-    border: 1px dashed black;
+    background-color: white;
+    border: 1px solid black;
     height: 30px;
     padding: 5px;
 }
