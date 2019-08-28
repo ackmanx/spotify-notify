@@ -1,8 +1,5 @@
 # Remaining
 
-* PROD: When I deploy, how will I backup my database?
-    * Maybe have a script that will download it so I can version control updates periodically
-
 * TRAINING: Introduce styled components
 
 * TRAINING: Convert to TypeScript
