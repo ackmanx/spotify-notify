@@ -1,10 +1,9 @@
 import React from 'react'
-import {AppContext} from '../context'
-import {Artist} from './artist/artist'
-import {ActionBar} from './action-bar/action-bar'
-import {Banner} from './banner/banner'
-import {fetchNewAlbums, postSeenAlbums} from '../api/request-utils'
-import {MessageBanners} from './banner/message-banners'
+import {AppContext} from './context'
+import {Artist} from './components/artist/artist'
+import {ActionBar} from './components/action-bar/action-bar'
+import {MessageBanners} from './components/banner/message-banners'
+import {fetchNewAlbums, postSeenAlbums} from './api/request-utils'
 
 export class App extends React.Component {
     state = {
