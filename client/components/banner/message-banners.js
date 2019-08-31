@@ -3,6 +3,8 @@ import {AppContext} from '../../context'
 import {Banner} from './banner'
 
 export const MessageBanners = () => {
+    console.log('###', 'MessageBanners render')
+
     const context = useContext(AppContext)
     let banner = null
 

@@ -5,6 +5,8 @@ import LazyLoad from 'react-lazyload'
 import {AppContext} from '../../context'
 
 export const Album = ({album, artistName}) => {
+    console.log('###', 'Album render')
+
     const context = useContext(AppContext)
     const artistAlbumName = `${artistName} - ${album.name}`
 

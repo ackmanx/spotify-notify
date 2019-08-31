@@ -4,6 +4,8 @@ import {Album} from '../album/album'
 import {AppContext} from '../../context'
 
 export const Artist = ({artist}) => {
+    console.log('###', 'Artist render')
+
     const context = useContext(AppContext)
 
     if (!artist.albums.length) {

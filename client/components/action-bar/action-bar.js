@@ -6,6 +6,8 @@ import {ActionButton} from './action-button'
 export const ActionBar = () => {
     const {getNewAlbums, seenAlbums, submitSeenAlbums} = useContext(AppContext)
 
+    console.log('###', 'ActionBar render')
+
     return (
         <div className='sticky-header'>
             <div className='action-bar'>

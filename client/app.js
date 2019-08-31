@@ -28,6 +28,8 @@ export class App extends React.Component {
         const artistsWithNewAlbumsKeys = Object.keys(this.state.artistsWithNewAlbums || {})
         const hasNewAlbums = !!artistsWithNewAlbumsKeys.length
 
+        console.log('###', 'App render')
+
         return (
             <AppContext.Provider value={this.state}>
                 <ActionBar/>
