@@ -104,5 +104,6 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
     await saveUserData(userId, Slices.user, user)
     await saveUserData(userId, Slices.newAlbumsCache, freshAlbumsCache)
 
-    return freshAlbumsCache
+    //todo: update UI and then don't spread
+    return {...freshAlbumsCache, ...user}
 }

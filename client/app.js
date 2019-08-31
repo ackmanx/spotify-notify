@@ -3,7 +3,7 @@ import {AppContext} from './context'
 import {Artist} from './components/artist/artist'
 import {ActionBar} from './components/action-bar/action-bar'
 import {MessageBanners} from './components/banner/message-banners'
-import {fetchNewAlbums, postSeenAlbums} from './api/request-utils'
+import {fetchNewAlbums, postSeenAlbums} from './api/request-helpers'
 
 export class App extends React.Component {
     state = {
