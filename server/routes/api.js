@@ -5,7 +5,7 @@ const path = require('path')
 const debug = require('debug')(`sn:${path.basename(__filename)}`)
 
 const {ensureAuthenticated} = require('./spotify-auth')
-const dao = require('../db/dao')
+const {getUserData, saveUserData, Slices} = require('../db/dao')
 const {checkForNewAlbums} = require('../service/spotify')
 
 /*
@@ -13,22 +13,22 @@ const {checkForNewAlbums} = require('../service/spotify')
  */
 router.get('/albums/cached', ensureAuthenticated, async function (req, res) {
     const userId = req.session.user.id
-    const userSeenAlbums = await dao.getSeenAlbums(userId)
-    const cache = await dao.getNewAlbumsCache(userId)
+    const userData = await getUserData(userId)
 
     //If a user's never been here, they won't have had this fetched from Spotify yet
-    if (!cache.totalFollowedArtists) {
+    if (!userData.user.totalFollowedArtists) {
         return res.json({firstTimeUser: true})
     }
 
     //Go through each artist in the cache and filter out seen albums
     //We don't cache seen albums, but the cache isn't rebuilt until the user does a refresh
     //So, this is to hide them until a refresh
-    Object.entries(cache.artists).forEach(([, artist]) => {
-        artist.albums = artist.albums.filter(album => !userSeenAlbums.includes(album.id))
+    Object.entries(userData.newAlbumsCache.artists).forEach(([, artist]) => {
+        artist.albums = artist.albums.filter(album => !userData.seenAlbums.includes(album.id))
     })
 
-    return res.json(cache)
+    //todo: UI needs to be updated so these aren't mixed together
+    return res.json({...userData.newAlbumsCache, ...userData.user})
 })
 
 /*
@@ -42,16 +42,11 @@ router.get('/albums/refresh', ensureAuthenticated, async function (req, res) {
 
 router.post('/seen-albums/update', ensureAuthenticated, async function (req, res) {
     const userId = req.session.user.id
-    const userSeenAlbums = await dao.getSeenAlbums(userId)
+    const userSeenAlbums = await getUserData(userId, Slices.seenAlbums)
 
-    await dao.saveSeenAlbums(userId, userSeenAlbums.concat(req.body.albumIds))
+    await saveUserData(userId, Slices.seenAlbums, userSeenAlbums.concat(req.body.albumIds))
 
     res.json({success: true})
-})
-
-router.get('/dump', ensureAuthenticated, async function (req, res) {
-    debug('Performing whole database dump')
-    res.json(await dao.dump())
 })
 
 module.exports = router

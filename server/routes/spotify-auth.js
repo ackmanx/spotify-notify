@@ -99,7 +99,7 @@ router.get('/callback', function (req, res) {
 
             req.session.user = await response.json()
 
-            await dao.initializeDatabaseForUser(req.session.user.id)
+            await dao.initializeDatabaseForUser(req.session.user)
 
             return res.redirect('/')
         }

@@ -15,7 +15,6 @@ Then add a heroku config for it and reference that in the code
 For local development, I'll need to keep the secret handy outside of git, maybe read it from a file somewhere and make same env var that heroku uses
 
 ## Add username, followed artists and new albums count to top
-    * Before doing this, do a mongodb contract change (see `collection-schema.js` for v2 schema)
 
 # Bugs
 
