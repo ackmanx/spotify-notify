@@ -9,7 +9,7 @@ const debug = require('debug')(`sn:${path.basename(__filename)}`)
 
 const renderRouter = require('./routes/render')
 const apiRouter = require('./routes/api')
-const {authRouter} = require('./routes/auth')
+const {authRouter} = require('./routes/spotify-auth')
 
 const app = express()
 

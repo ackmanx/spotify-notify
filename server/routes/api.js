@@ -4,7 +4,7 @@ const fs = require('fs')
 const path = require('path')
 const debug = require('debug')(`sn:${path.basename(__filename)}`)
 
-const {ensureAuthenticated} = require('./auth')
+const {ensureAuthenticated} = require('./spotify-auth')
 const dao = require('../db/dao')
 const {checkForNewAlbums} = require('../service/spotify')
 
