@@ -1,20 +1,23 @@
 import './album.css'
-import { Placeholder } from './placeholder';
-import React, {useContext, useState} from 'react'
+import React, {useState} from 'react'
 import LazyLoad from 'react-lazyload'
-import {AppContext} from '../../context'
+import {connect} from 'react-redux'
 
-export const Album = ({album, artistName}) => {
+import {markAlbumAsSeen} from '../../redux/actions/seen-albums'
+import { Placeholder } from './placeholder';
+
+export const _Album = props => {
     console.log('###', 'Album render')
 
-    const context = useContext(AppContext)
+    const {album, artistName, markAlbumAsSeen, seenAlbums} = props
+
     const artistAlbumName = `${artistName} - ${album.name}`
 
     const [hover, setHover] = useState(false);
 
     const toggleOverlay = () => setHover(!hover)
 
-    const selected = context.seenAlbums.includes(album.id)
+    const selected = seenAlbums.includes(album.id)
 
     return (
         <div className={`album ${selected ? 'album--selected' : ''}`}>
@@ -45,7 +48,7 @@ export const Album = ({album, artistName}) => {
                         </a>
                     </div>
                     <div className='actions-container'>
-                        <button className='action-trigger one-action' onClick={() => context.markAlbumAsSeen(album.id)}>
+                        <button className='action-trigger one-action' onClick={() => markAlbumAsSeen(album.id)}>
                             <div className='action-image-container'>
                                 <img src='album-actions/ghost.png' alt='mark as seen'/>
                             </div>
@@ -56,3 +59,13 @@ export const Album = ({album, artistName}) => {
         </div>
     )
 }
+
+const mapStateToProps = state => ({
+    seenAlbums: state.app.seenAlbums,
+})
+
+const mapDispatchToProps = dispatch => ({
+    markAlbumAsSeen: albumId => dispatch(markAlbumAsSeen(albumId))
+})
+
+export const Album = connect(mapStateToProps, mapDispatchToProps)(_Album)

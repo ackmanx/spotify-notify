@@ -1,12 +1,11 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
-import {AppContext} from '../../context'
+
 import {Banner} from './banner'
 
-const MessageBanners = ({firstTimeUser, loading, totalFollowedArtists, totalNewAlbums}) => {
+const _MessageBanners = ({firstTimeUser, loading, totalFollowedArtists, totalNewAlbums}) => {
     console.log('###', 'MessageBanners render')
 
-    const context = useContext(AppContext)
     let banner = null
 
     if (loading) {
@@ -37,4 +36,4 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({})
 
-export const ConnectedMessageBanners = connect(mapStateToProps, mapDispatchToProps)(MessageBanners)
+export const MessageBanners = connect(mapStateToProps, mapDispatchToProps)(_MessageBanners)

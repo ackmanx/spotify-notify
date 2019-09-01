@@ -1,10 +1,13 @@
 import './action-bar.css'
-import React, { useContext } from 'react'
-import {AppContext} from '../../context'
-import {ActionButton} from './action-button'
+import React from 'react'
+import {connect} from 'react-redux'
 
-export const ActionBar = () => {
-    const {getNewAlbums, seenAlbums, submitSeenAlbums} = useContext(AppContext)
+import {ActionButton} from './action-button'
+import {getNewAlbums} from '../../redux/actions/get-new-albums'
+import {submitSeenAlbums} from '../../redux/actions/seen-albums'
+
+const _ActionBar = props => {
+    const {getNewAlbums, seenAlbums, submitSeenAlbums} = props
 
     console.log('###', 'ActionBar render')
 
@@ -26,3 +29,15 @@ export const ActionBar = () => {
         </div>
     )
 }
+
+
+const mapStateToProps = state => ({
+    seenAlbums: state.app.seenAlbums,
+})
+
+const mapDispatchToProps = dispatch => ({
+    getNewAlbums: options => dispatch(getNewAlbums(options)),
+    submitSeenAlbums: options => dispatch(submitSeenAlbums()),
+})
+
+export const ActionBar = connect(mapStateToProps, mapDispatchToProps)(_ActionBar)

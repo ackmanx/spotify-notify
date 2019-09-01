@@ -1,23 +1,15 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import {AppContext} from './context'
 import {Artist} from './components/artist/artist'
 import {ActionBar} from './components/action-bar/action-bar'
-import {ConnectedMessageBanners} from './components/banner/message-banners'
-import {fetchNewAlbums, postSeenAlbums} from './network/request-helpers'
+import {MessageBanners} from './components/banner/message-banners'
 import {getNewAlbums} from './redux/actions/get-new-albums'
 
-class App extends React.Component {
-    state = {
-        seenAlbums: [],
-        markArtistAsSeen: this.markArtistAsSeen.bind(this),
-        markAlbumAsSeen: this.markAlbumAsSeen.bind(this),
-        submitSeenAlbums: this.submitSeenAlbums.bind(this),
-    }
+class _App extends React.Component {
 
     componentDidMount() {
-        console.log('###',  this.props)
+        console.log('###', this.props)
         this.props.getNewAlbums({shouldGetCached: true, appJustLoaded: true})
     }
 
@@ -29,49 +21,18 @@ class App extends React.Component {
 
         console.log('###', 'App render')
 
-        return (
-            <AppContext.Provider value={this.state}>
-                <ActionBar/>
+        return <>
+            <ActionBar/>
 
-                <ConnectedMessageBanners/>
+            <MessageBanners/>
 
-                {hasNewAlbums && (
-                    artistsWithNewAlbumsKeys.map(artistId => {
-                        const artist = artistsWithNewAlbums[artistId];
-                        return <Artist key={artist.id} artist={artist}/>
-                    })
-                )}
-            </AppContext.Provider>
-        )
-    }
-
-    markArtistAsSeen(artistId) {
-        const artist = this.props.artistsWithNewAlbums[artistId]
-        const albumsByArtist = artist.albums.map(album => album.id)
-
-        this.setState({seenAlbums: [...this.state.seenAlbums, ...albumsByArtist]})
-    }
-
-    markAlbumAsSeen(albumId) {
-        const seenAlbums = [...this.state.seenAlbums]
-
-        const seenAlbumIndex = seenAlbums.indexOf(albumId)
-
-        if (seenAlbumIndex !== -1) {
-            seenAlbums.splice(seenAlbumIndex, 1)
-        } else {
-            seenAlbums.push(albumId)
-        }
-
-        this.setState({seenAlbums})
-    }
-
-    async submitSeenAlbums() {
-        if (this.state.loading) return
-
-        await postSeenAlbums(this.state.seenAlbums)
-
-        document.location.reload()
+            {hasNewAlbums && (
+                artistsWithNewAlbumsKeys.map(artistId => {
+                    const artist = artistsWithNewAlbums[artistId];
+                    return <Artist key={artist.id} artist={artist}/>
+                })
+            )}
+        </>
     }
 }
 
@@ -83,4 +44,4 @@ const mapDispatchToProps = dispatch => ({
     getNewAlbums: options => dispatch(getNewAlbums(options))
 })
 
-export const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App)
+export const App = connect(mapStateToProps, mapDispatchToProps)(_App)

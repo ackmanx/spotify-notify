@@ -1,12 +1,14 @@
 import './artist.css'
-import React, {useContext} from 'react'
-import {Album} from '../album/album'
-import {AppContext} from '../../context'
+import React from 'react'
+import {connect} from 'react-redux'
 
-export const Artist = ({artist}) => {
+import {Album} from '../album/album'
+import {markArtistAsSeen} from '../../redux/actions/seen-albums'
+
+const _Artist = props => {
     console.log('###', 'Artist render')
 
-    const context = useContext(AppContext)
+    const {artist, markArtistAsSeen} = props
 
     if (!artist.albums.length) {
         return null
@@ -17,7 +19,7 @@ export const Artist = ({artist}) => {
 
     return (
         <div className='artist-group'>
-            <div className='artist-name' onClick={() => context.markArtistAsSeen(artist.id)}>{artist.name}</div>
+            <div className='artist-name' onClick={() => markArtistAsSeen(artist.id)}>{artist.name}</div>
 
             {!!albums.length && <>
                 <div className='album-group-title'>Albums</div>
@@ -31,3 +33,12 @@ export const Artist = ({artist}) => {
         </div>
     )
 }
+
+
+const mapStateToProps = state => ({})
+
+const mapDispatchToProps = dispatch => ({
+    markArtistAsSeen: artistId => dispatch(markArtistAsSeen(artistId))
+})
+
+export const Artist = connect(mapStateToProps, mapDispatchToProps)(_Artist)

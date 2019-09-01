@@ -5,7 +5,7 @@ import {Provider} from 'react-redux'
 import {applyMiddleware, combineReducers, createStore} from 'redux'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
-import {ConnectedApp} from './app'
+import {App} from './app'
 import {app} from './redux/reducers/app'
 import {artists} from './redux/reducers/artists'
 
@@ -21,7 +21,7 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-        <ConnectedApp/>
+        <App/>
     </Provider>,
     document.getElementById('root')
 )

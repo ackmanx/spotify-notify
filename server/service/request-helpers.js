@@ -1,5 +1,7 @@
 const delay = require('delay')
 const fetch = require('node-fetch')
+const path = require('path')
+const debug = require('debug')(`sn:${path.basename(__filename)}`)
 
 async function spotifyAPI(accessToken, endpoint) {
     const options = {

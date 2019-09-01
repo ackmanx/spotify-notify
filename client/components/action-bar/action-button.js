@@ -1,9 +1,9 @@
 import './action-bar.css'
-import React, {useContext} from 'react'
-import {AppContext} from '../../context'
+import React from 'react'
+import {connect} from 'react-redux'
 
-export const ActionButton = ({children, handler, className, imagePath, imageAltText}) => {
-    const {loading} = useContext(AppContext)
+const _ActionButton = props => {
+    const {children, handler, className, imagePath, imageAltText, loading} = props
 
     return (
         <button className={`action-button ${className ? className : ''} ${loading ? 'disabled' : ''}`} onClick={handler} disabled={loading}>
@@ -12,3 +12,9 @@ export const ActionButton = ({children, handler, className, imagePath, imageAltT
         </button>
     )
 }
+
+const mapStateToProps = state => ({
+    loading: state.app.loading,
+})
+
+export const ActionButton = connect(mapStateToProps)(_ActionButton)
