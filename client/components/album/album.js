@@ -7,8 +7,6 @@ import {markAlbumAsSeen} from '../../redux/actions/seen-albums'
 import { Placeholder } from './placeholder';
 
 export const _Album = props => {
-    console.log('###', 'Album render')
-
     const {album, artistName, markAlbumAsSeen, seenAlbums} = props
 
     const artistAlbumName = `${artistName} - ${album.name}`

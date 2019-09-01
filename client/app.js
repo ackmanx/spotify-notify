@@ -18,8 +18,6 @@ class _App extends React.Component {
         const artistsWithNewAlbumsKeys = Object.keys(artistsWithNewAlbums || {})
         const hasNewAlbums = !!artistsWithNewAlbumsKeys.length
 
-        console.log('###', 'App render')
-
         return <>
             <ActionBar/>
 

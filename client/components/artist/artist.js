@@ -6,8 +6,6 @@ import {Album} from '../album/album'
 import {markArtistAsSeen} from '../../redux/actions/seen-albums'
 
 const _Artist = props => {
-    console.log('###', 'Artist render')
-
     const {artist, markArtistAsSeen} = props
 
     if (!artist.albums.length) {

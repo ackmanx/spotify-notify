@@ -4,8 +4,6 @@ import {connect} from 'react-redux'
 import {Banner} from './banner'
 
 const _MessageBanners = ({firstTimeUser, loading, totalFollowedArtists, totalNewAlbums}) => {
-    console.log('###', 'MessageBanners render')
-
     let banner = null
 
     if (loading) {

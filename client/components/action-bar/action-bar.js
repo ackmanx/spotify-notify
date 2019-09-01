@@ -9,8 +9,6 @@ import {submitSeenAlbums} from '../../redux/actions/seen-albums'
 const _ActionBar = props => {
     const {getNewAlbums, seenAlbums, submitSeenAlbums} = props
 
-    console.log('###', 'ActionBar render')
-
     return (
         <div className='sticky-header'>
             <div className='action-bar'>
