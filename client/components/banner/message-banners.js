@@ -28,7 +28,7 @@ const _MessageBanners = ({firstTimeUser, loading, totalFollowedArtists, totalNew
 const mapStateToProps = state => ({
     firstTimeUser: state.app.firstTimeUser,
     loading: state.app.loading,
-    totalFollowedArtists: state.app.totalFollowedArtists,
+    totalFollowedArtists: state.artists.totalFollowedArtists,
     totalNewAlbums: state.artists.totalNewAlbums,
 })
 

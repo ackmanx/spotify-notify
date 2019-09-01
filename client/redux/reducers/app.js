@@ -19,7 +19,7 @@ export function app(state = initialState, action = {}) {
         }
 
         case FETCH_NEW_ALBUMS_SUCCESS: {
-            return {...state, firstTimeUser: action.firstTimeUser, totalFollowedArtists: action.totalFollowedArtists}
+            return {...state, firstTimeUser: action.firstTimeUser, username: action.username}
         }
 
         case UPDATE_SEEN_ALBUMS: {

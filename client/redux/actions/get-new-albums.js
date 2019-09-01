@@ -16,6 +16,7 @@ export const getNewAlbums = ({appJustLoaded, shouldGetCached}) => {
 
         dispatch({
             type: FETCH_NEW_ALBUMS_SUCCESS,
+            username: res.name,
             artistsWithNewAlbums: res.artists,
             firstTimeUser: res.firstTimeUser,
             totalFollowedArtists: res.totalFollowedArtists,
