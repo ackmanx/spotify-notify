@@ -8,6 +8,16 @@
     border: none;
 }
 
+.artist-name-container {
+    position: relative;
+}
+
+.artist-name-container img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
 .artist-name {
     font-size: 72px;
     cursor: pointer;
