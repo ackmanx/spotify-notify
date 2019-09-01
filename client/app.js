@@ -9,7 +9,6 @@ import {getNewAlbums} from './redux/actions/get-new-albums'
 class _App extends React.Component {
 
     componentDidMount() {
-        console.log('###', this.props)
         this.props.getNewAlbums({shouldGetCached: true, appJustLoaded: true})
     }
 
