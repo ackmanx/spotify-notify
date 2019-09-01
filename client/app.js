@@ -10,11 +10,7 @@ import {getNewAlbums} from './redux/actions/get-new-albums'
 
 class App extends React.Component {
     state = {
-        artistsWithNewAlbums: {},
-        firstTimeUser: false,
         seenAlbums: [],
-        totalFollowedArtists: 0,
-        totalNewAlbums: 0,
         markArtistAsSeen: this.markArtistAsSeen.bind(this),
         markAlbumAsSeen: this.markAlbumAsSeen.bind(this),
         submitSeenAlbums: this.submitSeenAlbums.bind(this),
@@ -50,7 +46,7 @@ class App extends React.Component {
     }
 
     markArtistAsSeen(artistId) {
-        const artist = this.state.artistsWithNewAlbums[artistId]
+        const artist = this.props.artistsWithNewAlbums[artistId]
         const albumsByArtist = artist.albums.map(album => album.id)
 
         this.setState({seenAlbums: [...this.state.seenAlbums, ...albumsByArtist]})
