@@ -1,31 +1,34 @@
 import React from 'react'
+import {connect} from 'react-redux'
+
 import {AppContext} from './context'
 import {Artist} from './components/artist/artist'
 import {ActionBar} from './components/action-bar/action-bar'
-import {MessageBanners} from './components/banner/message-banners'
-import {fetchNewAlbums, postSeenAlbums} from './api/request-helpers'
+import {ConnectedMessageBanners} from './components/banner/message-banners'
+import {fetchNewAlbums, postSeenAlbums} from './network/request-helpers'
+import {getNewAlbums} from './redux/actions/get-new-albums'
 
-export class App extends React.Component {
+class App extends React.Component {
     state = {
         artistsWithNewAlbums: {},
         firstTimeUser: false,
-        //Default this to true so the message banners aren't rendered before we get results back
-        loading: true,
         seenAlbums: [],
         totalFollowedArtists: 0,
         totalNewAlbums: 0,
-        getNewAlbums: this.getNewAlbums.bind(this),
         markArtistAsSeen: this.markArtistAsSeen.bind(this),
         markAlbumAsSeen: this.markAlbumAsSeen.bind(this),
         submitSeenAlbums: this.submitSeenAlbums.bind(this),
     }
 
     componentDidMount() {
-        this.getNewAlbums({shouldGetCached: true, appJustLoaded: true})
+        console.log('###',  this.props)
+        this.props.getNewAlbums({shouldGetCached: true, appJustLoaded: true})
     }
 
     render() {
-        const artistsWithNewAlbumsKeys = Object.keys(this.state.artistsWithNewAlbums || {})
+        const {artistsWithNewAlbums} = this.props
+
+        const artistsWithNewAlbumsKeys = Object.keys(artistsWithNewAlbums || {})
         const hasNewAlbums = !!artistsWithNewAlbumsKeys.length
 
         console.log('###', 'App render')
@@ -34,7 +37,7 @@ export class App extends React.Component {
             <AppContext.Provider value={this.state}>
                 <ActionBar/>
 
-                <MessageBanners/>
+                <ConnectedMessageBanners/>
 
                 {hasNewAlbums && (
                     artistsWithNewAlbumsKeys.map(artistId => {
@@ -44,24 +47,6 @@ export class App extends React.Component {
                 )}
             </AppContext.Provider>
         )
-    }
-
-    getNewAlbums({shouldGetCached, appJustLoaded}) {
-        //Prevent double-submissions, but also check this isn't a first-time load for a user
-        if (this.state.loading && !appJustLoaded) return
-
-        this.setState({loading: true}, async () => {
-            const res = await fetchNewAlbums(shouldGetCached)
-
-            this.setState({
-                artistsWithNewAlbums: res.artists,
-                totalFollowedArtists: res.totalFollowedArtists,
-                totalNewAlbums: res.totalNewAlbums,
-                //If we're getting the cache the user may be first-time, but if you are refreshing then you are no longer a first-time user
-                firstTimeUser: shouldGetCached ? res.firstTimeUser : false,
-                loading: false,
-            })
-        })
     }
 
     markArtistAsSeen(artistId) {
@@ -93,3 +78,13 @@ export class App extends React.Component {
         document.location.reload()
     }
 }
+
+const mapStateToProps = state => ({
+    artistsWithNewAlbums: state.artists.artistsWithNewAlbums,
+})
+
+const mapDispatchToProps = dispatch => ({
+    getNewAlbums: options => dispatch(getNewAlbums(options))
+})
+
+export const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App)
