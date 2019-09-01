@@ -41,7 +41,7 @@ class App extends React.Component {
 
                 {hasNewAlbums && (
                     artistsWithNewAlbumsKeys.map(artistId => {
-                        const artist = this.state.artistsWithNewAlbums[artistId];
+                        const artist = artistsWithNewAlbums[artistId];
                         return <Artist key={artist.id} artist={artist}/>
                     })
                 )}
