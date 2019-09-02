@@ -10,6 +10,10 @@
 Then add a heroku config for it and reference that in the code
 For local development, I'll need to keep the secret handy outside of git, maybe read it from a file somewhere and make same env var that heroku uses
 
+### Create modal to listen to that album RIGHT NOW
+After modal open, generate an iframe to insert an embedded player
+Use the album's URI so it shows the whole album
+https://developer.spotify.com/documentation/widgets/generate/play-button/
 
 # Bugs
 
