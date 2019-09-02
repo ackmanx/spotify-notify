@@ -42,9 +42,14 @@ router.get('/albums/refresh', ensureAuthenticated, async function (req, res) {
 
 router.post('/seen-albums/update', ensureAuthenticated, async function (req, res) {
     const userId = req.session.user.id
+    const markedAsSeen = req.body.albumIds
     const userSeenAlbums = await getUserData(userId, Slices.seenAlbums)
+    const newAlbumCache = await getUserData(userId, Slices.newAlbumsCache)
 
-    await saveUserData(userId, Slices.seenAlbums, userSeenAlbums.concat(req.body.albumIds))
+    newAlbumCache.totalNewAlbums -= markedAsSeen.length
+
+    await saveUserData(userId, Slices.seenAlbums, userSeenAlbums.concat(markedAsSeen))
+    await saveUserData(userId, Slices.newAlbumsCache, newAlbumCache)
 
     res.json({success: true})
 })

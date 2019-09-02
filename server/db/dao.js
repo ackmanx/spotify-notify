@@ -38,4 +38,5 @@ exports.getUserData = async (userId, slice) => {
     return document
 }
 
+// exports.saveUserData = () => true
 exports.saveUserData = async (userId, slice, value) => await getUserDataCollection().updateOne({'user.id': userId}, {$set: {[slice]: value}})
