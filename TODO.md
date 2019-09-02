@@ -14,7 +14,3 @@ For local development, I'll need to keep the secret handy outside of git, maybe 
 # Bugs
 
 ### Every Album instance on the page renders when you ghost an item
-
-### `totalNewAlbums` is not being populated correctly, or is not being updated when the cache is read
-    * If a user marks an album as seen, but doesn't refresh. That should reduce `totalNewAlbums` still
-    * The current problem is that I'm iterating over artists, thinking it's albums
