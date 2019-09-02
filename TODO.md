@@ -5,6 +5,8 @@
 ### Convert to TypeScript
 
 ### Mobile friendly
+Enlarge action bar 
+For mobile, tapping album opens a modal 
 
 ### Generate a new client secret with spotify
 Then add a heroku config for it and reference that in the code
