@@ -12,7 +12,7 @@ export const markArtistAsSeen = artistId => {
     }
 }
 
-export const markAlbumAsSeen = albumId => ({type: UPDATE_SEEN_ALBUMS, albumId})
+export const markAlbumAsSeen = albumId => ({type: UPDATE_SEEN_ALBUMS, albumIds: [albumId]})
 
 export const submitSeenAlbums = () => {
     return async (dispatch, getState) => {

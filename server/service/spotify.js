@@ -46,7 +46,7 @@ async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, fres
             return
         }
 
-        totalNewAlbums++
+        totalNewAlbums += Object.keys(artist.albums).length
 
         //Sort albums in descending order by their release date
         artist.albums.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))

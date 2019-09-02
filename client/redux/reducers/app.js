@@ -23,11 +23,9 @@ export function app(state = initialState, action = {}) {
         }
 
         case UPDATE_SEEN_ALBUMS: {
-            let markedAsSeen = action.albumId ? [action.albumId] : action.albumIds
-
             let seenAlbums = state.seenAlbums.slice()
 
-            markedAsSeen.forEach(albumId => {
+            action.albumIds.forEach(albumId => {
                 const seenAlbumIndex = seenAlbums.indexOf(albumId)
 
                 if (seenAlbumIndex !== -1) {
