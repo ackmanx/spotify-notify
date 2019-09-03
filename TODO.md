@@ -5,7 +5,6 @@
 ### Convert to TypeScript
 
 ### Mobile friendly
-Enlarge action bar 
 For mobile, tapping album opens a modal 
 
 ### Generate a new client secret with spotify
@@ -20,3 +19,5 @@ https://developer.spotify.com/documentation/widgets/generate/play-button/
 # Bugs
 
 ### Every Album instance on the page renders when you ghost an item
+
+### Lazy load does not load new images already on the screen when the app loads until you trigger a scroll event

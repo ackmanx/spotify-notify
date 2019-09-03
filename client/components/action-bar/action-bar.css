@@ -48,3 +48,9 @@
     max-height: 100%;
     width: auto;
 }
+
+@media only screen and (max-width: 500px) {
+    .username {
+        display: none;
+    }
+}

@@ -71,7 +71,7 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
         totalNewAlbums: 0,
     }
 
-    debug(`Found ${totalFollowedArtists} artists`)
+    debug(`User ${userId}: Following ${totalFollowedArtists} artists`)
 
     followedArtistsPagesFromSpotify.forEach(followedPage =>
         followedPage.artists.items.forEach(artist =>
@@ -81,6 +81,8 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
             }
         )
     )
+
+    debug(`User ${userId}: Fetching albums for ${Object.keys(freshAlbumsCache.artists).length} artists`)
 
     const allAlbumsPagesOfFollowedArtists = []
 
