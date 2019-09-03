@@ -19,6 +19,7 @@
 }
 
 .artist-name {
+    padding: 10px;
     font-size: 72px;
     cursor: pointer;
     color: white;
