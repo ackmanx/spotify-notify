@@ -40,4 +40,8 @@
     .artist-name-container img {
         display: none;
     }
+
+    .artist-name {
+        font-size: 48px;
+    }
 }

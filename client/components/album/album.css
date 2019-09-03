@@ -55,3 +55,13 @@
     align-items: center;
     height: 100%;
 }
+
+@media only screen and (max-width: 500px) {
+    .album {
+        width: 150px;
+    }
+
+    .album-cover-art {
+        width: 150px;
+    }
+}
