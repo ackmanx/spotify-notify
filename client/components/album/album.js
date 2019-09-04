@@ -4,7 +4,8 @@ import LazyLoad from 'react-lazyload'
 import {connect} from 'react-redux'
 
 import {markAlbumAsSeen} from '../../redux/actions/seen-albums'
-import { Placeholder } from './placeholder';
+import {Placeholder} from './placeholder';
+import {Desktop, Mobile} from '../responsive'
 
 export const _Album = props => {
     const {album, artistName, markAlbumAsSeen, seenAlbums} = props
@@ -22,10 +23,18 @@ export const _Album = props => {
             <LazyLoad placeholder={<Placeholder/>}
                       offset={500}
                       once>
-                <img className='album-cover-art'
-                     src={album.coverArt}
-                     alt={artistAlbumName}
-                     onMouseEnter={toggleOverlay}/>
+                <Mobile>
+                    <img className='album-cover-art'
+                         src={album.coverArt}
+                         alt={artistAlbumName}
+                         onClick={toggleOverlay}/>
+                </Mobile>
+                <Desktop>
+                    <img className='album-cover-art'
+                         src={album.coverArt}
+                         alt={artistAlbumName}
+                         onMouseEnter={toggleOverlay}/>
+                </Desktop>
             </LazyLoad>
 
             <div className='album-name'>{album.name}</div>
