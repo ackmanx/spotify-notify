@@ -5,7 +5,8 @@
 ### Convert to TypeScript
 
 ### Mobile friendly
-For mobile, tapping album opens a modal 
+consolidate react modal overrides
+style it 
 
 ### Generate a new client secret with spotify
 Then add a heroku config for it and reference that in the code

@@ -17,7 +17,8 @@ async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, fres
         //Being we don't know the artistId used for searching in this loop, we have to pull it out of the href
         const [, artistId] = artistAlbumPage.href.match(/artists\/(.+)\/albums/)
 
-        let allAlbumsForAnArtist = freshAlbumsCache.artists[artistId].albums || []
+        const artistInCache = freshAlbumsCache.artists[artistId]
+        const allAlbumsForAnArtist = artistInCache.albums || []
 
         //Build the cache for each album in this artist page
         artistAlbumPage.items.forEach(album => {
@@ -26,6 +27,7 @@ async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, fres
             allAlbumsForAnArtist.push({
                 id: album.id,
                 name: album.name,
+                artistName: artistInCache.name,
                 coverArt: album.images[1].url, //response always has 3 images of diff sizes, and I always want the middle one
                 releaseDate: album.release_date,
                 type: album.album_type,
@@ -34,7 +36,7 @@ async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, fres
             })
         })
 
-        freshAlbumsCache.artists[artistId].albums = allAlbumsForAnArtist
+        artistInCache.albums = allAlbumsForAnArtist
     })
 
     let totalNewAlbums = 0
