@@ -41,3 +41,10 @@ Combine action buttons to the left and add a hambuger to the right
 
 ### The spotify access token expires but being my server restarts every 30 min of inactivity on heroku i haven't encountered that
 If I went to an always-online app, I'd have to address this issue
+
+### Need a way to reset an artist because I mistakenly marked all of Krewella as seen
+
+### Set a timer to refresh the page every 20 minutes
+Does this work if the tab isn't the active tab?
+Or should I use a chrome extension to reload it every 20 minutes so I can enable/disable it
+Or should I re-do ganjing monorepo and make it work with non-chinese apps too?
