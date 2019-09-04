@@ -5,8 +5,7 @@
 ### Convert to TypeScript
 
 ### Mobile friendly
-consolidate react modal overrides
-style it 
+clean up css and modal code
 
 ### Generate a new client secret with spotify
 Then add a heroku config for it and reference that in the code
@@ -22,3 +21,7 @@ https://developer.spotify.com/documentation/widgets/generate/play-button/
 ### Every Album instance on the page renders when you ghost an item
 
 ### Lazy load does not load new images already on the screen when the app loads until you trigger a scroll event
+
+# Chores
+
+### Namespace my css or use Styled Components instead of avoiding it because I'm having conflicts
