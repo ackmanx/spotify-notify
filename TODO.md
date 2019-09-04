@@ -20,3 +20,7 @@ https://developer.spotify.com/documentation/widgets/generate/play-button/
 # Bugs
 
 ### Every Album instance on the page renders when you ghost an item
+
+# Chores
+
+### Need a way to reset an artist because I mistakenly marked all of Krewella as seen
