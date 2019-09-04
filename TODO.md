@@ -16,6 +16,10 @@ After modal open, generate an iframe to insert an embedded player
 Use the album's URI so it shows the whole album
 https://developer.spotify.com/documentation/widgets/generate/play-button/
 
+### Have an option to view all albums, including seen
+Would need a new UI for this
+Combine action buttons to the left and add a hambuger to the right
+
 # Bugs
 
 ### Every Album instance on the page renders when you ghost an item
