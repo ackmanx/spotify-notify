@@ -38,3 +38,6 @@ Combine action buttons to the left and add a hambuger to the right
 ### Rename new albums concept to unseen albums
 
 ### Remove artistName from artist.js and album.js because it will be included in the album now after I do a refresh
+
+### The spotify access token expires but being my server restarts every 30 min of inactivity on heroku i haven't encountered that
+If I went to an always-online app, I'd have to address this issue
