@@ -5,6 +5,18 @@ import {connect} from 'react-redux'
 import {Album} from '../album/album'
 import {markArtistAsSeen} from '../../redux/actions/seen-albums'
 
+let counter = 0
+
+function addAlbum(album) {
+    counter++
+
+    if (counter > 10) {
+        return <Album key={album.id} artistName={album.artistName} album={album} lazyLoad/>
+    }
+
+    return <Album key={album.id} artistName={album.artistName} album={album}/>
+}
+
 const _Artist = props => {
     const {artist, markArtistAsSeen} = props
 
@@ -32,12 +44,12 @@ const _Artist = props => {
 
             {hasAlbums && <>
                 <h3 className='album-group-title'>Albums</h3>
-                {albums.map(album => <Album key={album.id} artistName={artist.name} album={album}/>)}
+                {albums.map(addAlbum)}
             </>}
 
             {hasSingles && <>
                 <h3 className='album-group-title'>Singles</h3>
-                {singles.map(album => <Album key={album.id} artistName={artist.name} album={album}/>)}
+                {singles.map(addAlbum)}
             </>}
         </div>
     )

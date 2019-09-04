@@ -8,7 +8,7 @@ import {Desktop, Mobile} from '../responsive'
 import {AlbumActions} from './album-actions'
 
 export const _Album = props => {
-    const {album, artistName, seenAlbums} = props
+    const {album, artistName, lazyLoad, seenAlbums} = props
 
     const artistAlbumName = `${artistName} - ${album.name}`
 
@@ -18,24 +18,34 @@ export const _Album = props => {
 
     const selected = seenAlbums.includes(album.id)
 
+    const renderOutput = (
+        <>
+            <Mobile>
+                <img className='album-cover-art'
+                     src={album.coverArt}
+                     alt={artistAlbumName}
+                     onClick={toggleActionsPanel}/>
+            </Mobile>
+            <Desktop>
+                <img className='album-cover-art'
+                     src={album.coverArt}
+                     alt={artistAlbumName}
+                     onMouseEnter={toggleActionsPanel}/>
+            </Desktop>
+        </>
+    )
+
     return (
         <div className={`album ${selected ? 'album--selected' : ''}`}>
-            <LazyLoad placeholder={<Placeholder/>}
-                      offset={500}
-                      once>
-                <Mobile>
-                    <img className='album-cover-art'
-                         src={album.coverArt}
-                         alt={artistAlbumName}
-                         onClick={toggleActionsPanel}/>
-                </Mobile>
-                <Desktop>
-                    <img className='album-cover-art'
-                         src={album.coverArt}
-                         alt={artistAlbumName}
-                         onMouseEnter={toggleActionsPanel}/>
-                </Desktop>
-            </LazyLoad>
+            {lazyLoad && (
+                <LazyLoad placeholder={<Placeholder/>}
+                          offset={500}
+                          once>
+                    {renderOutput}
+                </LazyLoad>
+            )}
+
+            {!lazyLoad && renderOutput}
 
             <div className='album-name'>{album.name}</div>
             <div>{album.releaseDate}</div>
