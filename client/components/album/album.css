@@ -19,43 +19,6 @@
     text-overflow: ellipsis;
 }
 
-.album-actions {
-    position: absolute; /* this is absolute to the album, so that it covers the whole album and doesn't flow after it */
-    display: flex; /* this is flex to align the icon children vertically */
-    top: 0;
-    background-color: rgba(0, 0, 0, .33);
-}
-
-.actions-container {
-    width: 50%;
-}
-
-.action-trigger {
-    display: inline-block;
-    width: 150px;
-    cursor: pointer;
-}
-
-.action-trigger:hover {
-    background-color: rgba(0, 0, 0, .75);
-    transition: background-color .3s;
-}
-
-.one-action {
-    height: 300px;
-}
-
-.two-actions {
-    height: 150px;
-}
-
-.action-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
 @media only screen and (max-width: 500px) {
     .album {
         width: 150px;
