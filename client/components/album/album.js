@@ -3,57 +3,54 @@ import React, {useState} from 'react'
 import LazyLoad from 'react-lazyload'
 import {connect} from 'react-redux'
 
-import {markAlbumAsSeen} from '../../redux/actions/seen-albums'
-import { Placeholder } from './placeholder';
+import {Placeholder} from './placeholder';
+import {Desktop, Mobile} from '../responsive'
+import {AlbumActions} from './album-actions'
 
 export const _Album = props => {
-    const {album, artistName, markAlbumAsSeen, seenAlbums} = props
+    const {album, artistName, lazyLoad, seenAlbums} = props
 
     const artistAlbumName = `${artistName} - ${album.name}`
 
-    const [hover, setHover] = useState(false);
+    const [showActions, setShowActions] = useState(false);
 
-    const toggleOverlay = () => setHover(!hover)
+    const toggleActionsPanel = () => setShowActions(!showActions)
 
     const selected = seenAlbums.includes(album.id)
 
-    return (
-        <div className={`album ${selected ? 'album--selected' : ''}`}>
-            <LazyLoad placeholder={<Placeholder/>}
-                      offset={500}
-                      once>
+    const renderOutput = (
+        <>
+            <Mobile>
                 <img className='album-cover-art'
                      src={album.coverArt}
                      alt={artistAlbumName}
-                     onMouseEnter={toggleOverlay}/>
-            </LazyLoad>
+                     onClick={toggleActionsPanel}/>
+            </Mobile>
+            <Desktop>
+                <img className='album-cover-art'
+                     src={album.coverArt}
+                     alt={artistAlbumName}
+                     onMouseEnter={toggleActionsPanel}/>
+            </Desktop>
+        </>
+    )
+
+    return (
+        <div className={`album ${selected ? 'album--selected' : ''}`}>
+            {lazyLoad && (
+                <LazyLoad placeholder={<Placeholder/>}
+                          offset={500}
+                          once>
+                    {renderOutput}
+                </LazyLoad>
+            )}
+
+            {!lazyLoad && renderOutput}
 
             <div className='album-name'>{album.name}</div>
             <div>{album.releaseDate}</div>
 
-            {hover && (
-                <div className='album-actions' onMouseLeave={toggleOverlay}>
-                    <div className='actions-container'>
-                        <a className='action-trigger two-actions' href={album.spotifyUri} target='_blank'>
-                            <div className='action-image-container'>
-                                <img src='album-actions/spotify.png' alt='spotify logo'/>
-                            </div>
-                        </a>
-                        <a className='action-trigger two-actions' href={album.spotifyWebPlayerUrl} target='_blank'>
-                            <div className='action-image-container'>
-                                <img src='album-actions/google-chrome.png' alt='spotify logo'/>
-                            </div>
-                        </a>
-                    </div>
-                    <div className='actions-container'>
-                        <button className='action-trigger one-action' onClick={() => markAlbumAsSeen(album.id)}>
-                            <div className='action-image-container'>
-                                <img src='album-actions/ghost.png' alt='mark as seen'/>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-            )}
+            {showActions && <AlbumActions album={album} toggleActionsPanel={toggleActionsPanel}/>}
         </div>
     )
 }
@@ -62,8 +59,6 @@ const mapStateToProps = state => ({
     seenAlbums: state.app.seenAlbums,
 })
 
-const mapDispatchToProps = dispatch => ({
-    markAlbumAsSeen: albumId => dispatch(markAlbumAsSeen(albumId))
-})
+const mapDispatchToProps = dispatch => ({})
 
 export const Album = connect(mapStateToProps, mapDispatchToProps)(_Album)

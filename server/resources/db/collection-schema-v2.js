@@ -17,6 +17,7 @@ const userDataSchema = [
                         {
                             id: '7sAspG14R2muJBcJ3HcFcp',
                             name: 'Territory',
+                            artistName: 'Daniel Deluxe',
                             coverArt: 'https://i.scdn.co/image/4ffb0a1554dc7ad4b8ce30c553eef8210a81d3af',
                             releaseDate: '2018-06-22',
                             type: 'single',

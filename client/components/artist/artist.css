@@ -19,10 +19,12 @@
 }
 
 .artist-name {
+    padding: 10px;
     font-size: 72px;
     cursor: pointer;
     color: white;
     background-color: black;
+    overflow-wrap: break-word;
 }
 
 .artist-name:hover {
@@ -32,4 +34,14 @@
 .album-group-title {
     font-size: 35px;
     padding-top: 20px;
+}
+
+@media only screen and (max-width: 500px) {
+    .artist-name-container img {
+        display: none;
+    }
+
+    .artist-name {
+        font-size: 48px;
+    }
 }

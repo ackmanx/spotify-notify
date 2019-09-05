@@ -5,8 +5,15 @@
 ### Convert to TypeScript
 
 ### Mobile friendly
-Enlarge action bar 
-For mobile, tapping album opens a modal 
+clean up css and modal code
+    introduce LESS or styled components?
+loading text is too high
+    center it when first loading the page
+    add padding when doing a refresh
+check the new user text
+check the no followed artists text
+refresh button hover text doesn't go away after finished
+artist name not showing up in modal
 
 ### Generate a new client secret with spotify
 Then add a heroku config for it and reference that in the code
@@ -17,10 +24,9 @@ After modal open, generate an iframe to insert an embedded player
 Use the album's URI so it shows the whole album
 https://developer.spotify.com/documentation/widgets/generate/play-button/
 
-### Set a timer to refresh the page every 20 minutes
-Does this work if the tab isn't the active tab?
-Or should I use a chrome extension to reload it every 20 minutes so I can enable/disable it
-Or should I re-do ganjing monorepo and make it work with non-chinese apps too?
+### Have an option to view all albums, including seen
+Would need a new UI for this
+Combine action buttons to the left and add a hambuger to the right
 
 # Bugs
 
@@ -28,4 +34,18 @@ Or should I re-do ganjing monorepo and make it work with non-chinese apps too?
 
 # Chores
 
+### Namespace my css or use Styled Components instead of avoiding it because I'm having conflicts
+
+### Rename new albums concept to unseen albums
+
+### Remove artistName from artist.js and album.js because it will be included in the album now after I do a refresh
+
+### The spotify access token expires but being my server restarts every 30 min of inactivity on heroku i haven't encountered that
+If I went to an always-online app, I'd have to address this issue
+
 ### Need a way to reset an artist because I mistakenly marked all of Krewella as seen
+
+### Set a timer to refresh the page every 20 minutes
+Does this work if the tab isn't the active tab?
+Or should I use a chrome extension to reload it every 20 minutes so I can enable/disable it
+Or should I re-do ganjing monorepo and make it work with non-chinese apps too?

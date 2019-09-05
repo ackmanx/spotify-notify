@@ -1,0 +1,68 @@
+.ReactModal__Body--open {
+    overflow-y: hidden;
+}
+
+.ReactModal__Overlay {
+    z-index: 200;
+    background-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.album-actions-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.album-actions-mobile-album-art {
+    width: 300px;
+    height: 300px;
+}
+
+.album-info-mobile {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.album-info-name-mobile {
+    font-size: 28px;
+    padding-bottom: 5px;
+}
+
+.album-info-artist-name-mobile {
+    font-size: 24px;
+    padding-bottom: 5px;
+}
+
+.album-info-artist-release-date {
+    font-size: 18px;
+}
+
+.album-action-spotify-mobile {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.album-action-spotify-mobile img {
+    height: 40px;
+    padding-right: 15px;
+}
+
+.album-action-mark-as-seen-mobile {
+    display: flex;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+
+.album-action-mark-as-seen-mobile img {
+    height: 40px;
+    padding-right: 15px;
+}
+
+.album-action-button {
+    margin: 5px;
+    padding: 10px;
+}

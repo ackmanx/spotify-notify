@@ -18,7 +18,7 @@ const _ActionBar = props => {
                               handler={getNewAlbums}/>
 
                 {!loading && <>
-                    <div>{username}</div>
+                    <div className='username'>{username}</div>
                     <div>Following: {totalFollowedArtists}</div>
                     <div>Unseen: {totalNewAlbums}</div>
                 </>}

@@ -7,8 +7,9 @@ body {
     font-family: 'Allerta Stencil', sans-serif;
 }
 
-a {
+a, a:visited, a:active {
     text-decoration: none;
+    color: black;
 }
 
 button {

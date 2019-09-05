@@ -5,10 +5,32 @@ import {connect} from 'react-redux'
 import {Album} from '../album/album'
 import {markArtistAsSeen} from '../../redux/actions/seen-albums'
 
-const _Artist = props => {
-    const {artist, markArtistAsSeen} = props
+let counter = 0
 
-    if (!artist.albums.length) {
+//A reset is needed once all the albums are loaded
+//This is so a refresh, which doesn't reload the page, doesn't make the first 10 lazy
+function addAlbum(album, counterResetHint) {
+    counter++
+
+    if (counter >= counterResetHint) counter = 0
+
+    if (counter > 10) {
+        return <Album key={album.id} artistName={album.artistName} album={album} lazyLoad/>
+    }
+
+    return <Album key={album.id} artistName={album.artistName} album={album}/>
+}
+
+const _Artist = props => {
+    const {artist, counterResetHint, markArtistAsSeen} = props
+
+    const albums = artist.albums.filter(album => album.type === 'album')
+    const singles = artist.albums.filter(album => album.type === 'single')
+
+    const hasAlbums = !!albums.length
+    const hasSingles = !!singles.length
+
+    if (!hasAlbums && !hasSingles) {
         return null
     }
 
@@ -16,31 +38,29 @@ const _Artist = props => {
 
     const toggleOverlay = () => setHover(!hover)
 
-    const albums = artist.albums.filter(album => album.type === 'album')
-    const singles = artist.albums.filter(album => album.type === 'single')
-
     return (
         <div className='artist-group'>
             <div className='artist-name-container' onMouseEnter={toggleOverlay} onMouseLeave={toggleOverlay}>
-                <div className='artist-name' onClick={() => markArtistAsSeen(artist.id)}>{artist.name}</div>
+                <h2 className='artist-name' onClick={() => markArtistAsSeen(artist.id)}>{artist.name}</h2>
                 {hover && <img src='album-actions/ghost.png' alt='mark as seen'/>}
             </div>
 
-            {!!albums.length && <>
-                <div className='album-group-title'>Albums</div>
-                {albums.map(album => <Album key={album.id} artistName={artist.name} album={album}/>)}
+            {hasAlbums && <>
+                <h3 className='album-group-title'>Albums</h3>
+                {albums.map(album => addAlbum(album, counterResetHint))}
             </>}
 
-            {!!singles.length && <>
-                <div className='album-group-title'>Singles</div>
-                {singles.map(album => <Album key={album.id} artistName={artist.name} album={album}/>)}
+            {hasSingles && <>
+                <h3 className='album-group-title'>Singles</h3>
+                {singles.map(album => addAlbum(album, counterResetHint))}
             </>}
         </div>
     )
 }
 
-
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({
+    counterResetHint: state.artists.totalNewAlbums
+})
 
 const mapDispatchToProps = dispatch => ({
     markArtistAsSeen: artistId => dispatch(markArtistAsSeen(artistId))
