@@ -30,11 +30,22 @@ https://developer.spotify.com/documentation/widgets/generate/play-button/
 
 ### Have an option to view all albums, including seen
 Would need a new UI for this
-Combine action buttons to the left and add a hambuger to the right
+Combine action buttons to the left and add a hamburger to the right
+
+### Add overlay for refresh and submit
+
+### Use card flip css trick instead of hover on desktop
 
 # Bugs
 
 ### Every Album instance on the page renders when you ghost an item
+
+### The spotify access token expires but I don't have code that gets a new one if this happens so the request will fail
+Use case is a user (me) sets a bunch of albums as seen but doesn't submit it
+
+### Spotify doesn't take focus after opening
+This is because I remove the _blank target from the link. This prevented a new tab from opening, but also caused this where focus isn't there
+Either go back to _blank or find a different method
 
 # Chores
 
