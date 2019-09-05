@@ -1,5 +1,5 @@
 import {UPDATE_SEEN_ALBUMS} from '../action-types'
-import {postSeenAlbums} from '../../network/request-helpers'
+import {postSeenAlbums} from '../../utils/request-helpers'
 
 export const markArtistAsSeen = artistId => {
     return async (dispatch, getState) => {

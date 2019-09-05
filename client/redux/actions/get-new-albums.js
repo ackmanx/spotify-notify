@@ -1,4 +1,4 @@
-import {fetchNewAlbums} from '../../network/request-helpers'
+import {fetchNewAlbums} from '../../utils/request-helpers'
 import {FETCH_NEW_ALBUMS_SUCCESS, LOADING_START, LOADING_STOP} from '../action-types'
 
 export const getNewAlbums = ({appJustLoaded, shouldGetCached}) => {

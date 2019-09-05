@@ -13,7 +13,7 @@ const _ActionBar = props => {
         <div className='sticky-header'>
             <div className='action-bar'>
                 <ActionButton className='refresh-button'
-                              imagePath='refresh-icon.png'
+                              imagePath='action-bar/refresh-icon.png'
                               imageAltText='refresh'
                               handler={getNewAlbums}/>
 
@@ -24,7 +24,7 @@ const _ActionBar = props => {
                 </>}
 
                 <ActionButton className='mark-as-seen-button'
-                              imagePath='update-mark-as-seens.png'
+                              imagePath='action-bar/update-mark-as-seens.png'
                               imageAltText='mark as seen'
                               handler={submitSeenAlbums}>
                     {seenAlbums.length}
@@ -33,7 +33,6 @@ const _ActionBar = props => {
         </div>
     )
 }
-
 
 const mapStateToProps = state => ({
     loading: state.app.loading,
