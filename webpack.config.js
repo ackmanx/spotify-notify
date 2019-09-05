@@ -42,7 +42,6 @@ module.exports = function () {
                 },
                 {
                     test: /\.(css)$/,
-                    include: path.resolve(__dirname, 'client'),
                     use: [
                         {loader: 'style-loader'},
                         {loader: 'css-loader'},
