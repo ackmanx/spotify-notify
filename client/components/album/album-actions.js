@@ -17,7 +17,7 @@ export const _AlbumActions = props => {
             <Mobile>
                 <Modal isOpen={true} onRequestClose={toggleActionsPanel} contentLabel="Album Actions">
                     <div className='album-actions-mobile'>
-                        <img src={album.coverArt} alt={album.name}/>
+                        <img className='album-actions-mobile-album-art' src={album.coverArt} alt={album.name}/>
                         <div className='album-info-mobile'>
                             <div className='album-info-name-mobile'>{album.name}</div>
                             <div className='album-info-artist-name-mobile'>{album.artistName}</div>

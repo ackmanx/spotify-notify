@@ -15,6 +15,11 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+.album-actions-mobile-album-art {
+    width: 300px;
+    height: 300px;
+}
+
 .album-info-mobile {
     padding: 20px 0;
     text-align: center;
@@ -22,7 +27,7 @@
 
 .album-info-name-mobile {
     font-size: 28px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 .album-info-artist-name-mobile {

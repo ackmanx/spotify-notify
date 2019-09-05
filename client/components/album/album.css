@@ -6,6 +6,7 @@
     text-align: center;
     opacity: 1;
     transition: opacity .15s ease-out;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .album--selected {
@@ -13,7 +14,13 @@
     transition: opacity .15s ease-out;
 }
 
+.album-cover-art {
+    width: 300px;
+    height: 300px;
+}
+
 .album-name {
+    padding: 5px 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -26,5 +33,6 @@
 
     .album-cover-art {
         width: 150px;
+        height: 150px;
     }
 }
