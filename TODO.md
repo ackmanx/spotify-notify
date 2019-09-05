@@ -6,6 +6,7 @@
 
 ### Mobile friendly
 clean up css and modal code
+    introduce LESS or styled components?
 loading text is too high
     center it when first loading the page
     add padding when doing a refresh

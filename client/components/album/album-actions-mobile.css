@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .album-info-mobile {
@@ -47,7 +48,7 @@
 .album-action-mark-as-seen-mobile {
     display: flex;
     align-items: center;
-    font-family: 'Allerta Stencil', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 20px;
 }
 
