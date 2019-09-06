@@ -6,7 +6,6 @@
     text-align: center;
     opacity: 1;
     transition: opacity .15s ease-out;
-    font-family: 'Open Sans', sans-serif;
 }
 
 .album--selected {

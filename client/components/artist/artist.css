@@ -8,16 +8,6 @@
     border: none;
 }
 
-.artist-name-container {
-    position: relative;
-}
-
-.artist-name-container img {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
 .artist-name {
     padding: 10px;
     font-size: 72px;
@@ -27,20 +17,12 @@
     overflow-wrap: break-word;
 }
 
-.artist-name:hover {
-    background-color: #333;
-}
-
 .album-group-title {
     font-size: 35px;
     padding-top: 20px;
 }
 
 @media only screen and (max-width: 500px) {
-    .artist-name-container img {
-        display: none;
-    }
-
     .artist-name {
         font-size: 48px;
     }

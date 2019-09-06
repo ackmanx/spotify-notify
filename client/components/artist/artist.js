@@ -34,16 +34,9 @@ const _Artist = props => {
         return null
     }
 
-    const [hover, setHover] = useState(false);
-
-    const toggleOverlay = () => setHover(!hover)
-
     return (
         <div className='artist-group'>
-            <div className='artist-name-container' onMouseEnter={toggleOverlay} onMouseLeave={toggleOverlay}>
-                <h2 className='artist-name' onClick={() => markArtistAsSeen(artist.id)}>{artist.name}</h2>
-                {hover && <img src='album-actions/ghost.png' alt='mark as seen'/>}
-            </div>
+            <h2 className='artist-name' onClick={() => markArtistAsSeen(artist.id)}>{artist.name}</h2>
 
             {hasAlbums && <>
                 <h3 className='album-group-title'>Albums</h3>
