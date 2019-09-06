@@ -8,7 +8,7 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 import {App} from './app'
 import {app} from './redux/reducers/app-reducer'
-import {artists} from 'client/redux/reducers/artists-reducer'
+import {artists} from './redux/reducers/artists-reducer'
 
 const store = createStore(
     combineReducers({
