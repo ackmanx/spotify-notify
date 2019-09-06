@@ -17,7 +17,6 @@ check the no followed artists text
     reduce to 48px
     add line break
 refresh button hover styles doesn't go away after finished (is this an issue on a real mobile device?)
-should I wrap long names or use ...?
 
 ## Generate a new client secret with spotify
 Then add a heroku config for it and reference that in the code
