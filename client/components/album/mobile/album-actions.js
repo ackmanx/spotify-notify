@@ -1,10 +1,10 @@
-import './album-actions-mobile.css'
+import './album-actions.css'
 import React from 'react'
 import {connect} from 'react-redux'
 import Modal from 'react-modal'
 
-import {markAlbumAsSeen} from '../../redux/actions/seen-albums'
-import {Mobile} from '../responsive'
+import {markAlbumAsSeen} from '../../../redux/actions/seen-albums'
+import {Mobile} from '../../responsive'
 
 Modal.setAppElement('#root')
 

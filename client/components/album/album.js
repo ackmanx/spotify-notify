@@ -2,7 +2,7 @@ import './album.css'
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
 
-import {AlbumActions} from './album-actions'
+import {AlbumActions} from './mobile/album-actions'
 import {AlbumImage} from './album-image'
 
 export const _Album = props => {
