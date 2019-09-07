@@ -13,7 +13,14 @@ const {checkForNewAlbums} = require('../service/spotify')
  */
 router.get('/albums/cached', ensureAuthenticated, async function (req, res) {
     const userId = req.session.user.id
-    const userData = await getUserData(userId)
+    let userData
+
+    if (process.env.MOCK) {
+        userData = require('../resources/mocks/api/albums-cached-v2')
+    }
+    else {
+        userData = await getUserData(userId)
+    }
 
     //If a user's never been here, they won't have had this fetched from Spotify yet
     if (!userData.user.totalFollowedArtists) {

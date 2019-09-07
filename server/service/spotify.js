@@ -59,12 +59,16 @@ async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, fres
 
 exports.checkForNewAlbums = async function checkForNewAlbums(session) {
     const userId = session.user.id
+    let followedArtistsPagesFromSpotify
 
     debug(`Getting followed artists for ${userId}`)
 
-    //This mock is for getting a smaller set of followed artists than I would get making the real call below
-    // const followedArtistsPagesFromSpotify = [require('../resources/mocks/spotify/v1-me-following')]
-    const followedArtistsPagesFromSpotify = await fetchAllPages(session.access_token, '/me/following?type=artist&limit=50')
+    if (process.env.MOCK) {
+        followedArtistsPagesFromSpotify = [require('../resources/mocks/spotify/v1-me-following')]
+    }
+    else {
+        followedArtistsPagesFromSpotify = await fetchAllPages(session.access_token, '/me/following?type=artist&limit=50')
+    }
 
     const totalFollowedArtists = followedArtistsPagesFromSpotify[0].artists.total
 
