@@ -1,11 +1,10 @@
-import './album-actions-desktop.css'
 import './album-actions-mobile.css'
 import React from 'react'
 import {connect} from 'react-redux'
 import Modal from 'react-modal'
 
 import {markAlbumAsSeen} from '../../redux/actions/seen-albums'
-import {Desktop, Mobile} from '../responsive'
+import {Mobile} from '../responsive'
 
 Modal.setAppElement('#root')
 
@@ -36,30 +35,6 @@ export const _AlbumActions = props => {
                     </div>
                 </Modal>
             </Mobile>
-
-            <Desktop>
-                <div className='album-actions-desktop'>
-                    <div className='actions-container'>
-                        <a className='action-trigger two-actions' href={album.spotifyUri}>
-                            <div className='action-image-container'>
-                                <img src='album-actions/spotify.png' alt='spotify logo'/>
-                            </div>
-                        </a>
-                        <a className='action-trigger two-actions' href={album.spotifyWebPlayerUrl} target='_blank'>
-                            <div className='action-image-container'>
-                                <img src='album-actions/google-chrome.png' alt='spotify logo'/>
-                            </div>
-                        </a>
-                    </div>
-                    <div className='actions-container'>
-                        <button className='action-trigger one-action' onClick={() => markAlbumAsSeen(album.id)}>
-                            <div className='action-image-container'>
-                                <img src='album-actions/ghost.png' alt='mark as seen'/>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-            </Desktop>
         </>
     )
 }

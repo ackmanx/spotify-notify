@@ -6,16 +6,14 @@ import {AlbumActions} from './album-actions'
 import {AlbumImage} from './album-image'
 
 export const _Album = props => {
-    const {album, lazyLoad, seenAlbums} = props
+    const {album, lazyLoad} = props
 
     const [showActions, setShowActions] = useState(false);
 
     const toggleActionsPanel = () => setShowActions(!showActions)
 
-    const selected = seenAlbums.includes(album.id)
-
     return (
-        <div className={`album ${selected ? 'album--selected' : ''}`}>
+        <div className='album'>
             <AlbumImage album={album} lazyLoad={lazyLoad} onClickHandler={toggleActionsPanel}/>
 
             <div className='album-name'>{album.name}</div>
@@ -26,9 +24,7 @@ export const _Album = props => {
     )
 }
 
-const mapStateToProps = state => ({
-    seenAlbums: state.app.seenAlbums,
-})
+const mapStateToProps = state => ({})
 
 const mapDispatchToProps = dispatch => ({})
 
