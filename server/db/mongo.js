@@ -3,10 +3,11 @@ const debug = require('debug')(`sn:${path.basename(__filename)}`)
 const MongoClient = require('mongodb').MongoClient
 
 let client
+const databaseName = 'spotify-notify'
 
 exports.initDatabase = callback => {
     //This was provided by the mongodb website dashboard
-    const connectionUrl = 'mongodb+srv://admin:F8cHHZjWza0SRGOx@spotify-notify-f6tmy.mongodb.net/test?retryWrites=true&w=majority'
+    const connectionUrl = `mongodb+srv://admin:F8cHHZjWza0SRGOx@${databaseName}-f6tmy.mongodb.net/test?retryWrites=true&w=majority`
 
     client = new MongoClient(connectionUrl, { useNewUrlParser: true, useUnifiedTopology: true })
 
@@ -31,4 +32,6 @@ exports.initDatabase = callback => {
     })
 }
 
-exports.getUserDataCollection = () => client.db('spotify-notify').collection('user-data')
+exports.getUserDataCollection = () => client.db(databaseName).collection('user-data')
+
+exports.databaseName = databaseName

@@ -10,4 +10,4 @@ mongoexport \
     --authenticationDatabase admin \
     --db spotify-notify \
     --collection user-data \
-    --out ../../backups/spotify-notify.json
+    --out ../../backups/i-already-saw-that.json

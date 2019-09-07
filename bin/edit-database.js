@@ -1,3 +1,8 @@
+/*
+ * This is a script template for migrations
+ * It is not used in the application at all
+ */
+
 const path = require('path')
 const MongoClient = require('mongodb').MongoClient
 
