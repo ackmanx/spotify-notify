@@ -10,13 +10,6 @@
     height: 300px;
 }
 
-.album-name {
-    padding: 5px 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
 @media only screen and (max-width: 500px) {
     .album {
         width: 150px;

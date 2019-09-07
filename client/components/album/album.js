@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 
 import {AlbumActions} from './mobile/album-actions'
 import {AlbumImage} from './album-image'
+import {AlbumDetails} from './album-details'
 
 export const _Album = props => {
     const {album, lazyLoad} = props
@@ -16,8 +17,7 @@ export const _Album = props => {
         <div className='album'>
             <AlbumImage album={album} lazyLoad={lazyLoad} onClickHandler={toggleActionsPanel}/>
 
-            <div className='album-name'>{album.name}</div>
-            <div>{album.releaseDate}</div>
+            <AlbumDetails album={album}/>
 
             {showActions && <AlbumActions album={album} toggleActionsPanel={toggleActionsPanel}/>}
         </div>
