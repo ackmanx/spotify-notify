@@ -8,9 +8,7 @@ import {Desktop, Mobile} from '../responsive'
 import {AlbumActions} from './album-actions'
 
 export const _Album = props => {
-    const {album, artistName, lazyLoad, seenAlbums} = props
-
-    const artistAlbumName = `${artistName} - ${album.name}`
+    const {album, lazyLoad, seenAlbums} = props
 
     const [showActions, setShowActions] = useState(false);
 
@@ -23,13 +21,13 @@ export const _Album = props => {
             <Mobile>
                 <img className='album-cover-art'
                      src={album.coverArt}
-                     alt={artistAlbumName}
+                     alt={`${album.artistName} - ${album.name}`}
                      onClick={toggleActionsPanel}/>
             </Mobile>
             <Desktop>
                 <img className='album-cover-art'
                      src={album.coverArt}
-                     alt={artistAlbumName}
+                     alt={`${album.artistName} - ${album.name}`}
                      onMouseEnter={toggleActionsPanel}/>
             </Desktop>
         </>

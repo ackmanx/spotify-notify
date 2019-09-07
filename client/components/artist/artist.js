@@ -15,10 +15,10 @@ function addAlbum(album, counterResetHint) {
     if (counter >= counterResetHint) counter = 0
 
     if (counter > 10) {
-        return <Album key={album.id} artistName={album.artistName} album={album} lazyLoad/>
+        return <Album key={album.id} album={album} lazyLoad/>
     }
 
-    return <Album key={album.id} artistName={album.artistName} album={album}/>
+    return <Album key={album.id} album={album}/>
 }
 
 const _Artist = props => {

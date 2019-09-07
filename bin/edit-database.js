@@ -13,7 +13,7 @@ const client = new MongoClient(connectionUrl, {useNewUrlParser: true, useUnified
 
 client.connect(async function (err) {
     if (err) {
-        debug(err)
+        console.error(err)
         return
     }
 
