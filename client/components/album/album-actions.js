@@ -38,8 +38,7 @@ export const _AlbumActions = props => {
             </Mobile>
 
             <Desktop>
-                {/* We cannot use onMouseLeave on the album because once the overlay appears, that would trigger the overlay to be removed too, so we have to trigger it on leave of the overlay */}
-                <div className='album-actions-desktop' onMouseLeave={toggleActionsPanel}>
+                <div className='album-actions-desktop'>
                     <div className='actions-container'>
                         <a className='action-trigger two-actions' href={album.spotifyUri}>
                             <div className='action-image-container'>

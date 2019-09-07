@@ -18,7 +18,7 @@ export const _Album = props => {
 
     const selected = seenAlbums.includes(album.id)
 
-    const renderOutput = (
+    const albumImage = (
         <>
             <Mobile>
                 <img className='album-cover-art'
@@ -41,11 +41,11 @@ export const _Album = props => {
                 <LazyLoad placeholder={<Placeholder/>}
                           offset={500}
                           once>
-                    {renderOutput}
+                    {albumImage}
                 </LazyLoad>
             )}
 
-            {!lazyLoad && renderOutput}
+            {!lazyLoad && albumImage}
 
             <div className='album-name'>{album.name}</div>
             <div>{album.releaseDate}</div>
