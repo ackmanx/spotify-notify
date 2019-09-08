@@ -10,6 +10,10 @@
     height: 300px;
 }
 
+.is-marked {
+    opacity: 0.25;
+}
+
 @media only screen and (max-width: 500px) {
     .album {
         width: 150px;

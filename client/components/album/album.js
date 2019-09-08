@@ -9,18 +9,20 @@ import {DesktopAlbumActions} from './desktop/album-actions'
 import {MobileAlbumActions} from './mobile/album-actions'
 
 export const _Album = props => {
-    const {album, lazyLoad} = props
+    const {album, lazyLoad, seenAlbums} = props
 
     const [showActions, setShowActions] = useState(false);
 
     const toggleActionsPanel = () => setShowActions(!showActions)
+
+    const isMarked = seenAlbums.includes(album.id)
 
     return (
         <div className='album'>
 
             <Desktop>
                 <div className='scene'>
-                    <div className={`card ${showActions ? 'is-flipped' : ''}`} onClick={toggleActionsPanel}>
+                    <div className={`card ${showActions ? 'is-flipped' : ''} ${isMarked ? 'is-marked' : ''}`} onClick={toggleActionsPanel}>
                         <div className='card__face card__face--front'>
                             <AlbumImage album={album} lazyLoad={lazyLoad}/>
                         </div>
@@ -41,7 +43,9 @@ export const _Album = props => {
     )
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({
+    seenAlbums: state.app.seenAlbums,
+})
 
 const mapDispatchToProps = dispatch => ({})
 

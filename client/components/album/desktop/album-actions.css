@@ -1,5 +1,10 @@
 .desktop-album-actions {
-    border: 1px solid black;
     width: 300px;
     height: 300px;
+    border: 1px solid #ddd;
+}
+
+.desktop-actions-container {
+    background-color: rgba(255, 255, 255, .85);
+    width: 100%;
 }
