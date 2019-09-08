@@ -65,8 +65,9 @@
 .album-action-button {
     margin: 5px;
     padding: 10px;
+    border: 1px solid transparent;
 }
 
 .album-action-button:hover {
-    background-color: #ddd;
+    border: 1px solid black;
 }
