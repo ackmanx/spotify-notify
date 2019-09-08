@@ -22,8 +22,8 @@ export const _Album = props => {
 
             <Desktop>
                 <div className='scene'>
-                    <div className={`card ${showActions ? 'is-flipped' : ''} ${isMarked ? 'is-marked' : ''}`} onClick={toggleActionsPanel}>
-                        <div className='card__face card__face--front'>
+                    <div className={`card ${showActions ? 'is-flipped' : ''}`} onClick={toggleActionsPanel}>
+                        <div className={`card__face card__face--front ${isMarked ? 'is-marked' : ''}`}>
                             <AlbumImage album={album} lazyLoad={lazyLoad}/>
                         </div>
                         <div className='card__face card__face--back'>
