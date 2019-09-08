@@ -26,7 +26,7 @@ export const _DesktopAlbumActions = props => {
                             markAlbumAsSeen(album.id);
                             toggleActionsPanel()
                         }}>
-                            <img src='album-actions/ghost.png' alt=''/> Mark as Seen
+                            <img src='album-actions/ghost.png' alt=''/> Toggle Seen/Unseen
                         </button>
                     </div>
                 </div>
