@@ -34,6 +34,8 @@ Combine action buttons to the left and add a hamburger to the right
 ## Add overlay for refresh and submit
 
 ## Use card flip css trick instead of hover on desktop
+Sharing the jsx and css of mobile actions
+Should separate these out into own components and styles if possible, else CAP entirely
 
 # Bugs
 

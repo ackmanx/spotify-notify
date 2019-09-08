@@ -22,7 +22,7 @@ export const _MobileAlbumActions = props => {
                     </div>
                     <div className='album-action-button'>
                         <a className='album-action-spotify-mobile' href={album.spotifyUri}>
-                            <img src='album-actions/spotify.png' alt='spotify logo'/> Open in Spotify
+                            <img src='album-actions/spotify.png' alt=''/> Open in Spotify
                         </a>
                     </div>
                     <div className='album-action-button'>
@@ -30,7 +30,7 @@ export const _MobileAlbumActions = props => {
                             markAlbumAsSeen(album.id);
                             toggleActionsPanel()
                         }}>
-                            <img src='album-actions/ghost.png' alt='mark as seen'/> Mark as Seen
+                            <img src='album-actions/ghost.png' alt=''/> Mark as Seen
                         </button>
                     </div>
                 </div>
