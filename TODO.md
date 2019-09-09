@@ -40,6 +40,8 @@ Use case is a user (me) sets a bunch of albums as seen but doesn't submit it
 ## Spotify doesn't take focus after opening
 This only happens on my work Mac
 
+## App is slow
+
 # Chores
 
 ## Namespace my css or use Styled Components instead of avoiding it because I'm having conflicts
