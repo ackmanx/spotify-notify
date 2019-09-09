@@ -112,6 +112,5 @@ exports.checkForUnseenAlbums = async function checkForUnseenAlbums(session) {
     await saveUserData(userId, Slices.user, user)
     await saveUserData(userId, Slices.unseenAlbumsCache, freshAlbumsCache)
 
-    //todo: update UI and then don't spread
     return {...freshAlbumsCache, ...user}
 }

@@ -34,7 +34,6 @@ router.get('/albums/cached', ensureAuthenticated, async function (req, res) {
         artist.albums = artist.albums.filter(album => !userData.seenAlbums.includes(album.id))
     })
 
-    //todo: UI needs to be updated so these aren't mixed together
     return res.json({...userData.unseenAlbumsCache, ...userData.user})
 })
 
