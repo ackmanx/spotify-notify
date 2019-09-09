@@ -1,0 +1,50 @@
+.desktop-album-actions {
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ddd;
+}
+
+.desktop-album-actions-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.desktop-actions-container {
+    background-color: rgba(255, 255, 255, .85);
+    width: 100%;
+}
+
+.desktop-album-action-spotify {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.desktop-album-action-spotify img {
+    height: 40px;
+    padding-right: 15px;
+}
+
+.desktop-album-action-mark-as-seen {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+}
+
+.desktop-album-action-mark-as-seen img {
+    height: 40px;
+    padding-right: 15px;
+}
+
+.desktop-album-action-button {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid transparent;
+}
+
+.desktop-album-action-button:hover {
+    border: 1px solid black;
+}

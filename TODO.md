@@ -33,8 +33,6 @@ Combine action buttons to the left and add a hamburger to the right
 
 ## Add overlay for refresh and submit
 
-## Use card flip css trick instead of hover on desktop
-
 # Bugs
 
 ## Every Album instance on the page renders when you ghost an item

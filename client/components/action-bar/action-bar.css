@@ -15,13 +15,12 @@
 
 .action-button {
     background-color: white;
-    border: 1px solid black;
     height: 30px;
     padding: 5px;
 }
 
 .action-button:hover {
-    border: 2px dashed black;
+    border: 1px solid black;
     padding: 4px;
 }
 
@@ -36,11 +35,6 @@
 
 .disabled {
     background-color: darkgray;
-}
-
-.disabled:hover {
-    border: 1px dashed black;
-    padding: 5px;
 }
 
 .action-icon {
