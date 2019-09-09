@@ -39,7 +39,7 @@ async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, fres
         artistInCache.albums = allAlbumsForAnArtist
     })
 
-    let totalNewAlbums = 0
+    let totalUnseenAlbums = 0
 
     Object.entries(freshAlbumsCache.artists).forEach(([artistId, artist]) => {
         //Remove artists from cache if all of their albums have been seen
@@ -48,16 +48,16 @@ async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, fres
             return
         }
 
-        totalNewAlbums += Object.keys(artist.albums).length
+        totalUnseenAlbums += Object.keys(artist.albums).length
 
         //Sort albums in descending order by their release date
         artist.albums.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate))
     })
 
-    freshAlbumsCache.totalNewAlbums = totalNewAlbums
+    freshAlbumsCache.totalUnseenAlbums = totalUnseenAlbums
 }
 
-exports.checkForNewAlbums = async function checkForNewAlbums(session) {
+exports.checkForUnseenAlbums = async function checkForUnseenAlbums(session) {
     const userId = session.user.id
     let followedArtistsPagesFromSpotify
 
@@ -74,7 +74,7 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
 
     let freshAlbumsCache = {
         artists: {},
-        totalNewAlbums: 0,
+        totalUnseenAlbums: 0,
     }
 
     debug(`User ${userId}: Following ${totalFollowedArtists} artists`)
@@ -110,7 +110,7 @@ exports.checkForNewAlbums = async function checkForNewAlbums(session) {
     user.totalFollowedArtists = totalFollowedArtists
 
     await saveUserData(userId, Slices.user, user)
-    await saveUserData(userId, Slices.newAlbumsCache, freshAlbumsCache)
+    await saveUserData(userId, Slices.unseenAlbumsCache, freshAlbumsCache)
 
     //todo: update UI and then don't spread
     return {...freshAlbumsCache, ...user}

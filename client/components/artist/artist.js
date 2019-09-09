@@ -52,7 +52,7 @@ const _Artist = props => {
 }
 
 const mapStateToProps = state => ({
-    counterResetHint: state.artists.totalNewAlbums
+    counterResetHint: state.artists.totalUnseenAlbums
 })
 
 const mapDispatchToProps = dispatch => ({

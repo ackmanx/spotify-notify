@@ -4,28 +4,28 @@ import {connect} from 'react-redux'
 import {Artist} from './components/artist/artist'
 import {ActionBar} from './components/action-bar/action-bar'
 import {MessageBanners} from './components/banner/message-banners'
-import {getNewAlbums} from './redux/actions/get-new-albums'
+import {getUnseenAlbums} from './redux/actions/get-unseen-albums'
 
 class _App extends React.Component {
 
     componentDidMount() {
-        this.props.getNewAlbums({shouldGetCached: true, appJustLoaded: true})
+        this.props.getUnseenAlbums({shouldGetCached: true, appJustLoaded: true})
     }
 
     render() {
-        const {artistsWithNewAlbums} = this.props
+        const {artistsWithUnseenAlbums} = this.props
 
-        const artistsWithNewAlbumsKeys = Object.keys(artistsWithNewAlbums || {})
-        const hasNewAlbums = !!artistsWithNewAlbumsKeys.length
+        const artistsWithUnseenAlbumsKeys = Object.keys(artistsWithUnseenAlbums || {})
+        const hasUnseenAlbums = !!artistsWithUnseenAlbumsKeys.length
 
         return <>
             <ActionBar/>
 
             <MessageBanners/>
 
-            {hasNewAlbums && (
-                artistsWithNewAlbumsKeys.map(artistId => {
-                    const artist = artistsWithNewAlbums[artistId];
+            {hasUnseenAlbums && (
+                artistsWithUnseenAlbumsKeys.map(artistId => {
+                    const artist = artistsWithUnseenAlbums[artistId];
                     return <Artist key={artist.id} artist={artist}/>
                 })
             )}
@@ -34,11 +34,11 @@ class _App extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    artistsWithNewAlbums: state.artists.artistsWithNewAlbums,
+    artistsWithUnseenAlbums: state.artists.artistsWithUnseenAlbums,
 })
 
 const mapDispatchToProps = dispatch => ({
-    getNewAlbums: options => dispatch(getNewAlbums(options))
+    getUnseenAlbums: options => dispatch(getUnseenAlbums(options))
 })
 
 export const App = connect(mapStateToProps, mapDispatchToProps)(_App)

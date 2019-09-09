@@ -1,7 +1,7 @@
 const {getUserDataCollection} = require('./mongo')
 
 exports.Slices = {
-    newAlbumsCache: 'newAlbumsCache',
+    unseenAlbumsCache: 'unseenAlbumsCache',
     seenAlbums: 'seenAlbums',
     user: 'user',
 }
@@ -16,7 +16,7 @@ exports.initializeDatabaseForUser = async user => {
                 name: user.display_name,
             },
             seenAlbums: [],
-            newAlbumsCache: {},
+            unseenAlbumsCache: {},
         })
     }
 }

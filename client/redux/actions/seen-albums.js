@@ -5,7 +5,7 @@ export const markArtistAsSeen = artistId => {
     return async (dispatch, getState) => {
         const state = getState()
 
-        const artist = state.artists.artistsWithNewAlbums[artistId]
+        const artist = state.artists.artistsWithUnseenAlbums[artistId]
         const albumsByArtist = artist.albums.map(album => album.id)
 
         dispatch({type: UPDATE_SEEN_ALBUMS, albumIds: albumsByArtist})

@@ -3,7 +3,7 @@ export async function doGet(url) {
     return await response.json()
 }
 
-export async function fetchNewAlbums(shouldGetCached) {
+export async function fetchUnseenAlbums(shouldGetCached) {
     return await doGet(shouldGetCached ? '/api/albums/cached' : '/api/albums/refresh')
 }
 

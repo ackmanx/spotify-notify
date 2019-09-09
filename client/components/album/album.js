@@ -27,7 +27,7 @@ export const _Album = props => {
                             <AlbumImage album={album} lazyLoad={lazyLoad}/>
                         </div>
                         <div className='card__face card__face--back'>
-                            <DesktopAlbumActions album={album}/>
+                            <DesktopAlbumActions album={album} toggleActionsPanel={toggleActionsPanel}/>
                         </div>
                     </div>
                 </div>

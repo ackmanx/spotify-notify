@@ -8,7 +8,7 @@ const userDataSchema = [
             name: 'Eric Majerus',
             totalFollowedArtists: 200,
         },
-        newAlbumsCache: {
+        unseenAlbumsCache: {
             artists: {
                 '0OTY72l7CC7ynKzp6N2o5b': {
                     id: '0OTY72l7CC7ynKzp6N2o5b',
@@ -27,9 +27,9 @@ const userDataSchema = [
                     ]
                 }
             },
-            totalNewAlbums: 3000,
+            totalUnseenAlbums: 3000,
         },
-        //Array of albumIDs. We don't save seen albums into the newAlbumsCache
+        //Array of albumIDs. We don't save seen albums into the unseenAlbumsCache
         seenAlbums: [
             '64EHlRxOKVjlK1CY4RPjJz'
         ]

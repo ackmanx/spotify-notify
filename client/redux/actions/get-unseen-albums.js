@@ -1,7 +1,7 @@
-import {fetchNewAlbums} from '../../utils/request-helpers'
-import {FETCH_NEW_ALBUMS_SUCCESS, LOADING_START, LOADING_STOP} from '../action-types'
+import {fetchUnseenAlbums} from '../../utils/request-helpers'
+import {FETCH_UNSEEN_ALBUMS_SUCCESS, LOADING_START, LOADING_STOP} from '../action-types'
 
-export const getNewAlbums = ({appJustLoaded, shouldGetCached}) => {
+export const getUnseenAlbums = ({appJustLoaded, shouldGetCached}) => {
     return async (dispatch, getState) => {
         const state = getState()
 
@@ -10,17 +10,17 @@ export const getNewAlbums = ({appJustLoaded, shouldGetCached}) => {
 
         dispatch({type: LOADING_START})
 
-        const res = await fetchNewAlbums(shouldGetCached)
+        const res = await fetchUnseenAlbums(shouldGetCached)
 
         dispatch({type: LOADING_STOP})
 
         dispatch({
-            type: FETCH_NEW_ALBUMS_SUCCESS,
+            type: FETCH_UNSEEN_ALBUMS_SUCCESS,
             username: res.name,
-            artistsWithNewAlbums: res.artists,
+            artistsWithUnseenAlbums: res.artists,
             firstTimeUser: res.firstTimeUser,
             totalFollowedArtists: res.totalFollowedArtists,
-            totalNewAlbums: res.totalNewAlbums,
+            totalUnseenAlbums: res.totalUnseenAlbums,
         })
     }
 }

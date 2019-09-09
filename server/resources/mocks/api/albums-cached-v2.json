@@ -8,7 +8,7 @@
         "totalFollowedArtists": 201
     },
     "seenAlbums": [],
-    "newAlbumsCache": {
+    "unseenAlbumsCache": {
         "artists": {
             "1wGcs6i2IJbgXxE3bDIm9k": {
                 "id": "1wGcs6i2IJbgXxE3bDIm9k",
@@ -187,6 +187,6 @@
                 ]
             }
         },
-        "totalNewAlbums": 17
+        "totalUnseenAlbums": 17
     }
 }

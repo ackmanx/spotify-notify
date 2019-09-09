@@ -4,7 +4,7 @@
 const userDataSchema = [
     {
         "userId": "ackmanx",
-        "newAlbumsCache": {
+        "unseenAlbumsCache": {
             "artists": {
                 "0OTY72l7CC7ynKzp6N2o5b": { //artistId
                     "id": "0OTY72l7CC7ynKzp6N2o5b",
@@ -22,7 +22,7 @@ const userDataSchema = [
                     ]
                 },
                 totalFollowedArtists: 155,
-                totalNewAlbums: 25,
+                totalUnseenAlbums: 25,
             }
         },
         "seenAlbums": [

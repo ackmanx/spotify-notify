@@ -3,11 +3,11 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import {ActionButton} from './action-button'
-import {getNewAlbums} from '../../redux/actions/get-new-albums'
+import {getUnseenAlbums} from '../../redux/actions/get-unseen-albums'
 import {submitSeenAlbums} from '../../redux/actions/seen-albums'
 
 const _ActionBar = props => {
-    const {getNewAlbums, loading, seenAlbums, submitSeenAlbums, totalFollowedArtists, totalNewAlbums, username} = props
+    const {getUnseenAlbums, loading, seenAlbums, submitSeenAlbums, totalFollowedArtists, totalUnseenAlbums, username} = props
 
     return (
         <div className='sticky-header'>
@@ -15,12 +15,12 @@ const _ActionBar = props => {
                 <ActionButton className='refresh-button'
                               imagePath='action-bar/refresh-icon.png'
                               imageAltText='refresh'
-                              handler={getNewAlbums}/>
+                              handler={getUnseenAlbums}/>
 
                 {!loading && <>
                     <div className='username'>{username}</div>
                     <div>Following: {totalFollowedArtists}</div>
-                    <div>Unseen: {totalNewAlbums}</div>
+                    <div>Unseen: {totalUnseenAlbums}</div>
                 </>}
 
                 <ActionButton className='mark-as-seen-button'
@@ -39,11 +39,11 @@ const mapStateToProps = state => ({
     seenAlbums: state.app.seenAlbums,
     username: state.app.username,
     totalFollowedArtists: state.artists.totalFollowedArtists,
-    totalNewAlbums: state.artists.totalNewAlbums,
+    totalUnseenAlbums: state.artists.totalUnseenAlbums,
 })
 
 const mapDispatchToProps = dispatch => ({
-    getNewAlbums: options => dispatch(getNewAlbums(options)),
+    getUnseenAlbums: options => dispatch(getUnseenAlbums(options)),
     submitSeenAlbums: options => dispatch(submitSeenAlbums()),
 })
 

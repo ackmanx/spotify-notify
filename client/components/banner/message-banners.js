@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 import {Banner} from './banner'
 
-const _MessageBanners = ({firstTimeUser, loading, totalFollowedArtists, totalNewAlbums}) => {
+const _MessageBanners = ({firstTimeUser, loading, totalFollowedArtists, totalUnseenAlbums}) => {
     let banner = null
 
     if (loading) {
@@ -16,7 +16,7 @@ const _MessageBanners = ({firstTimeUser, loading, totalFollowedArtists, totalNew
         else if (!totalFollowedArtists) {
             banner = <Banner text="Whoa boy, it looks like you aren't following any artists on Spotify! Do that and come back."/>
         }
-        else if (!totalNewAlbums) {
+        else if (!totalUnseenAlbums) {
             banner = <Banner text="Nothing new :("/>
         }
     }
@@ -29,7 +29,7 @@ const mapStateToProps = state => ({
     firstTimeUser: state.app.firstTimeUser,
     loading: state.app.loading,
     totalFollowedArtists: state.artists.totalFollowedArtists,
-    totalNewAlbums: state.artists.totalNewAlbums,
+    totalUnseenAlbums: state.artists.totalUnseenAlbums,
 })
 
 const mapDispatchToProps = dispatch => ({})
