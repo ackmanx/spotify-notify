@@ -4,18 +4,6 @@
 
 ## Convert to TypeScript
 
-## Mobile friendly
-loading text is too high
-    center it when first loading the page
-    add padding when doing a refresh
-check the new user text
-    reduce to 48px
-    add line break
-check the no followed artists text
-    reduce to 48px
-    add line break
-refresh button hover styles doesn't go away after finished (is this an issue on a real mobile device?)
-
 ## Generate a new client secret with spotify
 Then add a heroku config for it and reference that in the code
 For local development, I'll need to keep the secret handy outside of git, maybe read it from a file somewhere and make same env var that heroku uses
@@ -31,6 +19,19 @@ Combine action buttons to the left and add a hamburger to the right
 
 ## Add overlay for refresh and submit
 
+## Action Bar and Messages
+Hide action bar while loading so we only show messages
+Center the message for all devices
+Don't show album list while loading (such as when doing a seen submit)
+check the new user text
+    reduce to 48px
+    add line break
+check the no followed artists text
+    reduce to 48px
+    add line break
+refresh button hover styles doesn't go away after finished (is this an issue on a real mobile device?)
+
+
 # Bugs
 
 ## The spotify access token expires but I don't have code that gets a new one if this happens so the request will fail
@@ -42,8 +43,6 @@ This only happens on my work Mac
 # Chores
 
 ## Namespace my css or use Styled Components instead of avoiding it because I'm having conflicts
-
-## Rename new albums concept to unseen albums
 
 ## The spotify access token expires but being my server restarts every 30 min of inactivity on heroku i haven't encountered that
 
