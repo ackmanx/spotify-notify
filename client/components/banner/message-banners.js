@@ -7,7 +7,11 @@ const _MessageBanners = ({firstTimeUser, loading, totalFollowedArtists, totalUns
     let banner = null
 
     if (loading) {
-        banner = <Banner text='Loading...'/>
+        banner = (
+            <div className='loading'>
+                <Banner text='Loading...'/>
+            </div>
+        )
     }
     else {
         if (firstTimeUser) {

@@ -13,17 +13,17 @@ class _App extends React.Component {
     }
 
     render() {
-        const {artistsWithUnseenAlbums} = this.props
+        const {artistsWithUnseenAlbums, loading} = this.props
 
         const artistsWithUnseenAlbumsKeys = Object.keys(artistsWithUnseenAlbums || {})
         const hasUnseenAlbums = !!artistsWithUnseenAlbumsKeys.length
 
         return <>
-            <ActionBar/>
+            {!loading && <ActionBar/>}
 
             <MessageBanners/>
 
-            {hasUnseenAlbums && (
+            {!loading && hasUnseenAlbums && (
                 artistsWithUnseenAlbumsKeys.map(artistId => {
                     const artist = artistsWithUnseenAlbums[artistId];
                     return <Artist key={artist.id} artist={artist}/>
@@ -35,6 +35,7 @@ class _App extends React.Component {
 
 const mapStateToProps = state => ({
     artistsWithUnseenAlbums: state.artists.artistsWithUnseenAlbums,
+    loading: state.app.loading,
 })
 
 const mapDispatchToProps = dispatch => ({
