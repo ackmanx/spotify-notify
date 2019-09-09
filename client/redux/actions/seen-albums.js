@@ -1,4 +1,4 @@
-import {UPDATE_SEEN_ALBUMS} from '../action-types'
+import { LOADING_START, LOADING_STOP, UPDATE_SEEN_ALBUMS } from '../action-types'
 import {postSeenAlbums} from '../../utils/request-helpers'
 
 export const markArtistAsSeen = artistId => {
@@ -19,6 +19,8 @@ export const submitSeenAlbums = () => {
         const state = getState()
 
         if (state.app.loading) return
+
+        dispatch({type: LOADING_START})
 
         await postSeenAlbums(state.app.seenAlbums)
 

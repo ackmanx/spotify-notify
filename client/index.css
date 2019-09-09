@@ -19,3 +19,9 @@ button {
     background: none;
     outline: none;
 }
+
+@media only screen and (max-width: 500px) {
+    h1 {
+        font-size: 48px;
+    }
+}

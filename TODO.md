@@ -1,6 +1,7 @@
 # Features
 
 ## Styled Components
+Standardize colors, font sizes and paddings/margins
 
 ## Convert to TypeScript
 
@@ -20,17 +21,12 @@ Combine action buttons to the left and add a hamburger to the right
 ## Add overlay for refresh and submit
 
 ## Action Bar and Messages
-Hide action bar while loading so we only show messages
-Center the message for all devices
-Don't show album list while loading (such as when doing a seen submit)
 check the new user text
     reduce to 48px
     add line break
 check the no followed artists text
     reduce to 48px
     add line break
-refresh button hover styles doesn't go away after finished (is this an issue on a real mobile device?)
-
 
 # Bugs
 
