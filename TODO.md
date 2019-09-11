@@ -20,8 +20,6 @@ Combine action buttons to the left and add a hamburger to the right
 Need a way to reset an artist because I mistakenly marked all of Krewella as seen
 Require navigation by letter or something (like android lists) to prevent loading everything
 
-## Add overlay for refresh and submit
-
 # Bugs
 
 ## The spotify access token expires but I don't have code that gets a new one if this happens so the request will fail
@@ -33,7 +31,3 @@ This only happens on my work Mac
 ## App is slow
 
 # Chores
-
-## Namespace my css or use Styled Components instead of avoiding it because I'm having conflicts
-
-## The spotify access token expires but being my server restarts every 30 min of inactivity on heroku i haven't encountered that
