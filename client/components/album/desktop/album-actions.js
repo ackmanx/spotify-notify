@@ -17,7 +17,7 @@ export const _DesktopAlbumActions = props => {
                         </a>
                     </div>
                     <div className='desktop-album-action-button'>
-                        <a className='desktop-album-action-spotify' href={album.spotifyUri}>
+                        <a className='desktop-album-action-spotify' href={album.spotifyWebPlayerUrl}>
                             <img src='album-actions/google-chrome.png' alt=''/> Open in Spotify Web
                         </a>
                     </div>
