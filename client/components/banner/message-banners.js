@@ -9,16 +9,26 @@ const _MessageBanners = ({firstTimeUser, loading, totalFollowedArtists, totalUns
     if (loading) {
         banner = (
             <div className='loading'>
-                <Banner text='Loading...'/>
+                <Banner>Loading...</Banner>
             </div>
         )
     }
     else {
         if (firstTimeUser) {
-            banner = <Banner text="Looks like you've never been here before. Click the refresh icon to get started!"/>
+            banner = (
+                <Banner>
+                    <p>Looks like you've never been here before.</p>
+                    <p> Click the refresh icon to get started!</p>
+                </Banner>
+            )
         }
         else if (!totalFollowedArtists) {
-            banner = <Banner text="Whoa boy, it looks like you aren't following any artists on Spotify! Do that and come back."/>
+            banner = (
+                <Banner>
+                    <p>Whoa boy, it looks like you aren't following any artists on Spotify!</p>
+                    <p>Do that and come back.</p>
+                </Banner>
+            )
         }
         else if (!totalUnseenAlbums) {
             banner = <Banner text="Nothing new :("/>

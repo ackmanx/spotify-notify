@@ -17,16 +17,10 @@ https://developer.spotify.com/documentation/widgets/generate/play-button/
 ## Have an option to view all albums, including seen
 Would need a new UI for this
 Combine action buttons to the left and add a hamburger to the right
+Need a way to reset an artist because I mistakenly marked all of Krewella as seen
+Require navigation by letter or something (like android lists) to prevent loading everything
 
 ## Add overlay for refresh and submit
-
-## Action Bar and Messages
-check the new user text
-    reduce to 48px
-    add line break
-check the no followed artists text
-    reduce to 48px
-    add line break
 
 # Bugs
 
@@ -43,5 +37,3 @@ This only happens on my work Mac
 ## Namespace my css or use Styled Components instead of avoiding it because I'm having conflicts
 
 ## The spotify access token expires but being my server restarts every 30 min of inactivity on heroku i haven't encountered that
-
-## Need a way to reset an artist because I mistakenly marked all of Krewella as seen

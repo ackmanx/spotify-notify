@@ -1,4 +1,4 @@
 import './banner.css'
 import React from 'react'
 
-export const Banner = ({text}) => <h1>{text}</h1>
+export const Banner = ({children}) => <h1>{children}</h1>

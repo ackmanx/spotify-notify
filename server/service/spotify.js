@@ -61,7 +61,7 @@ exports.checkForUnseenAlbums = async function checkForUnseenAlbums(session) {
     const userId = session.user.id
     let followedArtistsPagesFromSpotify
 
-    debug(`Getting followed artists for ${userId}`)
+    debug(`User ${userId}: Getting followed artists`)
 
     if (process.env.MOCK) {
         followedArtistsPagesFromSpotify = [require('../resources/mocks/spotify/v1-me-following')]
