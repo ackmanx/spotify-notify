@@ -52,6 +52,8 @@ router.post('/seen-albums/update', ensureAuthenticated, async function (req, res
     const userSeenAlbums = await getUserData(userId, Slices.seenAlbums)
     const unseenAlbumCache = await getUserData(userId, Slices.unseenAlbumsCache)
 
+    //todo: iterate through unseen cache and remove artists without albums. we already do this during refresh too.
+
     unseenAlbumCache.totalUnseenAlbums -= markedAsSeen.length
 
     await saveUserData(userId, Slices.seenAlbums, userSeenAlbums.concat(markedAsSeen))
