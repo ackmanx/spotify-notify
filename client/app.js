@@ -1,10 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import LazyLoad, {forceCheck} from 'react-lazyload'
 
 import {Artist} from './components/artist/artist'
 import {ActionBar} from './components/action-bar/action-bar'
 import {MessageBanners} from './components/banner/message-banners'
 import {getUnseenAlbums} from './redux/actions/get-unseen-albums'
+import {Placeholder} from './components/artist/placeholder/placeholder'
 
 class _App extends React.Component {
 
@@ -25,8 +27,14 @@ class _App extends React.Component {
 
             {!loading && hasUnseenAlbums && (
                 artistsWithUnseenAlbumsKeys.map(artistId => {
-                    const artist = artistsWithUnseenAlbums[artistId];
-                    return <Artist key={artist.id} artist={artist}/>
+                    const artist = artistsWithUnseenAlbums[artistId]
+
+                    return (
+                        <LazyLoad key={artistId}
+                                  placeholder={<Placeholder name={artist.name}/>}>
+                            <Artist key={artist.id} artist={artist}/>
+                        </LazyLoad>
+                    )
                 })
             )}
         </>
