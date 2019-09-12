@@ -13,7 +13,11 @@ export const _Album = props => {
 
     const [showActions, setShowActions] = useState(false);
 
-    const toggleActionsPanel = () => setShowActions(!showActions)
+    const toggleActionsPanel = e => {
+        //We don't want to flip the card if the user opened a song instead of marking it
+        if (e.target.tagName === 'A') return
+        setShowActions(!showActions)
+    }
 
     const isMarked = seenAlbums.includes(album.id)
 
