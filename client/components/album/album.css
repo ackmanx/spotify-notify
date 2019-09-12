@@ -11,7 +11,7 @@
 }
 
 .is-marked {
-    opacity: 0.25;
+    opacity: 0.15;
 }
 
 @media only screen and (max-width: 500px) {
