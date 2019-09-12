@@ -23,7 +23,7 @@ module.exports = function () {
         },
         plugins: [
             new CopyWebpackPlugin([
-                {from: './fav-icon.png'},
+                {from: './icon.png'},
                 {from: './client/not-logged-in.css'},
                 {from: './client/images'},
             ]),
