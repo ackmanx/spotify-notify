@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import LazyLoad, {forceCheck} from 'react-lazyload'
+import LazyLoad from 'react-lazyload'
 
 import {Artist} from './components/artist/artist'
 import {ActionBar} from './components/action-bar/action-bar'

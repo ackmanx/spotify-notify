@@ -1,3 +1,8 @@
+/*
+ * This height is important
+ * If it's too small, then on load there will be too many placeholders visible and react-lazyload will render them all because they're in the viewport
+ * Worse yet, if you try to do a Find in Chrome, then Chrome will scroll there, but so many placeholders are in the viewport your searched-for content will load out of view
+ */
 .artist-placeholder {
     height: 500px;
 }
