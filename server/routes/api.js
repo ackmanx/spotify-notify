@@ -32,6 +32,8 @@ router.get('/albums/cached', ensureAuthenticated, async function (req, res) {
     //So, this is to hide them until a refresh
     Object.entries(userData.unseenAlbumsCache.artists).forEach(([, artist]) => {
         artist.albums = artist.albums.filter(album => !userData.seenAlbums.includes(album.id))
+
+        if (!artist.albums.length) delete userData.unseenAlbumsCache.artists[artist.id]
     })
 
     return res.json({...userData.unseenAlbumsCache, ...userData.user})
@@ -51,8 +53,6 @@ router.post('/seen-albums/update', ensureAuthenticated, async function (req, res
     const markedAsSeen = req.body.albumIds
     const userSeenAlbums = await getUserData(userId, Slices.seenAlbums)
     const unseenAlbumCache = await getUserData(userId, Slices.unseenAlbumsCache)
-
-    //todo: iterate through unseen cache and remove artists without albums. we already do this during refresh too.
 
     unseenAlbumCache.totalUnseenAlbums -= markedAsSeen.length
 
