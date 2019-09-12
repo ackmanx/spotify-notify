@@ -1,17 +1,23 @@
+import './album-image.css'
 import React from 'react'
 import LazyLoad from 'react-lazyload'
 
 import {Placeholder} from './placeholder'
 
 export const AlbumImage = props => {
-    const {album, lazyLoad, onClickHandler} = props
+    const {addClass, album, lazyLoad, onClickHandler} = props
+    let className = 'album-cover-art'
+
+    if (addClass) {
+        className = `${className} ${addClass}`
+    }
 
     if (lazyLoad) {
         return (
             <LazyLoad placeholder={<Placeholder/>}
                       offset={500}
                       once>
-                <img className='album-cover-art'
+                <img className={className}
                      src={album.coverArt}
                      alt={`${album.artistName} - ${album.name}`}
                      onClick={onClickHandler}/>
@@ -20,7 +26,7 @@ export const AlbumImage = props => {
     }
 
     return (
-        <img className='album-cover-art'
+        <img className={className}
              src={album.coverArt}
              alt={`${album.artistName} - ${album.name}`}
              onClick={onClickHandler}/>

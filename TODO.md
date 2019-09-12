@@ -29,9 +29,6 @@ Use case is a user (me) sets a bunch of albums as seen but doesn't submit it
 We want enough space so the header doesn't shift when going from 1 to 2 digits
 We want the hover border to only go around the ship and number, not the padding too (try using margin)
 
-## In mobile, after marking as seen the album isn't going semi-transparent
-Also change text "Mark as Seen" to Toggle like desktop
-
 ## Going to landscape breaks the mobile experience
 
 # Chores

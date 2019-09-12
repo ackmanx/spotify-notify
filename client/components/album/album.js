@@ -15,7 +15,7 @@ export const _Album = props => {
 
     const toggleActionsPanel = e => {
         //We don't want to flip the card if the user opened a song instead of marking it
-        if (e.target.tagName === 'A') return
+        if (e && e.target.tagName === 'A') return
         setShowActions(!showActions)
     }
 
@@ -38,7 +38,7 @@ export const _Album = props => {
             </Desktop>
 
             <Mobile>
-                <AlbumImage album={album} lazyLoad={lazyLoad} onClickHandler={toggleActionsPanel}/>
+                <AlbumImage addClass={isMarked ? 'is-marked' : ''} album={album} lazyLoad={lazyLoad} onClickHandler={toggleActionsPanel}/>
                 {showActions && <Mobile><MobileAlbumActions album={album} toggleActionsPanel={toggleActionsPanel}/></Mobile>}
             </Mobile>
 
