@@ -1,6 +1,6 @@
 # Features
 
-## Styled Components
+## LESS
 Standardize colors, font sizes and paddings/margins
 
 ## Convert to TypeScript
@@ -24,11 +24,6 @@ Require navigation by letter or something (like android lists) to prevent loadin
 
 ## The spotify access token expires but I don't have code that gets a new one if this happens so the request will fail
 Use case is a user (me) sets a bunch of albums as seen but doesn't submit it
-
-## Spotify doesn't take focus after opening
-This only happens on my work Mac
-
-## App is slow
 
 ## Hover is ugly on the spaceship
 We want enough space so the header doesn't shift when going from 1 to 2 digits
