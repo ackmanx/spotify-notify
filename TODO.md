@@ -37,4 +37,6 @@ We want the hover border to only go around the ship and number, not the padding 
 ## In mobile, after marking as seen the album isn't going semi-transparent
 Also change text "Mark as Seen" to Toggle like desktop
 
+## Going to landscape breaks the mobile experience
+
 # Chores
