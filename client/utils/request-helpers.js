@@ -3,6 +3,10 @@ export async function doGet(url) {
     return await response.json()
 }
 
+export async function fetchRefreshStatus() {
+    return await doGet('/api/albums/refresh-status')
+}
+
 export async function fetchUnseenAlbums(shouldGetCached) {
     return await doGet(shouldGetCached ? '/api/albums/cached' : '/api/albums/refresh')
 }

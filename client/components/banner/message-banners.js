@@ -1,15 +1,42 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux'
 
 import {Banner} from './banner'
+import {fetchRefreshStatus} from '../../utils/request-helpers'
 
-const _MessageBanners = ({firstTimeUser, loading, totalFollowedArtists, totalUnseenAlbums}) => {
+const _MessageBanners = ({firstTimeUser, loading, loadingIsRefresh, totalFollowedArtists, totalUnseenAlbums}) => {
     let banner = null
+
+    const [intervalId, setIntervalId] = useState();
+    const [current, setCurrent] = useState();
+    const [total, setTotal] = useState();
+    const [error, setError] = useState(false);
+
+    useEffect(() => {
+        if (loadingIsRefresh) {
+            const id = setInterval(async () => {
+                const {current, total, error} = await fetchRefreshStatus()
+                setCurrent(current)
+                setTotal(total)
+                setError(error)
+            }, 1000)
+            setIntervalId(id)
+        }
+        else {
+            clearInterval(intervalId)
+        }
+    }, [loadingIsRefresh])
 
     if (loading) {
         banner = (
             <div className='loading'>
-                <Banner>Loading...</Banner>
+                <Banner>
+                    <p>Loading...</p>
+                    {loadingIsRefresh && <>
+                        <p>{current} / {total}</p>
+                        <p>{error ? 'Oh snap! It broke!' : ''}</p>
+                    </>}
+                </Banner>
             </div>
         )
     }
@@ -42,6 +69,7 @@ const _MessageBanners = ({firstTimeUser, loading, totalFollowedArtists, totalUns
 const mapStateToProps = state => ({
     firstTimeUser: state.app.firstTimeUser,
     loading: state.app.loading,
+    loadingIsRefresh: state.app.loadingIsRefresh,
     totalFollowedArtists: state.artists.totalFollowedArtists,
     totalUnseenAlbums: state.artists.totalUnseenAlbums,
 })

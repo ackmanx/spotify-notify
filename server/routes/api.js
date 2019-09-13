@@ -48,6 +48,19 @@ router.get('/albums/refresh', ensureAuthenticated, async function (req, res) {
     res.json(await checkForUnseenAlbums(req.session))
 })
 
+/*
+ * Query Spotify to refresh the cache
+ * This will get all followed artists, then all their albums
+ * Lastly it will remove the albums we've seen and save the cache to the DB before sending it to the user
+ */
+router.get('/albums/refresh-status', ensureAuthenticated, async function (req, res) {
+    res.json({
+        current: req.session.refreshCurrent,
+        total: req.session.refreshTotal,
+        error: req.session.refreshError,
+    })
+})
+
 router.post('/seen-albums/update', ensureAuthenticated, async function (req, res) {
     const userId = req.session.user.id
     const markedAsSeen = req.body.albumIds
