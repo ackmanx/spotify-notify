@@ -78,7 +78,7 @@
             }
         ],
         "next": "https://api.spotify.com/v1/me/following?type=artist&after=16yUpGkBRgc2eDMd3bB3Uw&limit=20",
-        "total": 167,
+        "total": 2,
         "cursors": {
             "after": "16yUpGkBRgc2eDMd3bB3Uw"
         },
