@@ -3,83 +3,79 @@
         "items": [
             {
                 "external_urls": {
-                    "spotify": "https://open.spotify.com/artist/03SZv6slUnLnHI3IfwG0gl"
+                    "spotify": "https://open.spotify.com/artist/77AiFEVeAVj2ORpC85QVJs"
                 },
                 "followers": {
                     "href": null,
-                    "total": 45240
+                    "total": 3230185
                 },
                 "genres": [
-                    "antideutsche",
-                    "electropunk",
-                    "german indie",
-                    "german pop",
-                    "german rock"
+                    "big room",
+                    "dance pop",
+                    "edm",
+                    "electro house",
+                    "pop",
+                    "tropical house"
                 ],
-                "href": "https://api.spotify.com/v1/artists/03SZv6slUnLnHI3IfwG0gl",
+                "href": "https://api.spotify.com/v1/artists/77AiFEVeAVj2ORpC85QVJs",
                 "id": "77AiFEVeAVj2ORpC85QVJs",
                 "images": [
                     {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/45b2aabf832035fab7fe10d9e8161ce5e2045727",
+                        "url": "https://i.scdn.co/image/bd878e687c252c80424d3dfd3758032f59447211",
                         "width": 640
                     },
                     {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/4724cda108d09d530a419004f9e67457a82ef3e6",
+                        "url": "https://i.scdn.co/image/4d669edde5a4954841b907608761ac959f9de75c",
                         "width": 320
                     },
                     {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/9b4b1250aeb0aa46b886727a873b30200faa6b65",
+                        "url": "https://i.scdn.co/image/212305d22e516100ddeed69e50a52d7dc386ca1f",
                         "width": 160
                     }
                 ],
                 "name": "Steve Aoki",
-                "popularity": 53,
+                "popularity": 82,
                 "type": "artist",
-                "uri": "spotify:artist:03SZv6slUnLnHI3IfwG0gl"
+                "uri": "spotify:artist:77AiFEVeAVj2ORpC85QVJs"
             },
             {
                 "external_urls": {
-                    "spotify": "https://open.spotify.com/artist/03SZv6slUnLnHI3IfwG0gl"
+                    "spotify": "https://open.spotify.com/artist/1r9DuPTHiQ7hnRRZ99B8nL"
                 },
                 "followers": {
                     "href": null,
-                    "total": 45240
+                    "total": 224321
                 },
                 "genres": [
-                    "antideutsche",
-                    "electropunk",
-                    "german indie",
-                    "german pop",
-                    "german rock"
+                    "mandopop"
                 ],
-                "href": "https://api.spotify.com/v1/artists/03SZv6slUnLnHI3IfwG0gl",
+                "href": "https://api.spotify.com/v1/artists/1r9DuPTHiQ7hnRRZ99B8nL",
                 "id": "1r9DuPTHiQ7hnRRZ99B8nL",
                 "images": [
                     {
                         "height": 640,
-                        "url": "https://i.scdn.co/image/45b2aabf832035fab7fe10d9e8161ce5e2045727",
+                        "url": "https://i.scdn.co/image/431ab8f1ed82b7f93b3c27896c18d430fd808c44",
                         "width": 640
                     },
                     {
                         "height": 320,
-                        "url": "https://i.scdn.co/image/4724cda108d09d530a419004f9e67457a82ef3e6",
+                        "url": "https://i.scdn.co/image/0bc7120fdf47dac2798c6a24098a687c7a437a95",
                         "width": 320
                     },
                     {
                         "height": 160,
-                        "url": "https://i.scdn.co/image/9b4b1250aeb0aa46b886727a873b30200faa6b65",
+                        "url": "https://i.scdn.co/image/2434d2217b573131b6ace0d83117b7eee9ebd1e2",
                         "width": 160
                     }
                 ],
                 "name": "Jolin Tsai",
-                "popularity": 53,
+                "popularity": 63,
                 "type": "artist",
-                "uri": "spotify:artist:03SZv6slUnLnHI3IfwG0gl"
+                "uri": "spotify:artist:1r9DuPTHiQ7hnRRZ99B8nL"
             }
-
         ],
         "next": "https://api.spotify.com/v1/me/following?type=artist&after=16yUpGkBRgc2eDMd3bB3Uw&limit=20",
         "total": 167,
