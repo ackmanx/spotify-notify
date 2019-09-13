@@ -90,18 +90,26 @@ exports.checkForUnseenAlbums = async function checkForUnseenAlbums(session) {
 
     debug(`User ${userId}: Fetching albums for ${Object.keys(freshAlbumsCache.artists).length} artists`)
 
-    const allAlbumsPagesOfFollowedArtists = []
-
     const artistIds = Object.keys(freshAlbumsCache.artists)
+
+    //Update session with progress as we fetch each artist. The client will poll another endpoint for this data until this is finished
+    session.refreshCurrent = 0
+    session.refreshTotal = artistIds.length
+    session.refreshError = false
+
+    const allAlbumsPagesOfFollowedArtists = []
 
     for(let i = 0; i < artistIds.length; i++) {
         try {
+            session.refreshCurrent = i + 1
+
             const artistId = artistIds[i]
             const albumsPages = await fetchAllPages(session.access_token, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`)
             //Spread albums because fetchAlbumsAllPages returns an array of responses, and we want this array to be flat of all artists and albums
             allAlbumsPagesOfFollowedArtists.push(...albumsPages)
         }
         catch (e) {
+            session.refreshError = true
             console.error(e)
         }
     }

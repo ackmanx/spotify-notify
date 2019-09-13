@@ -14,13 +14,16 @@ const _MessageBanners = ({firstTimeUser, loading, loadingIsRefresh, totalFollowe
 
     useEffect(() => {
         if (loadingIsRefresh) {
-            const id = setInterval(async () => {
+            const refreshFunction = async () => {
                 const {current, total, error} = await fetchRefreshStatus()
                 setCurrent(current)
                 setTotal(total)
                 setError(error)
-            }, 1000)
-            setIntervalId(id)
+            }
+
+            refreshFunction()
+
+            setIntervalId(setInterval(refreshFunction, 1000))
         }
         else {
             clearInterval(intervalId)
