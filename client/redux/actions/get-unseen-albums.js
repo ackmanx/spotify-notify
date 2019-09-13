@@ -8,7 +8,7 @@ export const getUnseenAlbums = ({appJustLoaded, shouldGetCached}) => {
         //Prevent double-submissions, but also check this isn't a first-time load for a user
         if (state.app.loading && !appJustLoaded) return
 
-        dispatch({type: LOADING_START})
+        dispatch({type: LOADING_START, isRefresh: !shouldGetCached})
 
         const res = await fetchUnseenAlbums(shouldGetCached)
 

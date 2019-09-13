@@ -48,6 +48,18 @@ router.get('/albums/refresh', ensureAuthenticated, async function (req, res) {
     res.json(await checkForUnseenAlbums(req.session))
 })
 
+/*
+ * Get the current status for Spotify albums refresh
+ * The session is updated in `checkForUnseenAlbums` as progress is made and the UI will poll this endpoint on an interval
+ */
+router.get('/albums/refresh-status', ensureAuthenticated, async function (req, res) {
+    res.json({
+        current: req.session.refreshCurrent,
+        total: req.session.refreshTotal,
+        error: req.session.refreshError,
+    })
+})
+
 router.post('/seen-albums/update', ensureAuthenticated, async function (req, res) {
     const userId = req.session.user.id
     const markedAsSeen = req.body.albumIds

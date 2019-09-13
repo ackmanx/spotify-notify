@@ -11,11 +11,11 @@ export function app(state = initialState, action = {}) {
     switch (action.type) {
 
         case LOADING_START: {
-            return {...state, loading: true}
+            return {...state, loading: true, loadingIsRefresh: action.isRefresh}
         }
 
         case LOADING_STOP: {
-            return {...state, loading: false}
+            return {...state, loading: false, loadingIsRefresh: undefined}
         }
 
         case FETCH_UNSEEN_ALBUMS_SUCCESS: {
