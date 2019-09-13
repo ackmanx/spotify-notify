@@ -96,12 +96,14 @@ exports.checkForUnseenAlbums = async function checkForUnseenAlbums(session) {
     session.refreshCurrent = 0
     session.refreshTotal = artistIds.length
     session.refreshError = false
+    session.save()
 
     const allAlbumsPagesOfFollowedArtists = []
 
     for(let i = 0; i < artistIds.length; i++) {
         try {
             session.refreshCurrent = i + 1
+            session.save()
 
             const artistId = artistIds[i]
             const albumsPages = await fetchAllPages(session.access_token, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`)
@@ -110,6 +112,7 @@ exports.checkForUnseenAlbums = async function checkForUnseenAlbums(session) {
         }
         catch (e) {
             session.refreshError = true
+            session.save()
             console.error(e)
         }
     }
