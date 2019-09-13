@@ -6,15 +6,13 @@
 
 .desktop-album-actions-2 {
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
     height: 100%;
 }
 
 .desktop-actions-container {
     background-color: rgba(255, 255, 255, .85);
-    width: 100%;
+    width: 280px;
 }
 
 .desktop-album-action-spotify {
@@ -40,11 +38,20 @@
 }
 
 .desktop-album-action-button {
-    margin: 5px;
-    padding: 10px;
-    border: 1px solid transparent;
+    width: 100%;
+    padding: 10px 0 10px 20px;
+}
+
+/*
+ * `button` with width 100% is different width than the `a` links so just set it explicitly.
+ * Weirdly, 300px for the `button` is also different than 300px width for `a` links
+ */
+button.desktop-album-action-button {
+    width: 300px;
+    padding: 10px 0 10px 20px;
 }
 
 .desktop-album-action-button:hover {
-    border: 1px solid black;
+    color: white;
+    background-color: black;
 }
