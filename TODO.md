@@ -1,7 +1,5 @@
 # Features
 
-## Report refresh status to the client
-
 ## Create modal to listen to that album RIGHT NOW
 After modal open, generate an iframe to insert an embedded player
 Use the album's URI so it shows the whole album
