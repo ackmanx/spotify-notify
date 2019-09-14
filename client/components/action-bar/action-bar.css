@@ -19,24 +19,59 @@
     padding: 5px;
 }
 
-.action-button:hover {
-    border: 1px solid black;
-    padding: 4px;
-}
-
+/* Refresh Button */
 .refresh-button {
     display: flex;
     width: 30px;
 }
 
+.refresh-button:hover {
+    animation: rotate 2s infinite linear
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(359deg)
+    }
+}
+/* End Refresh Button */
+
+/* Mark as Seen Button */
 .mark-as-seen-button {
-    width: 50px;
+    width: 60px;
     text-align: right;
 }
 
-.disabled {
-    background-color: darkgray;
+.mark-as-seen-button:hover {
+    animation: takeoff .2s infinite linear;
 }
+
+@keyframes takeoff {
+    from {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(1px, 1px);
+    }
+
+    50% {
+        transform: translate(0px, -1px);
+    }
+
+    75% {
+        transform: translate(-1px, 0px);
+    }
+
+    to {
+        transform: translate(0, 0);
+    }
+}
+/* End Mark as Seen Button */
 
 .action-icon {
     max-width: 100%;
