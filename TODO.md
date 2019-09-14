@@ -19,12 +19,6 @@ Use case is a user (me) sets a bunch of albums as seen but doesn't submit it
 ## Request throttling still doesn't work
 It fails at "Uh oh, the retry after throttle failed too" with a 429, suggesting the throttling is not working
 
-## Hover is ugly on the spaceship
-We want enough space so the header doesn't shift when going from 1 to 2 digits
-We want the hover border to only go around the ship and number, not the padding too (try using margin)
-It would be cool to have no border, but shake the rocket ship like it's going to take off
-And for the refresh icon to spin
-
 ## Going to landscape breaks the mobile experience
 
 # Chores
