@@ -7,9 +7,9 @@ https://developer.spotify.com/documentation/widgets/generate/play-button/
 
 ## Have an option to view all albums, including seen
 Would need a new UI for this
-Combine action buttons to the left and add a hamburger to the right
 Need a way to reset an artist because I mistakenly marked all of Krewella as seen
-Require navigation by letter or something (like android lists) to prevent loading everything
+
+## Introduce hamburger on the right for consolidating actions
 
 # Bugs
 

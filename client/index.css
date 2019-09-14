@@ -30,7 +30,7 @@ button {
     .ReactModal__Body--open {
         overflow-y: hidden;
     }
-    
+
     .ReactModal__Overlay {
         z-index: 200;
         background-color: rgba(0, 0, 0, 0.75) !important;
