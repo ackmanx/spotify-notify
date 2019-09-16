@@ -11,6 +11,26 @@ Need a way to reset an artist because I mistakenly marked all of Krewella as see
 
 ## Introduce hamburger on the right for consolidating actions
 
+## Use History so when user presses back and a modal is open it closes it
+
+## Make the rocket ship take off on click
+```css
+.mark-as-seen-button {
+    animation: takeoff .3s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes takeoff {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(50px, -50px);
+    }
+}
+```
+
 # Bugs
 
 ## The spotify access token expires but I don't have code that gets a new one if this happens so the request will fail
