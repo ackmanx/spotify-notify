@@ -41,6 +41,8 @@ It fails at "Uh oh, the retry after throttle failed too" with a 429, suggesting 
 
 ## Going to landscape breaks the mobile experience
 
+## Got a 203/203 during a refresh, but then also got the error true. Not sure how that even happened.
+
 # Chores
 
 ## LESS
