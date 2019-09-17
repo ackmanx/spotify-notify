@@ -1,4 +1,4 @@
-import './album-image.css'
+import './album-image.less'
 import React from 'react'
 import LazyLoad from 'react-lazyload'
 

@@ -1,4 +1,4 @@
-import './artist.css'
+import './artist.less'
 import React from 'react'
 import {connect} from 'react-redux'
 

@@ -41,10 +41,11 @@ module.exports = function () {
                     }
                 },
                 {
-                    test: /\.(css)$/,
+                    test: /\.(less|css)$/,
                     use: [
                         {loader: 'style-loader'},
                         {loader: 'css-loader'},
+                        {loader: 'less-loader'},
                     ]
                 },
             ]

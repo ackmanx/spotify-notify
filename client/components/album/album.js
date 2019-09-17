@@ -1,4 +1,4 @@
-import './album.css'
+import './album.less'
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
 

@@ -1,4 +1,4 @@
-import './album-details.css'
+import './album-details.less'
 import React from 'react'
 
 export const AlbumDetails = props => {
