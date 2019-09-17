@@ -1,3 +1,6 @@
+/* This is the CSS for the entire page if you are not logged in */
+/* There is no JavaScript for the login page */
+
 html, body {
     margin: 0;
     padding: 0;

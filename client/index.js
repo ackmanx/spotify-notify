@@ -1,5 +1,5 @@
 import 'normalize.css'
-import './index.less'
+import './styles/global.less'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
