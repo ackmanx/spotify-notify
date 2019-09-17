@@ -1,5 +1,6 @@
 import 'normalize.css'
 import './styles/global.less'
+import './styles/modal-overrides.less'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'

@@ -13,6 +13,8 @@ Need a way to reset an artist because I mistakenly marked all of Krewella as see
 
 ## Use History so when user presses back and a modal is open it closes it
 
+## Show in the album actions (mobile/desktop) if the album is currently seen or unseen
+
 ## Make the rocket ship take off on click
 ```css
 .mark-as-seen-button {
