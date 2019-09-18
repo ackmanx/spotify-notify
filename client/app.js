@@ -26,8 +26,12 @@ class _App extends React.Component {
             <MessageBanners/>
 
             {!loading && hasUnseenAlbums && (
-                artistsWithUnseenAlbumsKeys.map(artistId => {
+                artistsWithUnseenAlbumsKeys.map((artistId, index) => {
                     const artist = artistsWithUnseenAlbums[artistId]
+
+                    if (index === 0) {
+                        return <Artist key={artist.id} artist={artist}/>
+                    }
 
                     return (
                         <LazyLoad key={artistId}
