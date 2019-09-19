@@ -41,7 +41,7 @@ export const _MobileAlbumActions = props => {
                         markAlbumAsSeen(album.id);
                         toggleActionsPanel()
                     }}>
-                        <img src='album-actions/ghost.png' alt=''/> {seenAlbums.includes(album.id) ? 'Mark Unseen' : 'Mark Seen'}
+                        <img src='album-actions/ghost.png' alt=''/> {seenAlbums.includes(album.id) ? 'Mark as Unseen' : 'Mark as Seen'}
                     </button>
                 </div>
             </div>
