@@ -8,19 +8,20 @@ const _MessageBanners = ({firstTimeUser, loading, loadingIsRefresh, totalFollowe
     let banner = null
 
     const [intervalId, setIntervalId] = useState();
-    const [current, setCurrent] = useState();
+    const [completed, setCompleted] = useState();
     const [total, setTotal] = useState();
     const [error, setError] = useState(false);
 
     useEffect(() => {
         if (loadingIsRefresh) {
             const refreshFunction = async () => {
-                const {current, total, error} = await fetchRefreshStatus()
-                setCurrent(current)
+                const {completed, total, error} = await fetchRefreshStatus()
+                setCompleted(completed)
                 setTotal(total)
                 setError(error)
             }
 
+            //Ignoring returned promise
             refreshFunction()
 
             setIntervalId(setInterval(refreshFunction, 1000))
@@ -36,7 +37,7 @@ const _MessageBanners = ({firstTimeUser, loading, loadingIsRefresh, totalFollowe
                 <Banner>
                     <p>Loading...</p>
                     {loadingIsRefresh && <>
-                        <p>{current} / {total}</p>
+                        <p>{completed} / {total}</p>
                         <p>{error ? 'Oh snap! It broke!' : ''}</p>
                     </>}
                 </Banner>
