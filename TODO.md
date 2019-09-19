@@ -6,8 +6,6 @@ Need a way to reset an artist because I mistakenly marked all of Krewella as see
 
 ## Introduce hamburger on the right for consolidating actions
 
-## Show in the album actions (mobile/desktop) if the album is currently seen or unseen
-
 ## Make the rocket ship take off on click
 ```css
 .mark-as-seen-button {
@@ -45,3 +43,5 @@ Standardize colors, font sizes and paddings/margins
 ## Generate a new client secret with spotify
 Then add a heroku config for it and reference that in the code
 For local development, I'll need to keep the secret handy outside of git, maybe read it from a file somewhere and make same env var that heroku uses
+
+## Could probably combine to some extent the album actions

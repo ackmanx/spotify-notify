@@ -19,7 +19,7 @@ const modalOverrides = {
 }
 
 export const _MobileAlbumActions = props => {
-    const {album, markAlbumAsSeen, toggleActionsPanel} = props
+    const {album, markAlbumAsSeen, seenAlbums, toggleActionsPanel} = props
 
     return (
         <Modal isOpen={true} onRequestClose={toggleActionsPanel} style={modalOverrides}>
@@ -41,7 +41,7 @@ export const _MobileAlbumActions = props => {
                         markAlbumAsSeen(album.id);
                         toggleActionsPanel()
                     }}>
-                        <img src='album-actions/ghost.png' alt=''/> Toggle Seen/Unseen
+                        <img src='album-actions/ghost.png' alt=''/> {seenAlbums.includes(album.id) ? 'Mark Unseen' : 'Mark Seen'}
                     </button>
                 </div>
             </div>
@@ -49,7 +49,9 @@ export const _MobileAlbumActions = props => {
     )
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({
+    seenAlbums: state.app.seenAlbums,
+})
 
 const mapDispatchToProps = dispatch => ({
     markAlbumAsSeen: albumId => dispatch(markAlbumAsSeen(albumId))

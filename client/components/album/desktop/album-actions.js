@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 import {markAlbumAsSeen} from '../../../redux/actions/seen-albums'
 
 export const _DesktopAlbumActions = props => {
-    const {album, markAlbumAsSeen, toggleActionsPanel} = props
+    const {album, markAlbumAsSeen, seenAlbums, toggleActionsPanel} = props
 
     return (
         <div className='desktop-album-actions'>
@@ -18,10 +18,11 @@ export const _DesktopAlbumActions = props => {
                         <img src='album-actions/google-chrome.png' alt=''/> Open in Spotify Web
                     </a>
                     <button className='desktop-album-action-button desktop-album-action-mark-as-seen' onClick={() => {
-                        markAlbumAsSeen(album.id);
+                        //If we don't delay this, the text will update from Seen to Unseen before the card close animation finishes
+                        setTimeout(() => markAlbumAsSeen(album.id), 125)
                         toggleActionsPanel()
                     }}>
-                        <img src='album-actions/ghost.png' alt=''/> Toggle Seen/Unseen
+                        <img src='album-actions/ghost.png' alt=''/> {seenAlbums.includes(album.id) ? 'Mark Unseen' : 'Mark Seen'}
                     </button>
                 </div>
             </div>
@@ -29,7 +30,9 @@ export const _DesktopAlbumActions = props => {
     )
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({
+    seenAlbums: state.app.seenAlbums,
+})
 
 const mapDispatchToProps = dispatch => ({
     markAlbumAsSeen: albumId => dispatch(markAlbumAsSeen(albumId))
