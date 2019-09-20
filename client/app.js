@@ -12,13 +12,14 @@ class _App extends React.Component {
 
     componentDidMount() {
         this.props.getUnseenAlbums({shouldGetCached: true, appJustLoaded: true})
+    }
 
-        //On initial load, react-lazyload doesn't detect all elements in the viewport
-        //Force a recheck of the viewport, but not immediately because the DOM might isn't ready immediately
-        //todo majerus: This number doesn't work because slow networks cause delays, then it triggers too early
-        //todo majerus: How to detect until after a few things are rendered? For example, check each artist untl it's not on the viewport
-        //todo majerus: Then set a flag so this triggers in a componentDidUpdate?
-        setTimeout(() => forceCheck(), 100)
+    componentDidUpdate(prev) {
+        if (!prev.allAlbumsInViewportRendered && this.props.allAlbumsInViewportRendered) {
+            //On initial load, react-lazyload doesn't detect all elements in the viewport
+            //Force a recheck of the viewport after we've verified all artist placeholders in the viewport have rendered
+            forceCheck()
+        }
     }
 
     render() {
@@ -49,6 +50,7 @@ class _App extends React.Component {
 }
 
 const mapStateToProps = state => ({
+    allAlbumsInViewportRendered: state.app.allAlbumsInViewportRendered,
     artistsWithUnseenAlbums: state.artists.artistsWithUnseenAlbums,
     loading: state.app.loading,
 })

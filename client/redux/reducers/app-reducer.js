@@ -1,6 +1,7 @@
-import {FETCH_UNSEEN_ALBUMS_FINISHED, LOADING_START, LOADING_STOP, UPDATE_SEEN_ALBUMS} from '../action-types'
+import {ALL_ALBUMS_IN_VIEWPORT_RENDERED, FETCH_UNSEEN_ALBUMS_FINISHED, LOADING_START, LOADING_STOP, UPDATE_SEEN_ALBUMS} from '../action-types'
 
 const initialState = {
+    allAlbumsInViewportRendered: false,
     //Default this to true so the no-results message banners aren't rendered before we get results back
     loading: true,
     seenAlbums: [],
@@ -9,6 +10,10 @@ const initialState = {
 export function app(state = initialState, action = {}) {
 
     switch (action.type) {
+
+        case ALL_ALBUMS_IN_VIEWPORT_RENDERED: {
+            return {...state, allAlbumsInViewportRendered: true}
+        }
 
         case LOADING_START: {
             return {...state, loading: true, isRefresh: action.isRefresh}
