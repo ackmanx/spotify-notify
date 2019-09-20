@@ -23,22 +23,166 @@
                         "type": "album",
                         "spotifyUri": "spotify:album:36KYfT4iOGioOqJ6f6aHbg",
                         "spotifyWebPlayerUrl": "https://open.spotify.com/album/36KYfT4iOGioOqJ6f6aHbg"
-                    }
-                ]
-            },
-            "otherkey": {
-                "id": "otherkey",
-                "name": "Nachtmahr 2",
-                "albums": [
+                    },
+                    {
+                        "id": "1fFlLSHboKWZ1X1SoVZyJm",
+                        "name": "Gehorsam",
+                        "artistName": "Nachtmahr",
+                        "coverArt": "https://i.scdn.co/image/2444566db459f11c3c38674139e0b50278620863",
+                        "releaseDate": "2018-10-26",
+                        "type": "single",
+                        "spotifyUri": "spotify:album:1fFlLSHboKWZ1X1SoVZyJm",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/1fFlLSHboKWZ1X1SoVZyJm"
+                    },
+                    {
+                        "id": "45s78ohr8AphR3xcGOzbyt",
+                        "name": "Widerstand",
+                        "artistName": "Nachtmahr",
+                        "coverArt": "https://i.scdn.co/image/81355166148d6afe645ce69265a658dd565df72e",
+                        "releaseDate": "2018-06-29",
+                        "type": "album",
+                        "spotifyUri": "spotify:album:45s78ohr8AphR3xcGOzbyt",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/45s78ohr8AphR3xcGOzbyt"
+                    },
                     {
                         "id": "7H7i00Yi7mheLbLUinJ4yp",
                         "name": "Unbeugsam",
-                        "artistName": "Nachtmahr 2",
+                        "artistName": "Nachtmahr",
                         "coverArt": "https://i.scdn.co/image/e37540108be7476efe47676a2fcc8e4c0acc8ad4",
                         "releaseDate": "2017-02-17",
                         "type": "album",
                         "spotifyUri": "spotify:album:7H7i00Yi7mheLbLUinJ4yp",
                         "spotifyWebPlayerUrl": "https://open.spotify.com/album/7H7i00Yi7mheLbLUinJ4yp"
+                    },
+                    {
+                        "id": "2YnJALM2OeVmNPXcXQGd61",
+                        "name": "Mit vereinten Kräften",
+                        "artistName": "Nachtmahr",
+                        "coverArt": "https://i.scdn.co/image/debe1878f7aa51dc19578d13a54758832738cefc",
+                        "releaseDate": "2016-10-28",
+                        "type": "album",
+                        "spotifyUri": "spotify:album:2YnJALM2OeVmNPXcXQGd61",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/2YnJALM2OeVmNPXcXQGd61"
+                    },
+                    {
+                        "id": "4Og72fGbBqU1UXYvxaM1Sv",
+                        "name": "Kampfbereit",
+                        "artistName": "Nachtmahr",
+                        "coverArt": "https://i.scdn.co/image/33d12bf906bfacebc2b116b7f27a63860adcbb1b",
+                        "releaseDate": "2016-04-01",
+                        "type": "album",
+                        "spotifyUri": "spotify:album:4Og72fGbBqU1UXYvxaM1Sv",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/4Og72fGbBqU1UXYvxaM1Sv"
+                    },
+                    {
+                        "id": "6EMS74vCsIdR4ziGoV3epK",
+                        "name": "Strenge Liebe",
+                        "artistName": "Nachtmahr",
+                        "coverArt": "https://i.scdn.co/image/a51b5e12740218f5e9f5c5c40b501e0a3cf54eaa",
+                        "releaseDate": "2016-03-25",
+                        "type": "single",
+                        "spotifyUri": "spotify:album:6EMS74vCsIdR4ziGoV3epK",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/6EMS74vCsIdR4ziGoV3epK"
+                    },
+                    {
+                        "id": "4eE4sZgfj40GFlxkIdaBo8",
+                        "name": "Tanzt für mich",
+                        "artistName": "Nachtmahr",
+                        "coverArt": "https://i.scdn.co/image/b1488e26ce012e5409937ae03d32b041b3873b64",
+                        "releaseDate": "2016-03-18",
+                        "type": "single",
+                        "spotifyUri": "spotify:album:4eE4sZgfj40GFlxkIdaBo8",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/4eE4sZgfj40GFlxkIdaBo8"
+                    },
+                    {
+                        "id": "1e45U7C76A5aq32Jkj4Iav",
+                        "name": "Feindbild",
+                        "artistName": "Nachtmahr",
+                        "coverArt": "https://i.scdn.co/image/ea830ed85da1c2f796a48aa3fe0f27c2273b7fbf",
+                        "releaseDate": "2014-02-14",
+                        "type": "album",
+                        "spotifyUri": "spotify:album:1e45U7C76A5aq32Jkj4Iav",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/1e45U7C76A5aq32Jkj4Iav"
+                    },
+                    {
+                        "id": "5676RfwrDBGoleUIDMfzCX",
+                        "name": "Can You Feel The Beat?",
+                        "artistName": "Nachtmahr",
+                        "coverArt": "https://i.scdn.co/image/b63d1e866c3b6f8ecfc696e7b07a95a51d179337",
+                        "releaseDate": "2012-02-14",
+                        "type": "album",
+                        "spotifyUri": "spotify:album:5676RfwrDBGoleUIDMfzCX",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/5676RfwrDBGoleUIDMfzCX"
+                    },
+                    {
+                        "id": "6NsKNC8okX9VJZzzn4c4W4",
+                        "name": "Semper Fidelis",
+                        "artistName": "Nachtmahr",
+                        "coverArt": "https://i.scdn.co/image/bc83ee6df729163a9542282b66aae874fe6d3d0f",
+                        "releaseDate": "2011-01-11",
+                        "type": "album",
+                        "spotifyUri": "spotify:album:6NsKNC8okX9VJZzzn4c4W4",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/6NsKNC8okX9VJZzzn4c4W4"
+                    },
+                    {
+                        "id": "06soqJxH8Ushk6SxhGfuFS",
+                        "name": "Veni Vidi Vici",
+                        "artistName": "Nachtmahr",
+                        "coverArt": "https://i.scdn.co/image/52871f59ea94259b6f4befb05096552012e149b6",
+                        "releaseDate": "2011",
+                        "type": "album",
+                        "spotifyUri": "spotify:album:06soqJxH8Ushk6SxhGfuFS",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/06soqJxH8Ushk6SxhGfuFS"
+                    },
+                    {
+                        "id": "0ZUB5DIcJWPKsAf5ihLaA6",
+                        "name": "Alle Lust Will Ewigkeit",
+                        "artistName": "Nachtmahr",
+                        "coverArt": "https://i.scdn.co/image/2f86f67c21dd6c10df887ef7750509dce3cadd33",
+                        "releaseDate": "2009-10-13",
+                        "type": "album",
+                        "spotifyUri": "spotify:album:0ZUB5DIcJWPKsAf5ihLaA6",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/0ZUB5DIcJWPKsAf5ihLaA6"
+                    },
+                    {
+                        "id": "3nO2pgswP3UQwsv4bBP44F",
+                        "name": "Madchen In Uniform",
+                        "artistName": "Nachtmahr",
+                        "coverArt": "https://i.scdn.co/image/89d837b6a87515555d68ff8e43dd394e6f098ce3",
+                        "releaseDate": "2009-02-09",
+                        "type": "album",
+                        "spotifyUri": "spotify:album:3nO2pgswP3UQwsv4bBP44F",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/3nO2pgswP3UQwsv4bBP44F"
+                    },
+                    {
+                        "id": "23yHZIkNFzqTJoVSq06dID",
+                        "name": "Feuer Frei!",
+                        "artistName": "Nachtmahr",
+                        "coverArt": "https://i.scdn.co/image/06afd82264ce81b1130a231ffde38207ff53ac14",
+                        "releaseDate": "2008-06-06",
+                        "type": "album",
+                        "spotifyUri": "spotify:album:23yHZIkNFzqTJoVSq06dID",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/23yHZIkNFzqTJoVSq06dID"
+                    },
+                    {
+                        "id": "7H8Z9WshjNy2ojFMVWDN7C",
+                        "name": "Split",
+                        "artistName": "Nachtmahr",
+                        "coverArt": "https://i.scdn.co/image/1e123a067b67e0f077eb87956dade14cf3483d68",
+                        "releaseDate": "2005-05-29",
+                        "type": "single",
+                        "spotifyUri": "spotify:album:7H8Z9WshjNy2ojFMVWDN7C",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/7H8Z9WshjNy2ojFMVWDN7C"
+                    },
+                    {
+                        "id": "41vaUaYS5omSvZXDbxb28v",
+                        "name": "I",
+                        "artistName": "Nachtmahr",
+                        "coverArt": "https://i.scdn.co/image/0c934d1c3c58be302868697a63c137796bada735",
+                        "releaseDate": "2004-06-28",
+                        "type": "album",
+                        "spotifyUri": "spotify:album:41vaUaYS5omSvZXDbxb28v",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/41vaUaYS5omSvZXDbxb28v"
                     }
                 ]
             }
