@@ -1,5 +1,5 @@
 import {fetchUnseenAlbums} from '../../utils/request-helpers'
-import {FETCH_UNSEEN_ALBUMS_SUCCESS, LOADING_START, LOADING_STOP} from '../action-types'
+import {FETCH_UNSEEN_ALBUMS_FINISHED, LOADING_START, LOADING_STOP} from '../action-types'
 
 export const getUnseenAlbums = ({appJustLoaded, shouldGetCached}) => {
     return async (dispatch, getState) => {
@@ -15,12 +15,13 @@ export const getUnseenAlbums = ({appJustLoaded, shouldGetCached}) => {
         dispatch({type: LOADING_STOP})
 
         dispatch({
-            type: FETCH_UNSEEN_ALBUMS_SUCCESS,
+            type: FETCH_UNSEEN_ALBUMS_FINISHED,
             username: res.name,
             artistsWithUnseenAlbums: res.artists,
             firstTimeUser: res.firstTimeUser,
             totalFollowedArtists: res.totalFollowedArtists,
             totalUnseenAlbums: res.totalUnseenAlbums,
+            error: res.error,
         })
     }
 }

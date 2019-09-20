@@ -1,4 +1,4 @@
-import {FETCH_UNSEEN_ALBUMS_SUCCESS, LOADING_START, LOADING_STOP, UPDATE_SEEN_ALBUMS} from '../action-types'
+import {FETCH_UNSEEN_ALBUMS_FINISHED, LOADING_START, LOADING_STOP, UPDATE_SEEN_ALBUMS} from '../action-types'
 
 const initialState = {
     //Default this to true so the no-results message banners aren't rendered before we get results back
@@ -11,15 +11,15 @@ export function app(state = initialState, action = {}) {
     switch (action.type) {
 
         case LOADING_START: {
-            return {...state, loading: true, loadingIsRefresh: action.isRefresh}
+            return {...state, loading: true, isRefresh: action.isRefresh}
         }
 
         case LOADING_STOP: {
-            return {...state, loading: false, loadingIsRefresh: undefined}
+            return {...state, loading: false, isRefresh: undefined}
         }
 
-        case FETCH_UNSEEN_ALBUMS_SUCCESS: {
-            return {...state, firstTimeUser: action.firstTimeUser, username: action.username}
+        case FETCH_UNSEEN_ALBUMS_FINISHED: {
+            return {...state, firstTimeUser: action.firstTimeUser, username: action.username, error: action.error}
         }
 
         case UPDATE_SEEN_ALBUMS: {

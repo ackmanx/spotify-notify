@@ -4,48 +4,52 @@ import {connect} from 'react-redux'
 import {Banner} from './banner'
 import {fetchRefreshStatus} from '../../utils/request-helpers'
 
-const _MessageBanners = ({firstTimeUser, loading, loadingIsRefresh, totalFollowedArtists, totalUnseenAlbums}) => {
+const _MessageBanners = ({firstTimeUser, loading, isRefresh, totalFollowedArtists, totalUnseenAlbums, error}) => {
     let banner = null
 
     const [intervalId, setIntervalId] = useState();
     const [completed, setCompleted] = useState();
     const [total, setTotal] = useState();
-    const [error, setError] = useState(false);
 
     useEffect(() => {
-        if (loadingIsRefresh) {
+        //isRefresh is only changed when loading, so we don't need to check for that too
+        if (isRefresh) {
             const refreshFunction = async () => {
-                const {completed, total, error} = await fetchRefreshStatus()
+                const {completed, total} = await fetchRefreshStatus()
                 setCompleted(completed)
                 setTotal(total)
-                setError(error)
             }
 
             //Ignoring returned promise
             refreshFunction()
 
-            setIntervalId(setInterval(refreshFunction, 1000))
+            setIntervalId(setInterval(refreshFunction, 2000))
         }
         else {
             clearInterval(intervalId)
         }
-    }, [loadingIsRefresh])
+    }, [isRefresh])
 
     if (loading) {
         banner = (
             <div className='loading'>
                 <Banner>
                     <p>Loading...</p>
-                    {loadingIsRefresh && <>
-                        <p>{completed} / {total}</p>
-                        <p>{error ? 'Oh snap! It broke!' : ''}</p>
-                    </>}
+                    {isRefresh && <p>{completed} / {total}</p>}
                 </Banner>
             </div>
         )
     }
     else {
-        if (firstTimeUser) {
+        if (error) {
+            banner = (
+                <Banner>
+                    <p>The website broke!</p>
+                    <p>I don't know what to do now.</p>
+                </Banner>
+            )
+        }
+        else if (firstTimeUser) {
             banner = (
                 <Banner>
                     <p>Looks like you've never been here before.</p>
@@ -62,7 +66,7 @@ const _MessageBanners = ({firstTimeUser, loading, loadingIsRefresh, totalFollowe
             )
         }
         else if (!totalUnseenAlbums) {
-            banner = <Banner text="Nothing new :("/>
+            banner = <Banner>Nothing new :(</Banner>
         }
     }
 
@@ -73,7 +77,8 @@ const _MessageBanners = ({firstTimeUser, loading, loadingIsRefresh, totalFollowe
 const mapStateToProps = state => ({
     firstTimeUser: state.app.firstTimeUser,
     loading: state.app.loading,
-    loadingIsRefresh: state.app.loadingIsRefresh,
+    isRefresh: state.app.isRefresh,
+    error: state.app.error,
     totalFollowedArtists: state.artists.totalFollowedArtists,
     totalUnseenAlbums: state.artists.totalUnseenAlbums,
 })

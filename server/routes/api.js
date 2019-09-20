@@ -56,7 +56,6 @@ router.get('/albums/refresh-status', ensureAuthenticated, async function (req, r
     res.json({
         completed: req.session.refreshCompleted,
         total: req.session.refreshTotal,
-        error: req.session.refreshError,
     })
 })
 

@@ -95,7 +95,6 @@ exports.checkForUnseenAlbums = async function checkForUnseenAlbums(session) {
     //Update session with progress as we fetch each artist. The client will poll another endpoint for this data until this is finished
     session.refreshCompleted = 0
     session.refreshTotal = artistIds.length
-    session.refreshError = false
     session.save()
 
     const allAlbumsPagesOfFollowedArtists = []
@@ -112,9 +111,8 @@ exports.checkForUnseenAlbums = async function checkForUnseenAlbums(session) {
             session.save()
         }
         catch (e) {
-            session.refreshError = true
-            session.save()
             console.error(e)
+            return {error: true}
         }
     }
 

@@ -46,7 +46,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     getUnseenAlbums: options => dispatch(getUnseenAlbums(options)),
-    submitSeenAlbums: options => dispatch(submitSeenAlbums()),
+    submitSeenAlbums: () => dispatch(submitSeenAlbums()),
 })
 
 export const ActionBar = connect(mapStateToProps, mapDispatchToProps)(_ActionBar)
