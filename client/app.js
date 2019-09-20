@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import LazyLoad from 'react-lazyload'
+import LazyLoad, {forceCheck} from 'react-lazyload'
 
 import {Artist} from './components/artist/artist'
 import {ActionBar} from './components/action-bar/action-bar'
@@ -12,6 +12,14 @@ class _App extends React.Component {
 
     componentDidMount() {
         this.props.getUnseenAlbums({shouldGetCached: true, appJustLoaded: true})
+    }
+
+    componentDidUpdate(prev) {
+        //On initial load, react-lazyload doesn't detect all elements in the viewport
+        //Force a recheck of the viewport after we've verified all artist placeholders in the viewport have rendered
+        if (!prev.allAlbumsInViewportRendered && this.props.allAlbumsInViewportRendered) {
+            forceCheck()
+        }
     }
 
     render() {
@@ -26,12 +34,8 @@ class _App extends React.Component {
             <MessageBanners/>
 
             {!loading && hasUnseenAlbums && (
-                artistsWithUnseenAlbumsKeys.map((artistId, index) => {
+                artistsWithUnseenAlbumsKeys.map((artistId) => {
                     const artist = artistsWithUnseenAlbums[artistId]
-
-                    if (index === 0) {
-                        return <Artist key={artist.id} artist={artist}/>
-                    }
 
                     return (
                         <LazyLoad key={artistId}
@@ -46,6 +50,7 @@ class _App extends React.Component {
 }
 
 const mapStateToProps = state => ({
+    allAlbumsInViewportRendered: state.app.allAlbumsInViewportRendered,
     artistsWithUnseenAlbums: state.artists.artistsWithUnseenAlbums,
     loading: state.app.loading,
 })

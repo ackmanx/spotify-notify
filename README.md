@@ -12,7 +12,13 @@
 
 This app is deployed to Heroku. You can manage the servers at their dashboard.
 
-To deploy, simply add the Heroku origin to this git repository and push to master. Find instructions on their website. After you push, Heroku will run `heroku-postbuild`, which will do a production build of the UI for the node server to host.
+To deploy, simply add the Heroku origin to this git repository, then:
+* master: `git push -f heroku master`
+* branch: `git push -f heroku branch-name:master`
+
+Heroku will only deploy their master branch.
+
+After you push, Heroku will run `heroku-postbuild`, which will do a production build of the UI for the node server to host.
 
 # MongoDB
 

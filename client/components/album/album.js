@@ -9,7 +9,7 @@ import {DesktopAlbumActions} from './desktop/album-actions'
 import {MobileAlbumActions} from './mobile/album-actions'
 
 export const _Album = props => {
-    const {album, lazyLoad, seenAlbums} = props
+    const {album, seenAlbums} = props
 
     const [showActions, setShowActions] = useState(false);
 
@@ -28,7 +28,7 @@ export const _Album = props => {
                 <div className='scene'>
                     <div className={`card ${showActions ? 'is-flipped' : ''}`} onClick={toggleActionsPanel}>
                         <div className={`card__face card__face--front ${isMarked ? 'is-marked' : ''}`}>
-                            <AlbumImage album={album} lazyLoad={lazyLoad}/>
+                            <AlbumImage album={album} />
                         </div>
                         <div className='card__face card__face--back'>
                             <DesktopAlbumActions album={album} toggleActionsPanel={toggleActionsPanel}/>
@@ -38,7 +38,7 @@ export const _Album = props => {
             </Desktop>
 
             <Mobile>
-                <AlbumImage addClass={isMarked ? 'is-marked' : ''} album={album} lazyLoad={lazyLoad} onClickHandler={toggleActionsPanel}/>
+                <AlbumImage addClass={isMarked ? 'is-marked' : ''} album={album} onClickHandler={toggleActionsPanel}/>
                 {showActions && <Mobile><MobileAlbumActions album={album} toggleActionsPanel={toggleActionsPanel}/></Mobile>}
             </Mobile>
 
