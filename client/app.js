@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import LazyLoad from 'react-lazyload'
+import LazyLoad, {forceCheck} from 'react-lazyload'
 
 import {Artist} from './components/artist/artist'
 import {ActionBar} from './components/action-bar/action-bar'
@@ -12,6 +12,10 @@ class _App extends React.Component {
 
     componentDidMount() {
         this.props.getUnseenAlbums({shouldGetCached: true, appJustLoaded: true})
+
+        //On initial load, react-lazyload doesn't detect all elements in the viewport
+        //Force a recheck of the viewport, but not immediately because the DOM might isn't ready immediately
+        setTimeout(() => forceCheck(), 100)
     }
 
     render() {
