@@ -45,11 +45,11 @@
     text-align: right;
 }
 
-.mark-as-seen-button:hover {
-    animation: takeoff .1s infinite linear;
+.mark-as-seen-button.has-hover:hover {
+    animation: startengines .1s infinite linear;
 }
 
-@keyframes takeoff {
+@keyframes startengines {
     from {
         transform: translate(0, 0);
     }
@@ -68,6 +68,21 @@
 
     to {
         transform: translate(0, 0);
+    }
+}
+
+.mark-as-seen-button--take-off {
+    animation: takeoff .3s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes takeoff {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(50px, -50px);
     }
 }
 /* End Mark as Seen Button */

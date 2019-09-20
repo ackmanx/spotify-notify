@@ -6,28 +6,11 @@ Need a way to reset an artist because I mistakenly marked all of Krewella as see
 
 ## Introduce hamburger on the right for consolidating actions
 
-## Make the rocket ship take off on click
-```css
-.mark-as-seen-button {
-    animation: takeoff .3s linear;
-    animation-fill-mode: forwards;
-}
-
-@keyframes takeoff {
-    from {
-        transform: translate(0, 0);
-    }
-
-    to {
-        transform: translate(50px, -50px);
-    }
-}
-```
-
 # Bugs
 
 ## The spotify access token expires but I don't have code that gets a new one if this happens so the request will fail
-Use case is a user (me) sets a bunch of albums as seen but doesn't submit it
+Being debugging this requires restarting node, we'd fetch a new token and not be able to debug
+So, need a mock server like nock to test this
 
 ## Request throttling still doesn't work
 It fails at "Uh oh, the retry after throttle failed too" with a 429, suggesting the throttling is not working

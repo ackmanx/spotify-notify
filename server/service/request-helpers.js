@@ -14,6 +14,10 @@ async function spotifyAPI(accessToken, endpoint) {
 
     let response = await fetch(spotifyApiURL, options)
 
+    if (response.status === 401) {
+        debug('Access token expired. Get a new one! Or put code here that does it automatically')
+    }
+
     if (response.status === 429) {
         const retryAfterSeconds = response.headers.get('retry-after') //for some reason `get` is the official way to return headers
 
@@ -39,24 +43,24 @@ async function spotifyAPI(accessToken, endpoint) {
 }
 
 //Spotify puts the paging object in different places for their APIs, so we have to check multiple locations for `next`
-function getPagingNextUrl(response) {
-    if (response.next) return response.next
+function getPagingNextUrl(responseBody) {
+    if (responseBody.next) return responseBody.next
 
-    if (response.artists && response.artists.next) return response.artists.next
+    if (responseBody.artists && responseBody.artists.next) return responseBody.artists.next
 }
 
 exports.fetchAllPages = async function fetchAllPages(accessToken, relativeSpotifyUrl) {
     const results = []
 
-    let response = await spotifyAPI(accessToken, relativeSpotifyUrl)
-    let nextPageAbsoluteUrl = getPagingNextUrl(response)
+    let responseBody = await spotifyAPI(accessToken, relativeSpotifyUrl)
+    let nextPageAbsoluteUrl = getPagingNextUrl(responseBody)
 
-    results.push(response)
+    results.push(responseBody)
 
     while (nextPageAbsoluteUrl) {
-        response = await spotifyAPI(accessToken, nextPageAbsoluteUrl)
-        nextPageAbsoluteUrl = getPagingNextUrl(response)
-        results.push(response)
+        responseBody = await spotifyAPI(accessToken, nextPageAbsoluteUrl)
+        nextPageAbsoluteUrl = getPagingNextUrl(responseBody)
+        results.push(responseBody)
     }
 
     return results

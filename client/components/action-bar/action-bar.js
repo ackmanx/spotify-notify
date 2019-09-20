@@ -21,10 +21,15 @@ const _ActionBar = props => {
                 <div>Following: {totalFollowedArtists}</div>
                 <div>Unseen: {totalUnseenAlbums}</div>
 
-                <ActionButton className='mark-as-seen-button'
+                <ActionButton className='mark-as-seen-button has-hover'
                               imagePath='action-bar/update-mark-as-seens.png'
                               imageAltText='mark as seen'
-                              handler={submitSeenAlbums}>
+                              handler={() => {
+                                  const button = document.querySelector('.mark-as-seen-button')
+                                  button.classList.remove('has-hover')
+                                  button.classList.add('mark-as-seen-button--take-off')
+                                  setTimeout(submitSeenAlbums, 500)
+                              }}>
                     {seenAlbums.length}
                 </ActionButton>
             </div>
