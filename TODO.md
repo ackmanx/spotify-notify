@@ -1,12 +1,18 @@
 # Features -----------------------------------------------------------------------------------------------------------------------
 
-## Have an option to view all albums, including seen
-Would need a new UI for this
-Need a way to reset an artist because I mistakenly marked all of Krewella as seen
+## Have option to show only seen
+We would need a new api call to fetch all of the seen IDs and return in same contract
+Then all seen albums would appear but marked
+Can toggle to unmark and counter would go negative
+Can trigger mode by clicking "Unseen"
 
-## Re-think lazy loading album by index because screen sizes make it hard to predict
-Should we test if a placeholder is in the viewport when determining if lazy?
-Can we trigger that forceRecheck function again somehow?
+## Make "following" clickable and shows a dropdown of all artists in the current cache
+How to sort it, with chinese artists?
+Make each artist clickable and auto-scroll to that artist
+List needs to be scrollable
+Provide overlay when it opens
+It sounds like this could be react-modal customized, like how Target does the header nav
+If I can source this from client-side, I'll get it for free when adding "seen" view
 
 
 # Bugs ---------------------------------------------------------------------------------------------------------------------------
@@ -17,6 +23,7 @@ So, need a mock server like nock to test this
 
 ## Request throttling still doesn't work
 It fails at "Uh oh, the retry after throttle failed too" with a 429, suggesting the throttling is not working
+Set up a nock server to test this
 
 
 # Chores -------------------------------------------------------------------------------------------------------------------------
