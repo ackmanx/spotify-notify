@@ -1,3 +1,5 @@
+@import (reference) '../../styles/variables';
+
 .album {
     display: inline-block;
     margin: 20px;
@@ -14,7 +16,7 @@
     opacity: 0.15;
 }
 
-@media only screen and (max-width: 500px) {
+@media @mobile {
     .album {
         width: 150px;
     }
