@@ -1,0 +1,86 @@
+@import (reference) '../../styles/variables';
+
+.action-button {
+    background-color: white;
+    height: 30px;
+    padding: 5px;
+
+    &__action-icon {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        padding-right: 3px;
+    }
+
+    &__refresh {
+        display: flex;
+        width: 30px;
+
+        &:hover {
+            animation: rotate 2s infinite linear
+        }
+    }
+
+    &__submit-seen {
+        text-align: right;
+
+        &.has-hover:hover {
+            animation: startengines .1s infinite linear;
+        }
+
+        &--take-off {
+            animation: takeoff .3s linear;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(359deg)
+    }
+}
+
+@keyframes startengines {
+    from {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(1px, 1px);
+    }
+
+    50% {
+        transform: translate(0px, -1px);
+    }
+
+    75% {
+        transform: translate(-1px, 0px);
+    }
+
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes takeoff {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(50px, -50px);
+    }
+}
+
+@media @mobile {
+    .action-button {
+        &__submit-seen {
+            width: auto;
+        }
+    }
+}

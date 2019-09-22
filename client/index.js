@@ -7,6 +7,7 @@ import {Provider} from 'react-redux'
 import {applyMiddleware, combineReducers, createStore} from 'redux'
 import {composeWithDevTools} from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
+
 import {App} from './app'
 import {app} from './redux/reducers/app-reducer'
 import {artists} from './redux/reducers/artists-reducer'

@@ -15,93 +15,10 @@
     margin: 0 10px;
 }
 
-.action-button {
-    background-color: white;
-    height: 30px;
-    padding: 5px;
-}
-
-/* Refresh Button */
-.refresh-button {
-    display: flex;
-    width: 30px;
-}
-
-.refresh-button:hover {
-    animation: rotate 2s infinite linear
-}
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg)
-    }
-
-    to {
-        transform: rotate(359deg)
-    }
-}
-/* End Refresh Button */
-
-/* Mark as Seen Button */
-.mark-as-seen-button {
-    text-align: right;
-}
-
-.mark-as-seen-button.has-hover:hover {
-    animation: startengines .1s infinite linear;
-}
-
-@keyframes startengines {
-    from {
-        transform: translate(0, 0);
-    }
-
-    25% {
-        transform: translate(1px, 1px);
-    }
-
-    50% {
-        transform: translate(0px, -1px);
-    }
-
-    75% {
-        transform: translate(-1px, 0px);
-    }
-
-    to {
-        transform: translate(0, 0);
-    }
-}
-
-.mark-as-seen-button--take-off {
-    animation: takeoff .3s linear;
-    animation-fill-mode: forwards;
-}
-
-@keyframes takeoff {
-    from {
-        transform: translate(0, 0);
-    }
-
-    to {
-        transform: translate(50px, -50px);
-    }
-}
-/* End Mark as Seen Button */
-
-.action-icon {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    padding-right: 3px;
-}
-
 @media @mobile {
-    .username {
-        display: none;
-    }
-
-    .mark-as-seen-button {
-        width: auto;
+    .action-bar {
+        &__username {
+            display: none;
+        }
     }
 }
