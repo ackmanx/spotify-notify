@@ -29,7 +29,7 @@ Set up a nock server to test this
 # Chores -------------------------------------------------------------------------------------------------------------------------
 
 ## LESS
-Standardize colors, font sizes and paddings/margins
+Bemify album folder
 
 ## Convert to TypeScript
 
