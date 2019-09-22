@@ -14,6 +14,9 @@ Provide overlay when it opens
 It sounds like this could be react-modal customized, like how Target does the header nav
 If I can source this from client-side, I'll get it for free when adding "seen" view
 
+## Add UI to shuffle playlists because Spotify sucks at that
+Needs permission to modify playlists
+
 
 # Bugs ---------------------------------------------------------------------------------------------------------------------------
 
