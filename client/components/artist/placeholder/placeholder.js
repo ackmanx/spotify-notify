@@ -3,6 +3,9 @@ import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 
 import {ALL_ALBUMS_IN_VIEWPORT_RENDERED} from '../../../redux/action-types'
+import {bemFactory} from '../../../utils/utils'
+
+const bem = bemFactory('artist-placeholder')
 
 //Singleton, not the redux data
 let allAlbumsInViewportRendered = false
@@ -29,7 +32,7 @@ export const _Placeholder = props => {
         }
     }, [])
 
-    return <div ref={ref} className='artist-placeholder'>{name}</div>
+    return <div ref={ref} className={bem()}>{name}</div>
 }
 
 const mapStateToProps = state => ({})

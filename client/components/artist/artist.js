@@ -4,6 +4,9 @@ import {connect} from 'react-redux'
 
 import {Album} from '../album/album'
 import {markArtistAsSeen} from '../../redux/actions/seen-albums'
+import {bemFactory} from '../../utils/utils'
+
+const bem = bemFactory('artist')
 
 const _Artist = props => {
     const {artist, markArtistAsSeen} = props
@@ -19,17 +22,17 @@ const _Artist = props => {
     }
 
     return (
-        <div className='artist-group'>
-            <h2 className='artist-name' onClick={() => markArtistAsSeen(artist.id)}>{artist.name}</h2>
+        <div className={bem()}>
+            <h2 className={bem('name')} onClick={() => markArtistAsSeen(artist.id)}>{artist.name}</h2>
 
             {hasAlbums && <>
-                <h3 className='album-group-title'>Albums</h3>
+                <h3 className={bem('album-group')}>Albums</h3>
                 {albums.map(album => <Album key={album.id} album={album}/>)}
             </>}
 
             {hasSingles && <>
-                <h3 className='album-group-title'>Singles</h3>
-                {singles.map(album => <Album key={album.id} album={album}/>)}
+                <h3 className={bem('album-group')}>Singles</h3>
+                {singles.map(single => <Album key={single.id} album={single}/>)}
             </>}
         </div>
     )

@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux'
 
-import {Banner} from './banner'
-import {fetchRefreshStatus} from '../../utils/request-helpers'
+const bem = bemFactory('banner')
 
-const _MessageBanners = ({firstTimeUser, loading, isRefresh, totalFollowedArtists, totalUnseenAlbums, error}) => {
+import {fetchRefreshStatus} from '../../utils/request-helpers'
+import {bemFactory} from '../../utils/utils'
+
+const _Banners = ({firstTimeUser, loading, isRefresh, totalFollowedArtists, totalUnseenAlbums, error}) => {
     let banner = null
 
     const [intervalId, setIntervalId] = useState();
@@ -32,47 +34,46 @@ const _MessageBanners = ({firstTimeUser, loading, isRefresh, totalFollowedArtist
 
     if (loading) {
         banner = (
-            <div className='loading'>
-                <Banner>
+            <div className={bem('loading')}>
+                <h1>
                     <p>Loading...</p>
                     {isRefresh && <p>{completed} / {total}</p>}
-                </Banner>
+                </h1>
             </div>
         )
     }
     else {
         if (error) {
             banner = (
-                <Banner>
+                <h1>
                     <p>The website broke!</p>
                     <p>I don't know what to do now.</p>
-                </Banner>
+                </h1>
             )
         }
         else if (firstTimeUser) {
             banner = (
-                <Banner>
+                <h1>
                     <p>Looks like you've never been here before.</p>
                     <p> Click the refresh icon to get started!</p>
-                </Banner>
+                </h1>
             )
         }
         else if (!totalFollowedArtists) {
             banner = (
-                <Banner>
+                <h1>
                     <p>Whoa boy, it looks like you aren't following any artists on Spotify!</p>
                     <p>Do that and come back.</p>
-                </Banner>
+                </h1>
             )
         }
         else if (!totalUnseenAlbums) {
-            banner = <Banner>Nothing new :(</Banner>
+            banner = <h1>Nothing new :(</h1>
         }
     }
 
     return banner
 }
-
 
 const mapStateToProps = state => ({
     firstTimeUser: state.app.firstTimeUser,
@@ -85,4 +86,4 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({})
 
-export const MessageBanners = connect(mapStateToProps, mapDispatchToProps)(_MessageBanners)
+export const Banners = connect(mapStateToProps, mapDispatchToProps)(_Banners)

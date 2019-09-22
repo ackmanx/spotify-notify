@@ -4,7 +4,7 @@ import LazyLoad, {forceCheck} from 'react-lazyload'
 
 import {Artist} from './components/artist/artist'
 import {ActionBar} from './components/action-bar/action-bar'
-import {MessageBanners} from './components/banner/message-banners'
+import {Banners} from './components/banners/banners'
 import {getUnseenAlbums} from './redux/actions/get-unseen-albums'
 import {Placeholder} from './components/artist/placeholder/placeholder'
 
@@ -31,7 +31,7 @@ class _App extends React.Component {
         return <>
             {!loading && <ActionBar/>}
 
-            <MessageBanners/>
+            <Banners/>
 
             {!loading && hasUnseenAlbums && (
                 artistsWithUnseenAlbumsKeys.map((artistId) => {

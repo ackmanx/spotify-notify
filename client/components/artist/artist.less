@@ -1,31 +1,33 @@
 @import (reference) '../../styles/variables';
 
-.artist-group {
+.artist {
     margin-bottom: 30px;
     padding-bottom: 30px;
     text-align: center;
-}
 
-.artist-group:last-child {
-    border: none;
-}
+    &:last-child {
+        border: none;
+    }
 
-.artist-name {
-    padding: 10px;
-    font-size: 72px;
-    cursor: pointer;
-    color: white;
-    background-color: black;
-    overflow-wrap: break-word;
-}
+    &__name {
+        padding: 10px;
+        font-size: 72px;
+        cursor: pointer;
+        color: white;
+        background-color: black;
+        overflow-wrap: break-word;
+    }
 
-.album-group-title {
-    font-size: 35px;
-    padding-top: 20px;
+    &__album-group {
+        font-size: 35px;
+        padding-top: 20px;
+    }
 }
 
 @media @mobile {
-    .artist-name {
-        font-size: 48px;
+    .artist {
+        &__name {
+            font-size: 48px;
+        }
     }
 }
