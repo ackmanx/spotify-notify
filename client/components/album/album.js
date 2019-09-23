@@ -2,39 +2,25 @@ import './album.less'
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
 
+import {Card} from './desktop/card';
 import {AlbumImage} from './album-image'
 import {AlbumDetails} from './album-details'
 import {Desktop, Mobile} from '../responsive'
-import {DesktopAlbumActions} from './desktop/album-actions'
 import {MobileAlbumActions} from './mobile/album-actions'
 
 export const _Album = props => {
     const {album, seenAlbums} = props
+    const isMarked = seenAlbums.includes(album.id)
 
     const [showActions, setShowActions] = useState(false);
 
-    const toggleActionsPanel = e => {
-        //We don't want to flip the card if the user opened a song instead of marking it
-        if (e && e.target.tagName === 'A') return
-        setShowActions(!showActions)
-    }
-
-    const isMarked = seenAlbums.includes(album.id)
+    const toggleActionsPanel = e => setShowActions(!showActions)
 
     return (
         <div className='album'>
 
             <Desktop>
-                <div className='scene'>
-                    <div className={`card ${showActions ? 'is-flipped' : ''}`} onClick={toggleActionsPanel}>
-                        <div className={`card__face card__face--front ${isMarked ? 'is-marked' : ''}`}>
-                            <AlbumImage album={album} />
-                        </div>
-                        <div className='card__face card__face--back'>
-                            <DesktopAlbumActions album={album} toggleActionsPanel={toggleActionsPanel}/>
-                        </div>
-                    </div>
-                </div>
+                <Card album={album}/>
             </Desktop>
 
             <Mobile>
