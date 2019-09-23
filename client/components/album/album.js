@@ -1,6 +1,5 @@
 import './album.less'
 import React, {useState} from 'react'
-import {connect} from 'react-redux'
 import {bemFactory} from "../../utils/utils";
 
 import {Card} from './desktop/card';
@@ -11,9 +10,8 @@ import {MobileAlbumActions} from './mobile/album-actions'
 
 const bem = bemFactory('album')
 
-export const _Album = props => {
-    const {album, seenAlbums} = props
-    const isMarked = seenAlbums.includes(album.id)
+export const Album = props => {
+    const {album} = props
 
     const [showActions, setShowActions] = useState(false);
 
@@ -26,7 +24,7 @@ export const _Album = props => {
             </Desktop>
 
             <Mobile>
-                <AlbumImage addClass={isMarked ? 'is-marked' : ''} album={album} onClickHandler={toggleActionsPanel}/>
+                <AlbumImage album={album} onClickHandler={toggleActionsPanel}/>
                 {showActions && <Mobile><MobileAlbumActions album={album} toggleActionsPanel={toggleActionsPanel}/></Mobile>}
             </Mobile>
 
@@ -34,11 +32,3 @@ export const _Album = props => {
         </div>
     )
 }
-
-const mapStateToProps = state => ({
-    seenAlbums: state.app.seenAlbums,
-})
-
-const mapDispatchToProps = dispatch => ({})
-
-export const Album = connect(mapStateToProps, mapDispatchToProps)(_Album)

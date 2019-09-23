@@ -5,9 +5,8 @@ import {connect} from 'react-redux';
 import {AlbumImage} from '../album-image';
 import {DesktopAlbumActions} from './album-actions';
 
-export const _Card = props => {
-    const {album, seenAlbums} = props
-    const isMarked = seenAlbums.includes(album.id)
+export const Card = props => {
+    const {album} = props
 
     const [showActions, setShowActions] = useState(false);
 
@@ -20,7 +19,7 @@ export const _Card = props => {
     return (
         <div className='scene'>
             <div className={`card ${showActions ? 'is-flipped' : ''}`} onClick={toggleActionsPanel}>
-                <div className={`card__face card__face--front ${isMarked ? 'is-marked' : ''}`}>
+                <div className='card__face card__face--front'>
                     <AlbumImage album={album}/>
                 </div>
                 <div className='card__face card__face--back'>
@@ -30,11 +29,3 @@ export const _Card = props => {
         </div>
     )
 }
-
-const mapStateToProps = state => ({
-    seenAlbums: state.app.seenAlbums,
-})
-
-const mapDispatchToProps = dispatch => ({})
-
-export const Card = connect(mapStateToProps, mapDispatchToProps)(_Card)
