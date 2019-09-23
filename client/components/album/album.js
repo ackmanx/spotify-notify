@@ -1,12 +1,15 @@
 import './album.less'
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
+import {bemFactory} from "../../utils/utils";
 
 import {Card} from './desktop/card';
 import {AlbumImage} from './album-image'
 import {AlbumDetails} from './album-details'
 import {Desktop, Mobile} from '../responsive'
 import {MobileAlbumActions} from './mobile/album-actions'
+
+const bem = bemFactory('album')
 
 export const _Album = props => {
     const {album, seenAlbums} = props
@@ -17,8 +20,7 @@ export const _Album = props => {
     const toggleActionsPanel = e => setShowActions(!showActions)
 
     return (
-        <div className='album'>
-
+        <div className={bem()}>
             <Desktop>
                 <Card album={album}/>
             </Desktop>

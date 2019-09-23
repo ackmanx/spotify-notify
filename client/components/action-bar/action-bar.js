@@ -1,6 +1,7 @@
 import './action-bar.less'
 import React from 'react'
 import {connect} from 'react-redux'
+import {Desktop} from "../responsive";
 
 import {ActionButton} from './action-button'
 import {getUnseenAlbums} from '../../redux/actions/get-unseen-albums'
@@ -19,7 +20,9 @@ const _ActionBar = props => {
                               imagePath='action-bar/refresh-icon.png'
                               handler={getUnseenAlbums}/>
 
-                <div className='username'>{username}</div>
+                <Desktop>
+                    <div className='username'>{username}</div>
+                </Desktop>
                 <div>Following: {totalFollowedArtists}</div>
                 <div>Unseen: {totalUnseenAlbums}</div>
 

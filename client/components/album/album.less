@@ -7,63 +7,8 @@
     text-align: center;
 }
 
-.album-cover-art {
-    width: 300px;
-    height: 300px;
-}
-
-.is-marked {
-    opacity: 0.15;
-}
-
 @media @mobile {
     .album {
         width: 150px;
     }
-
-    .album-cover-art {
-        width: 150px;
-        height: 150px;
-    }
-}
-
-
-/*
- * 3D Card Styles
- * CSS 3D transform gladly used from https://3dtransforms.desandro.com/card-flip
- */
-.scene {
-    width: 300px;
-    height: 300px;
-    perspective: 700px;
-}
-
-/*
- * Add transition and transform-style here so it applies to both states of .card
- * If we only added it to .is-flipped then only one state would animate
- */
-.card {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transition: transform 0.66s;
-    transform-style: preserve-3d;
-}
-
-.card.is-flipped {
-    transform: rotateY(-180deg);
-}
-
-.card__face {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    backface-visibility: hidden;
-}
-
-.card__face--front {
-}
-
-.card__face--back {
-    transform: rotateY(-180deg);
 }
