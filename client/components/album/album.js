@@ -3,8 +3,7 @@ import React, {useState} from 'react'
 import {bemFactory} from "../../utils/utils";
 
 import {Card} from './desktop/card';
-import {AlbumImage} from './album-image'
-import {AlbumDetails} from './album-details'
+import {CoverArt} from './cover-art/cover-art'
 import {Desktop, Mobile} from '../responsive'
 import {MobileAlbumActions} from './mobile/album-actions'
 
@@ -24,11 +23,12 @@ export const Album = props => {
             </Desktop>
 
             <Mobile>
-                <AlbumImage album={album} onClickHandler={toggleActionsPanel}/>
+                <CoverArt album={album} onClickHandler={toggleActionsPanel}/>
                 {showActions && <MobileAlbumActions album={album} toggleActionsPanel={toggleActionsPanel}/>}
             </Mobile>
 
-            <AlbumDetails album={album}/>
+            <div className={bem('name')}>{album.name}</div>
+            <div>{album.releaseDate}</div>
         </div>
     )
 }

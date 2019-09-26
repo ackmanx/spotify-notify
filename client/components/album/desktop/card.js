@@ -2,7 +2,7 @@ import './card.less'
 import React, {useState} from 'react'
 import {connect} from 'react-redux';
 
-import {AlbumImage} from '../album-image';
+import {CoverArt} from '../cover-art/cover-art';
 import {DesktopAlbumActions} from './album-actions';
 
 export const Card = props => {
@@ -20,7 +20,7 @@ export const Card = props => {
         <div className='scene'>
             <div className={`card ${showActions ? 'is-flipped' : ''}`} onClick={toggleActionsPanel}>
                 <div className='card__face card__face--front'>
-                    <AlbumImage album={album}/>
+                    <CoverArt album={album}/>
                 </div>
                 <div className='card__face card__face--back'>
                     <DesktopAlbumActions album={album} toggleActionsPanel={toggleActionsPanel}/>

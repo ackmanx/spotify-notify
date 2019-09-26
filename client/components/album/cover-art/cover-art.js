@@ -1,14 +1,14 @@
-import './album-image.less'
+import './cover-art.less'
 import React from 'react'
 import LazyLoad from 'react-lazyload'
 import {connect} from "react-redux";
 
-import {bemFactory} from "../../utils/utils";
-import {Placeholder} from './placeholder/placeholder'
+import {bemFactory} from "../../../utils/utils";
+import {Placeholder} from '../placeholder/placeholder'
 
 const bem = bemFactory('cover-art')
 
-export const _AlbumImage = props => {
+export const _CoverArt = props => {
     const {album, onClickHandler, seenAlbums} = props
 
     const isMarked = seenAlbums.includes(album.id) ? 'is-marked' : ''
@@ -31,4 +31,4 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({})
 
-export const AlbumImage = connect(mapStateToProps, mapDispatchToProps)(_AlbumImage)
+export const CoverArt = connect(mapStateToProps, mapDispatchToProps)(_CoverArt)
