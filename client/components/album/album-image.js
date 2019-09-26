@@ -2,9 +2,9 @@ import './album-image.less'
 import React from 'react'
 import LazyLoad from 'react-lazyload'
 import {connect} from "react-redux";
-import {bemFactory} from "../../utils/utils";
 
-import {Placeholder} from './placeholder'
+import {bemFactory} from "../../utils/utils";
+import {Placeholder} from './placeholder/placeholder'
 
 const bem = bemFactory('cover-art')
 

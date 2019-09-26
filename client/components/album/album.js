@@ -25,7 +25,7 @@ export const Album = props => {
 
             <Mobile>
                 <AlbumImage album={album} onClickHandler={toggleActionsPanel}/>
-                {showActions && <Mobile><MobileAlbumActions album={album} toggleActionsPanel={toggleActionsPanel}/></Mobile>}
+                {showActions && <MobileAlbumActions album={album} toggleActionsPanel={toggleActionsPanel}/>}
             </Mobile>
 
             <AlbumDetails album={album}/>
