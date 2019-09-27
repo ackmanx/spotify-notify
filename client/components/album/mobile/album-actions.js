@@ -27,7 +27,7 @@ export const _MobileAlbumActions = props => {
     return (
         <Modal isOpen={true} onRequestClose={toggleActionsPanel} style={modalOverrides}>
             <div className={bem()}>
-                <img src='modal-close.png' className={bem('close-button')} onClick={toggleActionsPanel}/>
+                <img src='modal-close.png' className={bem('close-button')} alt='' onClick={toggleActionsPanel}/>
                 <img className={bem('cover-art')} src={album.coverArt} alt={album.name}/>
                 <div className={bem('details')}>
                     <div className={bem('album-name')}>{album.name}</div>
