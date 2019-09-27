@@ -2,7 +2,7 @@ import './card.less'
 import React, {useState} from 'react'
 import {connect} from 'react-redux';
 
-import {CoverArt} from '../cover-art/cover-art';
+import {CoverArt} from '../shared/cover-art/cover-art';
 import {DesktopAlbumActions} from './album-actions';
 
 export const Card = props => {

@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import {bemFactory} from "../../utils/utils";
 
 import {Card} from './desktop/card';
-import {CoverArt} from './cover-art/cover-art'
+import {CoverArt} from './shared/cover-art/cover-art'
 import {Desktop, Mobile} from '../responsive'
 import {MobileAlbumActions} from './mobile/album-actions'
 
