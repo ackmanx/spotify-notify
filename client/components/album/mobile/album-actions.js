@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import Modal from 'react-modal'
 
 import {markAlbumAsSeen} from '../../../redux/actions/seen-albums'
+import {bemFactory} from '../../../utils/utils'
 
 Modal.setAppElement('#root')
 
@@ -18,18 +19,20 @@ const modalOverrides = {
     }
 }
 
+const bem = bemFactory('mobile-album-actions')
+
 export const _MobileAlbumActions = props => {
     const {album, markAlbumAsSeen, seenAlbums, toggleActionsPanel} = props
 
     return (
         <Modal isOpen={true} onRequestClose={toggleActionsPanel} style={modalOverrides}>
-            <div className='album-actions-mobile'>
-                <img src='modal-close.png' className='close-button' onClick={toggleActionsPanel}/>
-                <img className='album-actions-mobile-album-art' src={album.coverArt} alt={album.name}/>
-                <div className='album-info-mobile'>
-                    <div className='album-info-name-mobile'>{album.name}</div>
-                    <div className='album-info-artist-name-mobile'>{album.artistName}</div>
-                    <div className='album-info-artist-release-date'>{album.releaseDate}</div>
+            <div className={bem()}>
+                <img src='modal-close.png' className={bem('close-button')} onClick={toggleActionsPanel}/>
+                <img className={bem('cover-art')} src={album.coverArt} alt={album.name}/>
+                <div className={bem('details')}>
+                    <div className={bem('album-name')}>{album.name}</div>
+                    <div className={bem('artist-name')}>{album.artistName}</div>
+                    <div className={bem('release-date')}>{album.releaseDate}</div>
                 </div>
                 <div className='album-action-button'>
                     <a className='album-action-spotify-mobile' href={album.spotifyUri}>
