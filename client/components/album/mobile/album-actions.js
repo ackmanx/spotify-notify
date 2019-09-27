@@ -34,18 +34,20 @@ export const _MobileAlbumActions = props => {
                     <div className={bem('artist-name')}>{album.artistName}</div>
                     <div className={bem('release-date')}>{album.releaseDate}</div>
                 </div>
-                <div className='album-action-button'>
-                    <a className='album-action-spotify-mobile' href={album.spotifyUri}>
-                        <img src='album-actions/spotify.png' alt=''/> Open in Spotify
-                    </a>
-                </div>
-                <div className='album-action-button'>
-                    <button className='album-action-mark-as-seen-mobile' onClick={() => {
-                        markAlbumAsSeen(album.id);
-                        toggleActionsPanel()
-                    }}>
-                        <img src='album-actions/ghost.png' alt=''/> {seenAlbums.includes(album.id) ? 'Mark as Unseen' : 'Mark as Seen'}
-                    </button>
+                <div>
+                    <div className={bem('action')}>
+                        <a href={album.spotifyUri}>
+                            <img src='album-actions/spotify.png' alt=''/> Open in Spotify
+                        </a>
+                    </div>
+                    <div className={bem('action')}>
+                        <button onClick={() => {
+                            markAlbumAsSeen(album.id);
+                            toggleActionsPanel()
+                        }}>
+                            <img src='album-actions/ghost.png' alt=''/> {seenAlbums.includes(album.id) ? 'Mark as Unseen' : 'Mark as Seen'}
+                        </button>
+                    </div>
                 </div>
             </div>
         </Modal>
