@@ -1,10 +1,11 @@
+import './banners.less'
 import React, {useEffect, useState} from 'react'
 import {connect} from 'react-redux'
 
-const bem = bemFactory('banner')
-
 import {fetchRefreshStatus} from '../../utils/request-helpers'
 import {bemFactory} from '../../utils/utils'
+
+const bem = bemFactory('banner')
 
 const _Banners = ({firstTimeUser, loading, isRefresh, totalFollowedArtists, totalUnseenAlbums, error}) => {
     let banner = null
@@ -72,7 +73,7 @@ const _Banners = ({firstTimeUser, loading, isRefresh, totalFollowedArtists, tota
         }
     }
 
-    return banner
+    return <div className={bem()}>{banner}</div>
 }
 
 const mapStateToProps = state => ({
