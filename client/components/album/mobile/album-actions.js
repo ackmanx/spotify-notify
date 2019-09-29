@@ -36,15 +36,16 @@ export const _MobileAlbumActions = props => {
                 </div>
                 <div>
                     <div className={bem('action')}>
-                        <a href={album.spotifyUri}>
+                        <a className={bem('flex')} href={album.spotifyUri}>
                             <img src='album-actions/spotify.png' alt=''/> Open in Spotify
                         </a>
                     </div>
                     <div className={bem('action')}>
-                        <button onClick={() => {
-                            markAlbumAsSeen(album.id);
-                            toggleActionsPanel()
-                        }}>
+                        <button className={bem('flex')}
+                                onClick={() => {
+                                    markAlbumAsSeen(album.id);
+                                    toggleActionsPanel()
+                                }}>
                             <img src='album-actions/ghost.png' alt=''/> {seenAlbums.includes(album.id) ? 'Mark as Unseen' : 'Mark as Seen'}
                         </button>
                     </div>
