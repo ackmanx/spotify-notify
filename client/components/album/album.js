@@ -2,7 +2,7 @@ import './album.less'
 import React from 'react'
 
 import {bemFactory} from "../../utils/utils";
-import {Card} from './desktop/card';
+import {Card} from './shared/card/card';
 
 const bem = bemFactory('album')
 

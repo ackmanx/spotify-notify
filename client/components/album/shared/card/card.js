@@ -2,11 +2,15 @@ import './card.less'
 import React, {useState} from 'react'
 import {connect} from 'react-redux';
 
-import {CoverArt} from '../shared/cover-art/cover-art';
-import {DesktopAlbumActions} from './album-actions';
-import {Desktop, Mobile} from '../../responsive'
-import {MobileAlbumActions} from '../mobile/album-actions'
+import {CoverArt} from '../cover-art/cover-art';
+import {DesktopAlbumActions} from '../../desktop/album-actions';
+import {MobileAlbumActions} from '../../mobile/album-actions'
+import {Desktop, Mobile} from '../../../responsive'
 
+/*
+ * This component handles the desktop Card, which is like a playing card you can flip with actions on the backside
+ * It handles the mobile Card, which brings up a modal after clicking it to show the actions
+ */
 export const _Card = props => {
     const {album, seenAlbums} = props
 
