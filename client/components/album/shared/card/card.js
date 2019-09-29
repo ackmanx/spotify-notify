@@ -6,6 +6,9 @@ import {CoverArt} from '../cover-art/cover-art';
 import {DesktopAlbumActions} from '../../desktop/album-actions';
 import {MobileAlbumActions} from '../../mobile/album-actions'
 import {Desktop, Mobile} from '../../../responsive'
+import {bemFactory} from '../../../../utils/utils'
+
+const bem = bemFactory('card-container')
 
 /*
  * This component handles the desktop Card, which is like a playing card you can flip with actions on the backside
@@ -23,26 +26,28 @@ export const _Card = props => {
         setShowActions(!showActions)
     }
 
-    return <>
-        <Desktop>
-            <div className='scene'>
-                <div className={`card ${showActions ? 'is-flipped' : ''}`} onClick={toggleActionsPanel}>
-                    <div className={`card__face card__face--front ${isMarked ? 'is-marked' : ''}`}>
-                        <CoverArt album={album}/>
-                    </div>
-                    <div className='card__face card__face--back'>
-                        <DesktopAlbumActions album={album} toggleActionsPanel={toggleActionsPanel}/>
+    return (
+        <div className={bem()}>
+            <Desktop>
+                <div className={bem('scene')}>
+                    <div className={`${bem('card')} ${showActions ? 'is-flipped' : ''}`} onClick={toggleActionsPanel}>
+                        <div className={`${bem('card-face')} ${bem('card-face--front')} ${isMarked ? bem('is-marked') : ''}`}>
+                            <CoverArt album={album}/>
+                        </div>
+                        <div className={`${bem('card-face')} ${bem('card-face--back')}`}>
+                            <DesktopAlbumActions album={album} toggleActionsPanel={toggleActionsPanel}/>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </Desktop>
-        <Mobile>
-            <div className={isMarked ? 'is-marked' : ''}>
-                <CoverArt album={album} onClickHandler={toggleActionsPanel}/>
-            </div>
-            {showActions && <MobileAlbumActions album={album} toggleActionsPanel={toggleActionsPanel}/>}
-        </Mobile>
-    </>
+            </Desktop>
+            <Mobile>
+                <div className={isMarked ? bem('is-marked') : ''}>
+                    <CoverArt album={album} onClickHandler={toggleActionsPanel}/>
+                </div>
+                {showActions && <MobileAlbumActions album={album} toggleActionsPanel={toggleActionsPanel}/>}
+            </Mobile>
+        </div>
+    )
 }
 
 const mapStateToProps = state => ({
