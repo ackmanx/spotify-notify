@@ -6,15 +6,15 @@ Then all seen albums would appear but marked
 Can toggle to unmark and counter would go negative
 Can trigger mode by clicking "Unseen"
 
-## Make "following" clickable and shows a dropdown of all artists in the current cache
-How to sort it, with chinese artists?
-Make each artist clickable and auto-scroll to that artist
-List needs to be scrollable
-Provide overlay when it opens
-It sounds like this could be react-modal customized, like how Target does the header nav
-If I can source this from client-side, I'll get it for free when adding "seen" view
+## Create hamburger menu and put refresh in there
+See stash
 
-## Add UI to shuffle playlists because Spotify sucks at that
+## Add UI to menu to see all artists I follow with new albums as a easily-viewed list
+Add search to the UI
+Clicking an artist will show just that one
+Add menu option to go back and see all artists
+
+## Add UI to menu to shuffle playlists because Spotify sucks at that
 Needs permission to modify playlists
 
 
