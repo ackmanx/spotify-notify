@@ -16,6 +16,16 @@ const _ActionBar = props => {
     return (
         <div className='sticky-header'>
             <div className={bem()}>
+                <ActionButton type='refresh'
+                              imagePath='action-bar/refresh-icon.png'
+                              handler={getUnseenAlbums}/>
+
+                <Desktop>
+                    <div className='username'>{username}</div>
+                </Desktop>
+                <div>Following: {totalFollowedArtists}</div>
+                <div>Unseen: {totalUnseenAlbums}</div>
+
                 <ActionButton type='submit-seen'
                               imagePath='action-bar/update-mark-as-seens.png'
                               handler={() => {
@@ -26,16 +36,6 @@ const _ActionBar = props => {
                               }}>
                     {seenAlbums.length}
                 </ActionButton>
-
-                <Desktop>
-                    <div className='username'>{username}</div>
-                </Desktop>
-                <div>Following: {totalFollowedArtists}</div>
-                <div>Unseen: {totalUnseenAlbums}</div>
-
-                <ActionButton type='refresh'
-                              imagePath='action-bar/refresh-icon.png'
-                              handler={getUnseenAlbums}/>
             </div>
         </div>
     )
