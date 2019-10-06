@@ -23,7 +23,7 @@ async function spotifyAPI(accessToken, endpoint) {
 
         debug(`Throttled by Spotify, retrying ${spotifyApiURL} after ${retryAfterSeconds} seconds`)
 
-        await delay(retryAfterSeconds)
+        await delay(retryAfterSeconds * 1000)
 
         response = await fetch(spotifyApiURL, options)
 
