@@ -30,8 +30,12 @@ Needs permission to modify playlists
 # Bugs ---------------------------------------------------------------------------------------------------------------------------
 
 ## The spotify access token expires but I don't have code that gets a new one if this happens so the request will fail
-Being debugging this requires restarting node, we'd fetch a new token and not be able to debug
-So, need a mock server like nock to test this
+Need to save in session the date that access_token expires
+    Then before making a request we check if it's expired
+    If so, send the refresh_token instead to get a new access_token and save that in the session
+    Then continue with the original request
+So, need a mock server like nock to test this (use jest-nock branch)
+https://developer.spotify.com/documentation/general/guides/authorization-guide/
 
 ## Request throttling still doesn't work
 It fails at "Uh oh, the retry after throttle failed too" with a 429, suggesting the throttling is not working
