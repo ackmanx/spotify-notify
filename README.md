@@ -23,4 +23,4 @@ After you push, Heroku will run `heroku-postbuild`, which will do a production b
 # MongoDB
 
 The caches for user data are stored in a MongoDB free tier MongoDB Atlas cluster. You can see the dashboard for management.
-    * https://cloud.mongodb.com/user?n=%2Fv2%2F5d547f839ccf643d3ff713bc#clusters 
+* https://cloud.mongodb.com/user?n=%2Fv2%2F5d547f839ccf643d3ff713bc#clusters
