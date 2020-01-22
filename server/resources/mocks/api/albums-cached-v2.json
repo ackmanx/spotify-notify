@@ -10,179 +10,189 @@
     "seenAlbums": [],
     "unseenAlbumsCache": {
         "artists": {
-            "1wGcs6i2IJbgXxE3bDIm9k": {
-                "id": "1wGcs6i2IJbgXxE3bDIm9k",
-                "name": "Nachtmahr",
+            "7aMQdNM05rPkcHS1ethHUx": {
+                "id": "7aMQdNM05rPkcHS1ethHUx",
+                "name": "頑童Mj116",
                 "albums": [
                     {
-                        "id": "36KYfT4iOGioOqJ6f6aHbg",
-                        "name": "Antithese",
-                        "artistName": "Nachtmahr",
-                        "coverArt": "https://i.scdn.co/image/40878836585014bcee93b378f43a9c52ecda48c6",
-                        "releaseDate": "2019-01-11",
+                        "id": "1RtDemKu2Rrqt9NqRKOzhs",
+                        "name": "DON",
+                        "artistName": "頑童Mj116",
+                        "coverArt": "https://i.scdn.co/image/ab67616d00001e02158172a3c56b146654d5b35d",
+                        "releaseDate": "2019-02-27",
                         "type": "album",
-                        "spotifyUri": "spotify:album:36KYfT4iOGioOqJ6f6aHbg",
-                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/36KYfT4iOGioOqJ6f6aHbg"
+                        "spotifyUri": "spotify:album:1RtDemKu2Rrqt9NqRKOzhs",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/7aMQdNM05rPkcHS1ethHUx"
                     },
                     {
-                        "id": "1fFlLSHboKWZ1X1SoVZyJm",
-                        "name": "Gehorsam",
-                        "artistName": "Nachtmahr",
-                        "coverArt": "https://i.scdn.co/image/2444566db459f11c3c38674139e0b50278620863",
-                        "releaseDate": "2018-10-26",
-                        "type": "single",
-                        "spotifyUri": "spotify:album:1fFlLSHboKWZ1X1SoVZyJm",
-                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/1fFlLSHboKWZ1X1SoVZyJm"
-                    },
-                    {
-                        "id": "45s78ohr8AphR3xcGOzbyt",
-                        "name": "Widerstand",
-                        "artistName": "Nachtmahr",
-                        "coverArt": "https://i.scdn.co/image/81355166148d6afe645ce69265a658dd565df72e",
-                        "releaseDate": "2018-06-29",
+                        "id": "5UY4Cgt5liAl7WscIImiHn",
+                        "name": "Big Thing",
+                        "artistName": "頑童Mj116",
+                        "coverArt": "https://i.scdn.co/image/ab67616d00001e02e9238e798122f827c2236384",
+                        "releaseDate": "2017-11-16",
                         "type": "album",
-                        "spotifyUri": "spotify:album:45s78ohr8AphR3xcGOzbyt",
-                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/45s78ohr8AphR3xcGOzbyt"
+                        "spotifyUri": "spotify:album:5UY4Cgt5liAl7WscIImiHn",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/7aMQdNM05rPkcHS1ethHUx"
                     },
                     {
-                        "id": "7H7i00Yi7mheLbLUinJ4yp",
-                        "name": "Unbeugsam",
-                        "artistName": "Nachtmahr",
-                        "coverArt": "https://i.scdn.co/image/e37540108be7476efe47676a2fcc8e4c0acc8ad4",
-                        "releaseDate": "2017-02-17",
+                        "id": "4MutKfZUoMxjFt2EW4ajFp",
+                        "name": "Fresh Game",
+                        "artistName": "頑童Mj116",
+                        "coverArt": "https://i.scdn.co/image/ab67616d00001e0249c6abfc7f3711998d1fa2a3",
+                        "releaseDate": "2014-06-24",
                         "type": "album",
-                        "spotifyUri": "spotify:album:7H7i00Yi7mheLbLUinJ4yp",
-                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/7H7i00Yi7mheLbLUinJ4yp"
+                        "spotifyUri": "spotify:album:4MutKfZUoMxjFt2EW4ajFp",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/7aMQdNM05rPkcHS1ethHUx"
                     },
                     {
-                        "id": "2YnJALM2OeVmNPXcXQGd61",
-                        "name": "Mit vereinten Kräften",
-                        "artistName": "Nachtmahr",
-                        "coverArt": "https://i.scdn.co/image/debe1878f7aa51dc19578d13a54758832738cefc",
-                        "releaseDate": "2016-10-28",
+                        "id": "5swemVvw433XjgWooKMco7",
+                        "name": "How We Roll",
+                        "artistName": "頑童Mj116",
+                        "coverArt": "https://i.scdn.co/image/ab67616d00001e0229306d2f3551d340addf88c3",
+                        "releaseDate": "2008-07-04",
                         "type": "album",
-                        "spotifyUri": "spotify:album:2YnJALM2OeVmNPXcXQGd61",
-                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/2YnJALM2OeVmNPXcXQGd61"
+                        "spotifyUri": "spotify:album:5swemVvw433XjgWooKMco7",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/7aMQdNM05rPkcHS1ethHUx"
                     },
                     {
-                        "id": "4Og72fGbBqU1UXYvxaM1Sv",
-                        "name": "Kampfbereit",
-                        "artistName": "Nachtmahr",
-                        "coverArt": "https://i.scdn.co/image/33d12bf906bfacebc2b116b7f27a63860adcbb1b",
-                        "releaseDate": "2016-04-01",
+                        "id": "5PA7XjjafPGESPKPxnSdZR",
+                        "name": "The Quote",
+                        "artistName": "頑童Mj116",
+                        "coverArt": "https://i.scdn.co/image/9ac7894df5daaac6896bc2553fd1cafa304ba794",
+                        "releaseDate": "2019-10-25",
                         "type": "album",
-                        "spotifyUri": "spotify:album:4Og72fGbBqU1UXYvxaM1Sv",
-                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/4Og72fGbBqU1UXYvxaM1Sv"
+                        "spotifyUri": "spotify:album:5PA7XjjafPGESPKPxnSdZR",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/7aMQdNM05rPkcHS1ethHUx"
                     },
                     {
-                        "id": "6EMS74vCsIdR4ziGoV3epK",
-                        "name": "Strenge Liebe",
-                        "artistName": "Nachtmahr",
-                        "coverArt": "https://i.scdn.co/image/a51b5e12740218f5e9f5c5c40b501e0a3cf54eaa",
-                        "releaseDate": "2016-03-25",
-                        "type": "single",
-                        "spotifyUri": "spotify:album:6EMS74vCsIdR4ziGoV3epK",
-                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/6EMS74vCsIdR4ziGoV3epK"
-                    },
-                    {
-                        "id": "4eE4sZgfj40GFlxkIdaBo8",
-                        "name": "Tanzt für mich",
-                        "artistName": "Nachtmahr",
-                        "coverArt": "https://i.scdn.co/image/b1488e26ce012e5409937ae03d32b041b3873b64",
-                        "releaseDate": "2016-03-18",
-                        "type": "single",
-                        "spotifyUri": "spotify:album:4eE4sZgfj40GFlxkIdaBo8",
-                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/4eE4sZgfj40GFlxkIdaBo8"
-                    },
-                    {
-                        "id": "1e45U7C76A5aq32Jkj4Iav",
-                        "name": "Feindbild",
-                        "artistName": "Nachtmahr",
-                        "coverArt": "https://i.scdn.co/image/ea830ed85da1c2f796a48aa3fe0f27c2273b7fbf",
-                        "releaseDate": "2014-02-14",
+                        "id": "71qheiVosWJSNyHXUkyGRn",
+                        "name": "Better Dayz (feat. A-Mei Chang)",
+                        "artistName": "頑童Mj116",
+                        "coverArt": "https://i.scdn.co/image/ab67616d00001e021c23bfa568955b6cf963672a",
+                        "releaseDate": "2019-06-17",
                         "type": "album",
-                        "spotifyUri": "spotify:album:1e45U7C76A5aq32Jkj4Iav",
-                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/1e45U7C76A5aq32Jkj4Iav"
+                        "spotifyUri": "spotify:album:71qheiVosWJSNyHXUkyGRn",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/7aMQdNM05rPkcHS1ethHUx"
                     },
                     {
-                        "id": "5676RfwrDBGoleUIDMfzCX",
-                        "name": "Can You Feel The Beat?",
-                        "artistName": "Nachtmahr",
-                        "coverArt": "https://i.scdn.co/image/b63d1e866c3b6f8ecfc696e7b07a95a51d179337",
-                        "releaseDate": "2012-02-14",
+                        "id": "5A647ctPba56u89W0TDWV1",
+                        "name": "Pian Jia Pian Jia",
+                        "artistName": "頑童Mj116",
+                        "coverArt": "https://i.scdn.co/image/ab67616d00001e0216d5ee520c83e6516f7df109",
+                        "releaseDate": "2018-12-21",
                         "type": "album",
-                        "spotifyUri": "spotify:album:5676RfwrDBGoleUIDMfzCX",
-                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/5676RfwrDBGoleUIDMfzCX"
+                        "spotifyUri": "spotify:album:5A647ctPba56u89W0TDWV1",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/7aMQdNM05rPkcHS1ethHUx"
                     },
                     {
-                        "id": "6NsKNC8okX9VJZzzn4c4W4",
-                        "name": "Semper Fidelis",
-                        "artistName": "Nachtmahr",
-                        "coverArt": "https://i.scdn.co/image/bc83ee6df729163a9542282b66aae874fe6d3d0f",
-                        "releaseDate": "2011-01-11",
+                        "id": "6aQqUyk96QGdksluAvVWnO",
+                        "name": "GOOD VIBE (feat. Starr Chen & Moozlie)",
+                        "artistName": "頑童Mj116",
+                        "coverArt": "https://i.scdn.co/image/ab67616d00001e02465a9a8ae01a4725e4f937fb",
+                        "releaseDate": "2018-10-11",
                         "type": "album",
-                        "spotifyUri": "spotify:album:6NsKNC8okX9VJZzzn4c4W4",
-                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/6NsKNC8okX9VJZzzn4c4W4"
+                        "spotifyUri": "spotify:album:6aQqUyk96QGdksluAvVWnO",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/7aMQdNM05rPkcHS1ethHUx"
                     },
                     {
-                        "id": "06soqJxH8Ushk6SxhGfuFS",
-                        "name": "Veni Vidi Vici",
-                        "artistName": "Nachtmahr",
-                        "coverArt": "https://i.scdn.co/image/52871f59ea94259b6f4befb05096552012e149b6",
-                        "releaseDate": "2011",
+                        "id": "3omH8HFT95KUMF4EJxJDJ0",
+                        "name": "少年董",
+                        "artistName": "頑童Mj116",
+                        "coverArt": "https://i.scdn.co/image/ab67616d00001e02ed7983c542f00749fef86708",
+                        "releaseDate": "2018-07-05",
                         "type": "album",
-                        "spotifyUri": "spotify:album:06soqJxH8Ushk6SxhGfuFS",
-                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/06soqJxH8Ushk6SxhGfuFS"
+                        "spotifyUri": "spotify:album:3omH8HFT95KUMF4EJxJDJ0",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/7aMQdNM05rPkcHS1ethHUx"
                     },
                     {
-                        "id": "0ZUB5DIcJWPKsAf5ihLaA6",
-                        "name": "Alle Lust Will Ewigkeit",
-                        "artistName": "Nachtmahr",
-                        "coverArt": "https://i.scdn.co/image/2f86f67c21dd6c10df887ef7750509dce3cadd33",
-                        "releaseDate": "2009-10-13",
+                        "id": "636nghoPtDQxXRutlH5D5G",
+                        "name": "走跳",
+                        "artistName": "頑童Mj116",
+                        "coverArt": "https://i.scdn.co/image/ab67616d00001e0268c7f0007519327896f65d6b",
+                        "releaseDate": "2018-06-07",
                         "type": "album",
-                        "spotifyUri": "spotify:album:0ZUB5DIcJWPKsAf5ihLaA6",
-                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/0ZUB5DIcJWPKsAf5ihLaA6"
+                        "spotifyUri": "spotify:album:636nghoPtDQxXRutlH5D5G",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/7aMQdNM05rPkcHS1ethHUx"
                     },
                     {
-                        "id": "3nO2pgswP3UQwsv4bBP44F",
-                        "name": "Madchen In Uniform",
-                        "artistName": "Nachtmahr",
-                        "coverArt": "https://i.scdn.co/image/89d837b6a87515555d68ff8e43dd394e6f098ce3",
-                        "releaseDate": "2009-02-09",
+                        "id": "6rQsp0s4TnCywcUrTxGRkQ",
+                        "name": "質感老鄉",
+                        "artistName": "頑童Mj116",
+                        "coverArt": "https://i.scdn.co/image/ab67616d00001e028268a69ef455c6677cd4c176",
+                        "releaseDate": "2018-05-23",
                         "type": "album",
-                        "spotifyUri": "spotify:album:3nO2pgswP3UQwsv4bBP44F",
-                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/3nO2pgswP3UQwsv4bBP44F"
+                        "spotifyUri": "spotify:album:6rQsp0s4TnCywcUrTxGRkQ",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/7aMQdNM05rPkcHS1ethHUx"
                     },
                     {
-                        "id": "23yHZIkNFzqTJoVSq06dID",
-                        "name": "Feuer Frei!",
-                        "artistName": "Nachtmahr",
-                        "coverArt": "https://i.scdn.co/image/06afd82264ce81b1130a231ffde38207ff53ac14",
-                        "releaseDate": "2008-06-06",
+                        "id": "6d7Z3Uw378aU0wkU6CeAlM",
+                        "name": "歹性底",
+                        "artistName": "頑童Mj116",
+                        "coverArt": "https://i.scdn.co/image/ab67616d00001e0287c30a7e40aa804b23cfa2e1",
+                        "releaseDate": "2018-05-16",
                         "type": "album",
-                        "spotifyUri": "spotify:album:23yHZIkNFzqTJoVSq06dID",
-                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/23yHZIkNFzqTJoVSq06dID"
+                        "spotifyUri": "spotify:album:6d7Z3Uw378aU0wkU6CeAlM",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/7aMQdNM05rPkcHS1ethHUx"
                     },
                     {
-                        "id": "7H8Z9WshjNy2ojFMVWDN7C",
-                        "name": "Split",
-                        "artistName": "Nachtmahr",
-                        "coverArt": "https://i.scdn.co/image/1e123a067b67e0f077eb87956dade14cf3483d68",
-                        "releaseDate": "2005-05-29",
-                        "type": "single",
-                        "spotifyUri": "spotify:album:7H8Z9WshjNy2ojFMVWDN7C",
-                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/7H8Z9WshjNy2ojFMVWDN7C"
-                    },
-                    {
-                        "id": "41vaUaYS5omSvZXDbxb28v",
-                        "name": "I",
-                        "artistName": "Nachtmahr",
-                        "coverArt": "https://i.scdn.co/image/0c934d1c3c58be302868697a63c137796bada735",
-                        "releaseDate": "2004-06-28",
+                        "id": "6w0VfJqxvcEcaviiygLmfo",
+                        "name": "地痞",
+                        "artistName": "頑童Mj116",
+                        "coverArt": "https://i.scdn.co/image/ab67616d00001e0220092457dbe09bbdf10fa07a",
+                        "releaseDate": "2018-05-09",
                         "type": "album",
-                        "spotifyUri": "spotify:album:41vaUaYS5omSvZXDbxb28v",
-                        "spotifyWebPlayerUrl": "https://open.spotify.com/album/41vaUaYS5omSvZXDbxb28v"
+                        "spotifyUri": "spotify:album:6w0VfJqxvcEcaviiygLmfo",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/7aMQdNM05rPkcHS1ethHUx"
+                    },
+                    {
+                        "id": "5h6D6Llst9lyn9PKgcngf2",
+                        "name": "2030",
+                        "artistName": "頑童Mj116",
+                        "coverArt": "https://i.scdn.co/image/ab67616d00001e02b23f3b8371988564721a65b7",
+                        "releaseDate": "2017-11-10",
+                        "type": "album",
+                        "spotifyUri": "spotify:album:5h6D6Llst9lyn9PKgcngf2",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/7aMQdNM05rPkcHS1ethHUx"
+                    },
+                    {
+                        "id": "121DagU064xgmgGJvuedMt",
+                        "name": "Better Believe Me (Remix)",
+                        "artistName": "陳嘉唯",
+                        "coverArt": "https://i.scdn.co/image/ab67616d00001e02143ff5cab076bd2e00b02ea5",
+                        "releaseDate": "2017-11-06",
+                        "type": "album",
+                        "spotifyUri": "spotify:album:121DagU064xgmgGJvuedMt",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/6hplUv2g0ESNAP5riPM7Ti"
+                    },
+                    {
+                        "id": "0JQmOzwmApRh3eEELn1u36",
+                        "name": "脫罪",
+                        "artistName": "頑童Mj116",
+                        "coverArt": "https://i.scdn.co/image/ab67616d00001e02200e3abe9ce34970ec174d2e",
+                        "releaseDate": "2017-11-02",
+                        "type": "album",
+                        "spotifyUri": "spotify:album:0JQmOzwmApRh3eEELn1u36",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/7aMQdNM05rPkcHS1ethHUx"
+                    },
+                    {
+                        "id": "72CHJxeWhqo3Pl7hWyTne2",
+                        "name": "幹大事",
+                        "artistName": "頑童Mj116",
+                        "coverArt": "https://i.scdn.co/image/ab67616d00001e0203a7d91e1373a55b704ed8e6",
+                        "releaseDate": "2017-10-27",
+                        "type": "album",
+                        "spotifyUri": "spotify:album:72CHJxeWhqo3Pl7hWyTne2",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/7aMQdNM05rPkcHS1ethHUx"
+                    },
+                    {
+                        "id": "5xdwFVDjR150yoQxfothVe",
+                        "name": "Costly Love (feat. BlackDoe)",
+                        "artistName": "頑童Mj116",
+                        "coverArt": "https://i.scdn.co/image/ab67616d00001e02a29c25b7a86f391f50b7bbf1",
+                        "releaseDate": "2017-07-05",
+                        "type": "album",
+                        "spotifyUri": "spotify:album:5xdwFVDjR150yoQxfothVe",
+                        "spotifyWebPlayerUrl": "https://open.spotify.com/artist/7aMQdNM05rPkcHS1ethHUx"
                     }
                 ]
             }

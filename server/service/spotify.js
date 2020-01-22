@@ -102,7 +102,7 @@ exports.checkForUnseenAlbums = async function checkForUnseenAlbums(session) {
     for(let i = 0; i < artistIds.length; i++) {
         try {
             const artistId = artistIds[i]
-            const albumsPages = await fetchAllPages(session.access_token, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`)
+            const albumsPages = await fetchAllPages(session.access_token, `/artists/${artistId}/albums?include_groups=album,single& market=US&limit=50`)
 
             //Spread albums because fetchAlbumsAllPages returns an array of responses, and we want this array to be flat of all artists and albums
             allAlbumsPagesOfFollowedArtists.push(...albumsPages)
