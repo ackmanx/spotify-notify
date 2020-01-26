@@ -9,8 +9,6 @@ Can trigger mode by clicking "Unseen"
 ## Create hamburger menu and put refresh in there
 See stash
 
-## Change refresh icon to an egg that shakes when you hover
-
 ## Add a search at the top that auto-focuses on page load
 When you search it shows only results that match, not scroll to results
 Search only searches artist titles
@@ -25,6 +23,10 @@ Add menu option to go back and see all artists
 
 ## Add UI to menu to shuffle playlists because Spotify sucks at that
 Needs permission to modify playlists
+
+## Filter by genre
+Persist genres property for each artist from spotify's following-artists call
+Build UI to show all the genres available, then filters each
 
 
 # Bugs ---------------------------------------------------------------------------------------------------------------------------
