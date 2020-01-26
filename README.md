@@ -12,7 +12,14 @@
 
 This app is deployed to Heroku. You can manage the servers at their dashboard.
 
-To deploy, simply add the Heroku origin to this git repository, then:
+Docs for Heroku with git: https://devcenter.heroku.com/articles/git
+
+To deploy:
+1. Install the Heroku CLI: `brew tap heroku/brew && brew install heroku`
+1. Login: `heroku login`
+1. Add Heroku as a remote: `heroku git:remote -a i-already-saw-that`
+
+Deploy either master or a branch to Heroku:
 * master: `git push -f heroku master`
 * branch: `git push -f heroku branch-name:master`
 
