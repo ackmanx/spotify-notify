@@ -1,28 +1,15 @@
 # Features -----------------------------------------------------------------------------------------------------------------------
 
-## Have option to show only seen
-We would need a new api call to fetch all of the seen IDs and return in same contract
-Then all seen albums would appear but marked
-Can toggle to unmark and counter would go negative
-Can trigger mode by clicking "Unseen"
-
-## Create hamburger menu and put refresh in there
-See stash
-
 ## Add a search at the top that auto-focuses on page load
 When you search it shows only results that match, not scroll to results
 Search only searches artist titles
 Could incorporate small edit distance to allow for a single character mistype
-Check spotify response to see if it includes tags or something, so you could search for chinese and it would show artists tagged with chinese
+
+## Sort results predictably
 
 ## Add UI to menu to see all artists I follow with new albums as a easily-viewed list
 Clicking an artist will show just that one
 Add menu option to go back and see all artists
-
-## Have option to show every artist every album, regardless of seen or not
-
-## Add UI to menu to shuffle playlists because Spotify sucks at that
-Needs permission to modify playlists
 
 ## Filter by genre
 Persist genres property for each artist from spotify's following-artists call
