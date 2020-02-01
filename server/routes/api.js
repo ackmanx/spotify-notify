@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const fs = require('fs')
 const path = require('path')
 const debug = require('debug')(`sn:${path.basename(__filename)}`)
 
@@ -59,7 +58,11 @@ router.get('/albums/refresh-status', ensureAuthenticated, async function (req, r
     })
 })
 
-router.post('/seen-albums/update', ensureAuthenticated, async function (req, res) {
+/*
+ * Takes the list of albums in the request and saves them to the DB for the user
+ * Also updates some metadata for the user
+ */
+router.post('/albums/update-seen', ensureAuthenticated, async function (req, res) {
     const user = await getUserData(req.session.user.id, Slices.user)
 
     user.lastUpdated = new Date()
@@ -75,5 +78,14 @@ router.post('/seen-albums/update', ensureAuthenticated, async function (req, res
 
     res.json({success: true})
 })
+
+/*
+ * Pings the server so it doesn't sleep
+ * This is because when the server sleeps you get logged out and will lose any albums marked as seen
+ */
+router.get('/heartbeat', function (req, res) {
+    res.json({alive: true})
+})
+
 
 module.exports = router

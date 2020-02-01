@@ -6,12 +6,14 @@ import {Artist} from './components/artist/artist'
 import {ActionBar} from './components/action-bar/action-bar'
 import {Banners} from './components/banners/banners'
 import {getUnseenAlbums} from './redux/actions/get-unseen-albums'
+import {fetchHeartbeat} from './utils/request-helpers'
 import {Placeholder} from './components/artist/placeholder/placeholder'
 
 class _App extends React.Component {
 
     componentDidMount() {
         this.props.getUnseenAlbums({shouldGetCached: true, appJustLoaded: true})
+        this.enableHeartbeat()
     }
 
     componentDidUpdate(prev) {
@@ -20,6 +22,12 @@ class _App extends React.Component {
         if (!prev.allAlbumsInViewportRendered && this.props.allAlbumsInViewportRendered) {
             forceCheck()
         }
+    }
+
+    enableHeartbeat() {
+        setInterval(() => {
+            fetchHeartbeat().catch(e => console.error('heartbeat failed', e))
+        }, 1200000) //20 minutes
     }
 
     render() {

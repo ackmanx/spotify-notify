@@ -7,12 +7,16 @@ export async function fetchRefreshStatus() {
     return await doGet('/api/albums/refresh-status')
 }
 
+export async function fetchHeartbeat() {
+    return await doGet('/api/heartbeat')
+}
+
 export async function fetchUnseenAlbums(shouldGetCached) {
     return await doGet(shouldGetCached ? '/api/albums/cached' : '/api/albums/refresh')
 }
 
 export async function postSeenAlbums(seenAlbums) {
-    await fetch('/api/seen-albums/update',
+    await fetch('/api/albums/update-seen',
         {
             method: 'POST',
             headers: {
