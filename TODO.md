@@ -7,6 +7,8 @@ Could incorporate small edit distance to allow for a single character mistype
 
 ## Sort results predictably
 
+## Add a keep alive
+
 ## Add UI to menu to see all artists I follow with new albums as a easily-viewed list
 Clicking an artist will show just that one
 Add menu option to go back and see all artists
