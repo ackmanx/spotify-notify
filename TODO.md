@@ -15,6 +15,9 @@ Add menu option to go back and see all artists
 Persist genres property for each artist from spotify's following-artists call
 Build UI to show all the genres available, then filters each
 
+## Collapse an artist if you click on its name
+Requires to put the select all feature at the end of the artist title or something
+
 
 # Bugs ---------------------------------------------------------------------------------------------------------------------------
 
