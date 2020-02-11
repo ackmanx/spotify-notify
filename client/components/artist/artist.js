@@ -36,7 +36,7 @@ const _Artist = props => {
                 <div>
                     {artist.name}
                 </div>
-                <div style={{display: 'flex', width: '90px', height: '60px'}}>
+                <div style={{width: '90px', height: '60px'}}>
                     <SVG />
                 </div>
             </h2>
