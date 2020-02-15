@@ -9,11 +9,15 @@ Could incorporate small edit distance to allow for a single character mistype
 
 ## Add UI to menu to see all artists I follow with new albums as a easily-viewed list
 Clicking an artist will show just that one
-Add menu option to go back and see all artists
+Add menu option to see all artists, regardless of new albums or not
+
+## Add UI to put metadata into a menu dropdown panel on hover of username
 
 ## Filter by genre
+Dependent on menu dropdowns
 Persist genres property for each artist from spotify's following-artists call
 Build UI to show all the genres available, then filters each
+Put in another menu called Filters on the action bar with the username
 
 ## Collapse an artist if you click on its name
 Requires to put the select all feature at the end of the artist title or something
