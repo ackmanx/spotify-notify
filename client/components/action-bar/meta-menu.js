@@ -1,6 +1,7 @@
 import './meta-menu.less'
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
+import {useTransition, animated} from "react-spring";
 
 import {bemFactory} from '../../utils/utils'
 
@@ -10,17 +11,28 @@ const _MetaMenu = props => {
     const {seenAlbums, totalFollowedArtists, totalUnseenAlbums, username} = props
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
+    //say what this does
+    const transitions = useTransition(isMenuOpen, null, {
+        from: {height: '0px', opacity: 0}, //describe the height
+        enter: {opacity: 1},
+        leave: {opacity: 0},
+    })
+
     const handleMenuOpen = () => setIsMenuOpen(!isMenuOpen)
 
     return (
         <div className={bem()}>
             <div className={bem('username')} onClick={handleMenuOpen}>{username}</div>
-            {isMenuOpen && (
-                <div className={bem('menu')}>
-                    <div>Following: {totalFollowedArtists}</div>
-                    <div>Seen: {seenAlbums}</div>
-                    <div>Unseen: {totalUnseenAlbums}</div>
-                </div>
+            {transitions.map(({item, key, props}) => //describe how this works above at the hook
+                item && (
+                    <animated.div key={key} style={props}>
+                        <div className={bem('menu')}>
+                            <div>Following: {totalFollowedArtists}</div>
+                            <div>Seen: {seenAlbums}</div>
+                            <div>Unseen: {totalUnseenAlbums}</div>
+                        </div>
+                    ️</animated.div>
+                )
             )}
         </div>
     )
