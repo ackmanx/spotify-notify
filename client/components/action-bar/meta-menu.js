@@ -8,7 +8,7 @@ import {bemFactory} from '../../utils/utils'
 const bem = bemFactory('meta-menu')
 
 const _MetaMenu = props => {
-    const {seenAlbums, totalFollowedArtists, totalUnseenAlbums, username} = props
+    const {totalFollowedArtists, totalUnseenAlbums, username} = props
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
     const transitions = useTransition(isMenuOpen, null, {
@@ -27,7 +27,6 @@ const _MetaMenu = props => {
                     <animated.div key={key} style={transitionProps}>
                         <div className={bem('menu')}>
                             <div>Following: {totalFollowedArtists}</div>
-                            <div>Seen: {seenAlbums}</div>
                             <div>Unseen: {totalUnseenAlbums}</div>
                         </div>
                     ️</animated.div>
@@ -38,7 +37,6 @@ const _MetaMenu = props => {
 }
 
 const mapStateToProps = state => ({
-    seenAlbums: state.app.seenAlbums,
     totalFollowedArtists: state.artists.totalFollowedArtists,
     totalUnseenAlbums: state.artists.totalUnseenAlbums,
     username: state.app.username,
