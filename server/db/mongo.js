@@ -3,11 +3,13 @@ const debug = require('debug')(`sn:${path.basename(__filename)}`)
 const MongoClient = require('mongodb').MongoClient
 
 let client
+const clusterName = 'hobby-cluster'
 const databaseName = 'spotify-notify'
 
+//This was provided by the mongodb website dashboard
+const connectionUrl = `mongodb+srv://admin:F8cHHZjWza0SRGOx@${clusterName}-f6tmy.mongodb.net/test?retryWrites=true&w=majority`
+
 exports.initDatabase = callback => {
-    //This was provided by the mongodb website dashboard
-    const connectionUrl = `mongodb+srv://admin:F8cHHZjWza0SRGOx@${databaseName}-f6tmy.mongodb.net/test?retryWrites=true&w=majority`
 
     client = new MongoClient(connectionUrl, { useNewUrlParser: true, useUnifiedTopology: true })
 
