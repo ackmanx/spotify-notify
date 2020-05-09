@@ -6,6 +6,7 @@
         "build:prod": "rm -rf public; export NODE_ENV=production; webpack",
         "build:watch": "rm -rf public; webpack --watch",
         "kill": "lsof -ti tcp:3666 | xargs kill",
+        "heroku:deploy": "git push heroku",
         "heroku-postbuild": "npm run build:prod",
         "start": "node ./bin/www"
     },
