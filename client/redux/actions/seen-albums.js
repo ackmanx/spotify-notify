@@ -8,11 +8,11 @@ export const markArtistAsSeen = artistId => {
         const artist = state.artists.artistsWithUnseenAlbums[artistId]
         const albumsByArtist = artist.albums.map(album => album.id)
 
-        dispatch({type: UPDATE_SEEN_ALBUMS, albumIds: albumsByArtist})
+        dispatch({type: UPDATE_SEEN_ALBUMS, albumIdsToMarkAsSeen: albumsByArtist})
     }
 }
 
-export const markAlbumAsSeen = albumId => ({type: UPDATE_SEEN_ALBUMS, albumIds: [albumId]})
+export const markAlbumAsSeen = albumId => ({type: UPDATE_SEEN_ALBUMS, albumIdsToMarkAsSeen: [albumId]})
 
 export const submitSeenAlbums = () => {
     return async (dispatch, getState) => {

@@ -16,16 +16,13 @@ Persist genres property for each artist from spotify's following-artists call
 Build UI to show all the genres available, then filters each
 Put in another menu called Filters on the action bar with the username
 
-## Collapse an artist if you click on its name
+## Collapse/show an artist if you click on its name
 Requires to put the select all feature at the end of the artist title or something
 
-## Add album to playlist from the website
-Get list of user's playlists
-https://developer.spotify.com/documentation/web-api/reference/playlists/get-a-list-of-current-users-playlists/
+## Collapse all artists by default
 
-Search by artist through those to see if we have one with same name as artist for selected album
-If not, create one and get the ID
-https://developer.spotify.com/documentation/web-api/reference/playlists/create-playlist/
+## Add album to playlist from the website
+Let's have a playlist for this webapp, sort of like a queue
 
 Add all the songs from the selected album to the playlist
 https://developer.spotify.com/documentation/web-api/reference/playlists/add-tracks-to-playlist/
