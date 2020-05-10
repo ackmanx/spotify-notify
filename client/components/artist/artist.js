@@ -10,6 +10,8 @@ const bem = bemFactory('artist')
 
 const _Artist = props => {
     const [isExpanded, setIsExpanded] = useState(true)
+    const [isSelectAllVisible, setIsSelectAllVisible] = useState(false)
+
     const {artist, markArtistAsSeen} = props
 
     const albums = artist.albums.filter(album => album.type === 'album')
@@ -24,11 +26,11 @@ const _Artist = props => {
 
     return (
         <div className={bem()}>
-            <h2 className={bem('name')}>
+            <h2 className={bem('name')} onMouseEnter={() => setIsSelectAllVisible(true)} onMouseLeave={() => setIsSelectAllVisible(false)}>
                 <div onClick={() => setIsExpanded(!isExpanded)}>
                     {artist.name}
                 </div>
-                {isExpanded && <img className={bem('select-all')} src='select-all.png' alt='select-all' onClick={() => markArtistAsSeen(artist.id)}/>}
+                {isExpanded && isSelectAllVisible && <img className={bem('select-all')} src='select-all.png' alt='select-all' onClick={() => markArtistAsSeen(artist.id)}/>}
             </h2>
 
             {isExpanded && (
