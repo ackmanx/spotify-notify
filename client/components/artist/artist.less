@@ -4,16 +4,13 @@
     margin-bottom: 30px;
     padding-bottom: 30px;
     text-align: center;
+    position: relative;
 
     &:last-child {
         border: none;
     }
 
     &__name {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
         padding: 10px;
         font-size: 72px;
         cursor: pointer;
@@ -27,7 +24,10 @@
         padding-top: 20px;
     }
 
-    &__hammer {
+    &__select-all {
+        position: absolute;
+        top: 23px;
+        right: 15px;
         width: 70px;
     }
 }
@@ -36,6 +36,12 @@
     .artist {
         &__name {
             font-size: 48px;
+        }
+
+        &__select-all {
+            top: 16px;
+            right: 15px;
+            width: 50px;
         }
     }
 }

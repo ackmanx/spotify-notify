@@ -27,7 +27,7 @@ const _Artist = props => {
                 <div>
                     {artist.name}
                 </div>
-                <img className={bem('hammer')} src='hammer.png' alt='hammer' onClick={() => markArtistAsSeen(artist.id)}/>
+                <img className={bem('select-all')} src='select-all.png' alt='hammer' onClick={() => markArtistAsSeen(artist.id)}/>
             </h2>
 
             {hasAlbums && <>
