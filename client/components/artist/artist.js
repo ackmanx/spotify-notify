@@ -9,7 +9,7 @@ import {bemFactory} from '../../utils/utils'
 const bem = bemFactory('artist')
 
 const _Artist = props => {
-    const [isExpanded, setIsExpanded] = useState(false)
+    const [isExpanded, setIsExpanded] = useState(true)
     const {artist, markArtistAsSeen} = props
 
     const albums = artist.albums.filter(album => album.type === 'album')
