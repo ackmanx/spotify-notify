@@ -4,6 +4,7 @@
     margin-bottom: 30px;
     padding-bottom: 30px;
     text-align: center;
+    position: relative;
 
     &:last-child {
         border: none;
@@ -22,12 +23,25 @@
         font-size: 35px;
         padding-top: 20px;
     }
+
+    &__select-all {
+        position: absolute;
+        top: 25px;
+        right: 15px;
+        width: 60px;
+    }
 }
 
 @media @mobile {
     .artist {
         &__name {
             font-size: 48px;
+        }
+
+        &__select-all {
+            top: 20px;
+            right: 15px;
+            width: 40px;
         }
     }
 }

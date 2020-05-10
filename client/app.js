@@ -44,12 +44,8 @@ class _App extends React.Component {
             {!loading && hasUnseenAlbums && (
                 artistsWithUnseenAlbumsKeys.map((artistId) => {
                     const artist = artistsWithUnseenAlbums[artistId]
-
                     return (
-                        <LazyLoad key={artistId}
-                                  placeholder={<Placeholder name={artist.name}/>}>
-                            <Artist key={artist.id} artist={artist}/>
-                        </LazyLoad>
+                        <Artist key={artist.id} artist={artist}/>
                     )
                 })
             )}
