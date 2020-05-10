@@ -30,13 +30,13 @@ export function app(state = initialState, action = {}) {
         case UPDATE_SEEN_ALBUMS: {
             let seenAlbums = state.seenAlbums.slice()
 
-            action.albumIds.forEach(albumId => {
-                const seenAlbumIndex = seenAlbums.indexOf(albumId)
+            const shouldUnmarkAll = action.albumIdsToMarkAsSeen.every(albumId => seenAlbums.includes(albumId))
 
-                if (seenAlbumIndex !== -1) {
-                    seenAlbums.splice(seenAlbumIndex, 1)
-                }
-                else {
+            //Either they all get unmarked, or remaining unmarked for an artist get marked
+            action.albumIdsToMarkAsSeen.forEach(albumId => {
+                if (shouldUnmarkAll) {
+                    seenAlbums.splice(seenAlbums.indexOf(albumId), 1)
+                } else if (!seenAlbums.includes(albumId)) {
                     seenAlbums.push(albumId)
                 }
             })

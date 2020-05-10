@@ -1,17 +1,17 @@
 import './action-bar.less'
 import React from 'react'
 import {connect} from 'react-redux'
-import {Desktop} from "../responsive";
 
 import {ActionButton} from './action-button'
 import {getUnseenAlbums} from '../../redux/actions/get-unseen-albums'
 import {submitSeenAlbums} from '../../redux/actions/seen-albums'
 import {bemFactory} from '../../utils/utils'
+import {MetaMenu} from "./meta-menu";
 
 const bem = bemFactory('action-bar')
 
 const _ActionBar = props => {
-    const {getUnseenAlbums, seenAlbums, submitSeenAlbums, totalFollowedArtists, totalUnseenAlbums, username} = props
+    const {getUnseenAlbums, seenAlbums, submitSeenAlbums} = props
 
     return (
         <div className='sticky-header'>
@@ -20,11 +20,7 @@ const _ActionBar = props => {
                               imagePath='action-bar/refresh-icon.png'
                               handler={getUnseenAlbums}/>
 
-                <Desktop>
-                    <div className='username'>{username}</div>
-                </Desktop>
-                <div>Following: {totalFollowedArtists}</div>
-                <div>Unseen: {totalUnseenAlbums}</div>
+                <MetaMenu/>
 
                 <ActionButton type='submit-seen'
                               imagePath='action-bar/update-mark-as-seens.png'
@@ -44,8 +40,6 @@ const _ActionBar = props => {
 const mapStateToProps = state => ({
     seenAlbums: state.app.seenAlbums,
     username: state.app.username,
-    totalFollowedArtists: state.artists.totalFollowedArtists,
-    totalUnseenAlbums: state.artists.totalUnseenAlbums,
 })
 
 const mapDispatchToProps = dispatch => ({

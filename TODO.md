@@ -9,14 +9,25 @@ Could incorporate small edit distance to allow for a single character mistype
 
 ## Add UI to menu to see all artists I follow with new albums as a easily-viewed list
 Clicking an artist will show just that one
-Add menu option to go back and see all artists
+Add menu option to see all artists, regardless of new albums or not
 
-## Filter by genre
+## Filter by genre and album type
 Persist genres property for each artist from spotify's following-artists call
 Build UI to show all the genres available, then filters each
+Put in another menu called Filters on the action bar with the username
 
-## Collapse an artist if you click on its name
+## Collapse/show an artist if you click on its name
 Requires to put the select all feature at the end of the artist title or something
+
+## Collapse all artists by default
+
+## Add album to playlist from the website
+Let's have a playlist for this webapp, sort of like a queue
+
+Add all the songs from the selected album to the playlist
+https://developer.spotify.com/documentation/web-api/reference/playlists/add-tracks-to-playlist/
+
+Mark album as seen
 
 
 # Bugs ---------------------------------------------------------------------------------------------------------------------------

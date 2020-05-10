@@ -10,4 +10,4 @@ mongoexport \
     --authenticationDatabase admin \
     --db spotify-notify \
     --collection user-data \
-    --out ../../db-backups/spotify-notify.json
+    --out "../../db-backups/spotify-notify-$(date '+%Y-%m-%d').json"
