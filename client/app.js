@@ -44,8 +44,15 @@ class _App extends React.Component {
             {!loading && hasUnseenAlbums && (
                 artistsWithUnseenAlbumsKeys.map((artistId) => {
                     const artist = artistsWithUnseenAlbums[artistId]
+
                     return (
-                        <Artist key={artist.id} artist={artist}/>
+                        //Lazy load artists for performance reasons
+                        //If we have hundreds of artists, then even though the images are lazy loaded separately, the artist components and handlers are all loaded
+                        //This causes crazy slowdowns when interacting with the mobile modal or meta menu
+                        <LazyLoad key={artistId}
+                                  placeholder={<Placeholder name={artist.name}/>}>
+                            <Artist key={artist.id} artist={artist}/>
+                        </LazyLoad>
                     )
                 })
             )}
