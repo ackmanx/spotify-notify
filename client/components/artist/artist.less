@@ -11,7 +11,7 @@
     }
 
     &__name {
-        padding: 10px;
+        padding: 10px 55px;
         font-size: 72px;
         cursor: pointer;
         color: white;
@@ -29,6 +29,10 @@
         top: 25px;
         right: 15px;
         width: 60px;
+
+        &:hover {
+            animation: flicker .5s infinite linear;
+        }
     }
 }
 
@@ -43,5 +47,19 @@
             right: 15px;
             width: 40px;
         }
+    }
+}
+
+@keyframes flicker {
+    from {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .7;
+    }
+
+    to {
+        opacity: .9;
     }
 }
