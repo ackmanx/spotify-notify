@@ -10,7 +10,6 @@ const bem = bemFactory('artist')
 
 const _Artist = props => {
     const [isExpanded, setIsExpanded] = useState(true)
-    const [isSelectAllVisible, setIsSelectAllVisible] = useState(false)
 
     const {artist, markArtistAsSeen} = props
 
@@ -26,11 +25,10 @@ const _Artist = props => {
 
     return (
         <div className={bem()}>
-            <h2 className={bem('name')} onMouseEnter={() => setIsSelectAllVisible(true)} onMouseLeave={() => setIsSelectAllVisible(false)}>
-                <div onClick={() => setIsExpanded(!isExpanded)}>
-                    {artist.name}
-                </div>
-                {isExpanded && isSelectAllVisible && <img className={bem('select-all')} src='select-all.png' alt='select-all' onClick={() => markArtistAsSeen(artist.id)}/>}
+            <h2 className={bem('name')}>
+                <div className={bem('clickable-collapse-panel')} onClick={() => setIsExpanded(!isExpanded)}/>
+                <div className={bem('clickable-mark-all-panel')} onClick={() => markArtistAsSeen(artist.id)}/>
+                {artist.name}
             </h2>
 
             {isExpanded && (
@@ -50,10 +48,8 @@ const _Artist = props => {
     )
 }
 
-const mapStateToProps = state => ({})
-
 const mapDispatchToProps = dispatch => ({
     markArtistAsSeen: artistId => dispatch(markArtistAsSeen(artistId))
 })
 
-export const Artist = connect(mapStateToProps, mapDispatchToProps)(_Artist)
+export const Artist = connect(undefined, mapDispatchToProps)(_Artist)

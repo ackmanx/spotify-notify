@@ -4,35 +4,47 @@
     margin-bottom: 30px;
     padding-bottom: 30px;
     text-align: center;
-    position: relative;
 
     &:last-child {
         border: none;
     }
 
     &__name {
-        padding: 10px 55px;
         font-size: 72px;
         cursor: pointer;
         color: white;
         background-color: black;
         overflow-wrap: break-word;
+        position: relative;
+        box-shadow: 0 8px 10px -6px black;
+    }
+
+    &__clickable-collapse-panel {
+        width: 50%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        &:hover {
+            box-shadow: 0 10px 10px -6px red;
+        }
+    }
+
+    &__clickable-mark-all-panel {
+        width: 50%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+
+        &:hover {
+            box-shadow: 0 10px 10px -6px red;
+        }
     }
 
     &__album-group {
         font-size: 35px;
         padding-top: 20px;
-    }
-
-    &__select-all {
-        position: absolute;
-        top: 25px;
-        right: 15px;
-        width: 60px;
-
-        &:hover {
-            animation: flicker .5s infinite linear;
-        }
     }
 }
 
@@ -41,25 +53,5 @@
         &__name {
             font-size: 48px;
         }
-
-        &__select-all {
-            top: 20px;
-            right: 15px;
-            width: 40px;
-        }
-    }
-}
-
-@keyframes flicker {
-    from {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: .7;
-    }
-
-    to {
-        opacity: .9;
     }
 }
