@@ -1,6 +1,7 @@
 import './artist.less'
 import React, {useState} from 'react'
 import {connect} from 'react-redux'
+import {forceCheck} from "react-lazyload";
 
 import {Album} from '../album/album'
 import {markArtistAsSeen} from '../../redux/actions/seen-albums'
@@ -26,7 +27,10 @@ const _Artist = props => {
     return (
         <div className={bem()}>
             <h2 className={bem('name')}>
-                <div className={bem('clickable-collapse-panel')} onClick={() => setIsExpanded(!isExpanded)}/>
+                <div className={bem('clickable-collapse-panel')} onClick={() => {
+                    setIsExpanded(!isExpanded)
+                    setTimeout(() => forceCheck(), 0)
+                }}/>
                 <div className={bem('clickable-mark-all-panel')} onClick={() => markArtistAsSeen(artist.id)}/>
                 {artist.name}
             </h2>
