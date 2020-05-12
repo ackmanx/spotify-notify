@@ -1,5 +1,9 @@
 # Features -----------------------------------------------------------------------------------------------------------------------
 
+## Make the left half of the name clickable to collapse and right half for select all
+This keeps it clean and is mobile friendly
+Plus only I need to know about it so it doens't have to be obvious
+
 ## Add a search at the top that auto-focuses on page load
 When you search it shows only results that match, not scroll to results
 Search only searches artist titles
