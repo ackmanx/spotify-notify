@@ -20,7 +20,8 @@ class _App extends React.Component {
         //On initial load, react-lazyload doesn't detect all elements in the viewport
         //Force a recheck of the viewport after we've verified all artist placeholders in the viewport have rendered
         if (!prev.allAlbumsInViewportRendered && this.props.allAlbumsInViewportRendered) {
-            forceCheck()
+            //Putting this on the next tick so it doesn't run before React finishes rendering
+            setTimeout(() => forceCheck(), 0)
         }
     }
 

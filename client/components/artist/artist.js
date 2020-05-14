@@ -1,5 +1,5 @@
 import './artist.less'
-import React, {useState} from 'react'
+import React, {useState, useEffect, useRef, useCallback} from 'react'
 import {connect} from 'react-redux'
 import {forceCheck} from "react-lazyload";
 
@@ -10,7 +10,8 @@ import {bemFactory} from '../../utils/utils'
 const bem = bemFactory('artist')
 
 const _Artist = props => {
-    const [isExpanded, setIsExpanded] = useState(true)
+    const [isCollapsed, setIsCollapsed] = useState(false)
+    const hasMounted = useRef(false)
 
     const {artist, markArtistAsSeen} = props
 
@@ -20,6 +21,29 @@ const _Artist = props => {
     const hasAlbums = !!albums.length
     const hasSingles = !!singles.length
 
+    useEffect(() => {
+        if (!hasMounted.current) {
+            hasMounted.current = true
+
+            const collapsedArtists = JSON.parse(window.localStorage.getItem('collapsedArtists')) || {}
+            const isCollapsed = collapsedArtists[artist.id]
+
+            if (isCollapsed) {
+                setIsCollapsed(true)
+            }
+        }
+    }, [isCollapsed, hasMounted, artist, setIsCollapsed])
+
+    const handleCollapse = useCallback(() => {
+        setIsCollapsed(!isCollapsed)
+
+        const collapsedArtists = JSON.parse(window.localStorage.getItem('collapsedArtists')) || {}
+        collapsedArtists[artist.id] = !isCollapsed
+        window.localStorage.setItem('collapsedArtists', JSON.stringify((collapsedArtists)))
+
+        setTimeout(() => forceCheck(), 0)
+    }, [artist, isCollapsed, setIsCollapsed])
+
     if (!hasAlbums && !hasSingles) {
         return null
     }
@@ -27,15 +51,12 @@ const _Artist = props => {
     return (
         <div className={bem()}>
             <h2 className={bem('name')}>
-                <div className={bem('clickable-collapse-panel')} onClick={() => {
-                    setIsExpanded(!isExpanded)
-                    setTimeout(() => forceCheck(), 0)
-                }}/>
+                <div className={bem('clickable-collapse-panel')} onClick={handleCollapse}/>
                 <div className={bem('clickable-mark-all-panel')} onClick={() => markArtistAsSeen(artist.id)}/>
                 {artist.name}
             </h2>
 
-            {isExpanded && (
+            {!isCollapsed && (
                 <>
                     {hasAlbums && <>
                         <h3 className={bem('album-group')}>Albums</h3>
