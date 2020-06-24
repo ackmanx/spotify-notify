@@ -2,8 +2,8 @@ const debug = require('debug')(`sn:${path.basename(__filename)}`)
 
 exports.shuffle = function shuffle(playlist) {
     /*
- * Generate flat list of names
- */
+     * Generate flat list of names
+     */
     let names = []
 
     playlist.forEach(playlistPage => {
@@ -30,5 +30,4 @@ exports.shuffle = function shuffle(playlist) {
         names[newIndex] = names[i]
         names[i] = elementBeingSwapped
     }
-
 }
