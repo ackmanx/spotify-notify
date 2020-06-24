@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const path = require('path')
+const {fetchAllPages} = require("../service/request-helpers");
 const debug = require('debug')(`sn:${path.basename(__filename)}`)
 
 const {ensureAuthenticated} = require('./spotify-auth')
@@ -87,5 +88,33 @@ router.get('/heartbeat', function (req, res) {
     res.json({alive: true})
 })
 
+/*
+ * Playlist sandboxing
+ */
+router.get('/playlist', ensureAuthenticated, async function (req, res) {
+    //todo: this returns all playlists. we need to find the one we want to shuffle by getting its ID
+    // const usersPlaylists = await fetchAllPages(req.session.access_token, '/me/playlists?limit=50')
+
+    //todo: do a GET for that playlist
+    const playlist = await fetchAllPages(req.session.access_token, '/playlists/7at9lCk1NMBgJQI2v24fi3/tracks?fields=next,offset,items(track(name))')
+
+    //todo: save the response somewhere as a backup
+        //todo: verify you save the fields needed to re-create the same playlist if things go south
+
+    //todo: shuffle in memory
+
+    //todo: PUT the same url used to GET the playlist
+        //todo: the request will have query param uris that's empty, so we delete the current playlist
+
+    //todo: after the PUT is done, we can POST the same url with the new tracks
+        //todo: spotify only accepts 100 at a time, so you need to build pages to send out
+
+    //todo: retry handling needs to work for this because otherwise we might delete the playlist without being able to recreate it shuffled
+
+    //todo: by now we should have the backup saved and our playlist shuffled
+
+    // res.json(usersPlaylists)
+    res.json(playlist)
+})
 
 module.exports = router
