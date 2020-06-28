@@ -1,5 +1,5 @@
 import { LOADING_START, LOADING_STOP, UPDATE_SEEN_ALBUMS } from '../action-types'
-import {postSeenAlbums} from '../../utils/request-helpers'
+import {postAddToPlaylist, postSeenAlbums} from '../../utils/request-helpers'
 
 export const markArtistAsSeen = artistId => {
     return async (dispatch, getState) => {
@@ -13,6 +13,12 @@ export const markArtistAsSeen = artistId => {
 }
 
 export const markAlbumAsSeen = albumId => ({type: UPDATE_SEEN_ALBUMS, albumIdsToMarkAsSeen: [albumId]})
+
+export const addToPlaylist = (albumId) => {
+    return async () => {
+        await postAddToPlaylist(albumId)
+    }
+}
 
 export const submitSeenAlbums = () => {
     return async (dispatch, getState) => {

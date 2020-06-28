@@ -15,6 +15,19 @@ export async function fetchUnseenAlbums(shouldGetCached) {
     return await doGet(shouldGetCached ? '/api/albums/cached' : '/api/albums/refresh')
 }
 
+export async function postAddToPlaylist(albumId) {
+    await fetch('/api/albums/add-to-playlist',
+        {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({albumId}),
+        }
+    )
+}
+
 export async function postSeenAlbums(seenAlbums) {
     await fetch('/api/albums/update-seen',
         {

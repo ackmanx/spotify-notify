@@ -80,10 +80,8 @@ router.post('/albums/update-seen', ensureAuthenticated, async function (req, res
     res.json({success: true})
 })
 
-//todo: LEFT OFF HERE: Make this a POST
-//todo: LEFT OFF HERE: Add button to UI to pass albumId
-router.get('/albums/add-to-playlist', ensureAuthenticated, async function (req, res) {
-    const tracks = await fetchAllPages(req.session.access_token, `/albums/${req.query.albumId}/tracks`)
+router.post('/albums/add-to-playlist', ensureAuthenticated, async function (req, res) {
+    const tracks = await fetchAllPages(req.session.access_token, `/albums/${req.body.albumId}/tracks`)
 
     //I'm going to go ahead and stupidly assume any album has less than 50 tracks so there will only be one page
     const spotifyURIsOfTracks = tracks[0].items.map(track => track.uri)
