@@ -3,11 +3,13 @@ const fetch = require('node-fetch')
 const path = require('path')
 const debug = require('debug')(`sn:${path.basename(__filename)}`)
 
-async function spotifyAPI(accessToken, endpoint) {
+async function spotifyAPI(accessToken, endpoint, optionOverrides) {
     const options = {
         headers: {
             Authorization: `Bearer ${accessToken}`,
-        }
+            'Content-Type': 'application/json'
+        },
+        ...optionOverrides,
     }
 
     debug(`FIRE AWAY!: ${endpoint}`)
@@ -55,7 +57,7 @@ function getPagingNextUrl(responseBody) {
     if (responseBody.artists && responseBody.artists.next) return responseBody.artists.next
 }
 
-exports.fetchAllPages = async function fetchAllPages(accessToken, relativeSpotifyUrl) {
+async function fetchAllPages(accessToken, relativeSpotifyUrl) {
     const results = []
 
     let responseBody = await spotifyAPI(accessToken, relativeSpotifyUrl)
@@ -70,4 +72,9 @@ exports.fetchAllPages = async function fetchAllPages(accessToken, relativeSpotif
     }
 
     return results
+}
+
+module.exports = {
+    fetchAllPages,
+    spotifyAPI,
 }

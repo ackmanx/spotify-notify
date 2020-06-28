@@ -6,6 +6,8 @@ const debug = require('debug')(`sn:${path.basename(__filename)}`)
 const {ensureAuthenticated} = require('./spotify-auth')
 const {getUserData, saveUserData, Slices} = require('../db/dao')
 const {checkForUnseenAlbums} = require('../service/spotify')
+const {fetchAllPages} = require("../service/request-helpers")
+const {spotifyAPI} = require('../service/request-helpers')
 
 /*
  * Grab the user's cache from the DB so we don't pester Spotify each time we load the page (plus this is ridiculously faster)
@@ -16,8 +18,7 @@ router.get('/albums/cached', ensureAuthenticated, async function (req, res) {
 
     if (process.env.MOCK) {
         userData = require('../resources/mocks/api/albums-cached-v2')
-    }
-    else {
+    } else {
         userData = await getUserData(userId)
     }
 
@@ -77,6 +78,34 @@ router.post('/albums/update-seen', ensureAuthenticated, async function (req, res
     await saveUserData(user.id, Slices.unseenAlbumsCache, unseenAlbumCache)
 
     res.json({success: true})
+})
+
+router.post('/albums/add-to-playlist', ensureAuthenticated, async function (req, res) {
+    const tracks = await fetchAllPages(req.session.access_token, `/albums/${req.body.albumId}/tracks`)
+
+    //I'm going to go ahead and stupidly assume any album has less than 50 tracks so there will only be one page
+    const spotifyURIsOfTracks = tracks[0].items.map(track => track.uri)
+
+    const usersPlaylists = await fetchAllPages(req.session.access_token, '/me/playlists?limit=50')
+    let iAlreadySawThat = usersPlaylists[0].items.find(playlist => playlist.name === 'I Already Saw That')
+
+    if (!iAlreadySawThat) {
+        iAlreadySawThat = await spotifyAPI(req.session.access_token, `/users/${req.session.user.id}/playlists`,
+            {
+                method: 'POST',
+                body: JSON.stringify({name: 'I Already Saw That'})
+            }
+        )
+    }
+
+    iAlreadySawThat = await spotifyAPI(req.session.access_token, `/playlists/${iAlreadySawThat.id}/tracks`,
+        {
+            method: 'POST',
+            body: JSON.stringify({uris: spotifyURIsOfTracks, position: 0})
+        }
+    )
+
+    res.json(iAlreadySawThat)
 })
 
 /*
