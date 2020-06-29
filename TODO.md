@@ -4,6 +4,7 @@
 When you search it shows only results that match, not scroll to results
 Search only searches artist titles
 Could incorporate small edit distance to allow for a single character mistype
+Have search icon maybe that opens an input when clicked to search
 
 ### Sort results predictably
 
@@ -16,6 +17,9 @@ Persist genres property for each artist from spotify's following-artists call
 Build UI to show all the genres available, then filters each
 Put in another menu called Filters on the action bar with the username
 
+### Bring back meta to the top bar
+I actually like seeing the counts without having to open a dropdown panel
+I also don't like the way it opens anyway with the animation
 
 ### Re-think mobile
 Can we get rid of the modal and flip cards still? What if we showed only one album on the screen so it was bigger?
