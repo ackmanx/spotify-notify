@@ -16,13 +16,6 @@ Persist genres property for each artist from spotify's following-artists call
 Build UI to show all the genres available, then filters each
 Put in another menu called Filters on the action bar with the username
 
-### Add album to playlist from the website
-Let's have a playlist for this webapp, sort of like a queue
-
-Add all the songs from the selected album to the playlist
-https://developer.spotify.com/documentation/web-api/reference/playlists/add-tracks-to-playlist/
-
-Mark album as seen
 
 ### Re-think mobile
 Can we get rid of the modal and flip cards still? What if we showed only one album on the screen so it was bigger?
