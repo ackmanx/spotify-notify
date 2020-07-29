@@ -1,8 +1,8 @@
 # Dev Setup
 
-* Run `npm install`
-* Use `npm start` to star the node server
-* Use `npm run build:watch` to build the UI for development
+* Run `yarn install`
+* Use `yarn start` to star the node server
+* Use `yarn build:watch` to build the UI for development
 * Use `me:3666` for development (update `/etc/hosts`)
 * Set env `DEBUG=sn:*` to enable node debug output
 * Spotify requires you to whitelist domains to access their API
