@@ -11,7 +11,7 @@ const bem = bemFactory('artist-placeholder')
 let allAlbumsInViewportRendered = false
 
 export const _Placeholder = props => {
-    const {dispatchAllAlbumsInViewport} = props
+    const {dispatchAllAlbumsInViewport, name} = props
 
     const ref = React.createRef()
 
@@ -32,7 +32,7 @@ export const _Placeholder = props => {
         }
     }, [])
 
-    return <div ref={ref} className={bem()}/>
+    return <div ref={ref} className={bem()}>{name}</div>
 }
 
 const mapStateToProps = () => ({})
