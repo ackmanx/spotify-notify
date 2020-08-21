@@ -57,10 +57,10 @@ function getPagingNextUrl(responseBody) {
     if (responseBody.artists && responseBody.artists.next) return responseBody.artists.next
 }
 
-async function fetchAllPages(accessToken, relativeSpotifyUrl) {
+async function fetchAllPages(accessToken, spotifyUrl) {
     const results = []
 
-    let responseBody = await spotifyAPI(accessToken, relativeSpotifyUrl)
+    let responseBody = await spotifyAPI(accessToken, spotifyUrl)
     let nextPageAbsoluteUrl = getPagingNextUrl(responseBody)
 
     results.push(responseBody)
