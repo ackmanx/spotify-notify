@@ -131,7 +131,10 @@ router.get('/playlists/search', ensureAuthenticated, async function (req, res) {
                     const tracks = []
                     playlistTracksPages.forEach(tracksPage => tracks.push(...tracksPage.items))
 
-                    responsePlaylist.tracks = tracks
+                    responsePlaylist.tracks = tracks.map(({track}) => ({
+                        title: track.name,
+                        album: track.album.name,
+                    }))
 
                     responseBody.push(responsePlaylist)
                 }
