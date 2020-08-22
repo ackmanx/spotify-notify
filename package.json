@@ -8,6 +8,7 @@
         "kill": "lsof -ti tcp:3666 | xargs kill",
         "heroku:deploy": "git push heroku",
         "heroku-postbuild": "npm run build:prod",
+        "prettier": "prettier --config ./prettier.config.js --write './**/*.{js,json}'",
         "start": "node ./bin/www"
     },
     "dependencies": {
@@ -27,6 +28,7 @@
         "morgan": "1.9.1",
         "node-fetch": "2.5.0",
         "normalize.css": "8.0.1",
+        "prettier": "2.0.5",
         "querystring": "0.2.0",
         "react": "16.8.6",
         "react-dom": "16.8.6",
