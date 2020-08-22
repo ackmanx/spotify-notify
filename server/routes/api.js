@@ -108,6 +108,46 @@ router.post('/albums/add-to-playlist', ensureAuthenticated, async function (req,
     res.json(iAlreadySawThat)
 })
 
+router.get('/playlists/search', ensureAuthenticated, async function (req, res) {
+    const usersPlaylistPages = await fetchAllPages(req.session.access_token, '/me/playlists?limit=50')
+
+    const promises = []
+    const responseBody = []
+
+    //Loop through each page of playlists, being Spotify only returns 50 playlists per request
+    usersPlaylistPages.forEach(page => {
+        page.items.forEach(async playlist => {
+            const responsePlaylist = {
+                playlistName: playlist.name,
+            }
+
+            //Execution finishes this loop before responses from Spotify come back, so build up promises for each playlist so we can delay sending our response until we're ready
+            const promise = new Promise(async (resolve) => {
+                if (playlist.name === 'Club') {
+                    const tracksHref = `${playlist.tracks.href}?fields=next,items(track(name,album(name)))`
+
+                    const playlistTracksPages = await fetchAllPages(req.session.access_token, tracksHref)
+
+                    const tracks = []
+                    playlistTracksPages.forEach(tracksPage => tracks.push(...tracksPage.items))
+
+                    responsePlaylist.tracks = tracks
+
+                    responseBody.push(responsePlaylist)
+                }
+
+                resolve()
+            });
+
+            promises.push(promise)
+        })
+    })
+
+    await Promise.all(promises)
+
+    res.json(responseBody)
+})
+
 /*
  * Pings the server so it doesn't sleep
  * This is because when the server sleeps you get logged out and will lose any albums marked as seen
