@@ -108,7 +108,20 @@ router.post('/albums/add-to-playlist', ensureAuthenticated, async function (req,
     res.json(iAlreadySawThat)
 })
 
+/*
+ * Left To Do:
+ * 1) Cache my search data structure in mongo that I build from all the Spotify playlists
+ *      - Also attach the snapshot_id to these
+ * 2) On hit of the endpoint, check the stored snapshot_id with one spotify sends from call that returns all playlists
+ * 3) If the snapshot_id does not match, then re-fetch all tracks for that playlist
+ */
 router.get('/playlists/search', ensureAuthenticated, async function (req, res) {
+    const userId = req.session.user.id
+    console.log('UserID:', userId)
+    const searchCache = await getUserData(userId, Slices.search)
+
+    console.log('Found from DB:', searchCache.length)
+
     const usersPlaylistPages = await fetchAllPages(req.session.access_token, '/me/playlists?limit=50')
 
     const promises = []
@@ -117,36 +130,56 @@ router.get('/playlists/search', ensureAuthenticated, async function (req, res) {
     //Loop through each page of playlists, being Spotify only returns 50 playlists per request
     usersPlaylistPages.forEach(page => {
         page.items.forEach(async playlist => {
+            const cachedPlaylist = searchCache.find(cachedPlaylist => cachedPlaylist.playlistName === playlist.name) || {}
+
+            debug(`I'm looking for:`, playlist.name)
+            debug('Found cache:', cachedPlaylist)
+
+            if (cachedPlaylist.snapshotId === playlist.snapshot_id) {
+                debug(`Skipping new fetch for "${playlist.name}" because there are no changes`)
+                debug('--------------------------')
+                responseBody.push(cachedPlaylist)
+                return
+            }
+
+            debug(`Fetching latest for "${playlist.name}" because there are changes`)
+            debug('--------------------------')
+
             const responsePlaylist = {
+                snapshotId: playlist.snapshot_id,
                 playlistName: playlist.name,
             }
 
-            //Execution finishes this loop before responses from Spotify come back, so build up promises for each playlist so we can delay sending our response until we're ready
-            const promise = new Promise(async (resolve) => {
-                if (playlist.name === 'Club') {
-                    const tracksHref = `${playlist.tracks.href}?fields=next,items(track(name,album(name)))`
-
-                    const playlistTracksPages = await fetchAllPages(req.session.access_token, tracksHref)
-
-                    const tracks = []
-                    playlistTracksPages.forEach(tracksPage => tracks.push(...tracksPage.items))
-
-                    responsePlaylist.tracks = tracks.map(({track}) => ({
-                        title: track.name,
-                        album: track.album.name,
-                    }))
-
+            // //Execution finishes this loop before responses from Spotify come back, so build up promises for each playlist so we can delay sending our response until we're ready
+            // const promise = new Promise(async (resolve) => {
+            //     if (playlist.name === 'Club') {
+            //         const tracksHref = `${playlist.tracks.href}?fields=next,items(track(name,album(name)))`
+            //
+            //         const playlistTracksPages = await fetchAllPages(req.session.access_token, tracksHref)
+            //
+            //         const tracks = []
+            //         playlistTracksPages.forEach(tracksPage => tracks.push(...tracksPage.items))
+            //
+            //         responsePlaylist.tracks = tracks.map(({track}) => ({
+            //             title: track.name,
+            //             album: track.album.name,
+            //         }))
+            //
                     responseBody.push(responsePlaylist)
-                }
-
-                resolve()
-            });
-
-            promises.push(promise)
+            //     }
+            //
+            //     resolve()
+            // });
+            //
+            // promises.push(promise)
         })
     })
 
-    await Promise.all(promises)
+    // await Promise.all(promises)
+
+    await saveUserData(userId, Slices.search, responseBody)
+
+    console.log('returning response')
 
     res.json(responseBody)
 })
@@ -155,8 +188,11 @@ router.get('/playlists/search', ensureAuthenticated, async function (req, res) {
  * Pings the server so it doesn't sleep
  * This is because when the server sleeps you get logged out and will lose any albums marked as seen
  */
-router.get('/heartbeat', function (req, res) {
-    res.json({alive: true})
+router.get('/heartbeat', ensureAuthenticated, async function (req, res) {
+    const userId = req.session.user.id
+    const searchCache = await getUserData(userId, Slices.search)
+
+    res.json(searchCache)
 })
 
 

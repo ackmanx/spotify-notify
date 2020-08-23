@@ -4,6 +4,7 @@ exports.Slices = {
     unseenAlbumsCache: 'unseenAlbumsCache',
     seenAlbums: 'seenAlbums',
     user: 'user',
+    search: 'search',
 }
 
 exports.initializeDatabaseForUser = async user => {
@@ -17,6 +18,7 @@ exports.initializeDatabaseForUser = async user => {
             },
             seenAlbums: [],
             unseenAlbumsCache: {},
+            search: [],
         })
     }
 }
@@ -27,10 +29,12 @@ exports.initializeDatabaseForUser = async user => {
  * Because this returns a MongoDB `Cursor` and we want all of the results immediately, we have to convert to an array
  */
 exports.getUserData = async (userId, slice) => {
+    console.log('--> getUserData invoked')
     const userCursor = await getUserDataCollection().find({'user.id': userId})
 
     if (slice) {
         const [document = {}] = await userCursor.project({[slice]: 1}).toArray()
+        console.log('--> getUserData found document:', document)
         return document[slice]
     }
 
