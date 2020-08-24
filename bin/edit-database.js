@@ -37,8 +37,8 @@ async function edit() {
 
 /*
     To get this one to work, I had to delete fields starting with $
-    So, I removed the entire id property and then for $date, I removed the $ part so it was just date
-    But now this field is a string in the document and note a Date... not sure if that matters?
+    So, I removed the entire property of $id and the $date object within lastUpdated
+    This is fine because they get regenerated and we don't depend on the values for anything
 */
 async function replaceEntireDocument(collection) {
     console.log('replaceEntireDocument running...')
