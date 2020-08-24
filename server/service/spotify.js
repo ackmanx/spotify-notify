@@ -121,6 +121,7 @@ exports.checkForUnseenAlbums = async function checkForUnseenAlbums(session) {
 
     const user = await getUserData(userId, Slices.user)
     user.totalFollowedArtists = totalFollowedArtists
+    user.lastUpdated = new Date()
 
     await saveUserData(userId, Slices.user, user)
     await saveUserData(userId, Slices.unseenAlbumsCache, freshAlbumsCache)
