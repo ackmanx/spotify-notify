@@ -168,11 +168,8 @@ router.get('/playlists/search', ensureAuthenticated, async function (req, res) {
  * Pings the server so it doesn't sleep
  * This is because when the server sleeps you get logged out and will lose any albums marked as seen
  */
-router.get('/heartbeat', ensureAuthenticated, async function (req, res) {
-    const userId = req.session.user.id
-    const searchCache = await getUserData(userId, Slices.search)
-
-    res.json(searchCache)
+router.get('/heartbeat', function (req, res) {
+    res.json({alive: true})
 })
 
 
