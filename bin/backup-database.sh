@@ -6,4 +6,4 @@ mongoexport \
     --uri mongodb+srv://admin:F8cHHZjWza0SRGOx@hobby-cluster-f6tmy.mongodb.net/spotify-notify \
     --collection user-data \
     --type json \
-    --out "../../db-backups/spotify-notify-$(date '+%Y-%m-%d').json"
+    --out "../server/resources/backups/spotify-notify-$(date '+%Y-%m-%d').json"
