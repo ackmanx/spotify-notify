@@ -169,7 +169,7 @@ router.get('/playlists/search', ensureAuthenticated, async function (req, res) {
  * This is because when the server sleeps you get logged out and will lose any albums marked as seen
  */
 router.get('/heartbeat', function (req, res) {
-    res.json({alive: true})
+    res.json(require('../../package.json').version)
 })
 
 
