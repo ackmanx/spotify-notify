@@ -1,6 +1,6 @@
 {
     "name": "i-already-saw-that",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "private": true,
     "scripts": {
         "build:prod": "rm -rf public; export NODE_ENV=production; webpack",
