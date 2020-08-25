@@ -25,11 +25,11 @@ async function spotifyAPI(accessToken, endpoint, optionOverrides) {
     if (response.status === 429) {
         const retryAfterSeconds = response.headers.get('retry-after') //for some reason `get` is the official way to return headers
 
-        debug(`Throttled by Spotify, wait ${retryAfterSeconds} seconds... ${new Date()}`)
+        debug(`Throttled by Spotify, wait ${retryAfterSeconds} seconds... current time: ${new Date()}`)
 
         await delay(retryAfterSeconds * 1500) //wait required amount of time and buffer a little bit too
 
-        debug(`Waited ${retryAfterSeconds} seconds... ${new Date()}`)
+        debug(`Waited ${retryAfterSeconds} seconds... current time: ${new Date()}`)
 
         debug(`Trying request again: ${endpoint}`)
 
@@ -43,7 +43,7 @@ async function spotifyAPI(accessToken, endpoint, optionOverrides) {
     const responseBody = await response.json()
 
     if (!response.ok) {
-        debug(`Uh oh, the Spotify API request failed (${spotifyApiURL})! Here's what they had to say: ${JSON.stringify(responseBody)}`)
+        debug(`Uh oh, the Spotify API request failed: (${spotifyApiURL})! We got ${response.status} :( Here's what they had to say: ${JSON.stringify(responseBody)}`)
         return
     }
 

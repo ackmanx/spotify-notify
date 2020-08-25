@@ -15,7 +15,7 @@ const _Banners = ({firstTimeUser, loading, isRefresh, totalFollowedArtists, tota
     const [total, setTotal] = useState();
 
     useEffect(() => {
-        //isRefresh is only changed when loading, so we don't need to check for that too
+        //isRefresh is only updated when we initiate one, so this won't run otherwise
         if (isRefresh) {
             const refreshFunction = async () => {
                 const {completed, total} = await fetchRefreshStatus()
@@ -23,13 +23,13 @@ const _Banners = ({firstTimeUser, loading, isRefresh, totalFollowedArtists, tota
                 setTotal(total)
             }
 
-            //Ignoring returned promise
             refreshFunction()
 
             setIntervalId(setInterval(refreshFunction, 2000))
         }
         else {
             clearInterval(intervalId)
+            window.location.reload()
         }
     }, [isRefresh])
 
