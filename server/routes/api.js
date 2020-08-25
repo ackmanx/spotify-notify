@@ -71,11 +71,29 @@ router.post('/albums/update-seen', ensureAuthenticated, async function (req, res
 
     const seenAlbums = await getUserData(user.id, Slices.seenAlbums)
     const markedAsSeen = req.body.albumIds
-    await saveUserData(user.id, Slices.seenAlbums, seenAlbums.concat(markedAsSeen))
+    const newSeenAlbumsList = seenAlbums.concat(markedAsSeen)
+    await saveUserData(user.id, Slices.seenAlbums, newSeenAlbumsList)
 
-    const unseenAlbumCache = await getUserData(user.id, Slices.unseenAlbumsCache)
-    unseenAlbumCache.totalUnseenAlbums -= markedAsSeen.length
-    await saveUserData(user.id, Slices.unseenAlbumsCache, unseenAlbumCache)
+    const unseenAlbumsCache = await getUserData(user.id, Slices.unseenAlbumsCache)
+    unseenAlbumsCache.totalUnseenAlbums -= markedAsSeen.length
+
+    newSeenAlbumsList.forEach(albumId => {
+        let isFinished = false
+
+        Object.keys(unseenAlbumsCache.artists).forEach(artistId => {
+            if (isFinished) return
+
+            const artist = unseenAlbumsCache.artists[artistId]
+            const albumIndexInCache = artist.albums.findIndex(album => albumId === album.id)
+
+            if (albumIndexInCache > -1) {
+                artist.albums.splice(albumIndexInCache, 1)
+                isFinished = true
+            }
+        })
+    })
+
+    await saveUserData(user.id, Slices.unseenAlbumsCache, unseenAlbumsCache)
 
     res.json({success: true})
 })
