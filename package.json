@@ -8,7 +8,7 @@
         "kill": "lsof -ti tcp:3666 | xargs kill",
         "heroku:deploy": "git push heroku",
         "heroku-postbuild": "npm run build:prod",
-        "start": "node ./bin/www"
+        "start": "export DEBUG=sn:*; node ./bin/www"
     },
     "dependencies": {
         "@babel/plugin-proposal-class-properties": "7.4.4",

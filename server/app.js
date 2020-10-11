@@ -9,6 +9,7 @@ const debug = require('debug')(`sn:${path.basename(__filename)}`)
 
 const renderRouter = require('./routes/render')
 const apiRouter = require('./routes/api')
+const sandboxRouter = require('./routes/sandbox')
 const {authRouter} = require('./routes/spotify-auth')
 
 const app = express()
@@ -42,6 +43,7 @@ app.use(session({
 app.use('/', renderRouter)
 app.use('/api', apiRouter)
 app.use('/auth', authRouter)
+app.use('/sandbox', sandboxRouter)
 
 
 // ---------------------------------------------------------------------------------
