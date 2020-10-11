@@ -24,10 +24,19 @@ class RequestQueue {
     }
 
     async request() {
-        const response = await fetch(`http://me:3666/sandbox?id=${this.currentItem}`)
-        await response.json()
-        const retryAfter = response.headers.get('retry-after')
-        console.log('##', response.status, retryAfter || '')
+        console.log('')
+        console.log('##', this.currentItem)
+        let response = await fetch(`http://me:3666/sandbox?id=${this.currentItem}`)
+        let retryAfter = response.headers.get('retry-after') || ''
+
+        while (retryAfter) {
+            console.log('going to retry', retryAfter)
+            response = await fetch(`http://me:3666/sandbox?id=${this.currentItem}`)
+            retryAfter = response.headers.get('retry-after') || ''
+            console.log('new response', retryAfter)
+        }
+
+        console.log('final response', response.status, retryAfter)
     }
 
     async process() {

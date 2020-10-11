@@ -13,8 +13,9 @@ router.get('/', function (req, res) {
         body.finished = new Date()
 
         if (Math.floor(Math.random() * 3 + 1) % 3 === 0) {
+            debug('Retry required for', req.query.id)
             res.status(429)
-            res.header('retry-after', 5)
+            res.header('retry-after', Math.floor((Math.random() * 10)))
         }
 
         res.json(body)
