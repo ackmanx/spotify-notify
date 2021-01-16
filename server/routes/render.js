@@ -11,7 +11,7 @@ router.get('/', function (req, res) {
         loggedIn = true
     }
 
-    res.render('index', {title: 'I Already Saw That', loggedIn})
+    res.render('index', { title: 'I Already Saw That', loggedIn })
 })
 
 module.exports = router

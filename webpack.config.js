@@ -8,24 +8,24 @@ module.exports = function () {
         mode: isProduction ? 'production' : 'development',
         entry: [
             '@babel/polyfill', //includes regenerator runtime (allows use of generators) and core-js
-            './client/index.js'
+            './client/index.js',
         ],
         output: {
             path: path.resolve(__dirname, 'public'),
-            filename: 'bundle.js'
+            filename: 'bundle.js',
         },
         optimization: {
             minimize: isProduction,
         },
         devtool: isProduction ? false : 'inline-source-map',
         resolve: {
-            extensions: ['.js', '.jsx', '.json']
+            extensions: ['.js', '.jsx', '.json'],
         },
         plugins: [
             new CopyWebpackPlugin([
-                {from: './icon.png'},
-                {from: './client/styles/not-logged-in.css'},
-                {from: './client/images'},
+                { from: './icon.png' },
+                { from: './client/styles/not-logged-in.css' },
+                { from: './client/images' },
             ]),
         ],
         module: {
@@ -36,19 +36,15 @@ module.exports = function () {
                     use: {
                         loader: 'babel-loader',
                         options: {
-                            cacheDirectory: true
-                        }
-                    }
+                            cacheDirectory: true,
+                        },
+                    },
                 },
                 {
                     test: /\.(less|css)$/,
-                    use: [
-                        {loader: 'style-loader'},
-                        {loader: 'css-loader'},
-                        {loader: 'less-loader'},
-                    ]
+                    use: [{ loader: 'style-loader' }, { loader: 'css-loader' }, { loader: 'less-loader' }],
                 },
-            ]
+            ],
         },
     }
 }

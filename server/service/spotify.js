@@ -1,7 +1,7 @@
 const path = require('path')
 const debug = require('debug')(`sn:${path.basename(__filename)}`)
-const {getUserData, saveUserData, Slices} = require('../db/dao')
-const {fetchAllPages} = require('./request-helpers')
+const { getUserData, saveUserData, Slices } = require('../db/dao')
+const { fetchAllPages } = require('./request-helpers')
 
 /*
  * This transforms lists of artists' albums responses from Spotify into the contract for the cache
@@ -11,7 +11,7 @@ const {fetchAllPages} = require('./request-helpers')
 async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, freshAlbumsCache, userId) {
     const userSeenAlbums = await getUserData(userId, Slices.seenAlbums)
 
-    pagesOfArtistAlbums.forEach(artistAlbumPage => {
+    pagesOfArtistAlbums.forEach((artistAlbumPage) => {
         //The albums response from Spotify does not contain the artistId used for searching except in the href and artists array
         //However, being the album could be a collab, there may be multiple artists in the array and order is not predictable
         //Being we don't know the artistId used for searching in this loop, we have to pull it out of the href
@@ -21,7 +21,7 @@ async function transformSpotifyArtistAlbumPagesToCache(pagesOfArtistAlbums, fres
         const allAlbumsForAnArtist = artistInCache.albums || []
 
         //Build the cache for each album in this artist page
-        artistAlbumPage.items.forEach(album => {
+        artistAlbumPage.items.forEach((album) => {
             if (userSeenAlbums.includes(album.id)) return
 
             allAlbumsForAnArtist.push({
@@ -65,9 +65,11 @@ exports.checkForUnseenAlbums = async function checkForUnseenAlbums(session) {
 
     if (process.env.MOCK) {
         followedArtistsPagesFromSpotify = [require('../resources/mocks/spotify/v1-me-following')]
-    }
-    else {
-        followedArtistsPagesFromSpotify = await fetchAllPages(session.access_token, '/me/following?type=artist&limit=50')
+    } else {
+        followedArtistsPagesFromSpotify = await fetchAllPages(
+            session.access_token,
+            '/me/following?type=artist&limit=50'
+        )
     }
 
     const totalFollowedArtists = followedArtistsPagesFromSpotify[0].artists.total
@@ -79,12 +81,13 @@ exports.checkForUnseenAlbums = async function checkForUnseenAlbums(session) {
 
     debug(`User ${userId}: Following ${totalFollowedArtists} artists`)
 
-    followedArtistsPagesFromSpotify.forEach(followedPage =>
-        followedPage.artists.items.forEach(artist =>
-            freshAlbumsCache.artists[artist.id] = {
-                id: artist.id,
-                name: artist.name,
-            }
+    followedArtistsPagesFromSpotify.forEach((followedPage) =>
+        followedPage.artists.items.forEach(
+            (artist) =>
+                (freshAlbumsCache.artists[artist.id] = {
+                    id: artist.id,
+                    name: artist.name,
+                })
         )
     )
 
@@ -99,20 +102,22 @@ exports.checkForUnseenAlbums = async function checkForUnseenAlbums(session) {
 
     const allAlbumsPagesOfFollowedArtists = []
 
-    for(let i = 0; i < artistIds.length; i++) {
+    for (let i = 0; i < artistIds.length; i++) {
         try {
             const artistId = artistIds[i]
-            const albumsPages = await fetchAllPages(session.access_token, `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`)
+            const albumsPages = await fetchAllPages(
+                session.access_token,
+                `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`
+            )
 
             //Spread albums because fetchAlbumsAllPages returns an array of responses, and we want this array to be flat of all artists and albums
             allAlbumsPagesOfFollowedArtists.push(...albumsPages)
 
             session.refreshCompleted = i + 1
             session.save()
-        }
-        catch (e) {
+        } catch (e) {
             console.error(e)
-            return {error: true}
+            return { error: true }
         }
     }
 
@@ -126,5 +131,5 @@ exports.checkForUnseenAlbums = async function checkForUnseenAlbums(session) {
     await saveUserData(userId, Slices.user, user)
     await saveUserData(userId, Slices.unseenAlbumsCache, freshAlbumsCache)
 
-    return {...freshAlbumsCache, ...user}
+    return { ...freshAlbumsCache, ...user }
 }

@@ -22,16 +22,14 @@ const userDataSchema = [
                             releaseDate: '2018-06-22',
                             type: 'single',
                             spotifyUri: 'spotify:album:7sAspG14R2muJBcJ3HcFcp',
-                            spotifyWebPlayerUrl: 'https://open.spotify.com/album/7sAspG14R2muJBcJ3HcFcp'
-                        }
-                    ]
-                }
+                            spotifyWebPlayerUrl: 'https://open.spotify.com/album/7sAspG14R2muJBcJ3HcFcp',
+                        },
+                    ],
+                },
             },
             totalUnseenAlbums: 3000,
         },
         //Array of albumIDs. We don't save seen albums into the unseenAlbumsCache
-        seenAlbums: [
-            '64EHlRxOKVjlK1CY4RPjJz'
-        ]
-    }
+        seenAlbums: ['64EHlRxOKVjlK1CY4RPjJz'],
+    },
 ]

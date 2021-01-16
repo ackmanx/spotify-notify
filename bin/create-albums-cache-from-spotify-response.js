@@ -8,7 +8,8 @@
 
 const spotifyResponse = {}
 
-console.log(spotifyResponse.items.map(album => ({
+console.log(
+    spotifyResponse.items.map((album) => ({
         id: album.id,
         name: album.name,
         artistName: album.artists[0].name,

@@ -1,18 +1,18 @@
 import { LOADING_START, LOADING_STOP, UPDATE_SEEN_ALBUMS } from '../action-types'
-import {postAddToPlaylist, postSeenAlbums} from '../../utils/request-helpers'
+import { postAddToPlaylist, postSeenAlbums } from '../../utils/request-helpers'
 
-export const markArtistAsSeen = artistId => {
+export const markArtistAsSeen = (artistId) => {
     return async (dispatch, getState) => {
         const state = getState()
 
         const artist = state.artists.artistsWithUnseenAlbums[artistId]
-        const albumsByArtist = artist.albums.map(album => album.id)
+        const albumsByArtist = artist.albums.map((album) => album.id)
 
-        dispatch({type: UPDATE_SEEN_ALBUMS, albumIdsToMarkAsSeen: albumsByArtist})
+        dispatch({ type: UPDATE_SEEN_ALBUMS, albumIdsToMarkAsSeen: albumsByArtist })
     }
 }
 
-export const markAlbumAsSeen = albumId => ({type: UPDATE_SEEN_ALBUMS, albumIdsToMarkAsSeen: [albumId]})
+export const markAlbumAsSeen = (albumId) => ({ type: UPDATE_SEEN_ALBUMS, albumIdsToMarkAsSeen: [albumId] })
 
 export const addToPlaylist = (albumId) => {
     return async () => {
@@ -26,7 +26,7 @@ export const submitSeenAlbums = () => {
 
         if (state.app.loading) return
 
-        dispatch({type: LOADING_START})
+        dispatch({ type: LOADING_START })
 
         await postSeenAlbums(state.app.seenAlbums)
 

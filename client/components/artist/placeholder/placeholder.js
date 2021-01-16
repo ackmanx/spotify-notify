@@ -1,17 +1,17 @@
 import './placeholder.less'
-import React, {useEffect} from 'react'
-import {connect} from 'react-redux'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
 
-import {ALL_ALBUMS_IN_VIEWPORT_RENDERED} from '../../../redux/action-types'
-import {bemFactory} from '../../../utils/utils'
+import { ALL_ALBUMS_IN_VIEWPORT_RENDERED } from '../../../redux/action-types'
+import { bemFactory } from '../../../utils/utils'
 
 const bem = bemFactory('artist-placeholder')
 
 //Singleton, not the redux data
 let allAlbumsInViewportRendered = false
 
-export const _Placeholder = props => {
-    const {dispatchAllAlbumsInViewport, name} = props
+export const _Placeholder = (props) => {
+    const { dispatchAllAlbumsInViewport, name } = props
 
     const ref = React.createRef()
 
@@ -22,7 +22,8 @@ export const _Placeholder = props => {
         if (!allAlbumsInViewportRendered) {
             //We check for the ref because lazyload may have already destroyed the placeholder element for an artist
             if (ref && ref.current) {
-                const placeholderIsNotInViewport = ref.current.getBoundingClientRect().top > document.documentElement.clientHeight
+                const placeholderIsNotInViewport =
+                    ref.current.getBoundingClientRect().top > document.documentElement.clientHeight
 
                 if (placeholderIsNotInViewport) {
                     allAlbumsInViewportRendered = true
@@ -32,13 +33,17 @@ export const _Placeholder = props => {
         }
     }, [])
 
-    return <div ref={ref} className={bem()}>{name}</div>
+    return (
+        <div ref={ref} className={bem()}>
+            {name}
+        </div>
+    )
 }
 
 const mapStateToProps = () => ({})
 
-const mapDispatchToProps = dispatch => ({
-    dispatchAllAlbumsInViewport: () => dispatch({type: ALL_ALBUMS_IN_VIEWPORT_RENDERED})
+const mapDispatchToProps = (dispatch) => ({
+    dispatchAllAlbumsInViewport: () => dispatch({ type: ALL_ALBUMS_IN_VIEWPORT_RENDERED }),
 })
 
 export const Placeholder = connect(mapStateToProps, mapDispatchToProps)(_Placeholder)

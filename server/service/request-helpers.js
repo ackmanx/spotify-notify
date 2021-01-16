@@ -7,7 +7,7 @@ async function spotifyAPI(accessToken, endpoint, optionOverrides) {
     const options = {
         headers: {
             Authorization: `Bearer ${accessToken}`,
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
         ...optionOverrides,
     }
@@ -35,14 +35,20 @@ async function spotifyAPI(accessToken, endpoint, optionOverrides) {
         response = await fetch(spotifyApiURL, options)
 
         if (!response.ok) {
-            debug(`Uh oh, the retry after throttle failed too! We got a ${response.status} ${response.statusText} from Spotify`)
+            debug(
+                `Uh oh, the retry after throttle failed too! We got a ${response.status} ${response.statusText} from Spotify`
+            )
         }
     }
 
     const responseBody = await response.json()
 
     if (!response.ok) {
-        debug(`Uh oh, the Spotify API request failed: (${spotifyApiURL})! We got ${response.status} :( Here's what they had to say: ${JSON.stringify(responseBody)}`)
+        debug(
+            `Uh oh, the Spotify API request failed: (${spotifyApiURL})! We got ${
+                response.status
+            } :( Here's what they had to say: ${JSON.stringify(responseBody)}`
+        )
         return
     }
 

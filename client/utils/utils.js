@@ -1,4 +1,4 @@
-export const bemFactory = block => (element, modifier) => {
+export const bemFactory = (block) => (element, modifier) => {
     let className = block
 
     if (element) className = className + '__' + element

@@ -1,4 +1,4 @@
-const {getUserDataCollection} = require('./mongo')
+const { getUserDataCollection } = require('./mongo')
 
 exports.Slices = {
     unseenAlbumsCache: 'unseenAlbumsCache',
@@ -7,8 +7,8 @@ exports.Slices = {
     search: 'search',
 }
 
-exports.initializeDatabaseForUser = async user => {
-    const userAlreadyInDatabase = await getUserDataCollection().find({'user.id': user.id}).count()
+exports.initializeDatabaseForUser = async (user) => {
+    const userAlreadyInDatabase = await getUserDataCollection().find({ 'user.id': user.id }).count()
 
     if (!userAlreadyInDatabase) {
         await getUserDataCollection().insertOne({
@@ -29,10 +29,10 @@ exports.initializeDatabaseForUser = async user => {
  * Because this returns a MongoDB `Cursor` and we want all of the results immediately, we have to convert to an array
  */
 exports.getUserData = async (userId, slice) => {
-    const userCursor = await getUserDataCollection().find({'user.id': userId})
+    const userCursor = await getUserDataCollection().find({ 'user.id': userId })
 
     if (slice) {
-        const [document = {}] = await userCursor.project({[slice]: 1}).toArray()
+        const [document = {}] = await userCursor.project({ [slice]: 1 }).toArray()
         return document[slice]
     }
 
@@ -45,5 +45,5 @@ exports.saveUserData = async (userId, slice, value) => {
         return true
     }
 
-    return await getUserDataCollection().updateOne({'user.id': userId}, {$set: {[slice]: value}})
+    return await getUserDataCollection().updateOne({ 'user.id': userId }, { $set: { [slice]: value } })
 }

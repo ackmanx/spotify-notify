@@ -9,14 +9,7 @@
                     "href": null,
                     "total": 3230185
                 },
-                "genres": [
-                    "big room",
-                    "dance pop",
-                    "edm",
-                    "electro house",
-                    "pop",
-                    "tropical house"
-                ],
+                "genres": ["big room", "dance pop", "edm", "electro house", "pop", "tropical house"],
                 "href": "https://api.spotify.com/v1/artists/77AiFEVeAVj2ORpC85QVJs",
                 "id": "77AiFEVeAVj2ORpC85QVJs",
                 "images": [
@@ -49,9 +42,7 @@
                     "href": null,
                     "total": 224321
                 },
-                "genres": [
-                    "mandopop"
-                ],
+                "genres": ["mandopop"],
                 "href": "https://api.spotify.com/v1/artists/1r9DuPTHiQ7hnRRZ99B8nL",
                 "id": "1r9DuPTHiQ7hnRRZ99B8nL",
                 "images": [

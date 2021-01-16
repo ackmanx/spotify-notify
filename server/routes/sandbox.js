@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const path = require('path')
-const delay = require("delay");
+const delay = require('delay')
 const { fetchAllPages } = require('../service/request-helpers')
 const { ensureAuthenticated } = require('./spotify-auth')
 const debug = require('debug')(`sn:${path.basename(__filename)}`)
@@ -16,8 +16,8 @@ const debug = require('debug')(`sn:${path.basename(__filename)}`)
  * ------------------------------------------------------------------------------------------------------------------------------------------
  */
 class RequestQueue {
-    currentItem;
-    items;
+    currentItem
+    items
 
     constructor(items) {
         this.items = items
@@ -44,8 +44,7 @@ class RequestQueue {
     async process() {
         do {
             await this.request()
-        }
-        while (queue.next())
+        } while (queue.next())
     }
 }
 
@@ -72,7 +71,6 @@ router.get('/create-retry', function (req, res) {
  * END
  * ------------------------------------------------------------------------------------------------------------------------------------------
  */
-
 
 /*
  * ------------------------------------------------------------------------------------------------------------------------------------------
@@ -158,6 +156,5 @@ router.get('/shuffle-playlist', ensureAuthenticated, async function (req, res) {
  * END
  * ------------------------------------------------------------------------------------------------------------------------------------------
  */
-
 
 module.exports = router

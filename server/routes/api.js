@@ -3,11 +3,11 @@ const router = express.Router()
 const path = require('path')
 const debug = require('debug')(`sn:${path.basename(__filename)}`)
 
-const {ensureAuthenticated} = require('./spotify-auth')
-const {getUserData, saveUserData, Slices} = require('../db/dao')
-const {checkForUnseenAlbums} = require('../service/spotify')
-const {fetchAllPages} = require("../service/request-helpers")
-const {spotifyAPI} = require('../service/request-helpers')
+const { ensureAuthenticated } = require('./spotify-auth')
+const { getUserData, saveUserData, Slices } = require('../db/dao')
+const { checkForUnseenAlbums } = require('../service/spotify')
+const { fetchAllPages } = require('../service/request-helpers')
+const { spotifyAPI } = require('../service/request-helpers')
 
 /*
  * Grab the user's cache from the DB so we don't pester Spotify each time we load the page (plus this is ridiculously faster)
@@ -24,19 +24,19 @@ router.get('/albums/cached', ensureAuthenticated, async function (req, res) {
 
     //If a user's never been here, they won't have had this fetched from Spotify yet
     if (!userData.user.totalFollowedArtists) {
-        return res.json({firstTimeUser: true})
+        return res.json({ firstTimeUser: true })
     }
 
     //Go through each artist in the cache and filter out seen albums
     //We don't cache seen albums, but the cache isn't rebuilt until the user does a refresh
     //So, this is to hide them until a refresh
     Object.entries(userData.unseenAlbumsCache.artists).forEach(([, artist]) => {
-        artist.albums = artist.albums.filter(album => !userData.seenAlbums.includes(album.id))
+        artist.albums = artist.albums.filter((album) => !userData.seenAlbums.includes(album.id))
 
         if (!artist.albums.length) delete userData.unseenAlbumsCache.artists[artist.id]
     })
 
-    return res.json({...userData.unseenAlbumsCache, ...userData.user})
+    return res.json({ ...userData.unseenAlbumsCache, ...userData.user })
 })
 
 /*
@@ -77,14 +77,14 @@ router.post('/albums/update-seen', ensureAuthenticated, async function (req, res
     const unseenAlbumsCache = await getUserData(user.id, Slices.unseenAlbumsCache)
     unseenAlbumsCache.totalUnseenAlbums -= markedAsSeen.length
 
-    newSeenAlbumsList.forEach(albumId => {
+    newSeenAlbumsList.forEach((albumId) => {
         let isFinished = false
 
-        Object.keys(unseenAlbumsCache.artists).forEach(artistId => {
+        Object.keys(unseenAlbumsCache.artists).forEach((artistId) => {
             if (isFinished) return
 
             const artist = unseenAlbumsCache.artists[artistId]
-            const albumIndexInCache = artist.albums.findIndex(album => albumId === album.id)
+            const albumIndexInCache = artist.albums.findIndex((album) => albumId === album.id)
 
             if (albumIndexInCache > -1) {
                 artist.albums.splice(albumIndexInCache, 1)
@@ -95,33 +95,29 @@ router.post('/albums/update-seen', ensureAuthenticated, async function (req, res
 
     await saveUserData(user.id, Slices.unseenAlbumsCache, unseenAlbumsCache)
 
-    res.json({success: true})
+    res.json({ success: true })
 })
 
 router.post('/albums/add-to-playlist', ensureAuthenticated, async function (req, res) {
     const tracks = await fetchAllPages(req.session.access_token, `/albums/${req.body.albumId}/tracks`)
 
     //I'm going to go ahead and stupidly assume any album has less than 50 tracks so there will only be one page
-    const spotifyURIsOfTracks = tracks[0].items.map(track => track.uri)
+    const spotifyURIsOfTracks = tracks[0].items.map((track) => track.uri)
 
     const usersPlaylists = await fetchAllPages(req.session.access_token, '/me/playlists?limit=50')
-    let iAlreadySawThat = usersPlaylists[0].items.find(playlist => playlist.name === 'I Already Saw That')
+    let iAlreadySawThat = usersPlaylists[0].items.find((playlist) => playlist.name === 'I Already Saw That')
 
     if (!iAlreadySawThat) {
-        iAlreadySawThat = await spotifyAPI(req.session.access_token, `/users/${req.session.user.id}/playlists`,
-            {
-                method: 'POST',
-                body: JSON.stringify({name: 'I Already Saw That'})
-            }
-        )
+        iAlreadySawThat = await spotifyAPI(req.session.access_token, `/users/${req.session.user.id}/playlists`, {
+            method: 'POST',
+            body: JSON.stringify({ name: 'I Already Saw That' }),
+        })
     }
 
-    iAlreadySawThat = await spotifyAPI(req.session.access_token, `/playlists/${iAlreadySawThat.id}/tracks`,
-        {
-            method: 'POST',
-            body: JSON.stringify({uris: spotifyURIsOfTracks, position: 0})
-        }
-    )
+    iAlreadySawThat = await spotifyAPI(req.session.access_token, `/playlists/${iAlreadySawThat.id}/tracks`, {
+        method: 'POST',
+        body: JSON.stringify({ uris: spotifyURIsOfTracks, position: 0 }),
+    })
 
     res.json(iAlreadySawThat)
 })
@@ -136,9 +132,10 @@ router.get('/playlists/search', ensureAuthenticated, async function (req, res) {
     const responseBody = []
 
     //Loop through each page of playlists, being Spotify only returns 50 playlists per request
-    usersPlaylistPages.forEach(page => {
-        page.items.forEach(async playlist => {
-            const cachedPlaylist = searchCache.find(cachedPlaylist => cachedPlaylist.playlistName === playlist.name) || {}
+    usersPlaylistPages.forEach((page) => {
+        page.items.forEach(async (playlist) => {
+            const cachedPlaylist =
+                searchCache.find((cachedPlaylist) => cachedPlaylist.playlistName === playlist.name) || {}
 
             if (cachedPlaylist.snapshotId === playlist.snapshot_id) {
                 debug(`Skipping new fetch for "${playlist.name}" because snapshot IDs match`)
@@ -160,9 +157,9 @@ router.get('/playlists/search', ensureAuthenticated, async function (req, res) {
 
                 //Combine all pages of responses and transform to get one list of simple track objects
                 const tracks = []
-                playlistTracksPages.forEach(tracksPage => tracks.push(...tracksPage.items))
+                playlistTracksPages.forEach((tracksPage) => tracks.push(...tracksPage.items))
 
-                responsePlaylist.tracks = tracks.map(({track}) => ({
+                responsePlaylist.tracks = tracks.map(({ track }) => ({
                     title: track.name,
                     album: track.album.name,
                 }))
@@ -170,7 +167,7 @@ router.get('/playlists/search', ensureAuthenticated, async function (req, res) {
                 responseBody.push(responsePlaylist)
 
                 resolve()
-            });
+            })
 
             promises.push(promise)
         })
@@ -189,6 +186,5 @@ router.get('/playlists/search', ensureAuthenticated, async function (req, res) {
 router.get('/heartbeat', function (req, res) {
     res.json(require('../../package.json').version)
 })
-
 
 module.exports = router

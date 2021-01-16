@@ -9,7 +9,7 @@ const debug = require('debug')(`sn:${path.basename(__filename)}`)
 
 const renderRouter = require('./routes/render')
 const apiRouter = require('./routes/api')
-const {authRouter} = require('./routes/spotify-auth')
+const { authRouter } = require('./routes/spotify-auth')
 
 const app = express()
 
@@ -19,22 +19,23 @@ const app = express()
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
-
 // ---------------------------------------------------------------------------------
 // Middleware
 // ---------------------------------------------------------------------------------
 app.use(logger('dev'))
 app.use(express.json())
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
-app.use(express.static(path.join(__dirname, '..', 'public'), {maxAge: 31536000}))
+app.use(express.static(path.join(__dirname, '..', 'public'), { maxAge: 31536000 }))
 app.use(compression())
 
-app.use(session({
-    secret: 'oh-boy-oh-boy',
-    resave: false,
-    saveUninitialized: true
-}))
+app.use(
+    session({
+        secret: 'oh-boy-oh-boy',
+        resave: false,
+        saveUninitialized: true,
+    })
+)
 
 // ---------------------------------------------------------------------------------
 // Routes
@@ -44,7 +45,6 @@ app.use('/api', apiRouter)
 app.use('/auth', authRouter)
 
 if (process.env.MOCK) app.use('/sandbox', require('./routes/sandbox'))
-
 
 // ---------------------------------------------------------------------------------
 // Error handling
