@@ -30,7 +30,6 @@ async function spotifyAPI(accessToken, endpoint, optionOverrides) {
         await delay(retryAfterSeconds * 1500) //wait required amount of time and buffer a little bit too
 
         debug(`Waited ${retryAfterSeconds} seconds... ${new Date()}`)
-
         debug(`Trying request again: ${endpoint}`)
 
         response = await fetch(spotifyApiURL, options)
