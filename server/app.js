@@ -43,6 +43,8 @@ app.use('/', renderRouter)
 app.use('/api', apiRouter)
 app.use('/auth', authRouter)
 
+if (process.env.MOCK) app.use('/sandbox', require('./routes/sandbox'))
+
 
 // ---------------------------------------------------------------------------------
 // Error handling
