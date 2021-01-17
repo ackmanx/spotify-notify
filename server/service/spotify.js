@@ -1,4 +1,5 @@
 const path = require('path')
+const delay = require('delay')
 const debug = require('debug')(`sn:${path.basename(__filename)}`)
 const { getUserData, saveUserData, Slices } = require('../db/dao')
 const { fetchAllPages } = require('./request-helpers')
@@ -105,6 +106,11 @@ exports.checkForUnseenAlbums = async function checkForUnseenAlbums(session) {
     for (let i = 0; i < artistIds.length; i++) {
         try {
             const artistId = artistIds[i]
+
+            //To avoid having to deal with being throttled from Spotify, hopefully having this delay between artists is enough
+            //Also note this only works because I'm in a "for" loop and not a loop that uses a callback function
+            await delay(750)
+
             const albumsPages = await fetchAllPages(
                 session.access_token,
                 `/artists/${artistId}/albums?include_groups=album,single&market=US&limit=50`
