@@ -17,7 +17,7 @@ Docs for Heroku with git: https://devcenter.heroku.com/articles/git
 
 To deploy:
 * Run `yarn version --patch` to up the version
-* Push to origin/heroku and a build will trigger automatically because I've got this app hooked up to my GitHub account in the Heroku app settings
+* Run `git push heroku master` and a build will trigger automatically because I've got this app hooked up to my GitHub account in the Heroku app settings
 
 After you push, Heroku will run `heroku-postbuild`, which will do a production build of the UI for the node server to host.
 
