@@ -28,7 +28,6 @@ const _Banners = ({ firstTimeUser, loading, isRefresh, totalFollowedArtists, tot
             setIntervalId(setInterval(refreshFunction, 2000))
         } else {
             clearInterval(intervalId)
-            window.location.reload()
         }
     }, [isRefresh])
 
