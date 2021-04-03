@@ -40,11 +40,16 @@ app.use(
 // ---------------------------------------------------------------------------------
 // Routes
 // ---------------------------------------------------------------------------------
+debug('Registering routes')
+
 app.use('/', renderRouter)
 app.use('/api', apiRouter)
 app.use('/auth', authRouter)
 
-if (process.env.MOCK) app.use('/sandbox', require('./routes/sandbox'))
+if (process.env.MOCK) {
+    debug('Using MOCK environment, will import sandbox routes')
+    app.use('/sandbox', require('./routes/sandbox'))
+}
 
 // ---------------------------------------------------------------------------------
 // Error handling
