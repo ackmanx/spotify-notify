@@ -94,6 +94,11 @@ router.get('/shuffle-playlist', ensureAuthenticated, async function (req, res) {
 /*
  * ------------------------------------------------------------------------------------------------------------------------------------------
  * Remove favorited tracks
+ *
+ * Get a list all all the user's favorited songs
+ * Then get a list of all the playlists the users have
+ * Then get the tracks of each playlist
+ * Then go through each favorite to see which playlist it is in, if any
  * ------------------------------------------------------------------------------------------------------------------------------------------
  */
 router.get('/remove-favorites', ensureAuthenticated, async function (req, res) {
@@ -101,9 +106,14 @@ router.get('/remove-favorites', ensureAuthenticated, async function (req, res) {
 
     let tracks = []
 
+    // Flatten responses into single array of track URIs
     favorites.forEach((favoritesPage) => {
-        tracks = tracks.concat(favoritesPage.items.map((item) => item.track.id))
+        tracks = tracks.concat(favoritesPage.items.map((item) => item.track.uri))
     })
+
+    const playlists = await fetchAllPages(req.session.access_token, '/me/playlists?limit=50')
+
+    // await fetchAllPages(req.session.access_token, `/playlists/${playlist_id}/tracks?limit=50`)
 
     res.json(tracks)
 })

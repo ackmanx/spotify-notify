@@ -25,7 +25,7 @@ const dao = require('../db/dao')
 
 const client_id = 'e466e7a286954e13b501d8e7bc4669cc' //this is the ID for my application registered with Spotify
 const client_secret = '76f2fd5049574e09899dcf84810e5fef' //this will live in heroku config so it isn't exposed via git, but until then store it here and regen a new key later
-const scope = 'user-follow-read playlist-modify-public user-library-read'
+const scope = 'user-follow-read playlist-modify-public user-library-read playlist-read-private'
 const stateKey = 'spotify_auth_state'
 
 let redirect_uri //where to be sent by spotify after logging in. this must be whitelisted in spotify developer dashboard first
