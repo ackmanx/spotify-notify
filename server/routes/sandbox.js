@@ -6,6 +6,10 @@ const { fetchAllPages } = require('../service/request-helpers')
 const { ensureAuthenticated } = require('./spotify-auth')
 const debug = require('debug')(`sn:${path.basename(__filename)}`)
 
+router.get('/', ensureAuthenticated, async function (req, res) {
+    res.json({ sandbox: 'is working' })
+})
+
 /*
  * ------------------------------------------------------------------------------------------------------------------------------------------
  * Shuffle a playlist
@@ -93,29 +97,70 @@ router.get('/shuffle-playlist', ensureAuthenticated, async function (req, res) {
 
 /*
  * ------------------------------------------------------------------------------------------------------------------------------------------
- * Remove favorited tracks
+ * Get all favorited tracks
  *
  * Get a list all all the user's favorited songs
- * Then get a list of all the playlists the users have
- * Then get the tracks of each playlist
- * Then go through each favorite to see which playlist it is in, if any
  * ------------------------------------------------------------------------------------------------------------------------------------------
  */
-router.get('/remove-favorites', ensureAuthenticated, async function (req, res) {
+router.get('/get-favorites', ensureAuthenticated, async function (req, res) {
     const favorites = await fetchAllPages(req.session.access_token, '/me/tracks?market=US&limit=50')
 
     let tracks = []
 
     // Flatten responses into single array of track URIs
     favorites.forEach((favoritesPage) => {
-        tracks = tracks.concat(favoritesPage.items.map((item) => item.track.uri))
+        tracks = tracks.concat(favoritesPage.items.map((item) => ({ name: item.track.name, uri: item.track.uri })))
     })
 
+    res.json(tracks)
+})
+
+/*
+ * ------------------------------------------------------------------------------------------------------------------------------------------
+ * Remove favorited tracks
+ *
+ * Get a list all all the user's favorited songs
+ * Then get a list of all the playlists the users have
+ * Then get the tracks of each playlist
+ * Then go through each playlist and remove any tracks in there if they are a favorite
+ * ------------------------------------------------------------------------------------------------------------------------------------------
+ */
+router.get('/remove-favorites', ensureAuthenticated, async function (req, res) {
+    // Get a list of all the favorited songs and gather the URI's for them
+    const favorites = await fetchAllPages(req.session.access_token, '/me/tracks?market=US&limit=50')
+
+    let trackUris = []
+    favorites.forEach((favoritesPage) => {
+        trackUris = trackUris.concat(favoritesPage.items.map((item) => item.track.uri))
+    })
+
+    // Get all playlists and flatten so we can go through each one
     const playlists = await fetchAllPages(req.session.access_token, '/me/playlists?limit=50')
 
-    // await fetchAllPages(req.session.access_token, `/playlists/${playlist_id}/tracks?limit=50`)
+    let playlistTracksUrl = []
+    playlists.forEach((playlistPage) => {
+        playlistTracksUrl = playlistTracksUrl.concat(playlistPage.items.map((item) => item.tracks.href))
+    })
 
-    res.json(tracks)
+    let blah = {}
+
+    // Go through each playlist and compare their tracks to the favorites
+    // for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < playlistTracksUrl.length; i++) {
+        const tracks = await fetchAllPages(
+            req.session.access_token,
+            `${playlistTracksUrl[i]}?market=US&fields=items(track(uri)),next&limit=50`
+        )
+
+        let tracksInPlaylist = []
+        tracks.forEach((playlistTracksPage) => {
+            tracksInPlaylist = tracksInPlaylist.concat(playlistTracksPage.items.map((item) => item.track.uri))
+        })
+
+        blah[playlistTracksUrl[i]] = tracksInPlaylist
+    }
+
+    res.json(blah)
 })
 /*
  * ------------------------------------------------------------------------------------------------------------------------------------------
